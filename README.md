@@ -1,5 +1,6 @@
 # Leer team 3 Bias Brothers
-![plot](/Images/BiasBrothers.png)
+
+![](Images/BiasBrothers.png)
 
 ---
 
