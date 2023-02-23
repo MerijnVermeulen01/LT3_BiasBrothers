@@ -1,3 +1,4 @@
+// This function makes the sidebar.
 function sidebarLoad(){
     document.write(
         "<ul>\
