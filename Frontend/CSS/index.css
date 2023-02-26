@@ -2,3 +2,19 @@ body
 {
     background-color: #F5F5FB;
 }
+
+li {
+    list-style: none;
+}
+
+.active{
+    font-size: 20px;
+}
+
+#sidebarContainer {
+    height: 600px;
+    width: 150px;
+    border: 1px black solid;
+    border-radius: 15px;
+    background-color: #27be6b;
+}

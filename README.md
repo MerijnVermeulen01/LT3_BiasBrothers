@@ -1,6 +1,6 @@
 # Leer team 3 Bias Brothers
 
-![](Images/BiasBrothers.png)
+![](Frontend/Images/BiasBrothers.png)
 
 ---
 
