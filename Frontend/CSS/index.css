@@ -1,3 +1,7 @@
+
+
+
+
 /* TAGS */
 /* -------------------------------------------- */
 body
@@ -22,5 +26,84 @@ li {
     width: 150px;
     border: 1px black solid;
     border-radius: 15px;
-    background-color: #27be6b;
+    background-color: #129651;
+}
+
+:root {
+    --bg-color: rgb(176, 176, 176);
+    --card-color: #27be6D;
+}
+
+body {
+    align-items: center;
+    background-color: var(--bg-color);
+    aspect-ratio: 960/300;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+}
+
+#cards {
+
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 916px;
+    width: calc(100% - 20px);
+}
+
+.card {
+    border-radius: 10px;
+    cursor: pointer;
+    height: 260px;
+    width: 300px;
+    position: relative;
+}
+
+
+
+
+.card > .card-content {
+    height: calc(100% - 2px);
+    margin: 1px;
+    width: calc(100% - 2px);
+    background-color: var(--card-color);
+    border-radius: inherit;
+    font-family: inherit;
+    position: relative;
+
+}
+
+.card-content img {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.card-content p {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #F5F5FB;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*Klein opzetje voor het geval we gebruik willen maken van een hover effect over de kaarten. (LET OP!! Dit is wel gewenst door de opdrahtgever)*/
+.card:hover::before {
+    opacity: 1;
+}
+
+.card::before {
 }
