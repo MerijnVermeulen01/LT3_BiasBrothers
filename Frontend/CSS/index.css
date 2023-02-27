@@ -1,3 +1,5 @@
+/* TAGS */
+/* -------------------------------------------- */
 body
 {
     background-color: #F5F5FB;
@@ -7,10 +9,14 @@ li {
     list-style: none;
 }
 
+/* Classes */
+/* -------------------------------------------- */
 .active{
     font-size: 20px;
 }
 
+/* ID's */
+/* -------------------------------------------- */
 #sidebarContainer {
     height: 600px;
     width: 150px;

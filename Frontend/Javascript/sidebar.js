@@ -1,6 +1,5 @@
 // This function makes the sidebar.
 function sidebarLoad(){
-
     // This piece of code makes the sidebar with HTML
     document.write(
         "<nav>\
@@ -16,14 +15,11 @@ function sidebarLoad(){
         </nav>"
     );
 
-
     // This code removes the class active form all of the childern in the div sidebarContainer
     const elements = document.querySelectorAll("#sidebarContainer *");
-
     elements.forEach((element) =>{
         element.classList.remove("active");
     });
-
 
     // This code looks at which page you are and then adds the class active to it
     // TODO: IF STATEMENT TO SWITCH STATEMENT
@@ -41,5 +37,4 @@ function sidebarLoad(){
     } else if (queryStrin.includes("downloadGegevensPagina")){
         document.getElementById("downloadGegevensPagina").classList.add("active");
     }
-
 }
