@@ -10,6 +10,7 @@ body
 
 li {
     list-style: none;
+    padding: 4px;
 }
 ul{
     padding: 0;
@@ -40,3 +41,11 @@ nav{
     width: 49px;
 }
 
+#dashboard{
+    border-bottom: 3px solid white;
+    margin-bottom: 20px;
+}
+#codex{
+    border-top: 3px solid white;
+    margin-top: 20px;
+}
