@@ -8,6 +8,13 @@ body
 li {
     list-style: none;
 }
+ul{
+    padding: 0;
+}
+nav{
+    display: flex;
+    justify-content: center;
+}
 
 /* Classes */
 /* -------------------------------------------- */
@@ -18,9 +25,15 @@ li {
 /* ID's */
 /* -------------------------------------------- */
 #sidebarContainer {
-    height: 600px;
-    width: 150px;
-    border: 1px black solid;
-    border-radius: 15px;
+    height: 75vh;
+    width: 92px;
+    border-radius: 20px;
     background-color: #27be6b;
+    box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
+    margin-left: 80px;
 }
+ img{
+    height: 49px;
+    width: 49px;
+}
+
