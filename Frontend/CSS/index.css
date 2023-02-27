@@ -3,7 +3,9 @@
 body
 {
     background-color: #F5F5FB;
+    min-height: 100%;
 }
+
 
 li {
     list-style: none;
@@ -36,4 +38,3 @@ nav{
     height: 49px;
     width: 49px;
 }
-
