@@ -4,6 +4,7 @@ body
 {
     background-color: #F5F5FB;
     min-height: 100%;
+    margin: 0 auto;
 }
 
 
@@ -38,3 +39,4 @@ nav{
     height: 49px;
     width: 49px;
 }
+
