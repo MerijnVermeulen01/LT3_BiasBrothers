@@ -15,10 +15,20 @@ li {
     list-style: none;
 }
 
+<<<<<<< Updated upstream
+=======
+/ Classes /
+/* -------------------------------------------- */
+>>>>>>> Stashed changes
 .active{
     font-size: 20px;
 }
 
+<<<<<<< Updated upstream
+=======
+/ ID's /
+/* -------------------------------------------- */
+>>>>>>> Stashed changes
 #sidebarContainer {
     height: 600px;
     width: 150px;
@@ -63,6 +73,7 @@ body {
     width: 300px;
     position: relative;
 
+<<<<<<< Updated upstream
 }
 
 
@@ -117,3 +128,45 @@ body {
     opacity: 0.8;
 }
 
+=======
+}
+
+
+
+
+.card > .card-content {
+    height: calc(100% - 2px);
+    margin: 1px;
+    width: calc(100% - 2px);
+    background-color: var(--card-color);
+    border-radius: inherit;
+    font-family: inherit;
+    position: relative;
+    box-shadow: 2px 4px 4px  rgb(0 0 0 / 40%)
+
+}
+
+.card-content img {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.card-content p {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #F5F5FB;
+    font-family: 'Poppins', sans-serif;
+}
+
+/Klein opzetje voor het geval we gebruik willen maken van een hover effect over de kaarten. (LET OP!! Dit is wel gewenst door de opdrahtgever)*/
+.card:hover::before {
+    opacity: 1;
+}
+
+.card::before {
+}
+>>>>>>> Stashed changes

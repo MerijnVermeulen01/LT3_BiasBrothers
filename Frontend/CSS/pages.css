@@ -1,5 +1,6 @@
 /* TAGS */
 /* -------------------------------------------- */
+<<<<<<< Updated upstream
 body{    
     background-color: #F5F5FB;    
     min-height: 100%;    
@@ -17,17 +18,41 @@ ul{
 
 nav{    
     display: flex;    
+=======
+body
+{
+    background-color: #F5F5FB;
+    min-height: 100%;
+    margin: 0 auto;
+}
+
+
+li {
+    list-style: none;
+    padding: 4px;
+}
+ul{
+    padding: 0;
+}
+nav{
+    display: flex;
+>>>>>>> Stashed changes
     justify-content: center;
 }
 
 /* Classes */
 /* -------------------------------------------- */
+<<<<<<< Updated upstream
 .active{    
+=======
+.active{
+>>>>>>> Stashed changes
     font-size: 20px;
 }
 
 /* ID's */
 /* -------------------------------------------- */
+<<<<<<< Updated upstream
 #sidebarContainer {    
     height: 75vh;    
     width: 92px;    
@@ -50,4 +75,53 @@ img{
 #codex{    
     border-top: 3px solid white;    
     margin-top: 20px;
+=======
+#sidebarContainer {
+    height: 100%;
+    width: 92px;
+    border-radius: 20px;
+    background-color: #27be6b;
+    box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
+}
+ img{
+    height: 49px;
+    width: 49px;
+}
+
+#dashboard{
+    border-bottom: 3px solid white;
+    margin-bottom: 20px;
+}
+#codex{
+    border-top: 3px solid white;
+    margin-top: 20px;
+}
+
+/* Optie1 */
+
+.container {
+    max-width: 90%;
+    margin: auto;
+}
+
+.flex-grid {
+    color: green;
+    display: flex;
+    margin: auto -1rem 1rem;
+}
+
+.col {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 1rem;
+}
+
+.sidebar {
+    flex: 0;
+}
+
+.main {
+    flex: 3;
+    border: medium dashed green;
+>>>>>>> Stashed changes
 }
