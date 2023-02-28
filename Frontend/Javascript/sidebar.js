@@ -4,18 +4,19 @@ function sidebarLoad(){
     document.write(
         "<nav>\
             <ul>\
-                <li><img scr='Images/BiasBrothers.png'></li>\
-                <li id='ontwikkelActies'><a href='ontwikkelActies.html'>Ontwikkelacties</a></li>\
-                <li id='denkvalkuilen'><a href='denkvalkuilen.html'>Denkvalkuilen</a></li>\
-                <li id='mijnBiasesPagina'><a href='mijnBiasesPagina.html'>Mijn Biases</a></li>\
-                <li id='aanpassingsvermogen'><a href='aanpassingsvermogen.html'>Aanpassingsvermogen</a></li>\
-                <li id='codex'><a href='codex.html'>Codex</a></li>\
-                <li id='downloadGegevensPagina'><a href='downloadGegevensPagina.html'>Download gegevens</a></li>\
+                <li id='logo'><img alt=\"\" src=\"../Images/BiasBrothers.png\" /></li>\
+                <li id='dashboard'><a href='../index.html'><img alt=\"\" src=\"../Images/Dashboard.png\" /></a></li>\
+                <li id='ontwikkelActies'><a href='ontwikkelActies.html'><img alt=\"\" src=\"../Images/Ontwikkelacties.png\" /></a></li>\
+                <li id='denkvalkuilen'><a href='denkvalkuilen.html'><img alt=\"\" src=\"../Images/Denkvalkuilen.png\" /></a></li>\
+                <li id='mijnBiasesPagina'><a href='mijnBiasesPagina.html'><img alt=\"\" src=\"../Images/Biases.png\" /></a></li>\
+                <li id='aanpassingsvermogen'><a href='aanpassingsvermogen.html'><img alt=\"\" src=\"../Images/Aanpassingsvermogen.png\" /></a></li>\
+                <li id='codex'><a href='codex.html'><img alt=\"\" src=\"../Images/Codex.png\" /></a></li>\
+                <li id='downloadGegevensPagina'><a href='downloadGegevensPagina.html'><img alt=\"\" src=\"../Images/Download-button.png\" /></a></a></li>\
             </ul>\
         </nav>"
     );
 
-    // This code removes the class active form all of the childern in the div sidebarContainer
+    // This code removes the class active form all the children in the div sidebarContainer
     const elements = document.querySelectorAll("#sidebarContainer *");
     elements.forEach((element) =>{
         element.classList.remove("active");
