@@ -29,12 +29,11 @@ nav{
 /* ID's */
 /* -------------------------------------------- */
 #sidebarContainer {
-    height: 75vh;
+    height: 100%;
     width: 92px;
     border-radius: 20px;
     background-color: #27be6b;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
-    margin-left: 80px;
 }
  img{
     height: 49px;
@@ -48,4 +47,32 @@ nav{
 #codex{
     border-top: 3px solid white;
     margin-top: 20px;
+}
+
+/* Optie1 */
+
+.container {
+    max-width: 90%;
+    margin: auto;
+}
+
+.flex-grid {
+    color: green;
+    display: flex;
+    margin: auto -1rem 1rem;
+}
+
+.col {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 1rem;
+}
+
+.sidebar {
+    flex: 0;
+}
+
+.main {
+    flex: 3;
+    border: medium dashed green;
 }
