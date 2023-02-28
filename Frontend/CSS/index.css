@@ -97,9 +97,23 @@ body {
 }
 
 /* Klein opzetje voor het geval we gebruik willen maken van een hover effect over de kaarten. (LET OP!! Dit is wel gewenst door de opdrahtgever) */
-.card:hover::before {
+
+.card:hover {
+    border: 100px #F5F5FB;
     opacity: 1;
 }
 
 .card::before {
+    opacity: 0;
 }
+
+.card:hover:before {
+    border: 100px #F5F5FB;
+    opacity: 1;
+}
+.card:hover {
+    border-color: #F5F5FB;
+    box-shadow: 0 0 10px #F5F5FB;
+    opacity: 0.8;
+}
+
