@@ -25,12 +25,32 @@ nav{
 .active{
     font-size: 20px;
 }
+.sidebar ul li .tooltip{
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    width: 160px;
+    color: white;
+    font-size: 12px;
+    background-color: #1D1D35;
+    opacity: 85%;
+    border-radius: 5px;
+    padding: 10px 15px 10px 15px;
+    margin-top: 5px;
+    margin-left: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+.sidebar ul li:hover .tooltip{
+    visibility: visible;
+}
+
 
 /* ID's */
 /* -------------------------------------------- */
 #sidebarContainer {
     height: 100%;
-    width: 92px;
+    width: 82px;
     border-radius: 20px;
     background-color: #27be6b;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
@@ -70,6 +90,7 @@ nav{
 
 .sidebar {
     flex: 0;
+    height: 100%;
 }
 
 .main {
