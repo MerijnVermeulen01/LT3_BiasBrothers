@@ -29,9 +29,8 @@ nav{
     visibility: hidden;
     position: absolute;
     z-index: 1;
-    width: 160px;
+    width: fit-content;
     color: white;
-    font-size: 12px;
     background-color: #1D1D35;
     opacity: 85%;
     border-radius: 5px;

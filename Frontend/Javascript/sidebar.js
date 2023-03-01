@@ -9,7 +9,7 @@ function sidebarLoad(){
                 <li id='ontwikkelActies'><a href='ontwikkelActies.html'><img alt=\"\" src=\"../Images/Ontwikkelacties.png\" /></a><span class='tooltip' >Ontwikkelacties</span></li>\
                 <li id='denkvalkuilen'><a href='denkvalkuilen.html'><img alt=\"\" src=\"../Images/Denkvalkuilen.png\" /></a><span class='tooltip' >Denkvalkuilen</span></li>\
                 <li id='mijnBiasesPagina'><a href='mijnBiasesPagina.html'><img alt=\"\" src=\"../Images/Biases.png\" /></a><span class='tooltip' >Biases</span></li>\
-                <li id='aanpassingsvermogen'><img alt=\"\" src=\"../Images/Aanpassingsvermogen.png\" /></a><span class='tooltip' >Aanpassingsvermogen</span></li>\
+                <li id='aanpassingsvermogen'><a href='aanpassingsvermogen.html'><img alt=\"\" src=\"../Images/Aanpassingsvermogen.png\" /></a><span class='tooltip' >Aanpassingsvermogen</span></li>\
                 <li id='codex'><a href='codex.html'><img alt=\"\" src=\"../Images/Codex.png\" /></a><span class='tooltip' >Codex</span></li>\
                 <li id='downloadGegevensPagina'><a href='downloadGegevensPagina.html'><img alt=\"\" src=\"../Images/Download-button.png\" /></a><span class='tooltip' >Download</span></li>\
             </ul>\
