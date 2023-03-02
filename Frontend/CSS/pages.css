@@ -57,7 +57,7 @@ nav{
 }
 
 .flex-grid {
-    color: green;
+
     display: flex;
     margin: auto -1rem 1rem;
 }
@@ -72,7 +72,64 @@ nav{
     flex: 0;
 }
 
-.main {
-    flex: 3;
-    border: medium dashed green;
+/*.main {*/
+/*    flex: 1;*/
+/*    border: medium dashed green;*/
+/*}*/
+
+
+
+
+
+
+.columnWithButtons {
+    background-color: white;
+    border-radius: 10px;
+    height: 80%;
+    width: fit-content;
+    margin: auto;
+    color: black;
+    padding: 10px;
+}
+.columnWithTextAreas {
+    background-color: white;
+    border-radius: 10px;
+    height: 80%;
+    width: fit-content;
+    margin: auto;
+    padding: 10px;
+
+
+}
+
+.column-content {
+    display: grid;
+    justify-content: space-between;
+    width: 312px;
+    height: 60%;
+
+}
+
+.buttonTunnelvisie {
+    padding: 10px;
+    margin: 20px;
+
+}
+
+#button > .buttonTunnelvisie {
+
+
+}
+
+#button > .buttonTunnelvisie {
+
+
+}
+
+
+#buttons {
+    border-radius: 10px;
+    display: inline-block;
+    padding: 10px;
+    margin: 10px 20px;
 }
