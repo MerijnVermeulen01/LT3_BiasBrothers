@@ -30,7 +30,7 @@ nav{
 /* -------------------------------------------- */
 #sidebarContainer {
     height: 100%;
-    width: 92px;
+    width: 82px;
     border-radius: 20px;
     background-color: #27be6b;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
@@ -39,14 +39,11 @@ nav{
     height: 49px;
     width: 49px;
 }
-
-#dashboard{
-    border-bottom: 3px solid white;
-    margin-bottom: 20px;
-}
-#codex{
-    border-top: 3px solid white;
-    margin-top: 20px;
+hr{
+    border-top: 2px solid white;
+    width: 80%;
+    border-style: solid;
+    border-color: white;
 }
 
 /* Optie1 */
@@ -57,7 +54,7 @@ nav{
 }
 
 .flex-grid {
-
+    color: green;
     display: flex;
     margin: auto -1rem 1rem;
 }
@@ -70,17 +67,13 @@ nav{
 
 .sidebar {
     flex: 0;
+    height: 100%;
 }
 
-/*.main {*/
-/*    flex: 1;*/
-/*    border: medium dashed green;*/
-/*}*/
-
-
-
-
-
+.main {
+    flex: 3;
+    border: medium dashed green;
+}
 
 .columnWithButtons {
     background-color: white;
