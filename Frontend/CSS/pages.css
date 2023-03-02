@@ -7,6 +7,13 @@ body
     margin: 0 auto;
 }
 
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: #1D1D35;
+}
 
 li {
     list-style: none;
@@ -26,8 +33,46 @@ nav{
     font-size: 20px;
 }
 
+.buttonsArea {
+    background-color: #FFFFFF;
+    width: 955px;
+    height: 130px;
+    border-radius: 17px;
+    box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
+    padding: 20px;
+}
+.textArea{
+    margin-top: 80px;
+    background-color: #FFFFFF;
+    width: 307px;
+    height: 332px;
+    box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
+    border-radius: 20px;
+}
+
+.writeArea{
+    margin: 30px;
+    background-color: #F5F5FB;
+    width: 195px;
+    height: 220px;
+    border-radius: 10px;
+    border: none;
+    padding: 26px;
+
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+    transition: all 0.2s;
+
+}
+
+.writeArea:hover {
+    cursor: pointer;
+    background-color: #f1f1f7;
+}
+
 /* ID's */
 /* -------------------------------------------- */
+
 #sidebarContainer {
     height: 100%;
     width: 92px;
@@ -35,7 +80,7 @@ nav{
     background-color: #27be6b;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
 }
- img{
+img{
     height: 49px;
     width: 49px;
 }
@@ -74,5 +119,26 @@ nav{
 
 .main {
     flex: 3;
-    border: medium dashed green;
+    border: #FFFFFF;
+}
+
+/* Basic Styling *\
+/* -------------------------------------------- */
+
+button{
+    padding: 8px;
+    margin: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    background-color: #F5F5FB;
+    border: none;
+    border-radius: 10px;
+
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: #f1f1f7;
+    border-color: #27be6b;
 }
