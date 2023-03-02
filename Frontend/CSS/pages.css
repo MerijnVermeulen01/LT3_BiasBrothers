@@ -28,6 +28,27 @@ nav{
 
 /* ID's */
 /* -------------------------------------------- */
+
+.sidebar ul li .tooltip{    
+    visibility: hidden;    
+    position: absolute;    
+    z-index: 1;    
+    width: fit-content;    
+    color: white;    
+    background-color: #1D1D35;    
+    opacity: 85%;    
+    border-radius: 5px;    
+    padding: 10px 15px 10px 15px;    
+    margin-top: 5px;    
+    margin-left: 5px;    
+    font-family: 'Poppins', sans-serif;    
+    font-size: 14px;
+}
+
+.sidebar ul li:hover .tooltip{    
+    visibility: visible;
+}
+
 #sidebarContainer {
     height: 100%;
     width: 82px;
