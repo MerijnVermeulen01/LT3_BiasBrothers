@@ -2,13 +2,13 @@
 /* -------------------------------------------- */
 body
 {
+    font-family: 'Poppins', sans-serif;
     background-color: #F5F5FB;
     min-height: 100%;
     margin: 0 auto;
 }
 
 h1 {
-    font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 18px;
     line-height: 27px;
@@ -41,7 +41,7 @@ header{
 display: flex;
 }
 
-.buttonsArea {
+.buttonsAreaContainer {
     background-color: #FFFFFF;
     width: 955px;
     height: 130px;
@@ -103,8 +103,6 @@ img{
 
     font-family: 'Poppins', sans-serif;
     color: #1D1D35;
-    transition: all 0.2s;
-
 }
 
 #writeArea1:hover, #writeArea2:hover, #writeArea3:hover{
@@ -158,6 +156,6 @@ textarea{
 }
 textarea:hover{
     cursor: pointer;
-    background-color: #f1f1f1;
+    background-color: #f1f1f7;
 }
 
