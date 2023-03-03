@@ -27,10 +27,18 @@ nav{
     justify-content: center;
 }
 
+header{
+    margin-bottom: 25px;
+}
+
 /* Classes */
 /* -------------------------------------------- */
 .active{
     font-size: 20px;
+}
+
+.writeAreaContainer{
+display: flex;
 }
 
 .buttonsArea {
@@ -42,7 +50,8 @@ nav{
     padding: 20px;
 }
 .textArea{
-    margin-top: 80px;
+    margin-top: 70px;
+    margin-right: 35px;
     background-color: #FFFFFF;
     width: 307px;
     height: 332px;
@@ -50,24 +59,13 @@ nav{
     border-radius: 20px;
 }
 
-.writeArea{
-    margin: 30px;
-    background-color: #F5F5FB;
-    width: 195px;
-    height: 220px;
-    border-radius: 10px;
-    border: none;
-    padding: 26px;
-
+.buttonWrite{
+    padding: 12px;
     font-family: 'Poppins', sans-serif;
-    color: #000000;
-    transition: all 0.2s;
-
-}
-
-.writeArea:hover {
-    cursor: pointer;
-    background-color: #f1f1f7;
+    margin-left: 8px;
+    font-weight: 600;
+    font-size: inherit;
+    color: #1D1D35;
 }
 
 /* ID's */
@@ -92,6 +90,27 @@ img{
 #codex{
     border-top: 3px solid white;
     margin-top: 20px;
+}
+
+#writeArea1, #writeArea2, #writeArea3{
+    margin: 30px;
+    background-color: #F5F5FB;
+    width: 195px;
+    height: 220px;
+    border-radius: 10px;
+    border: none;
+    padding: 26px;
+
+    font-family: 'Poppins', sans-serif;
+    color: #1D1D35;
+    transition: all 0.2s;
+
+}
+
+#writeArea1:hover, #writeArea2:hover, #writeArea3:hover{
+    cursor: pointer;
+    background-color: #f1f1f7;
+    border-color: #27be6b;
 }
 
 /* Optie1 */
@@ -125,20 +144,20 @@ img{
 /* Basic Styling *\
 /* -------------------------------------------- */
 
-button{
-    padding: 8px;
-    margin: 10px;
+textarea{
+    padding: 12px;
+    margin: 8px;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 14px;
     background-color: #F5F5FB;
     border: none;
     border-radius: 10px;
-
+    width: 275px;
+    height: 24px;
 }
-
-button:hover{
+textarea:hover{
     cursor: pointer;
-    background-color: #f1f1f7;
-    border-color: #27be6b;
+    background-color: #f1f1f1;
 }
+
