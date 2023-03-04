@@ -74,7 +74,7 @@ hr{
     margin: auto;
 }
 
-.flex-grid {
+.flexGrid {
     color: green;
     display: flex;
     margin: auto -1rem 1rem;
@@ -116,7 +116,7 @@ hr{
 
 }
 
-.column-content {
+.columnContent {
     display: grid;
     justify-content: space-between;
     width: 312px;

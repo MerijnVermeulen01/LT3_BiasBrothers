@@ -91,7 +91,7 @@ body {
 
 
 
-.card > .card-content {
+.card > .cardContent {
     height: calc(100% - 2px);
     margin: 1px;
     width: calc(100% - 2px);
@@ -103,14 +103,14 @@ body {
 
 }
 
-.card-content img {
+.cardContent img {
     position: absolute;
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%)
 }
 
-.card-content p {
+.cardContent p {
     position: absolute;
     top: 65%;
     left: 50%;

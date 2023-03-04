@@ -7,13 +7,13 @@ function sidebarLoad(){
                 <li id='logo'><img alt=\"\" src=\"../Images/BiasBrothers-Logo-Sidebar.png\" /></li>\
                 <li id='dashboard'><a href='../index.html'><img alt=\"\" src=\"../Images/Dashboard.png\" /></a><span class='tooltip' >Dashboard</span></li>\
                 <hr />\
-                <li id='ontwikkelActies'><a href='ontwikkelActies.html'><img alt=\"\" src=\"../Images/Ontwikkelacties.png\" /></a><span class='tooltip' >Ontwikkelacties</span></li>\
-                <li id='denkvalkuilen'><a href='denkvalkuilen.html'><img alt=\"\" src=\"../Images/Denkvalkuilen.png\" /></a><span class='tooltip' >Denkvalkuilen</span></li>\
-                <li id='mijnBiasesPagina'><a href='mijnBiasesPagina.html'><img alt=\"\" src=\"../Images/Biases.png\" /></a><span class='tooltip' >Biases</span></li>\
-                <li id='aanpassingsvermogen'><a href='aanpassingsvermogen.html'><img alt=\"\" src=\"../Images/Aanpassingsvermogen.png\" /></a><span class='tooltip' >Aanpassingsvermogen</span></li>\
+                <li id='selfDevelopment'><a href='selfDevelopment.html'><img alt=\"\" src=\"../Images/selfDevelopment.png\" /></a><span class='tooltip' >selfDevelopment</span></li>\
+                <li id='thinkingTraps'><a href='thinkingTraps.html'><img alt=\"\" src=\"../Images/thinkingTraps.png\" /></a><span class='tooltip' >thinkingTraps</span></li>\
+                <li id='myBiasPage'><a href='myBiasPage.html'><img alt=\"\" src=\"../Images/Biases.png\" /></a><span class='tooltip' >Biases</span></li>\
+                <li id='editPossibility'><a href='editPossibility.html'><img alt=\"\" src=\"../Images/editPossibility.png\" /></a><span class='tooltip' >editPossibility</span></li>\
                 <hr />\
                 <li id='codex'><a href='codex.html'><img alt=\"\" src=\"../Images/Codex.png\" /></a><span class='tooltip' >Codex</span></li>\
-                <li id='downloadGegevensPagina'><a href='downloadGegevensPagina.html'><img alt=\"\" src=\"../Images/Download-button.png\" /></a><span class='tooltip' >Download</span></li>\
+                <li id='downloadPage'><a href='downloadPage.html'><img alt=\"\" src=\"../Images/Download-button.png\" /></a><span class='tooltip' >Download</span></li>\
             </ul>\
         </nav>"
     );
@@ -27,17 +27,17 @@ function sidebarLoad(){
     // This code looks at which page you are and then adds the class active to it
     // TODO: IF STATEMENT TO SWITCH STATEMENT
     const queryStrin = window.location.href;
-    if (queryStrin.includes("ontwikkelActies")){
-        document.getElementById("ontwikkelActies").classList.add("active");
-    } else if (queryStrin.includes("denkvalkuilen")){
-        document.getElementById("denkvalkuilen").classList.add("active");
-    } else if (queryStrin.includes("mijnBiasesPagina")){
-        document.getElementById("mijnBiasesPagina").classList.add("active");
-    } else if (queryStrin.includes("aanpassingsvermogen")){
-        document.getElementById("aanpassingsvermogen").classList.add("active");
+    if (queryStrin.includes("selfDevelopment")){
+        document.getElementById("selfDevelopment").classList.add("active");
+    } else if (queryStrin.includes("thinkingTraps")){
+        document.getElementById("thinkingTraps").classList.add("active");
+    } else if (queryStrin.includes("myBiasPage")){
+        document.getElementById("myBiasPage").classList.add("active");
+    } else if (queryStrin.includes("editPossibility")){
+        document.getElementById("editPossibility").classList.add("active");
     } else if (queryStrin.includes("codex")){
         document.getElementById("codex").classList.add("active");
-    } else if (queryStrin.includes("downloadGegevensPagina")){
-        document.getElementById("downloadGegevensPagina").classList.add("active");
+    } else if (queryStrin.includes("downloadPage")){
+        document.getElementById("downloadPage").classList.add("active");
     }
 }
