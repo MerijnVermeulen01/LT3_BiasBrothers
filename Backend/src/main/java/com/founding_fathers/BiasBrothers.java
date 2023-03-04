@@ -20,7 +20,7 @@ public class BiasBrothers {
 
             Statement statement = connection.createStatement();
 
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM codex");
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM trainer");
 
             while (resultSet.next()){
                 System.out.println(resultSet.getInt(1) + " " + resultSet.getString(2));

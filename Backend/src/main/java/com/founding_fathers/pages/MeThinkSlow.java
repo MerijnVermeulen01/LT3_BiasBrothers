@@ -1,4 +1,4 @@
-package com.founding_fathers;
+package com.founding_fathers.pages;
 
 //This class extends the MeThink class
 public class MeThinkSlow extends MeThink{

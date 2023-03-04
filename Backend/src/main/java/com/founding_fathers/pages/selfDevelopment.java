@@ -1,4 +1,4 @@
-package com.founding_fathers;
+package com.founding_fathers.pages;
 
 public class selfDevelopment {
 
