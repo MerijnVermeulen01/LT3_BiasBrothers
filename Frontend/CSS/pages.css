@@ -1,6 +1,8 @@
 /* TAGS */
 /* -------------------------------------------- */
-body {
+body
+{
+    font-family: 'Poppins', sans-serif;
     background-color: #F5F5FB;
     min-height: 100%;
     margin: 0 auto;
@@ -11,6 +13,12 @@ h3{
     color: #1D1D35;
 }
 
+h1 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: #1D1D35;
+}
 
 li {
     list-style: none;
@@ -26,10 +34,45 @@ nav {
     justify-content: center;
 }
 
+header{
+    margin-bottom: 25px;
+}
+
 /* Classes */
 /* -------------------------------------------- */
 .active {
     font-size: 20px;
+}
+
+.writeAreaContainer{
+display: flex;
+}
+
+.buttonsAreaContainer {
+    background-color: #FFFFFF;
+    width: 955px;
+    height: 130px;
+    border-radius: 17px;
+    box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
+    padding: 20px;
+}
+.textArea{
+    margin-top: 70px;
+    margin-right: 35px;
+    background-color: #FFFFFF;
+    width: 307px;
+    height: 332px;
+    box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
+    border-radius: 20px;
+}
+
+.buttonWrite{
+    padding: 12px;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 8px;
+    font-weight: 600;
+    font-size: inherit;
+    color: #1D1D35;
 }
 
 /* ID's */
@@ -62,8 +105,7 @@ nav {
     background-color: #27be6b;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
 }
-
-img {
+img{
     height: 49px;
     width: 49px;
 }
@@ -82,6 +124,25 @@ hr{
 #codex {
     border-top: 3px solid white;
     margin-top: 20px;
+}
+
+#writeArea1, #writeArea2, #writeArea3{
+    margin: 30px;
+    background-color: #F5F5FB;
+    width: 195px;
+    height: 220px;
+    border-radius: 10px;
+    border: none;
+    padding: 26px;
+
+    font-family: 'Poppins', sans-serif;
+    color: #1D1D35;
+}
+
+#writeArea1:hover, #writeArea2:hover, #writeArea3:hover{
+    cursor: pointer;
+    background-color: #f1f1f7;
+    border-color: #27be6b;
 }
 
 /* Optie1 */
@@ -238,3 +299,24 @@ h3 {
 .activeButton{
     background: #A5A5F8;
 }
+
+/* Basic Styling *\
+/* -------------------------------------------- */
+
+textarea{
+    padding: 12px;
+    margin: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    background-color: #F5F5FB;
+    border: none;
+    border-radius: 10px;
+    width: 275px;
+    height: 24px;
+}
+textarea:hover{
+    cursor: pointer;
+    background-color: #f1f1f7;
+}
+

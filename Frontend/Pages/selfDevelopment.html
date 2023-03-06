@@ -1,32 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="../CSS/pages.css">
-        <link rel="icon" type="image/x-icon" href="Images/BiasBrothers.ico">
-        <title>selfDevelopment</title>
-        <script type="text/javascript" src="../Javascript/sidebar.js"></script> 
-    </head>
-    <body>
-        <!--Optie1-->
-        <div class="container">    
-            <div class="flexGrid">        
-                <aside class="col sidebar">            
-                    <div id="sidebarContainer">                
-                        <script type="text/javascript">                    
-                            sidebarLoad();                
-                        </script>            
-                    </div>        
-                </aside>        
-                <section class="col main">            
-                    <h2>The Main Content Area</h2>            
-                    <p>In CSS, it has a flex property of 3, meaning it takes up 3 units (whatever that might be) of the available space.<p>            
-                    <p>This means, in total we have 4 units of space (1 + 3 = 4) which then renders the sidebar at 25% and the main content area as 75%</p>        
-                </section>    
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../CSS/pages.css">
+    <link rel="icon" type="image/x-icon" href="Images/BiasBrothers.ico">
+    <title>Ontwikkelacties</title>
+    <script type="text/javascript" src="../Javascript/sidebar.js"></script>
+    <link rel="icon" type="image/x-icon" href="./Images/BiasBrothers.ico">
+    <title>Bias Brothers</title>
+</head>
+<body>
+<!--Optie1-->
+<div class="container">
+    <div class="flex-grid">
+        <aside class="col sidebar">
+            <div id="sidebarContainer">
+                <script type="text/javascript">
+                    sidebarLoad();
+                </script>
             </div>
-        </div>
+        </aside>
+        <section class="col main">
+            <header>
+                <h1> Mijn top 3 ontwikkel acties </h1>
+            </header>
+            <div class="buttonsAreaContainer">
+                    <textarea class="buttonWrite" placeholder="Ontwikkelactie hier opschrijven"></textarea>
+                    <textarea class="buttonWrite" placeholder="Ontwikkelactie hier opschrijven"></textarea>
+                    <textarea class="buttonWrite" placeholder="Ontwikkelactie hier opschrijven"></textarea>
+                    <textarea class="buttonWrite" placeholder="Ontwikkelactie hier opschrijven"></textarea>
+                    <textarea class="buttonWrite" placeholder="Ontwikkelactie hier opschrijven"></textarea>
+                    <textarea class="buttonWrite" placeholder="Ontwikkelactie hier opschrijven"></textarea>
+            </div>
+            <!-- Tekstvak koppeling maken bijv situatie 1, 2 en 3?-->
+            <div class="writeAreaContainer">
+                <div class="textArea"><textarea id="writeArea1" placeholder="[Beschrijf situatie(s) / voorbeeld(en) hier]"></textarea></div>
+                <div class="textArea"><textarea id="writeArea2" placeholder="[Beschrijf situatie(s) / voorbeeld(en) hier]"></textarea></div>
+                <div class="textArea"><textarea id="writeArea3" placeholder="[Beschrijf situatie(s) / voorbeeld(en) hier]"></textarea></div>
+            </div>
+        </section>
     </div>
-
-
-    </body>
+</div>
+</body>
 </html>
+
