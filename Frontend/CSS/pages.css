@@ -18,8 +18,7 @@ h1 {
     line-height: 27px;
     color: #1D1D35;
 }
-
-
+textarea { resize: none; }
 
 /* -------------------------------------------- */
 /* Sidebar */
@@ -112,6 +111,7 @@ hr{
 /* -------------------------------------------- */
 header{
     margin-bottom: 25px;
+    margin-left: 82px;
 }
 /* -------------------------------------------- */
 
@@ -142,7 +142,7 @@ header{
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
     margin-top: 36px;
     margin-left: 82px;
-    margin-right: 115px;
+    margin-right: 60px;
     width: 331px;
 
 }
@@ -209,8 +209,13 @@ header{
 /* selfDevelopment */
 /* -------------------------------------------- */
 
+header{
+    margin-bottom: 25px;
+    margin-left: 82px;
+}
 .writeAreaContainer{
     display: flex;
+    margin-left: 82px;
 }
 .buttonsAreaContainer {
     background-color: #FFFFFF;
@@ -219,6 +224,7 @@ header{
     border-radius: 17px;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
     padding: 20px;
+    margin-left: 82px;
 }
 .textArea{
     margin-top: 70px;
