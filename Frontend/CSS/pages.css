@@ -72,6 +72,7 @@ hr{
     width: 80%;
     border-style: solid;
     border-color: white;
+}
 
 #dashboard {
     border-bottom: 3px solid white;
@@ -192,6 +193,8 @@ h3 {
     width: 35%;
     height: 9%;
 }
+
+/* TODO: IDK WHAT DIT IS */
 /* 
     display: inline-block;
     padding: 10px;
