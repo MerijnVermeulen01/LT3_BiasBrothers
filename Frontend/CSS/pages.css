@@ -94,6 +94,7 @@ hr{
 .sidebar {
     flex: 0;
     height: 100%;
+    padding-top: 4%;
 }
 .main {
     flex: 3;
@@ -108,9 +109,18 @@ hr{
 /* -------------------------------------------- */
 /* Classes */
 /* -------------------------------------------- */
+
+/* Active sidebar */
 .active {
+    border-left: 6px solid white;
+    margin-left: -13px;
 
 }
+.active a{
+    padding-left: 7px;
+}
+
+
 /* -------------------------------------------- */
 
 
