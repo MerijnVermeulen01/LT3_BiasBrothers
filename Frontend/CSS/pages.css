@@ -6,6 +6,11 @@ body {
     margin: 0 auto;
 }
 
+h3{
+    font-family: 'Poppins', sans-serif;
+    color: #1D1D35;
+}
+
 
 li {
     list-style: none;
@@ -187,4 +192,46 @@ h3 {
     width: 35%;
     height: 9%;
 }
+/* 
+    display: inline-block;
+    padding: 10px;
+    margin: 10px 20px;
+} */
 
+.card{
+    width: 300px;
+    height: 200px;
+    background: #FFFFFF;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 17px;
+    margin-bottom: 15px;
+}
+
+.header{
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.content{
+    padding-left: 19px;
+    max-width: 260px;
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.bias-button{
+    width: auto;
+    height: 40px;
+    background: #F5F5FB;
+    border-radius: 10px;
+    border: none;
+    transition: ease-in 0.1s;
+}
+
+.activeButton{
+    background: #A5A5F8;
+}
