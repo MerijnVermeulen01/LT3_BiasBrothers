@@ -320,3 +320,19 @@ textarea:hover{
     background-color: #f1f1f7;
 }
 
+.circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #A5A5F8;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
