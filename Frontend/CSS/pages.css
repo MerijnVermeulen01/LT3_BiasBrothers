@@ -1,4 +1,5 @@
-/* TAGS */
+/* -------------------------------------------- */
+/* Base Styling*/
 /* -------------------------------------------- */
 body
 {
@@ -7,12 +8,10 @@ body
     min-height: 100%;
     margin: 0 auto;
 }
-
 h3{
     font-family: 'Poppins', sans-serif;
     color: #1D1D35;
 }
-
 h1 {
     font-weight: 600;
     font-size: 18px;
@@ -20,34 +19,199 @@ h1 {
     color: #1D1D35;
 }
 
+
+
+/* -------------------------------------------- */
+/* Sidebar */
+/* -------------------------------------------- */
+
 li {
     list-style: none;
     padding: 4px;
 }
-
 ul {
     padding: 0;
 }
-
 nav {
     display: flex;
     justify-content: center;
 }
+/* Tooltip sidebar */
+.sidebar ul li .tooltip{
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    width: fit-content;
+    color: white;
+    background-color: #1D1D35;
+    opacity: 85%;
+    border-radius: 5px;
+    padding: 10px 15px 10px 15px;
+    margin-top: 5px;
+    margin-left: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+/* Tooltip sidebar */
+.sidebar ul li:hover .tooltip{
+    visibility: visible;
+}
+/* Container sidebar */
+#sidebarContainer {
+    height: 100%;
+    width: 82px;
+    border-radius: 20px;
+    background-color: #27be6b;
+    box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
+}
+/* Icons in sidebar */
+img{
+    height: 49px;
+    width: 49px;
+}
+/* White line in sidebar */
+hr{
+    border-top: 2px solid white;
+    width: 80%;
+    border-style: solid;
+    border-color: white;
+}
+/* -------------------------------------------- */
 
+
+
+
+/* -------------------------------------------- */
+/* Main Layout */
+/* -------------------------------------------- */
+.container {
+    max-width: 90%;
+    margin: auto;
+}
+.flexGrid {
+    color: green;
+    display: flex;
+}
+.sidebar {
+    flex: 0;
+    height: 100%;
+}
+.main {
+    flex: 3;
+    border: medium dashed green;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 1rem;
+}
+/* -------------------------------------------- */
+
+
+
+/* -------------------------------------------- */
+/* Header */
+/* -------------------------------------------- */
 header{
     margin-bottom: 25px;
 }
+/* -------------------------------------------- */
 
+
+
+
+/* -------------------------------------------- */
 /* Classes */
 /* -------------------------------------------- */
 .active {
 
 }
+/* -------------------------------------------- */
+
+
+
+/* -------------------------------------------- */
+/* thinkingTraps */
+/* -------------------------------------------- */
+
+.columnWithButtons {
+    background-color: white;
+    border-radius: 10px;
+    height: fit-content;
+    /*width: fit-content;*/
+    color: black;
+    padding: 10px;
+    box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
+    margin-top: 36px;
+    margin-left: 82px;
+    margin-right: 115px;
+    width: 331px;
+
+}
+.columnWithTextAreas {
+    background-color: white;
+    border-radius: 10px;
+    height: 90%;
+    width: 670px;
+    padding: 10px;
+    box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
+    margin-left: 10px;
+    margin-top: 36px;
+
+}
+#buttonContainer {
+    font-family: 'Poppins', sans-serif;
+    border: none;
+}
+.buttons {
+    padding: 10px;
+    margin: 3px;
+    font-size: 14px;
+    border-radius: 10px;
+    border: none;
+}
+.column-content h3 {
+    width: fit-content;
+    font-family: 'Poppins', sans-serif;
+}
+.textArea1, .textArea2, .textArea3 {
+    margin: 30px;
+    background-color: #F5F5FB;
+    width: 559px;
+    height: 50px;
+    border-radius: 10px;
+    border: 20px black;
+    padding: 26px;
+    font-family: 'Poppins', sans-serif;
+    color: #c0c0cc;
+    transition: all 0.2s;
+}
+.columnContent {
+    display: grid;
+    justify-content: space-between;
+    width: 340px;
+    height: 60%;
+    grid-gap: 10px;
+}
+.textArea1 textarea, .textArea2 textarea, .textArea3 textarea {
+    overflow: hidden;
+    justify-content: space-between;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    background: none;
+    width: 35%;
+    height: 9%;
+}
+/* -------------------------------------------- */
+
+
+/* -------------------------------------------- */
+/* selfDevelopment */
+/* -------------------------------------------- */
 
 .writeAreaContainer{
-display: flex;
+    display: flex;
 }
-
 .buttonsAreaContainer {
     background-color: #FFFFFF;
     width: 955px;
@@ -65,7 +229,6 @@ display: flex;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
     border-radius: 20px;
 }
-
 .buttonWrite{
     padding: 12px;
     font-family: 'Poppins', sans-serif;
@@ -74,48 +237,6 @@ display: flex;
     font-size: inherit;
     color: #1D1D35;
 }
-
-/* ID's */
-/* -------------------------------------------- */
-
-.sidebar ul li .tooltip{    
-    visibility: hidden;    
-    position: absolute;    
-    z-index: 1;    
-    width: fit-content;    
-    color: white;    
-    background-color: #1D1D35;    
-    opacity: 85%;    
-    border-radius: 5px;    
-    padding: 10px 15px 10px 15px;    
-    margin-top: 5px;    
-    margin-left: 5px;    
-    font-family: 'Poppins', sans-serif;    
-    font-size: 14px;
-}
-
-.sidebar ul li:hover .tooltip{    
-    visibility: visible;
-}
-
-#sidebarContainer {
-    height: 100%;
-    width: 82px;
-    border-radius: 20px;
-    background-color: #27be6b;
-    box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
-}
-img{
-    height: 49px;
-    width: 49px;
-}
-hr{
-    border-top: 2px solid white;
-    width: 80%;
-    border-style: solid;
-    border-color: white;
-}
-
 #writeArea1, #writeArea2, #writeArea3{
     margin: 30px;
     background-color: #F5F5FB;
@@ -128,166 +249,11 @@ hr{
     font-family: 'Poppins', sans-serif;
     color: #1D1D35;
 }
-
 #writeArea1:hover, #writeArea2:hover, #writeArea3:hover{
     cursor: pointer;
     background-color: #f1f1f7;
     border-color: #27be6b;
 }
-
-/* Optie1 */
-
-.container {
-    max-width: 90%;
-    margin: auto;
-}
-
-.flexGrid {
-    color: green;
-    display: flex;
-
-}
-
-.sidebar {
-    flex: 0;
-    height: 100%;
-}
-
-.main {
-    flex: 3;
-    border: medium dashed green;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    padding: 1rem;
-}
-
-.columnWithButtons {
-    background-color: white;
-    border-radius: 10px;
-    height: fit-content;
-    /*width: fit-content;*/
-    color: black;
-    padding: 10px;
-    box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
-    margin-top: 36px;
-    margin-left: 82px;
-    margin-right: 115px;
-    width: 331px;
-
-}
-
-.columnWithTextAreas {
-    background-color: white;
-    border-radius: 10px;
-    height: 90%;
-    width: 670px;
-    padding: 10px;
-    box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
-    margin-left: 10px;
-    margin-top: 36px;
-
-}
-
-#buttonContainer {
-    font-family: 'Poppins', sans-serif;
-    border: none;
-}
-
-.buttons {
-    padding: 10px;
-    margin: 3px;
-    font-size: 14px;
-    border-radius: 10px;
-    border: none;
-}
-
-
-h3 {
-    width: fit-content;
-    font-family: 'Poppins', sans-serif;
-}
-
-.columnContent {
-    display: grid;
-    justify-content: space-between;
-    width: 340px;
-    height: 60%;
-    grid-gap: 10px;
-}
-
-.textArea1, .textArea2, .textArea3 {
-    margin: 30px;
-    background-color: #F5F5FB;
-    width: 559px;
-    height: 50px;
-    border-radius: 10px;
-    border: 20px black;
-    padding: 26px;
-    font-family: 'Poppins', sans-serif;
-    color: #c0c0cc;
-    transition: all 0.2s;
-}
-
-.textArea1 textarea, .textArea2 textarea, .textArea3 textarea {
-    overflow: hidden;
-    justify-content: space-between;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    border: none;
-    background: none;
-    width: 35%;
-    height: 9%;
-}
-
-/* TODO: IDK WHAT DIT IS */
-/* 
-    display: inline-block;
-    padding: 10px;
-    margin: 10px 20px;
-} */
-
-.card{
-    width: 300px;
-    height: 200px;
-    background: #FFFFFF;
-    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 17px;
-    margin-bottom: 15px;
-}
-
-.header{
-    margin: auto;
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 15px;
-}
-
-.content{
-    padding-left: 19px;
-    max-width: 260px;
-    height: 150px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
-}
-
-.biasButton{
-    width: auto;
-    height: 40px;
-    background: #F5F5FB;
-    border-radius: 10px;
-    border: none;
-    transition: ease-in 0.1s;
-}
-
-.activeButton{
-    background: #A5A5F8;
-}
-
-/* Basic Styling *\
-/* -------------------------------------------- */
-
 textarea{
     padding: 12px;
     margin: 8px;
@@ -304,6 +270,57 @@ textarea:hover{
     cursor: pointer;
     background-color: #f1f1f7;
 }
+/* -------------------------------------------- */
+
+
+
+/* -------------------------------------------- */
+/* myBiasPage */
+/* -------------------------------------------- */
+.card{
+    width: 300px;
+    height: 200px;
+    background: #FFFFFF;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 17px;
+    margin-bottom: 15px;
+}
+.header{
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+.content{
+    padding-left: 19px;
+    max-width: 260px;
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+.biasButton{
+    width: auto;
+    height: 40px;
+    background: #F5F5FB;
+    border-radius: 10px;
+    border: none;
+    transition: ease-in 0.1s;
+}
+.activeButton{
+    background: #A5A5F8;
+}
+/* -------------------------------------------- */
+
+
+
+
+/* TODO: IDK WHAT DIT IS */
+/* 
+    display: inline-block;
+    padding: 10px;
+    margin: 10px 20px;
+} */
 
 /* Speciaal voor Shawn, changed the name to fix your page layout. Have to fix it for later.  */
 .col_main{
