@@ -164,7 +164,7 @@ hr{
 .columnWithButtons {
     background-color: white;
     border-radius: 10px;
-    height: 51%;
+    height: fit-content;
     /*width: fit-content;*/
     color: black;
     padding: 10px;
@@ -204,7 +204,6 @@ hr{
 
 h3 {
     width: fit-content;
-    height: 14px;
     font-family: 'Poppins', sans-serif;
 }
 
