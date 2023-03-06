@@ -11,7 +11,7 @@ buttons.forEach((button, index) => {
 
             if (index > -1) {
                 pressedButtons.splice(index, 1);
-                renumberCircles()
+
             }
         }
 
@@ -20,7 +20,7 @@ buttons.forEach((button, index) => {
             const circle = document.createElement('div');
 
             circle.classList.add('circle');
-            circle.textContent = pressedButtons.length + 1;
+            circle.textContent = pressedButtons + 1;
             button.appendChild(circle);
             circle.style.top = button.offsetTop + 'px';
             circle.style.left = button.offsetLeft + 'px';
@@ -31,13 +31,3 @@ buttons.forEach((button, index) => {
         }
     });
 });
-
-
-
-function renumberCircles() {
-    nextNumber = 1;
-    buttons.forEach((circle, index) => {
-        circle.dataset.number = nextNumber;
-        nextNumber++;
-    });
-}
