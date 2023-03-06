@@ -1,4 +1,4 @@
-const button = document.querySelectorAll('.bias-button');
+const button = document.querySelectorAll('.biasButton');
 button.forEach(temp => {
     temp.addEventListener('click', function(){
 
