@@ -1,5 +1,7 @@
 package com.founding_fathers;
 
+import com.founding_fathers.API.API;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -7,6 +9,7 @@ import java.sql.Statement;
 
 public class BiasBrothers {
     public static void main(String[] args){
+        new API();
         System.out.println("Hello world!");
 
         String url = "jdbc:mysql://localhost:3308/biasbrothers";
