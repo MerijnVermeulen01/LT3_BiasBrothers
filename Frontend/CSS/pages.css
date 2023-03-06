@@ -41,7 +41,7 @@ header{
 /* Classes */
 /* -------------------------------------------- */
 .active {
-   
+
 }
 
 .writeAreaContainer{
@@ -306,3 +306,7 @@ textarea:hover{
     background-color: #f1f1f7;
 }
 
+/* Speciaal voor Shawn, changed the name to fix your page layout. Have to fix it for later.  */
+.col_main{
+    display: flex;
+}
