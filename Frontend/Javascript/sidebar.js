@@ -7,13 +7,13 @@ function sidebarLoad(){
                 <li id='logo'><img alt=\"\" src=\"../Images/BiasBrothers-Logo-Sidebar.png\" /></li>\
                 <li id='dashboard'><a href='../index.html'><img alt=\"\" src=\"../Images/Dashboard.png\" /></a><span class='tooltip' >Dashboard</span></li>\
                 <hr />\
-                <li id='selfDevelopment'><a href='selfDevelopment.html'><img alt=\"\" src=\"../Images/selfDevelopment.png\" /></a><span class='tooltip' >selfDevelopment</span></li>\
-                <li id='thinkingTraps'><a href='thinkingTraps.html'><img alt=\"\" src=\"../Images/thinkingTraps.png\" /></a><span class='tooltip' >thinkingTraps</span></li>\
-                <li id='myBiasPage'><a href='myBiasPage.html'><img alt=\"\" src=\"../Images/Biases.png\" /></a><span class='tooltip' >Biases</span></li>\
-                <li id='editPossibility'><a href='editPossibility.html'><img alt=\"\" src=\"../Images/editPossibility.png\" /></a><span class='tooltip' >editPossibility</span></li>\
+                <li id='selfDevelopment'><a href='selfDevelopment.html'><img alt=\"\" src=\"../Images/selfDevelopment.png\" /></a><span class='tooltip'>Ontwikkelacties</span></li>\
+                <li id='thinkingTraps'><a href='thinkingTraps.html'><img alt=\"\" src=\"../Images/thinkingTraps.png\" /></a><span class='tooltip'>Denkvalkuilen</span></li>\
+                <li id='myBiasPage'><a href='myBiasPage.html'><img alt=\"\" src=\"../Images/Biases.png\" /></a><span class='tooltip'>Mijn Biases</span></li>\
+                <li id='editPossibility'><a href='editPossibility.html'><img alt=\"\" src=\"../Images/editPossibility.png\" /></a><span class='tooltip'>Aanpassingsvermogen</span></li>\
                 <hr />\
-                <li id='codex'><a href='codex.html'><img alt=\"\" src=\"../Images/Codex.png\" /></a><span class='tooltip' >Codex</span></li>\
-                <li id='downloadPage'><a href='downloadPage.html'><img alt=\"\" src=\"../Images/Download-button.png\" /></a><span class='tooltip' >Download</span></li>\
+                <li id='codex'><a href='codex.html'><img alt=\"\" src=\"../Images/Codex.png\" /></a><span class='tooltip'>Codex</span></li>\
+                <li id='downloadPage'><a href='downloadPage.html'><img alt=\"\" src=\"../Images/Download-button.png\" /></a><span class='tooltip'>Download</span></li>\
             </ul>\
         </nav>"
     );
