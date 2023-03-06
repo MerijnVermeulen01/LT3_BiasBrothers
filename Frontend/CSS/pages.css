@@ -116,16 +116,6 @@ hr{
     border-color: white;
 }
 
-#dashboard {
-    border-bottom: 3px solid white;
-    margin-bottom: 20px;
-}
-
-#codex {
-    border-top: 3px solid white;
-    margin-top: 20px;
-}
-
 #writeArea1, #writeArea2, #writeArea3{
     margin: 30px;
     background-color: #F5F5FB;
@@ -158,13 +148,6 @@ hr{
     margin: auto -1rem 1rem;
 }
 
-.col {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    padding: 1rem;
-    display: flex;
-}
-
 .sidebar {
     flex: 0;
     height: 100%;
@@ -173,6 +156,9 @@ hr{
 .main {
     flex: 3;
     border: medium dashed green;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 1rem;
 }
 
 .columnWithButtons {
