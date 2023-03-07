@@ -9,7 +9,6 @@ import java.sql.Statement;
 
 public class BiasBrothers {
     public static void main(String[] args){
-        new API();
         System.out.println("Hello world!");
 
         String url = "jdbc:mysql://localhost:3308/biasbrothers";
@@ -33,5 +32,6 @@ public class BiasBrothers {
         } catch (Exception e){
             System.out.println(e);
         }
+        new API();
     }
 }
