@@ -7,7 +7,7 @@ public class MyBias {
     private String descriptionParticipant;
 
     public String getNameBais() {
-        return nameBais;
+        return "nameBais";
     }
 
     public String getDescription() {
