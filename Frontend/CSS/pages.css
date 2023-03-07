@@ -1,6 +1,19 @@
 /* -------------------------------------------- */
 /* Base Styling*/
 /* -------------------------------------------- */
+
+/*
+  3. Allow percentage-based heights in the application
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+html, body {
+    height: 100%;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+
 body
 {
     font-family: 'Poppins', sans-serif;
