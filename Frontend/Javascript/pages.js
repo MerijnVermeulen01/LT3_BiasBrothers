@@ -1,11 +1,33 @@
-const button = document.querySelectorAll('.biasButton');
-button.forEach(temp => {
-    temp.addEventListener('click', function(){
+const buttons = document.querySelectorAll('.biasButton');
+const pressedButtons = [];
 
-        if (temp.classList.contains("activeButton")){
-            temp.classList.remove("activeButton")
-        }else{
-            temp.classList.add("activeButton");
+buttons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+
+        if (button.classList.contains('activeButton')) {
+            button.classList.remove('activeButton');
+            button.removeChild(button.querySelector('.circle'));
+            const index = pressedButtons.indexOf(button);
+
+            if (index > -1) {
+                pressedButtons.splice(index, 1);
+
+            }
+        }
+
+        else {
+            button.classList.add('activeButton');
+            const circle = document.createElement('div');
+
+            circle.classList.add('circle');
+            circle.textContent = pressedButtons + 1;
+            button.appendChild(circle);
+            circle.style.top = button.offsetTop + 'px';
+            circle.style.left = button.offsetLeft + 'px';
+            pressedButtons.push(button);
+
+            console.log(pressedButtons.length);
+
         }
     });
 });
