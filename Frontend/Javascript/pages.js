@@ -1,7 +1,7 @@
 const buttons = document.querySelectorAll('.biasButton');
 const pressedButtons = [];
 
-buttons.forEach((button, index) => {
+buttons.forEach((button) => {
     button.addEventListener('click', () => {
 
         if (button.classList.contains('activeButton')) {
@@ -20,7 +20,9 @@ buttons.forEach((button, index) => {
             const circle = document.createElement('div');
 
             circle.classList.add('circle');
-            circle.textContent = pressedButtons + 1;
+            console.log(pressedButtons);
+            circle.textContent = pressedButtons.length + 1;
+            console.log(circle);
             button.appendChild(circle);
             circle.style.top = button.offsetTop + 'px';
             circle.style.left = button.offsetLeft + 'px';
