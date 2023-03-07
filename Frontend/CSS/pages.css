@@ -172,11 +172,10 @@ hr{
 .textArea1, .textArea2, .textArea3 {
     margin: 30px;
     background-color: #F5F5FB;
-    width: 559px;
-    height: 50px;
+    width: 580px;
+    height: 125px;
     border-radius: 10px;
     border: 20px black;
-    padding: 26px;
     font-family: 'Poppins', sans-serif;
     color: #c0c0cc;
     transition: all 0.2s;
@@ -196,8 +195,8 @@ hr{
     flex-direction: column;
     border: none;
     background: none;
-    width: 35%;
-    height: 9%;
+    width: 540px;
+    height: 78px;
 }
 /* -------------------------------------------- */
 
@@ -325,7 +324,7 @@ textarea:hover{
     margin: 10px 20px;
 } */
 
-/* Speciaal voor Shawn, changed the name to fix your page layout. Have to fix it for later.  */
+/* Speciaal voor Shawn, changed the name to fix your page layout. BUT WHY??? Have to fix it for later.  */
 .col_main{
     display: flex;
 }
@@ -345,10 +344,13 @@ textarea:hover{
     margin-left: 5px;
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
+    transition: opacity 0.2s ease-in-out;
+    transition-delay: 3s;
 }
 
 .biasButton:hover .tooltip{
     visibility: visible;
+    transition-delay: 0s;
 }
 
 .circle {
