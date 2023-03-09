@@ -148,7 +148,6 @@ hr{
     height: fit-content;
     /*width: fit-content;*/
     color: black;
-    padding: 10px;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
     margin-top: 36px;
     margin-left: 82px;
@@ -159,7 +158,7 @@ hr{
 .columnWithTextAreas {
     background-color: white;
     border-radius: 10px;
-    height: 90%;
+    height: 80%;
     width: 670px;
     padding: 10px;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
@@ -185,7 +184,7 @@ hr{
 .textArea1, .textArea2, .textArea3 {
     margin: 30px;
     background-color: #F5F5FB;
-    width: 580px;
+
     height: 125px;
     border-radius: 10px;
     border: 20px black;
