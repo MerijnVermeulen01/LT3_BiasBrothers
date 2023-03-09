@@ -111,7 +111,6 @@ hr{
 }
 .main {
     flex: 3;
-    border: medium dashed green;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
     padding: 1rem;
@@ -149,22 +148,23 @@ hr{
     /*width: fit-content;*/
     color: black;
     padding: 10px;
+    padding-left: 20px;
+    padding-bottom: 20px;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
-    margin-top: 36px;
+    margin-top: 40px;
     margin-left: 82px;
-    margin-right: 60px;
+    margin-right: 40px;
     width: 331px;
 
 }
 .columnWithTextAreas {
     background-color: white;
     border-radius: 10px;
-    height: 90%;
-    width: 670px;
+    height: 82%;
     padding: 10px;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
     margin-left: 10px;
-    margin-top: 36px;
+    margin-top: 40px;
 
 }
 #buttonContainer {
@@ -181,6 +181,9 @@ hr{
 .column-content h3 {
     width: fit-content;
     font-family: 'Poppins', sans-serif;
+    margin-top: 10px;
+    color: #1D1D35;
+    font-size: 19px;
 }
 .textArea1, .textArea2, .textArea3 {
     margin: 30px;
@@ -221,6 +224,7 @@ hr{
 header{
     margin-bottom: 25px;
     margin-left: 82px;
+    padding-top: 3%;
 }
 .writeAreaContainer{
     display: flex;
@@ -229,14 +233,14 @@ header{
 .buttonsAreaContainer {
     background-color: #FFFFFF;
     width: 955px;
-    height: 130px;
+    height: 120px;
     border-radius: 17px;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
     padding: 20px;
     margin-left: 82px;
 }
 .textArea{
-    margin-top: 70px;
+    margin-top: 50px;
     margin-right: 35px;
     background-color: #FFFFFF;
     width: 307px;
@@ -248,9 +252,9 @@ header{
     padding: 12px;
     font-family: 'Poppins', sans-serif;
     margin-left: 8px;
-    font-weight: 600;
-    font-size: inherit;
+    font-weight: 500;
     color: #1D1D35;
+    font-size: 14px;
 }
 #writeArea1, #writeArea2, #writeArea3{
     margin: 30px;
@@ -263,6 +267,7 @@ header{
 
     font-family: 'Poppins', sans-serif;
     color: #1D1D35;
+    font-size: 13px;
 }
 #writeArea1:hover, #writeArea2:hover, #writeArea3:hover{
     cursor: pointer;
@@ -272,6 +277,7 @@ header{
 textarea{
     padding: 12px;
     margin: 8px;
+    margin-bottom: 0;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 14px;
@@ -297,20 +303,22 @@ textarea:hover{
     margin-left: 82px;
     width: 300px;
     float: left;
+    margin-top: 15px;
 }
 .card{
     width: 300px;
-    height: 200px;
+    height: 160px;
     background: #FFFFFF;
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 17px;
-    margin-bottom: 15px;
+    margin-bottom: 40px;
 }
 .header{
     margin: auto;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 15px;
+    font-size: 14px;
 }
 .content{
     padding-left: 20px;
@@ -320,11 +328,14 @@ textarea:hover{
 .biasButton{
     width: auto;
     height: 40px;
-    margin: 0 1px 5px 0;
+    margin: 0 4px 10px 0;
     background: #F5F5FB;
     border-radius: 10px;
     border: none;
     transition: ease-in 0.1s;
+    color: #1D1D35;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
 }
 .activeButton{
     background: #A5A5F8;
@@ -332,6 +343,9 @@ textarea:hover{
 
 #cardInputContainer{
     float: right;
+    margin-right: 100px;
+    margin-top: 15px;
+
 }
 .textCard{
     margin: 25px 30px 10px 0;
@@ -366,7 +380,11 @@ textarea:hover{
 /* Speciaal voor Shawn, changed the name to fix your page layout. BUT WHY??? Have to fix it for later.  */
 .col_main{
     display: flex;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 1rem;
 }
+
 
 
 .biasButton .tooltip{
