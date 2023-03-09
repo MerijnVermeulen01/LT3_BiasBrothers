@@ -291,6 +291,12 @@ textarea:hover{
 /* -------------------------------------------- */
 /* myBiasPage */
 /* -------------------------------------------- */
+
+#cardContainer{
+    margin-left: 82px;
+    width: 300px;
+    float: left;
+}
 .card{
     width: 300px;
     height: 200px;
@@ -306,16 +312,14 @@ textarea:hover{
     padding-bottom: 15px;
 }
 .content{
-    padding-left: 19px;
+    padding-left: 20px;
     max-width: 260px;
     height: 150px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
 }
 .biasButton{
     width: auto;
     height: 40px;
+    margin: 0 1px 5px 0;
     background: #F5F5FB;
     border-radius: 10px;
     border: none;
@@ -324,6 +328,28 @@ textarea:hover{
 .activeButton{
     background: #A5A5F8;
 }
+
+#cardInputContainer{
+    float: right;
+}
+.textCard{
+    margin: 25px 30px 10px 0;
+    background-color: #FFFFFF;
+    width: 600px;
+    height: 200px;
+    box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
+    border-radius: 20px;
+}
+
+.test{
+    width: 488px;
+    height: 88px;
+    margin: 30px 0 0 30px;
+    border-radius: 10px;
+    padding: 26px;
+}
+
+
 /* -------------------------------------------- */
 
 
@@ -380,4 +406,61 @@ textarea:hover{
     align-items: center;
     font-size: 12px;
 }
+/* -------------------------------------------- */
 
+
+/* -------------------------------------------- */
+/* Codexes */
+/* -------------------------------------------- */
+.navBar{
+    background-color: white;
+    border-radius: 10px;
+    width: 514px;
+    height: 40px;
+    padding: 10px;
+    box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
+    margin-left: 490px;
+    margin-top: 36px;
+    margin-bottom: 20px;
+}
+.buttonsCodex{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    width: auto;
+    height: 40px;
+    background: #F5F5FB;
+    border-radius: 10px;
+    border: none;
+    transition: ease-in 0.1s;
+}
+.buttonsCodex:hover{
+    background: #A5A5F8;
+    transition: all .5s;
+}
+.codexBox{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1500px;
+}
+.codexTitel{
+    padding-top: 2px;
+    padding-bottom: 14px;
+    margin: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    background-color: #FFFFFF;
+    width: 400px;
+    height: auto;
+    box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
+    border-radius: 20px;
+}
+.codexText{
+    margin: 10px;
+    background: #F5F5FB;
+    text-align: left;
+    padding: 14px;
+    border-radius: 20px;
+}
