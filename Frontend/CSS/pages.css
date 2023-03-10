@@ -265,11 +265,10 @@ header {
     padding: 20px;
     margin-left: 82px;
 }
-<<<<<<< HEAD
 
 .textArea {
-    margin-top: 70px;
-=======
+            margin-top: 70px;
+        }
 .textArea{
     margin-top: 50px;
 >>>>>>> 9145dee454e1735e8e94a71a67432daf5fe91e55
@@ -426,13 +425,8 @@ textarea:hover {
     padding: 1rem;
 }
 
-
-<<<<<<< HEAD
-.biasButton .tooltip {
-=======
-
 .biasButton .tooltip{
->>>>>>> 9145dee454e1735e8e94a71a67432daf5fe91e55
+
     visibility: hidden;
     position: absolute;
     z-index: 1;
