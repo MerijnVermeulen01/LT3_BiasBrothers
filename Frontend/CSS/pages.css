@@ -167,7 +167,7 @@ hr {
     padding-bottom: 20px;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
     margin-top: 40px;
-    margin-left: 82px;
+    margin-left: 140px;
     margin-right: 40px;
     width: 331px;
 
@@ -247,13 +247,13 @@ hr {
 
 header {
     margin-bottom: 25px;
-    margin-left: 82px;
+    margin-left: 140px;
     padding-top: 3%;
 }
 
 .writeAreaContainer {
     display: flex;
-    margin-left: 82px;
+    margin-left: 140px;
 }
 
 .buttonsAreaContainer {
@@ -263,7 +263,7 @@ header {
     border-radius: 17px;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
     padding: 20px;
-    margin-left: 82px;
+    margin-left: 140px;
 }
 
 
@@ -333,7 +333,7 @@ textarea:hover {
 /* -------------------------------------------- */
 
 #cardContainer {
-    margin-left: 82px;
+    margin-left: 140px;
     width: 300px;
     float: left;
     margin-top: 15px;
@@ -475,7 +475,7 @@ textarea:hover {
     height: 40px;
     padding: 10px;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
-    margin-left: 82px;
+    margin-left: 140px;
     margin-top: 36px;
     margin-bottom: 20px;
     position: fixed;
@@ -501,9 +501,9 @@ textarea:hover {
 .codexBox {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 68px;
+    margin-left: 126px;
     margin-top: 125px;
-    overflow: auto;
+    width: 1282px;
 }
 
 .codexTitel {
