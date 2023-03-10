@@ -79,11 +79,12 @@ nav {
 
 /* Container sidebar */
 #sidebarContainer {
-    height: 100%;
+
     width: 82px;
     border-radius: 20px;
     background-color: #27be6b;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
+    position: fixed;
 }
 
 /* Icons in sidebar */
@@ -166,7 +167,7 @@ hr {
     padding-bottom: 20px;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
     margin-top: 40px;
-    margin-left: 82px;
+    margin-left: 140px;
     margin-right: 40px;
     width: 331px;
 
@@ -175,8 +176,7 @@ hr {
 .columnWithTextAreas {
     background-color: white;
     border-radius: 10px;
-    height: 82%;
-    height: 80%;
+    height: fit-content;
     width: 670px;
     padding: 10px;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
@@ -247,13 +247,13 @@ hr {
 
 header {
     margin-bottom: 25px;
-    margin-left: 82px;
+    margin-left: 140px;
     padding-top: 3%;
 }
 
 .writeAreaContainer {
     display: flex;
-    margin-left: 82px;
+    margin-left: 140px;
 }
 
 .buttonsAreaContainer {
@@ -263,7 +263,7 @@ header {
     border-radius: 17px;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
     padding: 20px;
-    margin-left: 82px;
+    margin-left: 140px;
 }
 
 
@@ -333,7 +333,7 @@ textarea:hover {
 /* -------------------------------------------- */
 
 #cardContainer {
-    margin-left: 82px;
+    margin-left: 140px;
     width: 300px;
     float: left;
     margin-top: 15px;
@@ -471,13 +471,14 @@ textarea:hover {
 .navBar {
     background-color: white;
     border-radius: 10px;
-    width: 514px;
+    width: fit-content;
     height: 40px;
     padding: 10px;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
-    margin-left: 490px;
+    margin-left: 140px;
     margin-top: 36px;
     margin-bottom: 20px;
+    position: fixed;
 }
 
 .buttonsCodex {
@@ -500,7 +501,9 @@ textarea:hover {
 .codexBox {
     display: flex;
     flex-wrap: wrap;
-    width: 1500px;
+    margin-left: 126px;
+    margin-top: 125px;
+    width: 1282px;
 }
 
 .codexTitel {
@@ -512,7 +515,7 @@ textarea:hover {
     font-size: 14px;
     text-align: center;
     background-color: #FFFFFF;
-    width: 400px;
+    width: 340px;
     height: auto;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
     border-radius: 20px;
@@ -524,4 +527,31 @@ textarea:hover {
     text-align: left;
     padding: 14px;
     border-radius: 20px;
+}
+
+/* -------------------------------------------- */
+
+
+/* -------------------------------------------- */
+/* Scrollbar */
+/* -------------------------------------------- */
+
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    border: 1px solid #27be6b;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #27be6b;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1ca95b;
 }
