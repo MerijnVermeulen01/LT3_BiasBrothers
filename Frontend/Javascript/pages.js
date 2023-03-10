@@ -4,7 +4,7 @@ const pressedButtons = [];
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
 
-        if(pressedButtons.length <= 3){
+        // if(pressedButtons.length <= 2){
             if (button.classList.contains('activeButton')) {
                 button.classList.remove('activeButton');
 
@@ -14,7 +14,6 @@ buttons.forEach((button) => {
                     pressedButtons.splice(index, 1);
                 }
             }
-
             else {
                 button.classList.add('activeButton');
                 // const circle = document.createElement('div');
