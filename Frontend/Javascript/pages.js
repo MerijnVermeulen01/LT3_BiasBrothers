@@ -12,10 +12,11 @@ buttons.forEach((button) => {
                 const index = pressedButtons.indexOf(button);
                 if (index > -1) {
                     pressedButtons.splice(index, 1);
+                    console.log(pressedButtons);
                 }
             }
 
-            else {
+            else if (pressedButtons.length >= 0 && pressedButtons.length < 3) {
                 button.classList.add('activeButton');
                 // const circle = document.createElement('div');
                 // circle.classList.add('circle');
