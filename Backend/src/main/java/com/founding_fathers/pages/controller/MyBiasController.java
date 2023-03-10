@@ -11,15 +11,25 @@ public class MyBiasController implements APIController {
 
     private MyBias myBias;
 
+    /**
+     * This is the constructor of the MyBiasController file
+     */
     public MyBiasController(MyBias myBias){
         this.myBias = myBias;
     }
 
+    /**
+     * This function is form the interface of APIContoller. This is to make sure that this file gets an url to talk with front-end.
+     */
     @Override
     public void addHandlers(Javalin app) {
         app.get("/MyBias", getMyBiases);
     }
 
+    /**
+     * This is a variable to get the selected biases form the database.
+     */
     protected final Handler getMyBiases = (@NotNull Context context) ->
-            context.json(myBias.getNameBais());
+            context.json(myBias.selectMyBias());
+
 }
