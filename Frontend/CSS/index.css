@@ -6,8 +6,7 @@
 
 /* TAGS */
 /* -------------------------------------------- */
-body
-{
+body {
     background-color: #F5F5FB;
 }
 
@@ -17,10 +16,11 @@ li {
 
 /* Classes */
 /* -------------------------------------------- */
-.active{
+.active {
     font-size: 20px;
 }
-.sidebar ul li .tooltip{
+
+.sidebar ul li .tooltip {
     visibility: hidden;
     position: absolute;
     z-index: 1;
@@ -35,7 +35,8 @@ li {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
 }
-.sidebar ul li:hover .tooltip{
+
+.sidebar ul li:hover .tooltip {
     visibility: visible;
 }
 
@@ -89,8 +90,6 @@ body {
 }
 
 
-
-
 .card > .cardContent {
     height: calc(100% - 2px);
     margin: 1px;
@@ -99,7 +98,7 @@ body {
     border-radius: inherit;
     font-family: inherit;
     position: relative;
-    box-shadow: 2px 4px 4px  rgb(0 0 0 / 40%)
+    box-shadow: 2px 4px 4px rgb(0 0 0 / 40%)
 
 }
 
@@ -122,7 +121,7 @@ body {
 
 /* Klein opzetje voor het geval we gebruik willen maken van een hover effect over de kaarten. (LET OP!! Dit is wel gewenst door de opdrahtgever) */
 .card:hover {
-    transition: opacity 0.2s ease-in-out ;
+    transition: opacity 0.2s ease-in-out;
     border-color: #F5F5FB;
     box-shadow: 0 0 10px #F5F5FB;
     opacity: 0.8;

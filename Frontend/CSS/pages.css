@@ -14,24 +14,28 @@ html, body {
 }
 
 
-body
-{
+body {
     font-family: 'Poppins', sans-serif;
     background-color: #F5F5FB;
     min-height: 100%;
     margin: 0 auto;
 }
-h3{
+
+h3 {
     font-family: 'Poppins', sans-serif;
     color: #1D1D35;
 }
+
 h1 {
     font-weight: 600;
     font-size: 18px;
     line-height: 27px;
     color: #1D1D35;
 }
-textarea { resize: none; }
+
+textarea {
+    resize: none;
+}
 
 /* -------------------------------------------- */
 /* Sidebar */
@@ -41,15 +45,18 @@ li {
     list-style: none;
     padding: 4px;
 }
+
 ul {
     padding: 0;
 }
+
 nav {
     display: flex;
     justify-content: center;
 }
+
 /* Tooltip sidebar */
-.sidebar ul li .tooltip{
+.sidebar ul li .tooltip {
     visibility: hidden;
     position: absolute;
     z-index: 1;
@@ -64,10 +71,12 @@ nav {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
 }
+
 /* Tooltip sidebar */
-.sidebar ul li:hover .tooltip{
+.sidebar ul li:hover .tooltip {
     visibility: visible;
 }
+
 /* Container sidebar */
 #sidebarContainer {
     height: 100%;
@@ -76,21 +85,22 @@ nav {
     background-color: #27be6b;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
 }
+
 /* Icons in sidebar */
-img{
+img {
     height: 49px;
     width: 49px;
 }
+
 /* White line in sidebar */
-hr{
+hr {
     border-top: 2px solid white;
     width: 80%;
     border-style: solid;
     border-color: white;
 }
+
 /* -------------------------------------------- */
-
-
 
 
 /* -------------------------------------------- */
@@ -100,15 +110,18 @@ hr{
     max-width: 90%;
     margin: auto;
 }
+
 .flexGrid {
     color: green;
     display: flex;
 }
+
 .sidebar {
     flex: 0;
     height: 100%;
     padding-top: 4%;
 }
+
 .main {
     flex: 3;
     border: medium dashed green;
@@ -116,6 +129,7 @@ hr{
     margin-right: 0.5rem;
     padding: 1rem;
 }
+
 /* -------------------------------------------- */
 
 
@@ -129,13 +143,13 @@ hr{
     margin-left: -13px;
 
 }
-.active a{
+
+.active a {
     padding-left: 8px;
 }
 
 
 /* -------------------------------------------- */
-
 
 
 /* -------------------------------------------- */
@@ -155,6 +169,7 @@ hr{
     width: 331px;
 
 }
+
 .columnWithTextAreas {
     background-color: white;
     border-radius: 10px;
@@ -166,10 +181,12 @@ hr{
     margin-top: 36px;
 
 }
+
 #buttonContainer {
     font-family: 'Poppins', sans-serif;
     border: none;
 }
+
 .buttons {
     padding: 10px;
     margin: 3px;
@@ -177,10 +194,12 @@ hr{
     border-radius: 10px;
     border: none;
 }
+
 .column-content h3 {
     width: fit-content;
     font-family: 'Poppins', sans-serif;
 }
+
 .textArea1, .textArea2, .textArea3 {
     margin: 30px;
     background-color: #F5F5FB;
@@ -192,6 +211,7 @@ hr{
     color: #c0c0cc;
     transition: all 0.2s;
 }
+
 .columnContent {
     display: grid;
     justify-content: space-between;
@@ -199,6 +219,7 @@ hr{
     height: 60%;
     grid-gap: 10px;
 }
+
 .textArea1 textarea, .textArea2 textarea, .textArea3 textarea {
     overflow: hidden;
     justify-content: space-between;
@@ -210,6 +231,7 @@ hr{
     width: 540px;
     height: 78px;
 }
+
 /* -------------------------------------------- */
 
 
@@ -217,14 +239,16 @@ hr{
 /* selfDevelopment */
 /* -------------------------------------------- */
 
-header{
+header {
     margin-bottom: 25px;
     margin-left: 82px;
 }
-.writeAreaContainer{
+
+.writeAreaContainer {
     display: flex;
     margin-left: 82px;
 }
+
 .buttonsAreaContainer {
     background-color: #FFFFFF;
     width: 955px;
@@ -234,7 +258,8 @@ header{
     padding: 20px;
     margin-left: 82px;
 }
-.textArea{
+
+.textArea {
     margin-top: 70px;
     margin-right: 35px;
     background-color: #FFFFFF;
@@ -243,7 +268,8 @@ header{
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
     border-radius: 20px;
 }
-.buttonWrite{
+
+.buttonWrite {
     padding: 12px;
     font-family: 'Poppins', sans-serif;
     margin-left: 8px;
@@ -251,7 +277,8 @@ header{
     font-size: inherit;
     color: #1D1D35;
 }
-#writeArea1, #writeArea2, #writeArea3{
+
+#writeArea1, #writeArea2, #writeArea3 {
     margin: 30px;
     background-color: #F5F5FB;
     width: 195px;
@@ -263,12 +290,14 @@ header{
     font-family: 'Poppins', sans-serif;
     color: #1D1D35;
 }
-#writeArea1:hover, #writeArea2:hover, #writeArea3:hover{
+
+#writeArea1:hover, #writeArea2:hover, #writeArea3:hover {
     cursor: pointer;
     background-color: #f1f1f7;
     border-color: #27be6b;
 }
-textarea{
+
+textarea {
     padding: 12px;
     margin: 8px;
     font-family: 'Poppins', sans-serif;
@@ -280,24 +309,26 @@ textarea{
     width: 275px;
     height: 24px;
 }
-textarea:hover{
+
+textarea:hover {
     cursor: pointer;
     background-color: #f1f1f7;
 }
-/* -------------------------------------------- */
 
+/* -------------------------------------------- */
 
 
 /* -------------------------------------------- */
 /* myBiasPage */
 /* -------------------------------------------- */
 
-#cardContainer{
+#cardContainer {
     margin-left: 82px;
     width: 300px;
     float: left;
 }
-.card{
+
+.card {
     width: 300px;
     height: 200px;
     background: #FFFFFF;
@@ -305,18 +336,21 @@ textarea:hover{
     border-radius: 17px;
     margin-bottom: 15px;
 }
-.header{
+
+.header {
     margin: auto;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 15px;
 }
-.content{
+
+.content {
     padding-left: 20px;
     max-width: 260px;
     height: 150px;
 }
-.biasButton{
+
+.biasButton {
     width: auto;
     height: 40px;
     margin: 0 1px 5px 0;
@@ -325,14 +359,16 @@ textarea:hover{
     border: none;
     transition: ease-in 0.1s;
 }
-.activeButton{
+
+.activeButton {
     background: #A5A5F8;
 }
 
-#cardInputContainer{
+#cardInputContainer {
     float: right;
 }
-.textCard{
+
+.textCard {
     margin: 25px 30px 10px 0;
     background-color: #FFFFFF;
     width: 600px;
@@ -341,7 +377,7 @@ textarea:hover{
     border-radius: 20px;
 }
 
-.test{
+.test {
     width: 488px;
     height: 88px;
     margin: 30px 0 0 30px;
@@ -353,8 +389,6 @@ textarea:hover{
 /* -------------------------------------------- */
 
 
-
-
 /* TODO: IDK WHAT DIT IS */
 /* 
     display: inline-block;
@@ -363,12 +397,12 @@ textarea:hover{
 } */
 
 /* Speciaal voor Shawn, changed the name to fix your page layout. BUT WHY??? Have to fix it for later.  */
-.col_main{
+.col_main {
     display: flex;
 }
 
 
-.biasButton .tooltip{
+.biasButton .tooltip {
     visibility: hidden;
     position: absolute;
     z-index: 1;
@@ -378,15 +412,15 @@ textarea:hover{
     opacity: 85%;
     border-radius: 5px;
     padding: 10px 15px 10px 15px;
-    margin-top: 5px;
-    margin-left: 5px;
+    margin-top: 14px;
+    margin-left: 10px;
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     transition: opacity 0.2s ease-in-out;
     transition-delay: 3s;
 }
 
-.biasButton:hover .tooltip{
+.biasButton:hover .tooltip {
     visibility: visible;
     transition-delay: 0s;
 }
@@ -406,13 +440,14 @@ textarea:hover{
     align-items: center;
     font-size: 12px;
 }
+
 /* -------------------------------------------- */
 
 
 /* -------------------------------------------- */
 /* Codexes */
 /* -------------------------------------------- */
-.navBar{
+.navBar {
     background-color: white;
     border-radius: 10px;
     width: 514px;
@@ -423,7 +458,8 @@ textarea:hover{
     margin-top: 36px;
     margin-bottom: 20px;
 }
-.buttonsCodex{
+
+.buttonsCodex {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 16px;
@@ -434,16 +470,19 @@ textarea:hover{
     border: none;
     transition: ease-in 0.1s;
 }
-.buttonsCodex:hover{
+
+.buttonsCodex:hover {
     background: #A5A5F8;
     transition: all .5s;
 }
-.codexBox{
+
+.codexBox {
     display: flex;
     flex-wrap: wrap;
     width: 1500px;
 }
-.codexTitel{
+
+.codexTitel {
     padding-top: 2px;
     padding-bottom: 14px;
     margin: 14px;
@@ -457,7 +496,8 @@ textarea:hover{
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
     border-radius: 20px;
 }
-.codexText{
+
+.codexText {
     margin: 10px;
     background: #F5F5FB;
     text-align: left;
