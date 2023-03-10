@@ -4,7 +4,7 @@ const pressedButtons = [];
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
 
-         if(pressedButtons.length <= 2){
+         if(pressedButtons.length <= 3){
             if (button.classList.contains('activeButton')) {
                 button.classList.remove('activeButton');
 
