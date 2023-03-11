@@ -39,7 +39,7 @@ public class MyBias extends DatabaseController {
      * This is send over with a JSONArray to give to the MyBiasController.
      * Here the controller gives it to the REST-API.
      */
-    public JSONArray selectMyBias() throws SQLException {
+    public List selectMyBias() throws SQLException {
         Statement stmt = con.createStatement();
         String query = "SELECT * FROM bias";
         ResultSet resultSet = stmt.executeQuery(query);
@@ -68,6 +68,8 @@ public class MyBias extends DatabaseController {
             });
             result.put(row);
         }
-        return result;
+        return result.toList();
+//        TODO:
+//        result.getJSONObject(1).getString("nameBias") <- Dit is om een object uit de json te halen.
     }
 }
