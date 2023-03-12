@@ -3,6 +3,12 @@
 /* -------------------------------------------- */
 
 /*
+ Added font to all elements
+*/
+*{
+    font-family: 'Poppins', sans-serif;
+}
+/*
   3. Allow percentage-based heights in the application
   4. Add accessible line-height
   5. Improve text rendering
@@ -15,14 +21,12 @@ html, body {
 
 
 body {
-    font-family: 'Poppins', sans-serif;
     background-color: #F5F5FB;
     min-height: 100%;
     margin: 0 auto;
 }
 
 h3 {
-    font-family: 'Poppins', sans-serif;
     color: #1D1D35;
 }
 
@@ -68,7 +72,6 @@ nav {
     padding: 10px 15px 10px 15px;
     margin-top: 5px;
     margin-left: 5px;
-    font-family: 'Poppins', sans-serif;
     font-size: 14px;
 }
 
@@ -186,7 +189,6 @@ hr {
 }
 
 #buttonContainer {
-    font-family: 'Poppins', sans-serif;
     border: none;
 }
 
@@ -200,7 +202,6 @@ hr {
 
 .column-content h3 {
     width: fit-content;
-    font-family: 'Poppins', sans-serif;
     margin-top: 10px;
     color: #1D1D35;
     font-size: 19px;
@@ -213,7 +214,6 @@ hr {
     height: 125px;
     border-radius: 10px;
     border: 20px black;
-    font-family: 'Poppins', sans-serif;
     color: #c0c0cc;
     transition: all 0.2s;
 }
@@ -279,7 +279,6 @@ header {
 
 .buttonWrite {
     padding: 12px;
-    font-family: 'Poppins', sans-serif;
     margin-left: 8px;
     font-weight: 500;
     color: #1D1D35;
@@ -295,7 +294,7 @@ header {
     border: none;
     padding: 26px;
 
-    font-family: 'Poppins', sans-serif;
+
     color: #1D1D35;
     font-size: 13px;
 }
@@ -310,7 +309,6 @@ textarea {
     padding: 12px;
     margin: 8px;
     margin-bottom: 0;
-    font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 14px;
     background-color: #F5F5FB;
@@ -371,7 +369,6 @@ textarea:hover {
     border: none;
     transition: ease-in 0.1s;
     color: #1D1D35;
-    font-family: 'Poppins', sans-serif;
     font-size: 12px;
 }
 
@@ -435,7 +432,6 @@ textarea:hover {
     padding: 10px 15px 10px 15px;
     margin-top: 14px;
     margin-left: 10px;
-    font-family: 'Poppins', sans-serif;
     font-size: 14px;
     transition: opacity 0.2s ease-in-out;
     transition-delay: 3s;
@@ -482,7 +478,6 @@ textarea:hover {
 }
 
 .buttonsCodex {
-    font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 16px;
     width: auto;
@@ -510,7 +505,6 @@ textarea:hover {
     padding-top: 2px;
     padding-bottom: 14px;
     margin: 14px;
-    font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 14px;
     text-align: center;
