@@ -30,6 +30,5 @@ public class ThinkingTrapsController implements APIController {
      * This is a variable to get the selected thinking traps form the database.
      */
     protected final Handler getThinkingTraps = (@NotNull Context context) ->
-            context.json(thinkingTraps);
-
+            context.json(thinkingTraps.selectThinkingTraps());
 }
