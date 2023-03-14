@@ -31,7 +31,5 @@ public class selfDevelopmentController implements APIController {
      * This is a variable to get the selected self development form the database.
      */
     protected final Handler getSelfDevelopment = (@NotNull Context context) ->
-            context.json(selfDevelopment);
-
-
+            context.json(selfDevelopment.selectSelfDevelopment());
 }

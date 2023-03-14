@@ -36,7 +36,7 @@ public class API {
         this.selfDevelopmentController = new selfDevelopmentController(selfDevelopment);
         this.thinkingTrapsController = new ThinkingTrapsController(thinkingTraps);
 
-
+        selfDevelopment.updateSelfDevelopment();
         addHandlers();
 
     }
