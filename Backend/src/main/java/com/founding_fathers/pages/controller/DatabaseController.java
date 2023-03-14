@@ -39,9 +39,9 @@ public class DatabaseController {
         Connection con = null;
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3308/biasbrothers";
+            String url = "jdbc:mysql://localhost:3306/biasbrothers";
             String username = "root";
-            String password = "Thefoundingfathers";
+            String password = "";
             con = DriverManager.getConnection(url,username,password);
         } catch (Exception e){
             System.out.println(e);
