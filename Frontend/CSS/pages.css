@@ -19,7 +19,6 @@ html, body {
     -webkit-font-smoothing: antialiased;
 }
 
-
 body {
     background-color: #F5F5FB;
     min-height: 100%;
@@ -131,6 +130,9 @@ hr {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
     padding: 1rem;
+}
+section{
+    display: flex;
 }
 
 /* -------------------------------------------- */
@@ -468,10 +470,10 @@ textarea:hover {
     background-color: white;
     border-radius: 10px;
     width: fit-content;
-    height: 40px;
+    height: fit-content;
     padding: 10px;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
-    margin-left: 140px;
+    margin-left: 536px;
     margin-top: 36px;
     margin-bottom: 20px;
     position: fixed;
@@ -494,11 +496,11 @@ textarea:hover {
 }
 
 .codexBox {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
     margin-left: 126px;
     margin-top: 125px;
-    width: 1282px;
+    grid-template-columns: repeat(2, 1fr);
+    /*width: 1282px;*/
 }
 
 .codexTitel {
@@ -509,7 +511,7 @@ textarea:hover {
     font-size: 14px;
     text-align: center;
     background-color: #FFFFFF;
-    width: 340px;
+    width: 640px;
     height: auto;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
     border-radius: 20px;
