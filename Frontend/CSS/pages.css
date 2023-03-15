@@ -392,13 +392,23 @@ textarea:hover {
     border-radius: 20px;
 }
 
-.test {
+.biasText {
     width: 488px;
-    height: 88px;
-    margin: 30px 0 0 30px;
+    height: 80px;
+    margin: 0 0 0 30px;
     border-radius: 10px;
     padding: 26px;
 }
+
+.textCardHeader{
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+
+
 
 
 /* -------------------------------------------- */
