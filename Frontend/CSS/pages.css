@@ -131,9 +131,6 @@ hr {
     margin-right: 0.5rem;
     padding: 1rem;
 }
-section{
-    display: flex;
-}
 
 /* -------------------------------------------- */
 
@@ -500,7 +497,7 @@ textarea:hover {
     margin-left: 126px;
     margin-top: 125px;
     grid-template-columns: repeat(2, 1fr);
-    /*width: 1282px;*/
+    width: 1282px;
 }
 
 .codexTitel {
