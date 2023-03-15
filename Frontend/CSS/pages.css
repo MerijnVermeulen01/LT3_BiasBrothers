@@ -549,3 +549,19 @@ textarea:hover {
 ::-webkit-scrollbar-thumb:hover {
     background: #1ca95b;
 }
+
+/* -------------------------------------------- */
+/* EditPossibility */
+/* -------------------------------------------- */
+.navBarEditPosibility {
+    background-color: white;
+    border-radius: 10px;
+    width: fit-content;
+    height: 40px;
+    padding: 10px;
+    box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
+    margin: auto;
+    margin-top: 10px;
+}
+
+/* -------------------------------------------- */
