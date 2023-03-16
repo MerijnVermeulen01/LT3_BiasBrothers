@@ -1,5 +1,5 @@
 const newDiv document.createElement("div");
-const newDivText document.createElement("div")
+const newDivText document.createElement("div");
 const newH3 document.createElement("h3");
 
 
@@ -8,12 +8,7 @@ fetch('http://localhost:7070/MyBias')
     .then(repsone => repsone.json())
     .then(data => {
         data.forEach(post => {
-            loop(title,text)
-            {
-                title.insertAdjacentHTML('beforeend', `"In which HTML tag u want it" ${post."point u want in the JSON"} "In which HTML tag u want it"`);
-                text.insertAdjacentHTML('beforeend', `"In which HTML tag u want it" ${post."point u want in the JSON"} "In which HTML tag u want it"`);
-            }
-
+            fillDiv(post.title,post.text);
             // "name".insertAdjacentHTML('beforeend', `"In which HTML tag u want it" ${post."point u want in the JSON"} "In which HTML tag u want it"`);
         })
     })
