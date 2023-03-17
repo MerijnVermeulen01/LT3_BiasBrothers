@@ -1,23 +1,28 @@
-const newDiv document.createElement("div");
-const newDivText document.createElement("div");
-const newH3 document.createElement("h3");
-
 
 // const "name" = document.querySelector('"html where u want it"');
-fetch('http://localhost:7070/MyBias')
+fetch('http://localhost:7070/Codex')
     .then(repsone => repsone.json())
     .then(data => {
+        console.log(data);
         data.forEach(post => {
-            fillDiv(post.title,post.text);
+            fillDiv(post.nameBias,post.description);
             // "name".insertAdjacentHTML('beforeend', `"In which HTML tag u want it" ${post."point u want in the JSON"} "In which HTML tag u want it"`);
         })
     })
-function fillDiv(title, text) {
-    let titles = document.createTextNode(title);
-    let text = document.createTextNode(text);
+function fillDiv(title, desription) {
+    var newDiv = document.createElement("div");
+    var newDivText = document.createElement("div");
+    var newH3 = document.createElement("h3");
+    var titles = document.createTextNode(title);
+    var text = document.createTextNode(desription);
+
 
     newH3.appendChild(titles);
     newDivText.appendChild(text);
+    newDiv.appendChild(newH3);
+    newDiv.appendChild(newDivText);
+    newDiv.classList.add("codexTitel");
+    newDivText.classList.add("codexText");
 
-    docment.getElementById('codexBox').appendChild(newDiv);
+    document.getElementById('codexBox').appendChild(newDiv);
 }

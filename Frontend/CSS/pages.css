@@ -492,7 +492,7 @@ textarea:hover {
     transition: all .5s;
 }
 
-.codexBox {
+#codexBox {
     display: grid;
     margin-left: 126px;
     margin-top: 125px;
