@@ -1,5 +1,7 @@
 const buttons = document.querySelectorAll('.biasButton');
+const textArea = document.querySelectorAll('.buttonWrite')
 const pressedButtons = [];
+const pressedTextArea = [];
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -31,3 +33,32 @@ buttons.forEach((button) => {
         }
     });
 });
+
+
+
+// TODO: Werkend maken begin staat
+// Function for the textarea from the page selfdevelopment and the buttonWrite css class to highlight in purple
+
+// textArea.forEach((text) => {
+//     text.addEventListener('click', () =>{
+//         if(pressedTextArea.length <= 3){
+//             if (button.classList.contains('activeButton')) {
+//                 button.classList.remove('activeButton');
+//
+//                 const index = pressedTextArea.indexOf(text);
+//                 if (index > -1) {
+//                     pressedTextArea.splice(index, 1);
+//                     console.log(pressedTextArea);
+//                 }
+//             }
+//
+//             else if (pressedTextArea.length >= 0 && pressedTextArea.length < 3) {
+//                 button.classList.add('activeButton');
+//                 pressedTextArea.push(text);
+//             }
+//         }
+//     });
+// });
+
+
+
