@@ -11,12 +11,12 @@ import java.util.stream.IntStream;
 
 public class Codex extends DatabaseController{
     Connection con = getConnection();
-
-
+    String traps = "SELECT * FROM thinkingtraps";
+    String bias = "SELECT * FROM bias";
 
     public List codexInfo() throws SQLException {
         Statement stmt = con.createStatement();
-        String query = "SELECT * FROM bias";
+        String query = traps;
         ResultSet resultSet = stmt.executeQuery(query);
 
         ResultSetMetaData md = resultSet.getMetaData();
