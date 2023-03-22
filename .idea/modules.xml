@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Backend/Bais-Brothers.iml" filepath="$PROJECT_DIR$/Backend/Bais-Brothers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LT3_BiasBrothers.iml" filepath="$PROJECT_DIR$/LT3_BiasBrothers.iml" />
     </modules>
   </component>
 </project>

@@ -243,9 +243,11 @@ header {
     margin-bottom: 25px;
     margin-left: 140px;
     padding-top: 3%;
+    margin-left: 140px;
 }
 
 .writeAreaContainer {
+    margin-top: -91px;
     display: flex;
     margin-left: 140px;
 }
@@ -258,6 +260,8 @@ header {
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
     padding: 20px;
     margin-left: 140px;
+    margin-top: 62px;
+
 }
 
 
@@ -277,6 +281,9 @@ header {
     font-weight: 500;
     color: #1D1D35;
     font-size: 14px;
+    border: none;
+    transition: ease-in 0.1s;
+    color: #1D1D35;
 }
 
 #writeArea1, #writeArea2, #writeArea3 {
