@@ -1,14 +1,37 @@
 
-// const "name" = document.querySelector('"html where u want it"');
-fetch('http://localhost:7070/Codex')
-    .then(repsone => repsone.json())
-    .then(data => {
-        console.log(data);
-        data.forEach(post => {
-            fillDiv(post.nameBias,post.description);
-            // "name".insertAdjacentHTML('beforeend', `"In which HTML tag u want it" ${post."point u want in the JSON"} "In which HTML tag u want it"`);
-        })
-    })
+    if(window.location.href.indexOf("codexBiases")> -1)
+    {
+    fetch('http://localhost:7070/codexBias')
+        .then(repsone => repsone.json())
+        .then(data => {
+            console.log(data);
+            data.forEach(post => {
+                fillDiv(post.nameBias, post.description);
+            })
+        });
+    }
+    else if (window.location.href.indexOf("codexAdaptability")>-1){
+        console.log("wauw");
+
+    }
+    else if (window.location.href.indexOf("codexThinkingTraps")>-1){
+        fetch('http://localhost:7070/codexThinkingTraps')
+            .then(repsone => repsone.json())
+            .then(data => {
+                console.log(data);
+                data.forEach(post => {
+                    fillDiv(post.thinkingTraps, post.description);
+                })
+            });
+
+    }
+    else if (window.location.href.indexOf("codexCognitiveBias")>-1){
+        console.log("wew");
+    }
+    else{
+        console.log("bad juju")
+    }
+
 function fillDiv(title, desription) {
     var newDiv = document.createElement("div");
     var newDivText = document.createElement("div");

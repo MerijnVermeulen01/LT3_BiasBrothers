@@ -12,11 +12,8 @@ import java.util.stream.IntStream;
 public class Codex extends DatabaseController{
     Connection con = getConnection();
 
-
-
-    public List codexInfo() throws SQLException {
+    public List codexInfo(String query) throws SQLException {
         Statement stmt = con.createStatement();
-        String query = "SELECT * FROM bias";
         ResultSet resultSet = stmt.executeQuery(query);
 
         ResultSetMetaData md = resultSet.getMetaData();
