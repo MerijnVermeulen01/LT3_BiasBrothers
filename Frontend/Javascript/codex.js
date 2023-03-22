@@ -1,7 +1,7 @@
 
     if(window.location.href.indexOf("codexBiases")> -1)
     {
-    fetch('http://localhost:7070/Codex')
+    fetch('http://localhost:7070/codexBias')
         .then(repsone => repsone.json())
         .then(data => {
             console.log(data);
@@ -10,12 +10,12 @@
             })
         });
     }
-    else if (window.location.href.indexOf("codexAanpassingsvermogen")>-1){
+    else if (window.location.href.indexOf("codexAdaptability")>-1){
         console.log("wauw");
 
     }
-    else if (window.location.href.indexOf("codex")>-1){
-        fetch('http://localhost:7070/Codex')
+    else if (window.location.href.indexOf("codexThinkingTraps")>-1){
+        fetch('http://localhost:7070/codexThinkingTraps')
             .then(repsone => repsone.json())
             .then(data => {
                 console.log(data);
@@ -25,7 +25,7 @@
             });
 
     }
-    else if (window.location.href.indexOf("codexCognitieveBias")>-1){
+    else if (window.location.href.indexOf("codexCognitiveBias")>-1){
         console.log("wew");
     }
     else{

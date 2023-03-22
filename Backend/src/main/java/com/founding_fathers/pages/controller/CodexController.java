@@ -9,13 +9,25 @@ import org.jetbrains.annotations.NotNull;
 
 public class CodexController implements APIController {
     private Codex codex;
-    public CodexController(Codex codex){
+
+    public CodexController(Codex codex) {
         this.codex = codex;
     }
+
     @Override
     public void addHandlers(Javalin app) {
-        app.get("/Codex", getCodex);
+        app.get("/codexThinkingTraps", getCodexThinkingTraps);
+        app.get("/codexBias", getCodexBias);
+        app.get("/codexAdaptability", getCodexAdaptability);
+        app.get("/codexCognitiveBias", getCodexCognitiveBias);
     }
-    protected final Handler getCodex = (@NotNull Context context) ->
-            context.json(codex.codexInfo());
+
+    protected final Handler getCodexThinkingTraps = (@NotNull Context context) ->
+            context.json(codex.codexInfo("SELECT * FROM thinkingtraps"));
+    protected final Handler getCodexBias = (@NotNull Context context) ->
+            context.json(codex.codexInfo("SELECT * FROM bias"));
+    protected final Handler getCodexAdaptability = (@NotNull Context context) ->
+            context.json(codex.codexInfo("SELECT * FROM bias"));
+    protected final Handler getCodexCognitiveBias = (@NotNull Context context) ->
+            context.json(codex.codexInfo("SELECT * FROM bias"));
 }
