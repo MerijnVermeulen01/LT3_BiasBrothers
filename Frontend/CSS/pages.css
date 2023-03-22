@@ -375,6 +375,10 @@ textarea:hover {
     background: #A5A5F8;
 }
 
+.activeButton:hover{
+    background: #9494df;
+}
+
 #cardInputContainer {
     float: right;
     margin-right: 100px;
