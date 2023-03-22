@@ -91,5 +91,41 @@ public class ThinkingTraps extends DatabaseController {
         }
         return result.toList();
     }
+
+    public void deleteSelfDevelopment(){
+
+        int nummer = 1;
+
+        PreparedStatement stmt = null;
+        try {
+            stmt = con.prepareStatement("DELETE FROM selfdevelopment WHERE idThinkingTraps = ?");
+
+            stmt.setInt(1, nummer);
+            stmt.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void updateSelfDevelopment(){
+        String dummy = "Update";
+        String description = "UpdateDescription";
+
+        int id2 = 2;
+
+        PreparedStatement stmt = null;
+        try {
+            stmt = con.prepareStatement("UPDATE thinkingTraps SET thinkingTraps = ?, description = ? WHERE idThinkingTraps = ?");
+
+            stmt.setString(1, dummy);
+            stmt.setString(2, description);
+            stmt.setInt(3, id2);
+            stmt.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
 
