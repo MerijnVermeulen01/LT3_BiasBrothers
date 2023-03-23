@@ -2,6 +2,7 @@ package com.founding_fathers.pages.controller;
 
 import com.founding_fathers.API.APIController;
 import com.founding_fathers.pages.MyBias;
+import com.founding_fathers.pages.ThinkingTraps;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
 import io.javalin.http.Handler;
@@ -24,6 +25,11 @@ public class MyBiasController implements APIController {
     @Override
     public void addHandlers(Javalin app) {
         app.get("/MyBias", getMyBiases);
+        app.post("/MyBiasParticipant", ctx -> {
+            myBias = ctx.bodyAsClass(MyBias.class);
+            myBias.insertInBias();
+        });
+        app.get("/getParicipantBias", getParicipantBias);
     }
 
     /**
@@ -31,5 +37,8 @@ public class MyBiasController implements APIController {
      */
     protected final Handler getMyBiases = (@NotNull Context context) ->
             context.json(myBias.selectMyBias());
+
+    protected final Handler getParicipantBias = (@NotNull Context context) ->
+            context.json(myBias.selectParticipantBias());
 
 }

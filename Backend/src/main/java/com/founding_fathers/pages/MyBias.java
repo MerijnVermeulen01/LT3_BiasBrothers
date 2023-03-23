@@ -14,24 +14,89 @@ public class MyBias extends DatabaseController {
 
     Connection con = getConnection();
 
-    private String nameBais;
-    private String description;
-    private String descriptionParticipant;
+    private int button1;
+    private int button2;
+    private int button3;
+    private String description1;
+    private String description2;
+    private String description3;
 
-    /**
-     * These are the respective getters and setters for this file.
-     */
-    public String getNameBais() {
-        return nameBais;
+    public void setButton1(int button1) {
+        this.button1 = button1;
     }
-    public String getDescription() {
-        return this.description;
+    public void setButton2(int button2) {
+        this.button2 = button2;
     }
-    public String getDescriptionParticipant() {
-        return this.descriptionParticipant;
+    public void setButton3(int button3) {
+        this.button3 = button3;
     }
-    public void setDescriptionParticipant(String descriptionParticipant) {
-        this.descriptionParticipant = descriptionParticipant;
+
+    public void setDescription1(String description1) {
+        this.description1 = description1;
+    }
+    public void setDescription2(String description2) {
+        this.description2 = description2;
+    }
+    public void setDescription3(String description3) {
+        this.description3 = description3;
+    }
+
+    public List selectParticipantBias() throws SQLException {
+        ResultSet resultSet = null;
+        PreparedStatement stmt = null;
+        try {
+            stmt = con.prepareStatement("SELECT * FROM participant_bias WHERE session_idSession = ?");
+
+            stmt.setInt(1, 1);
+            resultSet = stmt.executeQuery();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        ResultSetMetaData md =   resultSet.getMetaData();
+        int numCols = md.getColumnCount();
+        List<String> colNames = IntStream.range(0, numCols)
+                .mapToObj(i -> {
+                    try {
+                        return md.getColumnName(i + 1);
+                    } catch (SQLException e){
+                        System.out.println(e);
+                        return "?";
+                    }
+                }).collect(Collectors.toList());
+
+        JSONArray result = new JSONArray();
+        while (resultSet.next()){
+            JSONObject row = new JSONObject();
+            ResultSet finalResultSet = resultSet;
+            colNames.forEach(cn -> {
+                try {
+                    row.put(cn, finalResultSet.getObject(cn));
+                } catch (JSONException | SQLException e){
+                    System.out.println(e);
+                }
+            });
+            result.put(row);
+        }
+        return result.toList();
+    }
+
+    public void insertInBias() {
+        int[] buttons = {button1, button2, button3};
+        String[] descriptions = {description1, description2, description3};
+        PreparedStatement stmt = null;
+        try {
+            for (int i = 0; i < buttons.length; i++) {
+                stmt = con.prepareStatement("INSERT INTO participant_bias (session_idSession, bias_idBiases, description) VALUES (?, ?, ?)");
+
+                stmt.setInt(1, 1);
+                stmt.setInt(2, buttons[i]);
+                stmt.setString(3, descriptions[i]);
+                stmt.executeUpdate();
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
