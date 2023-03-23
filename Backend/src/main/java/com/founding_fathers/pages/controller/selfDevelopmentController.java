@@ -1,6 +1,7 @@
 package com.founding_fathers.pages.controller;
 
 import com.founding_fathers.API.APIController;
+import com.founding_fathers.pages.ThinkingTraps;
 import com.founding_fathers.pages.selfDevelopment;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
@@ -24,7 +25,11 @@ public class selfDevelopmentController implements APIController {
     @Override
     public void addHandlers(Javalin app) {
         app.get("/selfDevelopment", getSelfDevelopment);
-
+        app.post("/selfDevToBackend", ctx -> {
+            selfDevelopment = ctx.bodyAsClass(selfDevelopment.class);
+            selfDevelopment.insertSelfDevelopment();
+        });
+        app.get("/getParicipantSelfDev", getParticipantSelfDev);
     }
 
     /**
@@ -32,4 +37,8 @@ public class selfDevelopmentController implements APIController {
      */
     protected final Handler getSelfDevelopment = (@NotNull Context context) ->
             context.json(selfDevelopment.selectSelfDevelopment());
+
+    protected final Handler getParticipantSelfDev = (@NotNull Context context) ->
+            context.json(selfDevelopment.getParticipantSelfDev());
+
 }

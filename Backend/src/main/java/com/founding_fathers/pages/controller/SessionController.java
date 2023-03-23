@@ -3,10 +3,6 @@ package com.founding_fathers.pages.controller;
 import com.founding_fathers.API.APIController;
 import com.founding_fathers.pages.SessionsParticipant;
 import io.javalin.Javalin;
-import io.javalin.http.Context;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.logging.Handler;
 
 public class SessionController implements APIController {
 
@@ -24,14 +20,9 @@ public class SessionController implements APIController {
      */
     @Override
     public void addHandlers(Javalin app) {
-        app.get("/addSession", ctx -> {
+        app.post("/addSession", ctx -> {
             session.addSession();
-            ctx.json(session.getIdSession());
         });
+        app.get("/getSession",  ctx -> ctx.json(session.getIdSession()));
     }
-    /**
-     * This is a variable to get the selected thinking traps form the database.
-     */
-//    protected final Handler getThinkingTraps = (@NotNull Context context) ->
-//            context.json(session.getIdSession());
 }

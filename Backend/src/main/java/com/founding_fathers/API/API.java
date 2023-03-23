@@ -13,7 +13,7 @@ public class API {
     private final selfDevelopmentController selfDevelopmentController;
     private final ThinkingTrapsController thinkingTrapsController;
     private final CodexController codexController;
-    private final SessionController sessionController;
+//    private final SessionController sessionController;
 
     /**
      * This function is the REST-API. This makes sure that we there will be a connection between the front-end and the back-end.
@@ -29,14 +29,14 @@ public class API {
         selfDevelopment selfDevelopment = new selfDevelopment();
         ThinkingTraps thinkingTraps = new ThinkingTraps();
         Codex codex = new Codex();
-        SessionsParticipant session = new SessionsParticipant();
+//        SessionsParticipant session = new SessionsParticipant();
 
 
         this.myBiasController = new MyBiasController(myBias);
         this.selfDevelopmentController = new selfDevelopmentController(selfDevelopment);
         this.thinkingTrapsController = new ThinkingTrapsController(thinkingTraps);
         this.codexController = new CodexController(codex);
-        this.sessionController = new SessionController(session);
+//        this.sessionController = new SessionController(session);
         addHandlers();
 
     }

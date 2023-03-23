@@ -6,8 +6,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -126,6 +124,46 @@ public class ThinkingTraps extends DatabaseController {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public List selectParticipantThinkingTraps() throws SQLException {
+        ResultSet resultSet = null;
+        PreparedStatement stmt = null;
+        try {
+            stmt = con.prepareStatement("SELECT * FROM participant_thinkingtraps WHERE session_idSession = ?");
+
+            stmt.setInt(1, 1);
+            resultSet = stmt.executeQuery();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        ResultSetMetaData md =   resultSet.getMetaData();
+        int numCols = md.getColumnCount();
+        List<String> colNames = IntStream.range(0, numCols)
+                .mapToObj(i -> {
+                    try {
+                        return md.getColumnName(i + 1);
+                    } catch (SQLException e){
+                        System.out.println(e);
+                        return "?";
+                    }
+                }).collect(Collectors.toList());
+
+        JSONArray result = new JSONArray();
+        while (resultSet.next()){
+            JSONObject row = new JSONObject();
+            ResultSet finalResultSet = resultSet;
+            colNames.forEach(cn -> {
+                try {
+                    row.put(cn, finalResultSet.getObject(cn));
+                } catch (JSONException | SQLException e){
+                    System.out.println(e);
+                }
+            });
+            result.put(row);
+        }
+        return result.toList();
     }
 }
 

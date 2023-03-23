@@ -59,3 +59,16 @@ function valuesToJSON(){
     xhr.send(data);
 
 }
+
+
+fetch('http://localhost:7070/getParicipantTraps')
+    .then(repsone => repsone.json())
+    .then(data => {
+        // console.log();
+        document.getElementById(data[0].thinkingtraps_idThinkingTraps).classList.add('activeButton');
+        document.getElementById(data[1].thinkingtraps_idThinkingTraps).classList.add('activeButton');
+        document.getElementById(data[2].thinkingtraps_idThinkingTraps).classList.add('activeButton');
+        document.getElementById('description1').value = data[0].description;
+        document.getElementById('description2').value = data[1].description;
+        document.getElementById('description3').value = data[2].description;
+    });

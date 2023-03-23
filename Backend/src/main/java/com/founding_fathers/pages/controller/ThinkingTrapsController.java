@@ -25,14 +25,18 @@ public class ThinkingTrapsController implements APIController {
     public void addHandlers(Javalin app) {
         app.get("/ThinkingTraps", getThinkingTraps);
         app.post("/MyTest", ctx -> {
-            thinkingTraps.getSelectedIDThinkingTraps();
             thinkingTraps = ctx.bodyAsClass(ThinkingTraps.class);
+            thinkingTraps.getSelectedIDThinkingTraps();
         });
+        app.get("/getParicipantTraps", getParticipantTraps);
     }
     /**
      * This is a variable to get the selected thinking traps form the database.
      */
     protected final Handler getThinkingTraps = (@NotNull Context context) ->
             context.json(thinkingTraps.selectThinkingTraps());
+
+    protected final Handler getParticipantTraps = (@NotNull Context context) ->
+            context.json(thinkingTraps.selectParticipantThinkingTraps());
 
 }

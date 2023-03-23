@@ -12,7 +12,7 @@ function sidebarLoad(){
                 <li id='myBiasPage'><a href='myBiasPage.html'><img alt=\"\" src=\"../Images/Biases.png\" /></a><span class='tooltip'>Mijn Biases</span></li>\
                 <li id='editPossibility'><a href='editPossibility.html'><img alt=\"\" src=\"../Images/editPossibility.png\" /></a><span class='tooltip'>Aanpassingsvermogen</span></li>\
                 <hr />\
-                <li id='codex'><a href='codex.html'><img alt=\"\" src=\"../Images/Codex.png\" /></a><span class='tooltip'>Codex</span></li>\
+                <li id='codex'><a href='codexThinkingTraps.html'><img alt=\"\" src=\"../Images/Codex.png\" /></a><span class='tooltip'>Codex</span></li>\
                 <li id='downloadPage'><a href='downloadPage.html'><img alt=\"\" src=\"../Images/Download-button.png\" /></a><span class='tooltip'>Download</span></li>\
             </ul>\
         </nav>"

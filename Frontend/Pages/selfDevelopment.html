@@ -30,27 +30,28 @@
         </aside>
         <section class="col main">
             <div class="buttonsAreaContainer">
-                    <textarea class="buttonWrite" placeholder="Ontwikkelactie hier opschrijven"></textarea>
-                    <textarea class="buttonWrite" placeholder="Ontwikkelactie hier opschrijven"></textarea>
-                    <textarea class="buttonWrite" placeholder="Ontwikkelactie hier opschrijven"></textarea>
-                    <textarea class="buttonWrite" placeholder="Ontwikkelactie hier opschrijven"></textarea>
-                    <textarea class="buttonWrite" placeholder="Ontwikkelactie hier opschrijven"></textarea>
-                    <textarea class="buttonWrite" placeholder="Ontwikkelactie hier opschrijven"></textarea>
+                    <textarea class="buttonWrite" id="buttonWrite1" onkeyup="buttonTextToArray(this.id, this.value)" placeholder="Ontwikkelactie hier opschrijven"></textarea>
+                    <textarea class="buttonWrite" id="buttonWrite2" onkeyup="buttonTextToArray(this.id, this.value)" placeholder="Ontwikkelactie hier opschrijven"></textarea>
+                    <textarea class="buttonWrite" id="buttonWrite3" onkeyup="buttonTextToArray(this.id, this.value)" placeholder="Ontwikkelactie hier opschrijven"></textarea>
+                    <textarea class="buttonWrite" id="buttonWrite4" onkeyup="buttonTextToArray(this.id, this.value)" placeholder="Ontwikkelactie hier opschrijven"></textarea>
+                    <textarea class="buttonWrite" id="buttonWrite5" onkeyup="buttonTextToArray(this.id, this.value)" placeholder="Ontwikkelactie hier opschrijven"></textarea>
+                    <textarea class="buttonWrite" id="buttonWrite6" onkeyup="buttonTextToArray(this.id, this.value)" placeholder="Ontwikkelactie hier opschrijven"></textarea>
             </div>
             <header>
                 <h1> Mijn top 3 ontwikkelacties </h1>
             </header>
             <!-- Tekstvak koppeling maken bijv situatie 1, 2 en 3?-->
             <div class="writeAreaContainer">
-                <div class="textArea"><textarea id="writeArea1" placeholder="[Beschrijf situatie(s) / voorbeeld(en) hier]"></textarea></div>
-                <div class="textArea"><textarea id="writeArea2" placeholder="[Beschrijf situatie(s) / voorbeeld(en) hier]"></textarea></div>
-                <div class="textArea"><textarea id="writeArea3" placeholder="[Beschrijf situatie(s) / voorbeeld(en) hier]"></textarea></div>
+                <div class="textArea"><textarea id="writeArea1" onkeyup="textToArray(this.id, this.value)" placeholder="[Beschrijf situatie(s) / voorbeeld(en) hier]"></textarea></div>
+                <div class="textArea"><textarea id="writeArea2" onkeyup="textToArray(this.id, this.value)" placeholder="[Beschrijf situatie(s) / voorbeeld(en) hier]"></textarea></div>
+                <div class="textArea"><textarea id="writeArea3" onkeyup="textToArray(this.id, this.value)" placeholder="[Beschrijf situatie(s) / voorbeeld(en) hier]"></textarea></div>
             </div>
         </section>
     </div>
 </div>
-<script type="text/javascript" src="../Javascript/pages.js"></script>
+<button onclick="valuesToJSON();">Verder</button>
 </body>
 <script type="text/javascript" src="../Javascript/pages.js"></script>
+<script type="text/javascript" src="../Javascript/selfDev.js"></script>
 </html>
 

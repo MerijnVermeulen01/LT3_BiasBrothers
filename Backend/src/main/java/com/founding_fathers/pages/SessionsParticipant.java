@@ -2,6 +2,8 @@ package com.founding_fathers.pages;
 
 import com.founding_fathers.pages.controller.DatabaseController;
 import java.sql.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class SessionsParticipant extends DatabaseController {
 
@@ -18,10 +20,13 @@ public class SessionsParticipant extends DatabaseController {
     }
 
     public void addSession() throws SQLException {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("INSERT INTO session (dateTime) VALUE (NOW());");
+            stmt = con.prepareStatement("INSERT INTO sessionparticipant (dateTime) VALUE (?);");
 
+            stmt.setString(1, dtf.format(now));
             stmt.executeUpdate();
 
         } catch (SQLException e) {
@@ -30,12 +35,13 @@ public class SessionsParticipant extends DatabaseController {
         selectSession();
     }
 
-    public void selectSession() throws SQLException {
+    public int selectSession() throws SQLException {
         Statement stmt = con.createStatement();
-        String query = "SELECT * FROM session ORDER BY sessionid DESC LIMIT 1";
+        String query = "SELECT * FROM sessionparticipant ORDER BY sesionId DESC LIMIT 1";
         ResultSet resultSet = stmt.executeQuery(query);
         while (resultSet.next()){
             setIdSession(resultSet.getInt(1));
         }
+        return this.idSession;
     }
 }

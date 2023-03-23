@@ -14,6 +14,5 @@ function valuesToJSON(){
         "description3" : description[2], 
     });
 
-    console.log(data);
     xhr.send(data);
 }
