@@ -1,10 +1,11 @@
 const buttons = document.querySelectorAll('.biasButton');
 const pressedButtons = [];
+const filledTextareas = [];
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
 
-         if(pressedButtons.length <= 3){
+        if (pressedButtons.length <= 3) {
             if (button.classList.contains('activeButton')) {
                 button.classList.remove('activeButton');
 
@@ -14,9 +15,7 @@ buttons.forEach((button) => {
                     pressedButtons.splice(index, 1);
                     console.log(pressedButtons);
                 }
-            }
-
-            else if (pressedButtons.length >= 0 && pressedButtons.length < 3) {
+            } else if (pressedButtons.length >= 0 && pressedButtons.length < 3) {
                 button.classList.add('activeButton');
                 // const circle = document.createElement('div');
                 // circle.classList.add('circle');
@@ -36,12 +35,21 @@ buttons.forEach((button) => {
 const area = document.querySelectorAll('.buttonWrite');
 area.forEach((text) => {
     text.addEventListener('input', () => {
-            if (text.value.length > 0) {
-                text.classList.add('activeButton');
-            }
-            else {
-                text.classList.remove('activeButton');
-            }
-        });
+        
+        // Add
+        if (text.value.length > 0 && text.value.trim() !== '') {
+            text.classList.add('activeButton');
+            filledTextareas.push(text);
+            filledTextareas.slice(0,3)
+        }
+        
+        // Remove
+        else {
+            const index = filledTextareas.indexOf(text);
+            text.classList.remove('activeButton');
+            filledTextareas.splice(index, 1);
+            console.log(filledTextareas);
+        }
     });
+});
 
