@@ -61,4 +61,16 @@ buttons.forEach((button) => {
 // });
 
 
+// Changes color background when inputting a value -> String
+const area = document.querySelectorAll('.buttonWrite');
+area.forEach((text) => {
+    text.addEventListener('input', () => {
+            if (text.value.length > 0) {
+                text.classList.add('activeButton');
+            }
+            else {
+                text.classList.remove('activeButton');
+            }
+        });
+    });
 
