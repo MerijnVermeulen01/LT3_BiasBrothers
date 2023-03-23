@@ -29,15 +29,10 @@ public class ThinkingTrapsController implements APIController {
             thinkingTraps = ctx.bodyAsClass(ThinkingTraps.class);
         });
     }
-//ctx.getJSONObject(1).getString("nameBias")
     /**
      * This is a variable to get the selected thinking traps form the database.
      */
     protected final Handler getThinkingTraps = (@NotNull Context context) ->
             context.json(thinkingTraps.selectThinkingTraps());
 
-//    protected final Handler addThinkingTrapsData = (@NotNull Context context) ->
-//            thinkingTraps = context.bodyAsClass(ThinkingTraps.class);
-//
-//            context.json(thinkingTraps.selectThinkingTraps());
 }

@@ -1,10 +1,7 @@
 package com.founding_fathers.API;
 
-import com.founding_fathers.pages.Codex;
-import com.founding_fathers.pages.MyBias;
-import com.founding_fathers.pages.ThinkingTraps;
+import com.founding_fathers.pages.*;
 import com.founding_fathers.pages.controller.*;
-import com.founding_fathers.pages.selfDevelopment;
 import io.javalin.Javalin;
 import io.javalin.plugin.bundled.CorsPluginConfig;
 
@@ -16,6 +13,7 @@ public class API {
     private final selfDevelopmentController selfDevelopmentController;
     private final ThinkingTrapsController thinkingTrapsController;
     private final CodexController codexController;
+    private final SessionController sessionController;
 
     /**
      * This function is the REST-API. This makes sure that we there will be a connection between the front-end and the back-end.
@@ -31,13 +29,14 @@ public class API {
         selfDevelopment selfDevelopment = new selfDevelopment();
         ThinkingTraps thinkingTraps = new ThinkingTraps();
         Codex codex = new Codex();
+        SessionsParticipant session = new SessionsParticipant();
 
 
         this.myBiasController = new MyBiasController(myBias);
         this.selfDevelopmentController = new selfDevelopmentController(selfDevelopment);
         this.thinkingTrapsController = new ThinkingTrapsController(thinkingTraps);
         this.codexController = new CodexController(codex);
-        selfDevelopment.updateSelfDevelopment();
+        this.sessionController = new SessionController(session);
         addHandlers();
 
     }

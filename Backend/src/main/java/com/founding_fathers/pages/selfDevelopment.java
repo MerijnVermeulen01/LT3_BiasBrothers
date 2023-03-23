@@ -33,9 +33,6 @@ public class selfDevelopment extends DatabaseController {
         this.description = description;
     }
 
-    // TODO:
-    // 1:De waarde ophalen van JavaScript (komt nog)
-    // 2:vervolgens inserten in de database
     public void insertSelfDevelopment(){
     String dummy = "Dummy data";
     String description = "Description";
