@@ -562,6 +562,109 @@ textarea:hover {
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
     margin: auto;
     margin-top: 10px;
+    margin-bottom: 25px;
 }
 
+#titelTopBar{
+    background-color: #27be6b;
+    color: white;
+    height: fit-content;
+    text-align: center;
+    margin: auto;
+    width: 40vw;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+#titelTopBar p {
+    margin: 0;
+    padding: 8px;
+}
+.wrapper {
+    margin: 15px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border: solid blue;
+    height: fit-content;
+}
+
+
+.situatieBeschrijving{
+    background-color: white;
+    color: #1D1D35;
+    height: fit-content;
+    text-align: center;
+    width: 30vw;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.titelSituatie p {
+    margin: 0;
+    padding: 8px;
+    font-weight: 600;
+    font-style: italic;
+    text-align: left;
+}
 /* -------------------------------------------- */
+
+
+.cardEditPosibility {
+    width: fit-content;
+    height: fit-content;
+    background: #FFFFFF;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 17px;
+}
+
+.contentEditPosibility {
+    /*padding-left: 20px;*/
+    max-width: fit-content;
+
+}
+
+.testEditPosibility {
+    width: fit-content;
+    height: fit-content;
+    /*margin: 30px 0 0 30px;*/
+    border-radius: 10px;
+    padding: 26px;
+    font-size: 12px;
+}
+
+.rowBoxes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.columnBoxes {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+.columnBoxesLeft {
+    background-color: blue;
+    height: 100%;
+}
+
+.columnBoxesRight {
+    background-color: green;
+    height: 100%;
+}
+
