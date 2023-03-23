@@ -666,6 +666,14 @@ textarea:hover {
     height: 100%;
 }
 
+.navActive {
+    font-style: italic;
+    text-decoration: none;
+    color: green;
+}
+
+
+
 /* When the browser is at least 1366px and below */
 @media screen and (max-width: 1366px) {
     .row {

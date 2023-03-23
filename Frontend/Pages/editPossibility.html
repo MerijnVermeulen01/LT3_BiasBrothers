@@ -6,7 +6,8 @@
         <link rel="icon" type="image/x-icon" href="Images/BiasBrothers.ico">
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
         <title>editPossibility</title>
-        <script type="text/javascript" src="../Javascript/sidebar.js"></script> 
+        <script type="text/javascript" src="../Javascript/sidebar.js"></script>
+        <script type="text/javascript" src="../Javascript/pages.js"></script>
     </head>
     <body>
 
@@ -24,10 +25,9 @@
 
                 <div class="navBarEditPosibility">
                     <div id="buttonContainer">
-                        <a href="../Pages/codex.html">
                             <button id="buttonThinkinFast" class="buttonsCodex">
-                                Thinking Fast
-                            </button></a>
+                                <a href="../Pages/editPossibility.html"> Thinking Fast</a>
+                            </button>
                         <a href="../Pages/codexBiases.html">
                             <button id="buttonThinkingSlow" class="buttonsCodex">
                                 Thinking Slow
@@ -217,4 +217,18 @@
     </div>
 
     </body>
+<script type="text/javascript">
+
+  const currentLocation = location.href;
+  const navItems =   document.querySelectorAll("button a");
+  const navLength = navItems.length
+
+  for (let i = 0; i<navLength; i++){
+      if (navItems[i].href === currentLocation){
+          navItems[i].className = "navActive"
+      }
+  };
+
+
+</script>
 </html>
