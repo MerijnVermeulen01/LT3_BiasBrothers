@@ -596,7 +596,7 @@ textarea:hover {
     display: flex;
     flex-direction: column;
     flex: 1;
-    border: solid blue;
+    /*border: solid blue;*/
     height: fit-content;
 }
 
@@ -618,8 +618,6 @@ textarea:hover {
     font-style: italic;
     text-align: left;
 }
-/* -------------------------------------------- */
-
 
 .cardEditPosibility {
     width: fit-content;
@@ -659,12 +657,21 @@ textarea:hover {
 }
 
 .columnBoxesLeft {
-    background-color: blue;
+    /*background-color: blue;*/
     height: 100%;
 }
 
 .columnBoxesRight {
-    background-color: green;
+    /*background-color: green;*/
     height: 100%;
 }
 
+/* When the browser is at least 1366px and below */
+@media screen and (max-width: 1366px) {
+    .row {
+        width: 90%;
+        margin-left: 100px;
+    }
+}
+
+/* -------------------------------------------- */
