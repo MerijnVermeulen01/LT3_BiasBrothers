@@ -576,6 +576,176 @@ textarea:hover {
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
     margin: auto;
     margin-top: 10px;
+    margin-bottom: 25px;
 }
+
+#titelTopBar{
+    background-color: #27be6b;
+    color: white;
+    height: fit-content;
+    text-align: center;
+    margin: auto;
+    width: 40vw;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+#titelTopBar p {
+    margin: 0;
+    padding: 8px;
+}
+.wrapper {
+    margin: 15px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    /*border: solid blue;*/
+    height: fit-content;
+}
+
+
+.situatieBeschrijving{
+    background-color: white;
+    color: #1D1D35;
+    height: fit-content;
+    text-align: center;
+    width: 30vw;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.titelSituatie p {
+    margin: 0;
+    padding: 8px;
+    font-weight: 600;
+    font-style: italic;
+    text-align: left;
+}
+
+.cardEditPosibility {
+    width: fit-content;
+    height: fit-content;
+    background: #FFFFFF;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 17px;
+}
+
+.contentEditPosibility {
+    /*padding-left: 20px;*/
+    max-width: fit-content;
+
+}
+
+.testEditPosibility {
+    width: fit-content;
+    height: fit-content;
+    /*margin: 30px 0 0 30px;*/
+    border-radius: 10px;
+    padding: 26px;
+    font-size: 12px;
+}
+
+.rowBoxes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.columnBoxes {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+.columnBoxesLeft {
+    /*background-color: blue;*/
+    height: 100%;
+}
+
+.columnBoxesRight {
+    /*background-color: green;*/
+    height: 100%;
+}
+
+.navActive {
+    font-style: italic;
+    text-decoration: none;
+    color: green;
+}
+
+
+
+/* When the browser is at least 1366px and below */
+@media screen and (max-width: 1366px) {
+    .row {
+        width: 90%;
+        margin-left: 100px;
+    }
+}
+/* When the browser is at least 1150px and below */
+@media screen and (max-width: 1150px) {
+    .row {
+        margin-left: 70px;
+        width: 100%;
+    }
+    .columnBoxes{
+        margin-bottom: 20px;
+    }
+}
+
+/* When the browser is at least 1050px and below */
+@media screen and (max-width: 1050px) {
+    .row {
+        margin-left: 70px;
+        width: 100%;
+    }
+    .columnBoxes{
+        margin-bottom: 20px;
+    }
+    .situatieBeschrijving{
+        width: 38vw;
+    }
+    .cardEditPosibility{
+        margin: auto;
+    }
+}
+
+/* When the browser is at least 634px and below */
+@media screen and (max-width: 634px) {
+    .row {
+        margin-left: 70px;
+        width: 100%;
+    }
+    .columnBoxes{
+        margin-bottom: 20px;
+    }
+    .cardEditPosibility{
+        margin: auto;
+    }
+    #titelTopBar{
+        width: fit-content;
+    }
+    .topBarEditPosibility{
+        margin: auto;
+    }
+    .cardEditPosibility{
+        margin: 0;
+    }
+
+}
+
 
 /* -------------------------------------------- */
