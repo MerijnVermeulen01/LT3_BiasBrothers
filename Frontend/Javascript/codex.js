@@ -44,7 +44,7 @@ function fillDiv(title, desription) {
     newDivText.appendChild(text);
     newDiv.appendChild(newH3);
     newDiv.appendChild(newDivText);
-    newDiv.classList.add("codexTitel");
+    newDiv.classList.add("codexTitle");
     newDivText.classList.add("codexText");
 
     document.getElementById('codexBox').appendChild(newDiv);
