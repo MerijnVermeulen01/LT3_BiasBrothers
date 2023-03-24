@@ -515,7 +515,7 @@ textarea:hover {
     grid-template-columns: repeat(2, 1fr);
 }
 
-.codexTitel {
+.codexTitle {
     padding-top: 2px;
     padding-bottom: 14px;
     margin: 2%;
@@ -536,6 +536,38 @@ textarea:hover {
     padding: 14px;
     border-radius: 20px;
 }
+#codexBoxAdapt{
+    display: grid;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2.5%;
+    grid-template-columns: repeat(2, 1fr);
+}
+.AdaptTitle{
+    padding-top: 2px;
+    padding-bottom: 14px;
+    margin: 2%;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    background-color: #FFFFFF;
+    width: auto;
+    height: auto;
+    box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
+    border-radius: 20px;
+}
+.AdaptDescription{
+    margin: 10px;
+    background: #F5F5FB;
+    text-align: left;
+    padding: 14px;
+    border-radius: 20px;
+}
+.AdaptingTrades{
+    position: relative;
+    
+}
+
 /* -------------------------------------------- */
 
 
