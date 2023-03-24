@@ -31,24 +31,25 @@ buttons.forEach((button) => {
     });
 });
 
-// Changes color background when inputting a value -> String
+// xChanges color background when inputting a value -> String
 const area = document.querySelectorAll('.buttonWrite');
 area.forEach((text) => {
     text.addEventListener('input', () => {
-        
+
+        let activeCount = 0;
         // Add
-        if (text.value.length > 0 && text.value.trim() !== '') {
+        if (text.value.length > 0 && text.value.trim() !== '' && activeCount <= 3) {
             text.classList.add('activeButton');
             filledTextareas.push(text);
-            filledTextareas.slice(0,3)
+            activeCount++;
+
         }
-        
+
         // Remove
         else {
-            const index = filledTextareas.indexOf(text);
             text.classList.remove('activeButton');
-            filledTextareas.splice(index, 1);
-            console.log(filledTextareas);
+            console.log(activeCount);
+            activeCount--;
         }
     });
 });
