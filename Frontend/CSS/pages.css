@@ -482,14 +482,12 @@ textarea:hover {
 .navBar {
     background-color: white;
     border-radius: 10px;
+    position: relative;
     width: fit-content;
     height: fit-content;
     padding: 10px;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
-    margin-left: 536px;
-    margin-top: 36px;
-    margin-bottom: 20px;
-    position: fixed;
+    margin: 2% 20% 3% 30%;
 }
 
 .buttonsCodex {
@@ -501,6 +499,7 @@ textarea:hover {
     border-radius: 10px;
     border: none;
     transition: ease-in 0.1s;
+    margin-bottom: 1%;
 }
 
 .buttonsCodex:hover {
@@ -510,21 +509,21 @@ textarea:hover {
 
 #codexBox {
     display: grid;
-    margin-left: 126px;
-    margin-top: 125px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2.5%;
     grid-template-columns: repeat(2, 1fr);
-    width: 1282px;
 }
 
 .codexTitel {
     padding-top: 2px;
     padding-bottom: 14px;
-    margin: 14px;
+    margin: 2%;
     font-weight: 600;
     font-size: 14px;
     text-align: center;
     background-color: #FFFFFF;
-    width: 640px;
+    width: auto;
     height: auto;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
     border-radius: 20px;
