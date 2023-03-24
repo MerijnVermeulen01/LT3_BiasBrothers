@@ -45,7 +45,7 @@ public class MyBias extends DatabaseController {
         ResultSet resultSet = null;
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("SELECT * FROM participant_bias WHERE session_idSession = ?");
+            stmt = con.prepareStatement("SELECT bias_idBiases, participant_bias.description, nameBias FROM participant_bias LEFT JOIN bias ON participant_bias.bias_idBiases = bias.idBiases WHERE session_idSession = ?;");
 
             stmt.setInt(1, 1);
             resultSet = stmt.executeQuery();

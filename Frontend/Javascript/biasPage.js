@@ -91,11 +91,14 @@ function valuesToJSON(){
 fetch('http://localhost:7070/getParicipantBias')
     .then(repsone => repsone.json())
     .then(data => {
-        // console.log();
+        console.log(data);
         document.getElementById(data[0].bias_idBiases).classList.add('activeButton');
         document.getElementById(data[1].bias_idBiases).classList.add('activeButton');
         document.getElementById(data[2].bias_idBiases).classList.add('activeButton');
         document.getElementById('description1').value = data[0].description;
         document.getElementById('description2').value = data[1].description;
         document.getElementById('description3').value = data[2].description;
+        headers[0].innerHTML = data[0].nameBias;
+        headers[1].innerHTML = data[1].nameBias;
+        headers[2].innerHTML = data[2].nameBias;
     });
