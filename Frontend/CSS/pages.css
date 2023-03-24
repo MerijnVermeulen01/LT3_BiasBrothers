@@ -681,5 +681,57 @@ textarea:hover {
         margin-left: 100px;
     }
 }
+/* When the browser is at least 1150px and below */
+@media screen and (max-width: 1150px) {
+    .row {
+        margin-left: 70px;
+        width: 100%;
+    }
+    .columnBoxes{
+        margin-bottom: 20px;
+    }
+}
+
+/* When the browser is at least 1050px and below */
+@media screen and (max-width: 1050px) {
+    .row {
+        margin-left: 70px;
+        width: 100%;
+    }
+    .columnBoxes{
+        margin-bottom: 20px;
+    }
+    .situatieBeschrijving{
+        width: 38vw;
+    }
+    .cardEditPosibility{
+        margin: auto;
+    }
+}
+
+/* When the browser is at least 634px and below */
+@media screen and (max-width: 634px) {
+    .row {
+        margin-left: 70px;
+        width: 100%;
+    }
+    .columnBoxes{
+        margin-bottom: 20px;
+    }
+    .cardEditPosibility{
+        margin: auto;
+    }
+    #titelTopBar{
+        width: fit-content;
+    }
+    .topBarEditPosibility{
+        margin: auto;
+    }
+    .cardEditPosibility{
+        margin: 0;
+    }
+
+}
+
 
 /* -------------------------------------------- */
