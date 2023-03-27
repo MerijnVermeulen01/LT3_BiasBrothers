@@ -170,7 +170,7 @@ public class ThinkingTraps extends DatabaseController {
         return result.toList();
     }
 
-    public List selectJoinedParticipantThinkingTraps() throws SQLException {
+    public List getParticipantTrapName() throws SQLException {
         Statement stmt = con.createStatement();
         String query = "SELECT thinkingTraps FROM participant_thinkingtraps LEFT JOIN thinkingtraps ON participant_thinkingtraps.thinkingtraps_idThinkingTraps = thinkingtraps.idThinkingTraps";
         ResultSet resultSet = stmt.executeQuery(query);

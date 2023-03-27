@@ -41,7 +41,7 @@ public class ThinkingTrapsController implements APIController {
             context.json(thinkingTraps.selectParticipantThinkingTraps());
 
     protected final Handler getJoinedParticipantTraps = (@NotNull Context context) ->
-            context.json(thinkingTraps.selectJoinedParticipantThinkingTraps());
+            context.json(thinkingTraps.getParticipantTrapName());
 
 
 }
