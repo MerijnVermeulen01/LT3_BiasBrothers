@@ -1,8 +1,7 @@
 const buttons = document.querySelectorAll('.biasButton');
 const textArea = document.querySelectorAll('.buttonWrite')
 const pressedButtons = [];
-const pressedTextArea = [];
-const filledTextareas = [];
+const headers = [document.getElementById('textHeader1'), document.getElementById('textHeader2'), document.getElementById('textHeader3')];
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -28,7 +27,13 @@ buttons.forEach((button) => {
                 // circle.style.top = button.offsetTop + 'px';
                 // circle.style.left = button.offsetLeft + 'px';
                 pressedButtons.push(button);
+                
             }
+
+            headers.forEach((header, index) => {
+                header.innerHTML = pressedButtons[index] ? pressedButtons[index].innerHTML.replace(/<span.*<\/span>/, '') : "Selecteer een bias";
+            }); 
+
         }
     });
 });
