@@ -550,8 +550,8 @@ textarea:hover {
     grid-template-columns: repeat(2, 1fr);
 }
 .AdaptTitle{
-    padding-top: 2px;
-    padding-bottom: 14px;
+    display: grid;
+    padding: 2px 50px 14px 20px;
     margin: 2%;
     font-weight: 600;
     font-size: 14px;
@@ -561,6 +561,12 @@ textarea:hover {
     height: auto;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
     border-radius: 20px;
+
+}
+.cardTitle{
+border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-bottom: 2px;
 }
 .AdaptDescription{
     margin: 10px;
@@ -570,10 +576,23 @@ textarea:hover {
     border-radius: 20px;
 }
 .AdaptingTrades{
-    position: relative;
-    
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
 }
-
+.adaptingTrade{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    padding: 10px;
+    background: #F5F5FB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
 /* -------------------------------------------- */
 
 
