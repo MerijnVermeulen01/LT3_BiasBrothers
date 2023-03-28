@@ -37,16 +37,19 @@ function valuesToJSON(){
     xhr.open("POST", url, true);
 
     // Set the request header i.e. which type of content you are sending
-    xhr.setRequestHeader("Content-Type", "application/json");
-
-    // Create a state change callback
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
-
+            // Request completed successfully
             console.log(this.responseText);
 
+            // Redirect to the next HTML page
+            window.location.href = "nextPage.html";
         }
     };
+
+    // Send the request
+    xhr.send();
+}
 
     // Converting JSON data to string
     var data = JSON.stringify({ 

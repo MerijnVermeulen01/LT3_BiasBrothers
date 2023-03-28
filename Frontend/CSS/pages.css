@@ -131,6 +131,7 @@ hr {
     margin-right: 0.5rem;
     padding: 1rem;
 }
+
 /* -------------------------------------------- */
 
 
@@ -323,6 +324,10 @@ textarea {
 textarea:hover {
     cursor: pointer;
     background-color: #f1f1f7;
+}
+
+.buttonContinue{
+    font-size: 18px;
 }
 
 /* -------------------------------------------- */
