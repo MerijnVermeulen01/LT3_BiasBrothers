@@ -23,9 +23,11 @@ public class ThinkingTraps extends DatabaseController {
     public void setButton1(int button1) {
         this.button1 = button1;
     }
+
     public void setButton2(int button2) {
         this.button2 = button2;
     }
+
     public void setButton3(int button3) {
         this.button3 = button3;
     }
@@ -33,9 +35,11 @@ public class ThinkingTraps extends DatabaseController {
     public void setDescription1(String description1) {
         this.description1 = description1;
     }
+
     public void setDescription2(String description2) {
         this.description2 = description2;
     }
+
     public void setDescription3(String description3) {
         this.description3 = description3;
     }
@@ -63,25 +67,25 @@ public class ThinkingTraps extends DatabaseController {
         String query = "SELECT * FROM thinkingtraps";
         ResultSet resultSet = stmt.executeQuery(query);
 
-        ResultSetMetaData md =   resultSet.getMetaData();
+        ResultSetMetaData md = resultSet.getMetaData();
         int numCols = md.getColumnCount();
         List<String> colNames = IntStream.range(0, numCols)
                 .mapToObj(i -> {
                     try {
                         return md.getColumnName(i + 1);
-                    } catch (SQLException e){
+                    } catch (SQLException e) {
                         System.out.println(e);
                         return "?";
                     }
                 }).collect(Collectors.toList());
 
         JSONArray result = new JSONArray();
-        while (resultSet.next()){
+        while (resultSet.next()) {
             JSONObject row = new JSONObject();
             colNames.forEach(cn -> {
                 try {
                     row.put(cn, resultSet.getObject(cn));
-                } catch (JSONException | SQLException e){
+                } catch (JSONException | SQLException e) {
                     System.out.println(e);
                 }
             });
@@ -90,7 +94,7 @@ public class ThinkingTraps extends DatabaseController {
         return result.toList();
     }
 
-    public void deleteSelfDevelopment(){
+    public void deleteSelfDevelopment() {
 
         int nummer = 1;
 
@@ -106,7 +110,7 @@ public class ThinkingTraps extends DatabaseController {
         }
     }
 
-    public void updateSelfDevelopment(){
+    public void updateSelfDevelopment() {
         String dummy = "Update";
         String description = "UpdateDescription";
 
@@ -138,30 +142,64 @@ public class ThinkingTraps extends DatabaseController {
             throw new RuntimeException(e);
         }
 
-        ResultSetMetaData md =   resultSet.getMetaData();
+        ResultSetMetaData md = resultSet.getMetaData();
         int numCols = md.getColumnCount();
         List<String> colNames = IntStream.range(0, numCols)
                 .mapToObj(i -> {
                     try {
                         return md.getColumnName(i + 1);
-                    } catch (SQLException e){
+                    } catch (SQLException e) {
                         System.out.println(e);
                         return "?";
                     }
                 }).collect(Collectors.toList());
 
         JSONArray result = new JSONArray();
-        while (resultSet.next()){
+        while (resultSet.next()) {
             JSONObject row = new JSONObject();
             ResultSet finalResultSet = resultSet;
             colNames.forEach(cn -> {
                 try {
                     row.put(cn, finalResultSet.getObject(cn));
-                } catch (JSONException | SQLException e){
+                } catch (JSONException | SQLException e) {
                     System.out.println(e);
                 }
             });
             result.put(row);
+        }
+        return result.toList();
+    }
+
+    public List getParticipantTrapName() throws SQLException {
+        Statement stmt = con.createStatement();
+        String query = "SELECT thinkingTraps FROM participant_thinkingtraps LEFT JOIN thinkingtraps ON participant_thinkingtraps.thinkingtraps_idThinkingTraps = thinkingtraps.idThinkingTraps";
+        ResultSet resultSet = stmt.executeQuery(query);
+
+        ResultSetMetaData md = resultSet.getMetaData();
+        int numCols = md.getColumnCount();
+        List<String> colNames = IntStream.range(0, numCols)
+                .mapToObj(i -> {
+                    try {
+                        return md.getColumnName(i + 1);
+                    } catch (SQLException e) {
+                        System.out.println(e);
+                        return "?";
+                    }
+                }).collect(Collectors.toList());
+
+        JSONArray result = new JSONArray();
+        while (resultSet.next()) {
+            JSONObject row = new JSONObject();
+            colNames.forEach(cn -> {
+                try {
+                    row.put(cn, resultSet.getObject(cn));
+                } catch (JSONException | SQLException e) {
+                    System.out.println(e);
+                }
+            });
+            if (row.length() != 0){
+                result.put(row);
+            }
         }
         return result.toList();
     }

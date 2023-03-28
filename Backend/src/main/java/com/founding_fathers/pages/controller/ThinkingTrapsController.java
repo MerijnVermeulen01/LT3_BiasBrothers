@@ -29,6 +29,7 @@ public class ThinkingTrapsController implements APIController {
             thinkingTraps.getSelectedIDThinkingTraps();
         });
         app.get("/getParicipantTraps", getParticipantTraps);
+        app.get("/joinedParticipantTraps", getJoinedParticipantTraps);
     }
     /**
      * This is a variable to get the selected thinking traps form the database.
@@ -38,5 +39,9 @@ public class ThinkingTrapsController implements APIController {
 
     protected final Handler getParticipantTraps = (@NotNull Context context) ->
             context.json(thinkingTraps.selectParticipantThinkingTraps());
+
+    protected final Handler getJoinedParticipantTraps = (@NotNull Context context) ->
+            context.json(thinkingTraps.getParticipantTrapName());
+
 
 }
