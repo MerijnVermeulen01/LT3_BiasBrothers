@@ -74,9 +74,9 @@ function valuesToJSON(){
 fetch('http://localhost:7070/getParicipantSelfDev')
     .then(repsone => repsone.json())
     .then(data => {
-        document.getElementById('buttonWrite1').classList.add('activeButton');
-        document.getElementById('buttonWrite2').classList.add('activeButton');
-        document.getElementById('buttonWrite3').classList.add('activeButton');
+        // document.getElementById('buttonWrite1').classList.add('activeButton');
+        // document.getElementById('buttonWrite2').classList.add('activeButton');
+        // document.getElementById('buttonWrite3').classList.add('activeButton');
         document.getElementById('buttonWrite1').value = data[0].selfDevelopment;
         document.getElementById('buttonWrite2').value = data[1].selfDevelopment;
         document.getElementById('buttonWrite3').value = data[2].selfDevelopment;

@@ -24,12 +24,13 @@ public class ThinkingTrapsController implements APIController {
     @Override
     public void addHandlers(Javalin app) {
         app.get("/ThinkingTraps", getThinkingTraps);
-        app.post("/MyTest", ctx -> {
-            thinkingTraps = ctx.bodyAsClass(ThinkingTraps.class);
-            thinkingTraps.getSelectedIDThinkingTraps();
-        });
         app.get("/getParicipantTraps", getParticipantTraps);
         app.get("/joinedParticipantTraps", getJoinedParticipantTraps);
+        app.post("/MyThinkingTraps", ctx -> {
+            System.out.println("Yeetus DELETUS");
+            thinkingTraps = ctx.bodyAsClass(ThinkingTraps.class);
+            thinkingTraps.checkForInformationThinkingTrap();
+        });
     }
     /**
      * This is a variable to get the selected thinking traps form the database.

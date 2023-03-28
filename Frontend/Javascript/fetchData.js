@@ -27,7 +27,7 @@ function buttonToArray(clicked_id) {
 function valuesToJSON(){  
     // Creating a XHR object
     let xhr = new XMLHttpRequest();
-    let url = "http://localhost:7070/MyTest";
+    let url = "http://localhost:7070/MyThinkingTraps";
 
     // open a connection
     xhr.open("POST", url, true);

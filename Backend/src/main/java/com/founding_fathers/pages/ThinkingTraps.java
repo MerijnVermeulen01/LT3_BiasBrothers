@@ -13,6 +13,8 @@ import java.util.stream.IntStream;
 public class ThinkingTraps extends DatabaseController {
     Connection con = getConnection();
 
+    private int count;
+
     private int button1;
     private int button2;
     private int button3;
@@ -44,7 +46,32 @@ public class ThinkingTraps extends DatabaseController {
         this.description3 = description3;
     }
 
-    public void getSelectedIDThinkingTraps() {
+    public void checkForInformationThinkingTrap() throws SQLException {
+        System.out.println("Yeetus");
+        ResultSet resultSet = null;
+        PreparedStatement stmt = null;
+        try {
+            stmt = con.prepareStatement("SELECT participant_thinkingtraps.id, thinkingtraps_idThinkingTraps, thinkingTraps, participant_thinkingtraps.description FROM participant_thinkingtraps LEFT JOIN thinkingtraps ON participant_thinkingtraps.thinkingtraps_idThinkingTraps = thinkingtraps.idThinkingTraps WHERE session_idSession = ?;");
+
+            stmt.setInt(1, 1);
+            resultSet = stmt.executeQuery();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Yeet");
+        if(!resultSet.isBeforeFirst()){
+            System.out.println("Insert");
+            insertThinkingTraps();
+        }else{
+            while (resultSet.next()){
+                System.out.println("Update");
+                updateThinkingTraps(resultSet.getInt(1));
+                count++;
+            }
+        }
+    }
+
+    public void insertThinkingTraps() {
         int[] buttons = {button1, button2, button3};
         String[] descriptions = {description1, description2, description3};
         PreparedStatement stmt = null;
@@ -57,6 +84,23 @@ public class ThinkingTraps extends DatabaseController {
                 stmt.setString(3, descriptions[i]);
                 stmt.executeUpdate();
             }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void updateThinkingTraps(int id) {
+        int[] buttons = {button1, button2, button3};
+        String[] descriptions = {description1, description2, description3};
+        System.out.println(descriptions[count]);
+        PreparedStatement stmt = null;
+        try {
+            stmt = con.prepareStatement("UPDATE participant_thinkingtraps SET description = ? WHERE id = ?");
+//                stmt.setInt(1, buttons[count]);
+            stmt.setString(1, descriptions[count]);
+            System.out.println(id);
+            stmt.setInt(2, id);
+            stmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

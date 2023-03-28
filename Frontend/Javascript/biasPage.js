@@ -14,11 +14,8 @@ buttons.forEach((button) => {
                 const index = pressedButtons.indexOf(button);
                 if (index > -1) {
                     pressedButtons.splice(index, 1);
-                    console.log(pressedButtons);
                 }
-            }
-
-            else if (pressedButtons.length >= 0 && pressedButtons.length < 3) {
+            } else if (pressedButtons.length >= 0 && pressedButtons.length < 3) {
                 button.classList.add('activeButton');
                 pressedButtons.push(button);
             }
@@ -110,4 +107,7 @@ fetch('http://localhost:7070/getParicipantBias')
         headers[0].innerHTML = data[0].nameBias;
         headers[1].innerHTML = data[1].nameBias;
         headers[2].innerHTML = data[2].nameBias;
+        console.log(document.getElementById('description1').value);
     });
+
+    console.log("Dit is buiten:" + console.log(document.getElementById('description1').value));

@@ -27,7 +27,7 @@ public class MyBiasController implements APIController {
         app.get("/MyBias", getMyBiases);
         app.post("/MyBiasParticipant", ctx -> {
             myBias = ctx.bodyAsClass(MyBias.class);
-            myBias.insertInBias();
+            myBias.checkForInformation();
         });
         app.get("/getParicipantBias", getParicipantBias);
     }

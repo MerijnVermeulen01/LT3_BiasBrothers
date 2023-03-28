@@ -21,6 +21,8 @@ public class MyBias extends DatabaseController {
     private String description2;
     private String description3;
 
+    private int count;
+
     public void setButton1(int button1) {
         this.button1 = button1;
     }
@@ -39,6 +41,28 @@ public class MyBias extends DatabaseController {
     }
     public void setDescription3(String description3) {
         this.description3 = description3;
+    }
+
+    public void checkForInformation() throws SQLException {
+        ResultSet resultSet = null;
+        PreparedStatement stmt = null;
+        try {
+            stmt = con.prepareStatement("SELECT participant_bias.id, bias_idBiases, participant_bias.description, nameBias FROM participant_bias LEFT JOIN bias ON participant_bias.bias_idBiases = bias.idBiases WHERE session_idSession = ?;");
+
+            stmt.setInt(1, 1);
+            resultSet = stmt.executeQuery();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        if(!resultSet.isBeforeFirst()){
+            insertInBias();
+        }else{
+            while (resultSet.next()){
+                updateInBias(resultSet.getInt(1));
+                count++;
+            }
+        }
     }
 
     public List selectParticipantBias() throws SQLException {
@@ -94,6 +118,24 @@ public class MyBias extends DatabaseController {
                 stmt.setString(3, descriptions[i]);
                 stmt.executeUpdate();
             }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void updateInBias(int result) {
+//        int[] buttons = {button1, button2, button3};
+        String[] descriptions = {description1, description2, description3};
+        System.out.println(descriptions[count]);
+        PreparedStatement stmt = null;
+        try {
+                stmt = con.prepareStatement("UPDATE participant_bias SET description = ? WHERE id = ?");
+//            System.out.println(descriptions);
+//                stmt.setInt(1, buttons[count]);
+                stmt.setString(1, descriptions[count]);
+            System.out.println(result);
+                stmt.setInt(2, result);
+                stmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
