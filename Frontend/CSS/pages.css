@@ -40,6 +40,10 @@ textarea {
     resize: none;
 }
 
+.continueButton {
+    margin-left: 80%;
+    text-underline: #27be6b;
+}
 /* -------------------------------------------- */
 /* Sidebar */
 /* -------------------------------------------- */
@@ -326,9 +330,7 @@ textarea:hover {
     background-color: #f1f1f7;
 }
 
-.buttonContinue{
-    font-size: 18px;
-}
+
 
 /* -------------------------------------------- */
 
