@@ -27,7 +27,7 @@ public class CodexController implements APIController {
     protected final Handler getCodexBias = (@NotNull Context context) ->
             context.json(codex.codexInfo("SELECT * FROM bias"));
     protected final Handler getCodexAdaptability = (@NotNull Context context) ->
-            context.json(codex.codexInfo("SELECT * FROM bias"));
+            context.json(codex.codexInfo("SELECT * FROM adaptability"));
     protected final Handler getCodexCognitiveBias = (@NotNull Context context) ->
             context.json(codex.codexInfo("SELECT * FROM bias"));
 }
