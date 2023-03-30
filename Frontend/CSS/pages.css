@@ -647,7 +647,8 @@ border-top: 1px solid black;
 /* -------------------------------------------- */
 /* EditPossibility */
 /* -------------------------------------------- */
-.navBarEditPosibility {
+/* For menu within page */
+.navBarPosibility {
     background-color: white;
     border-radius: 10px;
     width: fit-content;
@@ -658,6 +659,32 @@ border-top: 1px solid black;
     margin-top: 10px;
     margin-bottom: 25px;
 }
+
+.navBarPosibility a:hover {
+    background-color: #A5A5F8;
+    color: white;
+    transition: all .5s;
+}
+
+.navBarPosibility button {
+    font-weight: 600;
+    font-size: 16px;
+    width: auto;
+    height: 40px;
+    background: #F5F5FB;
+    border-radius: 10px;
+    border: none;
+    transition: ease-in 0.1s;
+    margin-bottom: 1%;
+}
+
+.navBarPosibility button.active2 {
+    background-color: #A5A5F8;
+}
+
+a:visited, a:link { text-decoration: none!important; color:black; }
+/* end menu within page */
+
 
 #titelTopBar{
     background-color: #27be6b;
@@ -758,19 +785,6 @@ border-top: 1px solid black;
 .columnBoxesRight {
     /*background-color: green;*/
     height: 100%;
-}
-
-.navActive {
-    font-weight: 600;
-    font-size: 16px;
-    width: auto;
-    height: 40px;
-    background: blue;
-    display: block;
-    border-radius: 10px;
-    border: none;
-    transition: ease-in 0.1s;
-    margin-bottom: 1%;
 }
 
 
