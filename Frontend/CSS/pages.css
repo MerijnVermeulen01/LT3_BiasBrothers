@@ -41,9 +41,32 @@ textarea {
 }
 
 .continueButton {
-    margin-left: 80%;
     text-underline: #27be6b;
+    color: #27be6b;
+    text-decoration: none;
+    font-size: 20px;
 }
+.returnButton{
+    text-underline: #27be6b;
+    color: #27be6b;
+    text-decoration: none;
+    font-size: 20px;
+    padding-right: 10px;
+}
+
+.columnReturnContinue{
+
+}
+.div1{
+    text-align: right;
+    width: 70%;
+    float: left;
+}
+.div2{
+    width: 30%;
+    float: right;
+}
+
 /* -------------------------------------------- */
 /* Sidebar */
 /* -------------------------------------------- */
