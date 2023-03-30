@@ -20,15 +20,18 @@ public class MyBias extends DatabaseController {
     private String description1;
     private String description2;
     private String description3;
+    private List biasList;
 
     private int count;
 
     public void setButton1(int button1) {
         this.button1 = button1;
     }
+
     public void setButton2(int button2) {
         this.button2 = button2;
     }
+
     public void setButton3(int button3) {
         this.button3 = button3;
     }
@@ -36,9 +39,11 @@ public class MyBias extends DatabaseController {
     public void setDescription1(String description1) {
         this.description1 = description1;
     }
+
     public void setDescription2(String description2) {
         this.description2 = description2;
     }
+
     public void setDescription3(String description3) {
         this.description3 = description3;
     }
@@ -55,10 +60,10 @@ public class MyBias extends DatabaseController {
             throw new RuntimeException(e);
         }
 
-        if(!resultSet.isBeforeFirst()){
+        if (!resultSet.isBeforeFirst()) {
             insertInBias();
-        }else{
-            while (resultSet.next()){
+        } else {
+            while (resultSet.next()) {
                 updateInBias(resultSet.getInt(1));
                 count++;
             }
@@ -77,26 +82,26 @@ public class MyBias extends DatabaseController {
             throw new RuntimeException(e);
         }
 
-        ResultSetMetaData md =   resultSet.getMetaData();
+        ResultSetMetaData md = resultSet.getMetaData();
         int numCols = md.getColumnCount();
         List<String> colNames = IntStream.range(0, numCols)
                 .mapToObj(i -> {
                     try {
                         return md.getColumnName(i + 1);
-                    } catch (SQLException e){
+                    } catch (SQLException e) {
                         System.out.println(e);
                         return "?";
                     }
                 }).collect(Collectors.toList());
 
         JSONArray result = new JSONArray();
-        while (resultSet.next()){
+        while (resultSet.next()) {
             JSONObject row = new JSONObject();
             ResultSet finalResultSet = resultSet;
             colNames.forEach(cn -> {
                 try {
                     row.put(cn, finalResultSet.getObject(cn));
-                } catch (JSONException | SQLException e){
+                } catch (JSONException | SQLException e) {
                     System.out.println(e);
                 }
             });
@@ -129,13 +134,13 @@ public class MyBias extends DatabaseController {
         System.out.println(descriptions[count]);
         PreparedStatement stmt = null;
         try {
-                stmt = con.prepareStatement("UPDATE participant_bias SET description = ? WHERE id = ?");
+            stmt = con.prepareStatement("UPDATE participant_bias SET description = ? WHERE id = ?");
 //            System.out.println(descriptions);
 //                stmt.setInt(1, buttons[count]);
-                stmt.setString(1, descriptions[count]);
+            stmt.setString(1, descriptions[count]);
             System.out.println(result);
-                stmt.setInt(2, result);
-                stmt.executeUpdate();
+            stmt.setInt(2, result);
+            stmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -155,21 +160,21 @@ public class MyBias extends DatabaseController {
         int numCols = md.getColumnCount();
         List<String> colNames = IntStream.range(0, numCols)
                 .mapToObj(i -> {
-                   try {
+                    try {
                         return md.getColumnName(i + 1);
-                   } catch (SQLException e){
-                       System.out.println(e);
-                       return "?";
-                   }
+                    } catch (SQLException e) {
+                        System.out.println(e);
+                        return "?";
+                    }
                 }).collect(Collectors.toList());
 
         JSONArray result = new JSONArray();
-        while(resultSet.next()){
+        while (resultSet.next()) {
             JSONObject row = new JSONObject();
             colNames.forEach(cn -> {
                 try {
                     row.put(cn, resultSet.getObject(cn));
-                } catch (JSONException | SQLException e){
+                } catch (JSONException | SQLException e) {
                     System.out.println(e);
                 }
             });
@@ -179,4 +184,62 @@ public class MyBias extends DatabaseController {
 //        TODO:
 //        result.getJSONObject(1).getString("nameBias") <- Dit is om een object uit de json te halen.
     }
+
+    public void checkForBias() throws SQLException {
+        ResultSet resultSet = null;
+        PreparedStatement stmt = null;
+        try {
+            stmt = con.prepareStatement("SELECT thinkingtraps_idThinkingTraps FROM participant_thinkingtraps WHERE session_idSession = ?;");
+
+            stmt.setInt(1, 1);
+            resultSet = stmt.executeQuery();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        while (resultSet.next()) {
+            selectBiasByTrap(resultSet.getInt(1));
+        }
+    }
+
+    public void selectBiasByTrap(int resultid) throws SQLException {
+        ResultSet resultSet = null;
+        PreparedStatement stmt = null;
+        try {
+            stmt = con.prepareStatement("SELECT * FROM bias WHERE idThinkingTraps = ?");
+            System.out.println(resultid);
+            stmt.setInt(1, resultid);
+            resultSet = stmt.executeQuery();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        ResultSetMetaData md = resultSet.getMetaData();
+        int numCols = md.getColumnCount();
+        List<String> colNames = IntStream.range(0, numCols)
+                .mapToObj(i -> {
+                    try {
+                        return md.getColumnName(i + 1);
+                    } catch (SQLException e) {
+                        System.out.println(e);
+                        return "?";
+                    }
+                }).collect(Collectors.toList());
+
+        JSONArray result = new JSONArray();
+        while (resultSet.next()) {
+            JSONObject row = new JSONObject();
+            ResultSet finalResultSet = resultSet;
+            colNames.forEach(cn -> {
+                try {
+                    row.put(cn, finalResultSet.getObject(cn));
+                } catch (JSONException | SQLException e) {
+                    System.out.println(e);
+                }
+            });
+            result.put(row);
+            biasList = result.toList();
+        }
+    }
 }
+
+//BiasList is multidimensional. Method for only showing the values in the first second or third list.

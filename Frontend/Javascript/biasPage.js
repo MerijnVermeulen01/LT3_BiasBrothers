@@ -89,6 +89,15 @@ fetch('http://localhost:7070/joinedParticipantTraps')
     .then(response => response.json())
     .then(data => {
         console.log(data);
+        data.forEach(post => {
+            fillDiv(post.thinkingTraps);
+        });
+    });
+
+fetch('http://localhost:7070/joinedParticipantTraps')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
         document.getElementById('cardTitle1').innerHTML = data[0].thinkingTraps;
         document.getElementById('cardTitle2').innerHTML = data[1].thinkingTraps;
         document.getElementById('cardTitle3').innerHTML = data[2].thinkingTraps;
@@ -111,3 +120,16 @@ fetch('http://localhost:7070/getParicipantBias')
     });
 
     console.log("Dit is buiten:" + console.log(document.getElementById('description1').value));
+
+function fillDiv(title) {
+    var newDiv = document.createElement("div");
+    var newH3 = document.createElement("h3");
+    var titles = document.createTextNode(title);
+
+    newDiv.classList.add('card');
+    newH3.classList.add('header');
+
+    newH3.appendChild(titles);;
+    newDiv.appendChild(newH3);
+    document.getElementById('cardContainer').appendChild(newDiv);
+}
