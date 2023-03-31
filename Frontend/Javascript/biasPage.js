@@ -7,7 +7,7 @@ const headers = [document.getElementById('textHeader1'), document.getElementById
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
 
-        if(pressedButtons.length <= 3){
+        if (pressedButtons.length <= 3) {
             if (button.classList.contains('activeButton')) {
                 button.classList.remove('activeButton');
 
@@ -27,9 +27,8 @@ buttons.forEach((button) => {
     });
 });
 
-function buttonToArray(clicked_id)
-{
-    if(clickedButton.length <= 3){
+function buttonToArray(clicked_id) {
+    if (clickedButton.length <= 3) {
         const index = clickedButton.indexOf(clicked_id);
         if (index > -1) {
             clickedButton.splice(index, 1);
@@ -39,17 +38,17 @@ function buttonToArray(clicked_id)
     }
 }
 
-function textToArray(textAreaId, paricipantText){
-    if(textAreaId === "description1"){
+function textToArray(textAreaId, paricipantText) {
+    if (textAreaId === "description1") {
         description[0] = paricipantText;
-    } else if(textAreaId === "description2"){
+    } else if (textAreaId === "description2") {
         description[1] = paricipantText;
-    } else if(textAreaId === "description3"){
+    } else if (textAreaId === "description3") {
         description[2] = paricipantText;
     }
 }
 
-function valuesToJSON(){  
+function valuesToJSON() {
     // Creating a XHR object
     let xhr = new XMLHttpRequest();
     let url = "http://localhost:7070/MyBiasParticipant";
@@ -70,13 +69,13 @@ function valuesToJSON(){
     };
 
     // Converting JSON data to string
-    var data = JSON.stringify({ 
-        "button1" : clickedButton[0],
-        "description1" : description[0],
-        "button2" : clickedButton[1],
-        "description2" : description[1],
-        "button3" : clickedButton[2],
-        "description3" : description[2], 
+    var data = JSON.stringify({
+        "button1": clickedButton[0],
+        "description1": description[0],
+        "button2": clickedButton[1],
+        "description2": description[1],
+        "button3": clickedButton[2],
+        "description3": description[2],
     });
 
     console.log(data);
@@ -86,7 +85,7 @@ function valuesToJSON(){
 }
 
 
-// Fetches thinkingtrap id and bias.
+// Fetches thinkingtrap name and id.
 fetch('http://localhost:7070/joinedParticipantTraps')
     .then(response => response.json())
     .then(data => {
@@ -95,11 +94,6 @@ fetch('http://localhost:7070/joinedParticipantTraps')
             fillDiv(post.thinkingTraps, post.idThinkingTraps);
         });
     });
-
-// Fetch biases related to specific idthinkingtrap
-
-
-
 
 fetch('http://localhost:7070/joinedParticipantTraps')
     .then(response => response.json())
@@ -126,7 +120,7 @@ fetch('http://localhost:7070/getParicipantBias')
         console.log(document.getElementById('description1').value);
     });
 
-    console.log("Dit is buiten:" + console.log(document.getElementById('description1').value));
+console.log("Dit is buiten:" + console.log(document.getElementById('description1').value));
 
 function fillDiv(title, id) {
     var newDiv = document.createElement("div");
@@ -136,7 +130,11 @@ function fillDiv(title, id) {
     newDiv.classList.add('card');
     newH3.classList.add('header');
 
-    fetch('http://localhost:7070/getTrapBias/' + id )
+    newH3.appendChild(titles);
+    newDiv.appendChild(newH3);
+    document.getElementById('cardContainer').appendChild(newDiv);
+
+    fetch('http://localhost:7070/getTrapBias/' + id)
         .then(response => response.json())
         .then(data => {
             console.log(data);
@@ -150,8 +148,4 @@ function fillDiv(title, id) {
                 newDiv.appendChild(newButton);
             });
         });
-
-    newH3.appendChild(titles);;
-    newDiv.appendChild(newH3);
-    document.getElementById('cardContainer').appendChild(newDiv);
 }
