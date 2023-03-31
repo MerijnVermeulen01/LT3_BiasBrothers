@@ -133,3 +133,12 @@ function fillDiv(title) {
     newDiv.appendChild(newH3);
     document.getElementById('cardContainer').appendChild(newDiv);
 }
+
+function fillButton(bias){
+    var text = document.createTextNode(bias);
+    var newButton = document.createElement("button");
+
+    newButton.classList.add('biasButton');
+
+    newButton.appendChild(text);
+}
