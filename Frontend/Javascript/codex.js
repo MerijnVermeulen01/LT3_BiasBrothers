@@ -42,29 +42,31 @@
 function fillDiv(title, desription) {
     var newDiv = document.createElement("div");
     var newDivText = document.createElement("div");
-    var newH3 = document.createElement("h3");
+    var newH2 = document.createElement("h2");
     var titles = document.createTextNode(title);
     var text = document.createTextNode(desription);
+    var line = document.createElement("div");
 
-
-    newH3.appendChild(titles);
+    newH2.appendChild(titles);
     newDivText.appendChild(text);
-    newDiv.appendChild(newH3);
+    newDiv.appendChild(newH2);
+    newDiv.appendChild(line);
     newDiv.appendChild(newDivText);
+    line.classList.add("line");
     newDiv.classList.add("codexTitle");
     newDivText.classList.add("codexText");
 
     document.getElementById('codexBox').appendChild(newDiv);
 }
-    function fillAdaptibility(title, description, trade1, trade2, trade3){
+    function fillAdaptibility(title, description, trade1,trade2,trade3){
         var titleDiv = document.createElement("div");
         var cardTitle1 = document.createElement("div");
         var adaptDescription = document.createElement("div");
         var cardTitle2 = document.createElement("div");
-        var adaptTrades = document.createElement("div");
-        var adaptTrade1 = document.createElement("div");
-        var adaptTrade2 = document.createElement("div");
-        var adaptTrade3 = document.createElement("div");
+        var adaptTrades = document.createElement("ul");
+        var adaptTrade1 = document.createElement("li");
+        var adaptTrade2 = document.createElement("li");
+        var adaptTrade3 = document.createElement("li");
         var h2 = document.createElement("h2");
         var card1 = document.createElement("h3");
         var card2 = document.createElement("h3");
