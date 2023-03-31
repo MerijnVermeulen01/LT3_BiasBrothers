@@ -30,6 +30,7 @@ public class MyBiasController implements APIController {
             myBias.checkForInformation();
         });
         app.get("/getParicipantBias", getParicipantBias);
+        app.get("/getTrapBias", getTrapBias);
     }
 
     /**
@@ -41,4 +42,6 @@ public class MyBiasController implements APIController {
     protected final Handler getParicipantBias = (@NotNull Context context) ->
             context.json(myBias.selectParticipantBias());
 
+    protected final Handler getTrapBias = (@NotNull Context context) ->
+            context.json(myBias.checkForBias());
 }

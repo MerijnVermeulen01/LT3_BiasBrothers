@@ -6,6 +6,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -185,9 +186,10 @@ public class MyBias extends DatabaseController {
 //        result.getJSONObject(1).getString("nameBias") <- Dit is om een object uit de json te halen.
     }
 
-    public void checkForBias() throws SQLException {
+    public List checkForBias() throws SQLException {
         ResultSet resultSet = null;
         PreparedStatement stmt = null;
+        List<Object> biasList = new ArrayList<>();
         try {
             stmt = con.prepareStatement("SELECT thinkingtraps_idThinkingTraps FROM participant_thinkingtraps WHERE session_idSession = ?;");
 
@@ -197,13 +199,17 @@ public class MyBias extends DatabaseController {
             throw new RuntimeException(e);
         }
         while (resultSet.next()) {
-            selectBiasByTrap(resultSet.getInt(1));
+            if (resultSet.getInt(1) != 0) {
+                biasList.addAll(selectBiasByTrap(resultSet.getInt(1)));
+            }
         }
+        return biasList;
     }
 
-    public void selectBiasByTrap(int resultid) throws SQLException {
+    public List selectBiasByTrap(int resultid) throws SQLException {
         ResultSet resultSet = null;
         PreparedStatement stmt = null;
+        List<Object> resultList = new ArrayList<>();
         try {
             stmt = con.prepareStatement("SELECT * FROM bias WHERE idThinkingTraps = ?");
             System.out.println(resultid);
@@ -228,17 +234,15 @@ public class MyBias extends DatabaseController {
         JSONArray result = new JSONArray();
         while (resultSet.next()) {
             JSONObject row = new JSONObject();
-            ResultSet finalResultSet = resultSet;
-            colNames.forEach(cn -> {
-                try {
-                    row.put(cn, finalResultSet.getObject(cn));
-                } catch (JSONException | SQLException e) {
-                    System.out.println(e);
-                }
-            });
+            for(int i = 1; i <= numCols; i++) {
+                String columnName = md.getColumnName(i);
+                Object columnValue = resultSet.getObject(columnName);
+                row.put(columnName, columnValue);
+            }
             result.put(row);
-            biasList = result.toList();
         }
+        resultList = result.toList(); // convert the array to a list
+        return resultList;
     }
 }
 
