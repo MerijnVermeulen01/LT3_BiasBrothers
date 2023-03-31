@@ -85,14 +85,21 @@ function valuesToJSON(){
 
 }
 
+
+// Fetches thinkingtrap id and bias.
 fetch('http://localhost:7070/joinedParticipantTraps')
     .then(response => response.json())
     .then(data => {
         console.log(data);
         data.forEach(post => {
-            fillDiv(post.thinkingTraps);
+            fillDiv(post.thinkingTraps, post.idThinkingTraps);
         });
     });
+
+// Fetch biases related to specific idthinkingtrap
+
+
+
 
 fetch('http://localhost:7070/joinedParticipantTraps')
     .then(response => response.json())
@@ -121,7 +128,7 @@ fetch('http://localhost:7070/getParicipantBias')
 
     console.log("Dit is buiten:" + console.log(document.getElementById('description1').value));
 
-function fillDiv(title) {
+function fillDiv(title, id) {
     var newDiv = document.createElement("div");
     var newH3 = document.createElement("h3");
     var titles = document.createTextNode(title);
@@ -129,16 +136,22 @@ function fillDiv(title) {
     newDiv.classList.add('card');
     newH3.classList.add('header');
 
+    fetch('http://localhost:7070/getTrapBias/' + id )
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            data.forEach(post => {
+                var text = document.createTextNode(post.nameBias);
+                var newButton = document.createElement("button");
+
+                newButton.classList.add('biasButton');
+
+                newButton.appendChild(text);
+                newDiv.appendChild(newButton);
+            });
+        });
+
     newH3.appendChild(titles);;
     newDiv.appendChild(newH3);
     document.getElementById('cardContainer').appendChild(newDiv);
-}
-
-function fillButton(bias){
-    var text = document.createTextNode(bias);
-    var newButton = document.createElement("button");
-
-    newButton.classList.add('biasButton');
-
-    newButton.appendChild(text);
 }
