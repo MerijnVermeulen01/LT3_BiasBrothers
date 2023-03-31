@@ -40,6 +40,33 @@ textarea {
     resize: none;
 }
 
+.continueButton {
+    text-underline: #27be6b;
+    color: #27be6b;
+    text-decoration: none;
+    font-size: 20px;
+}
+.returnButton{
+    text-underline: #27be6b;
+    color: #27be6b;
+    text-decoration: none;
+    font-size: 20px;
+    padding-right: 10px;
+}
+
+.columnReturnContinue{
+
+}
+.div1{
+    text-align: right;
+    width: 70%;
+    float: left;
+}
+.div2{
+    width: 30%;
+    float: right;
+}
+
 /* -------------------------------------------- */
 /* Sidebar */
 /* -------------------------------------------- */
@@ -324,9 +351,7 @@ textarea:hover {
     background-color: #f1f1f7;
 }
 
-.buttonContinue{
-    font-size: 18px;
-}
+
 
 /* -------------------------------------------- */
 
@@ -587,7 +612,6 @@ textarea:hover {
 
 }
 .cardTitle{
-border-top: 1px solid black;
     border-bottom: 1px solid black;
     margin-bottom: 2px;
 }
@@ -759,9 +783,16 @@ border-top: 1px solid black;
 }
 
 .navActive {
-    font-style: italic;
-    text-decoration: none;
-    color: green;
+    font-weight: 600;
+    font-size: 16px;
+    width: auto;
+    height: 40px;
+    background: blue;
+    display: block;
+    border-radius: 10px;
+    border: none;
+    transition: ease-in 0.1s;
+    margin-bottom: 1%;
 }
 
 
