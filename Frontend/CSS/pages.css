@@ -59,13 +59,25 @@ textarea {
 }
 .div1{
     text-align: right;
-    width: 70%;
+    width: 80%;
     float: left;
 }
 .div2{
-    width: 30%;
-    float: right;
+    width: 10%;
+    float: left;
 }
+.lineBetween{
+    width: 1%;
+    height: 30px;
+    border-left: 3px solid #1D1D35;
+    float :left;
+}
+.buttonsPages{
+    height:30px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
 
 /* -------------------------------------------- */
 /* Sidebar */
