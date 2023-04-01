@@ -1,7 +1,14 @@
 package com.founding_fathers.pages;
 
-public class MeThink {
+import io.javalin.http.Context;
+import io.javalin.http.Handler;
+import org.jetbrains.annotations.NotNull;
 
+import java.sql.Connection;
+
+public class MeThink {
+    Connection con = getConnection();
+    private MeThink meThink;
     private String title;
     private String description;
 
@@ -17,4 +24,16 @@ public class MeThink {
     public void setDescription(String description) {
         this.description = description;
     }
+
+
+
+    /**
+     * This is a variable to get the explained top bias form the database.
+     */
+    protected final Handler getMeSlowingDown = (@NotNull Context context) ->
+            context.json(meThink.insertInBias());
+
+    protected final Handler getMeThinkingFast = (@NotNull Context context) ->
+            context.json(meThink.situationalDescription());
+
 }
