@@ -186,65 +186,6 @@ public class MyBias extends DatabaseController {
 //        result.getJSONObject(1).getString("nameBias") <- Dit is om een object uit de json te halen.
     }
 
-    public List checkForBias() throws SQLException {
-        ResultSet resultSet = null;
-        PreparedStatement stmt = null;
-        List<Object> biasList = new ArrayList<>();
-        try {
-            stmt = con.prepareStatement("SELECT thinkingtraps_idThinkingTraps FROM participant_thinkingtraps WHERE session_idSession = ?;");
-
-            stmt.setInt(1, 1);
-            resultSet = stmt.executeQuery();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        while (resultSet.next()) {
-            if (resultSet.getInt(1) != 0) {
-                biasList.addAll(selectBiasByTrap(resultSet.getInt(1)));
-            }
-        }
-        return biasList;
-    }
-
-//    public List selectBiasByTrap(int resultid) throws SQLException {
-//        ResultSet resultSet = null;
-//        PreparedStatement stmt = null;
-//        List<Object> resultList = new ArrayList<>();
-//        try {
-//            stmt = con.prepareStatement("SELECT * FROM bias WHERE idThinkingTraps = ?");
-//            System.out.println(resultid);
-//            stmt.setInt(1, resultid);
-//            resultSet = stmt.executeQuery();
-//        } catch (SQLException e) {
-//            throw new RuntimeException(e);
-//        }
-//
-//        ResultSetMetaData md = resultSet.getMetaData();
-//        int numCols = md.getColumnCount();
-//        List<String> colNames = IntStream.range(0, numCols)
-//                .mapToObj(i -> {
-//                    try {
-//                        return md.getColumnName(i + 1);
-//                    } catch (SQLException e) {
-//                        System.out.println(e);
-//                        return "?";
-//                    }
-//                }).collect(Collectors.toList());
-//
-//        JSONArray result = new JSONArray();
-//        while (resultSet.next()) {
-//            JSONObject row = new JSONObject();
-//            for(int i = 1; i <= numCols; i++) {
-//                String columnName = md.getColumnName(i);
-//                Object columnValue = resultSet.getObject(columnName);
-//                row.put(columnName, columnValue);
-//            }
-//            result.put(row);
-//        }
-//        resultList = result.toList(); // convert the array to a list
-//        return resultList;
-//    }
-
 //    Select a bias based on 'idThinkingTrap'
     public List selectBiasByTrap(int resultid) throws SQLException {
         ResultSet resultSet = null;
