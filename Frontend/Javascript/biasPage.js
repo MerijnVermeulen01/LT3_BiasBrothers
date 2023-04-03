@@ -2,7 +2,7 @@ var clickedButton = [];
 const pressedButtons = [];
 const description = ["", "", ""];
 const buttonContainer = document.getElementById('cardContainer');
-const headers = [document.getElementById('textHeader1'), document.getElementById('textHeader2'), document.getElementById('textHeader3')];
+const headers = [];
 
     buttonContainer.addEventListener('click', (event) => {
         const button = event.target.closest('.biasButton');
@@ -90,6 +90,7 @@ fetch('http://localhost:7070/joinedParticipantTraps')
         // console.log(data);
         data.forEach(post => {
             fillDiv(post.thinkingTraps, post.idThinkingTraps);
+            fillTextCard();
         });
     });
 
@@ -146,4 +147,23 @@ function fillDiv(title, id) {
                 newDiv.appendChild(newButton);
             });
         });
+}
+
+function fillTextCard() {
+    var newDiv = document.createElement("div");
+    var newArea = document.createElement("textarea");
+    var newH3 = document.createElement("h3");
+
+    newH3.innerHTML = "Selecteer een bias"
+    headers.push(newH3);
+
+    newArea.placeholder = "[Beschrijf situatie(s) / voorbeeld(en) hier]"
+
+    newDiv.classList.add('textCard');
+    newArea.classList.add('biasText');
+    newH3.classList.add('header');
+
+    newDiv.appendChild(newH3);
+    newDiv.appendChild(newArea);
+    document.getElementById('cardInputContainer').appendChild(newDiv);
 }
