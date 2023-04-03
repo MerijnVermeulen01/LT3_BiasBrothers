@@ -1,12 +1,13 @@
 var clickedButton = [];
-const description = ["", "", ""];
-const buttons = document.querySelectorAll('.biasButton');
 const pressedButtons = [];
-const headers = [document.getElementById('textHeader1'), document.getElementById('textHeader2'), document.getElementById('textHeader3')];
+const description = ["", "", ""];
 
-buttons.forEach((button) => {
-    button.addEventListener('click', () => {
+function addClickEvent() {
+    const buttonContainer = document.getElementById('cardContainer');
+    const headers = [document.getElementById('textHeader1'), document.getElementById('textHeader2'), document.getElementById('textHeader3')];
 
+    buttonContainer.addEventListener('click', (event) => {
+        const button = event.target.closest('.biasButton');
         if (pressedButtons.length <= 3) {
             if (button.classList.contains('activeButton')) {
                 button.classList.remove('activeButton');
@@ -25,7 +26,7 @@ buttons.forEach((button) => {
             });
         }
     });
-});
+}
 
 function buttonToArray(clicked_id) {
     if (clickedButton.length <= 3) {
@@ -89,7 +90,7 @@ function valuesToJSON() {
 fetch('http://localhost:7070/joinedParticipantTraps')
     .then(response => response.json())
     .then(data => {
-        console.log(data);
+        // console.log(data);
         data.forEach(post => {
             fillDiv(post.thinkingTraps, post.idThinkingTraps);
         });
@@ -137,7 +138,7 @@ function fillDiv(title, id) {
     fetch('http://localhost:7070/getTrapBias/' + id)
         .then(response => response.json())
         .then(data => {
-            console.log(data);
+            // console.log(data);
             data.forEach(post => {
                 var text = document.createTextNode(post.nameBias);
                 var newButton = document.createElement("button");
@@ -147,5 +148,6 @@ function fillDiv(title, id) {
                 newButton.appendChild(text);
                 newDiv.appendChild(newButton);
             });
+            addClickEvent();
         });
 }
