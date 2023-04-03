@@ -2,7 +2,7 @@ var clickedButton = [];
 const pressedButtons = [];
 const description = ["", "", ""];
 const buttonContainer = document.getElementById('cardContainer');
-const headers = [];
+const headers = [document.getElementById('textHeader1'), document.getElementById('textHeader2'), document.getElementById('textHeader3')];
 
     buttonContainer.addEventListener('click', (event) => {
         const button = event.target.closest('.biasButton');
@@ -90,7 +90,6 @@ fetch('http://localhost:7070/joinedParticipantTraps')
         // console.log(data);
         data.forEach(post => {
             fillDiv(post.thinkingTraps, post.idThinkingTraps);
-            fillTextCard();
         });
     });
 
@@ -121,6 +120,7 @@ fetch('http://localhost:7070/getParicipantBias')
 
 console.log("Dit is buiten:" + console.log(document.getElementById('description1').value));
 
+// Makes cards with buttons filled with corresponding bias.
 function fillDiv(title, id) {
     var newDiv = document.createElement("div");
     var newH3 = document.createElement("h3");
@@ -149,6 +149,7 @@ function fillDiv(title, id) {
         });
 }
 
+// Not needed. For when cardText should be re-active.
 function fillTextCard() {
     var newDiv = document.createElement("div");
     var newArea = document.createElement("textarea");
