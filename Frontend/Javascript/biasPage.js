@@ -1,10 +1,8 @@
 var clickedButton = [];
 const pressedButtons = [];
 const description = ["", "", ""];
-
-function addClickEvent() {
-    const buttonContainer = document.getElementById('cardContainer');
-    const headers = [document.getElementById('textHeader1'), document.getElementById('textHeader2'), document.getElementById('textHeader3')];
+const buttonContainer = document.getElementById('cardContainer');
+const headers = [document.getElementById('textHeader1'), document.getElementById('textHeader2'), document.getElementById('textHeader3')];
 
     buttonContainer.addEventListener('click', (event) => {
         const button = event.target.closest('.biasButton');
@@ -26,7 +24,6 @@ function addClickEvent() {
             });
         }
     });
-}
 
 function buttonToArray(clicked_id) {
     if (clickedButton.length <= 3) {
@@ -148,6 +145,5 @@ function fillDiv(title, id) {
                 newButton.appendChild(text);
                 newDiv.appendChild(newButton);
             });
-            addClickEvent();
         });
 }
