@@ -370,7 +370,7 @@ textarea:hover {
 .biasButton {
     width: auto;
     height: 40px;
-    margin: 0 4px 10px 0;
+    margin: 0 0 11px 12px;
     background: #F5F5FB;
     border-radius: 10px;
     border: none;
