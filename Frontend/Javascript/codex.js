@@ -1,16 +1,22 @@
 
-    if(window.location.href.indexOf("codexBiases")> -1)
-    {
-    fetch('http://localhost:7070/codexBias')
-        .then(repsone => repsone.json())
-        .then(data => {
-            console.log(data);
-            data.forEach(post => {
-                fillDiv(post.nameBias, post.description);
-            })
-        });
+    const elements = document.querySelectorAll("#buttonContainer *");
+        elements.forEach((element) =>{
+         element.classList.remove("active2");
+    });
+
+    if(window.location.href.indexOf("codexBiases")> -1){
+        buttonBiases.classList.add('active2');
+        fetch('http://localhost:7070/codexBias')
+            .then(repsone => repsone.json())
+            .then(data => {
+                console.log(data);
+                data.forEach(post => {
+                    fillDiv(post.nameBias, post.description);
+                })
+            });
     }
     else if (window.location.href.indexOf("codexAdaptability")>-1){
+        buttonAdaptability.classList.add('active2');
         fetch('http://localhost:7070/codexAdaptability')
             .then(repsone => repsone.json())
             .then(data => {
@@ -22,6 +28,7 @@
 
     }
     else if (window.location.href.indexOf("codexThinkingTraps")>-1){
+        buttonThinkingTraps.classList.add('active2');
         fetch('http://localhost:7070/codexThinkingTraps')
             .then(repsone => repsone.json())
             .then(data => {
@@ -34,6 +41,7 @@
     }
     else if (window.location.href.indexOf("codexCognitiveBias")>-1){
         console.log("wew");
+        buttonCognitiveBias.classList.add('active2');
     }
     else{
         console.log("bad juju")
