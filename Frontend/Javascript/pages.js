@@ -54,19 +54,12 @@ area.forEach((text) => {
                 activeTextareas.splice(index, 1);
             }
         } else if (text.value.length > 0 && text.value.trim() !== '')  {
-            // if ( <= 3){}
-            text.classList.add('activeButton');
+            if ( activeTextareas.length <= 2 ) {
+                text.classList.add('activeButton');
 
-            activeTextareas.push(text);
+                activeTextareas.push(text);
+            }
         }
-
-        // Set the 'activeButton' class only for the active textareas
-        // area.forEach((text) => {
-        //     if (activeTextareas.includes(text)) {
-        //         text.classList.add('activeButton');
-        //     } else {
-        //         text.classList.remove('activeButton');
-        //     }
-        // });
+        
     });
 });
