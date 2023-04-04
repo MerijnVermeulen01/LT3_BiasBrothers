@@ -27,37 +27,46 @@ buttons.forEach((button) => {
                 // circle.style.top = button.offsetTop + 'px';
                 // circle.style.left = button.offsetLeft + 'px';
                 pressedButtons.push(button);
-                
+
             }
 
             headers.forEach((header, index) => {
                 header.innerHTML = pressedButtons[index] ? pressedButtons[index].innerHTML.replace(/<span.*<\/span>/, '') : "Selecteer een bias";
-            }); 
+            });
 
         }
     });
 });
 
-// xChanges color background when inputting a value -> String
 const area = document.querySelectorAll('.buttonWrite');
+let activeCount = 0;
+const activeTextareas = [];
+
 area.forEach((text) => {
-    text.addEventListener('input', () => {
+    text.addEventListener('click', () => {
 
-        let activeCount = 0;
         // Add
-        if (text.value.length > 0 && text.value.trim() !== '' && activeCount <= 3) {
-            text.classList.add('activeButton');
-            filledTextareas.push(text);
-            activeCount++;
-
-        }
-
-        // Remove
-        else {
+        if (text.classList.contains('activeButton')) {
             text.classList.remove('activeButton');
-            console.log(activeCount);
-            activeCount--;
+
+            const index = activeTextareas.indexOf(text);
+            if (index > -1) {
+                activeTextareas.splice(index, 1);
+            }
+        } else if (text.value.length > 0 && text.value.trim() !== '')  {
+            // if ( <= 3){}
+            text.classList.add('activeButton');
+
+            activeTextareas.push(text);
         }
+
+        // Set the 'activeButton' class only for the active textareas
+        // area.forEach((text) => {
+        //     if (activeTextareas.includes(text)) {
+        //         text.classList.add('activeButton');
+        //     } else {
+        //         text.classList.remove('activeButton');
+        //     }
+        // });
     });
 });
-
