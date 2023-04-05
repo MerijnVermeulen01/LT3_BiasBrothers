@@ -127,6 +127,7 @@ nav {
     background-color: #27be6b;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
     position: fixed;
+    transform: translateY(20%);
 }
 
 /* Icons in sidebar */
@@ -498,6 +499,7 @@ textarea:hover {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
     padding: 1rem;
+
 }
 
 .biasButton .tooltip{
@@ -884,3 +886,4 @@ a:visited, a:link { text-decoration: none!important; color:black; }
 
 
 /* -------------------------------------------- */
+

@@ -1,85 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="../CSS/pages.css">
-        <link rel="icon" type="image/x-icon" href="Images/BiasBrothers.ico">
-        <title>Mijn Biases</title>
-        <script type="text/javascript" src="../Javascript/sidebar.js"></script>
-    </head>
-    <body>
-    <!--Optie1-->
-        <div class="container">
-            <div class="flexGrid">
-                <aside class="col sidebar">
-                    <div id="sidebarContainer">
-                        <script type="text/javascript">
-                            sidebarLoad();
-                        </script>
-                    </div>
-                </aside>
-                <section class="col main">
-                    <div>
-                    <div id="cardContainer">
-                        <div class="card">
-                            <h3 class="header" id="cardTitle1">Selecteer een valkuil</h3>
-                            <div class="content">
-                                <button class="biasButton" onClick="buttonToArray(this.id)" id="4">Confirmation bias</button>
-                                <button class="biasButton" onClick="buttonToArray(this.id)" id="6">Focusing effect</button>
-                                <button class="biasButton" onClick="buttonToArray(this.id)" id="5">Selective perception bias</button>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <h3 class="header" id="cardTitle2">Selecteer een valkuil</h3>
-                            <div class="content">
-                                <button class="biasButton" onClick="buttonToArray(this.id)" id="18">Implicit stereotype</button>
-                                <button class="biasButton" onClick="buttonToArray(this.id)" id="17">Halo effect</button>
-                                <button class="biasButton" onClick="buttonToArray(this.id)" id="16">Fundamental attribution error</button>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <h3 class="header" id="cardTitle3">Selecteer een valkuil</h3>
-                            <div class="content">
-                                <button class="biasButton" onClick="buttonToArray(this.id)" id="10">Imposter syndrome</button>
-                                <button class="biasButton" onClick="buttonToArray(this.id)" id="12">Negativity bias</button>
-                                <button class="biasButton" onClick="buttonToArray(this.id)" id="11">Self-relevance effect</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="cardInputContainer">
-                        <div class="textCard">
-                            <h3 class="textCardHeader" id="textHeader1">Selecteer een bias</h3>
-                            <div class="contentTextBox">
-                                <textarea class="biasText" id="description1" onkeyup="textToArray(this.id, this.value)" placeholder="[Beschrijf situatie(s) / voorbeeld(en) hier]"></textarea>
-                            </div>
-                        </div>
-                        <div class="textCard">
-                            <h3 class="textCardHeader" id="textHeader2">Selecteer een bias</h3>
-                            <div class="contentTextBox">
-                                <textarea class="biasText" id="description2" onkeyup="textToArray(this.id, this.value)" placeholder="[Beschrijf situatie(s) / voorbeeld(en) hier]"></textarea>
-                            </div>
-                        </div>
-                        <div class="textCard">
-                            <h3 class="textCardHeader" id="textHeader3">Selecteer een bias</h3>
-                            <div class="contentTextBox">
-                                <textarea class="biasText" id="description3" onkeyup="textToArray(this.id, this.value)" placeholder="[Beschrijf situatie(s) / voorbeeld(en) hier]"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                        <div>
-                        </div>
-                    </div>
-                </section>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../CSS/pages.css">
+    <link rel="icon" type="image/x-icon" href="Images/BiasBrothers.ico">
+    <title>Mijn Biases</title>
+    <script type="text/javascript" src="../Javascript/sidebar.js"></script>
+</head>
+<body>
+<!--Optie1-->
+<div class="container">
+    <div class="flexGrid">
+        <aside class="col sidebar">
+            <div id="sidebarContainer">
+                <script type="text/javascript">
+                    sidebarLoad();
+                </script>
             </div>
-        </div>
-
-
-    <div class="buttonsPages">
-        <div class="div1" ><a class="returnButton" type="button" href="thinkingTraps.html" onClick="valuesToJSON()">Terug</a> </div>
-        <div class ="lineBetween"></div>
-        <div class="div2"><a class="continueButton" type="button" href="editPossibility.html" onClick="valuesToJSON()">Verder</a></div>
+        </aside>
+        <section class="col main">
+            <div>
+                <div id="cardContainer">
+                    <div class="card">
+                        <h3 class="header" id="cardTitle1">Selecteer een valkuil</h3>
+                        <div class="content">
+                            <button class="biasButton" onClick="buttonToArray(this.id)" id="4">Confirmation bias
+                            </button>
+                            <button class="biasButton" onClick="buttonToArray(this.id)" id="6">Focusing effect</button>
+                            <button class="biasButton" onClick="buttonToArray(this.id)" id="5">Selective perception
+                                bias
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3 class="header" id="cardTitle2">Selecteer een valkuil</h3>
+                        <div class="content">
+                            <button class="biasButton" onClick="buttonToArray(this.id)" id="18">Implicit stereotype
+                            </button>
+                            <button class="biasButton" onClick="buttonToArray(this.id)" id="17">Halo effect</button>
+                            <button class="biasButton" onClick="buttonToArray(this.id)" id="16">Fundamental attribution
+                                error
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3 class="header" id="cardTitle3">Selecteer een valkuil</h3>
+                        <div class="content">
+                            <button class="biasButton" onClick="buttonToArray(this.id)" id="10">Imposter syndrome
+                            </button>
+                            <button class="biasButton" onClick="buttonToArray(this.id)" id="12">Negativity bias</button>
+                            <button class="biasButton" onClick="buttonToArray(this.id)" id="11">Self-relevance effect
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div id="cardInputContainer">
+                    <div class="textCard">
+                        <h3 class="textCardHeader" id="textHeader1">Selecteer een bias</h3>
+                        <div class="contentTextBox">
+                            <textarea class="biasText" id="description1" onkeyup="textToArray(this.id, this.value)"
+                                      placeholder="[Beschrijf situatie(s) / voorbeeld(en) hier]"></textarea>
+                        </div>
+                    </div>
+                    <div class="textCard">
+                        <h3 class="textCardHeader" id="textHeader2">Selecteer een bias</h3>
+                        <div class="contentTextBox">
+                            <textarea class="biasText" id="description2" onkeyup="textToArray(this.id, this.value)"
+                                      placeholder="[Beschrijf situatie(s) / voorbeeld(en) hier]"></textarea>
+                        </div>
+                    </div>
+                    <div class="textCard">
+                        <h3 class="textCardHeader" id="textHeader3">Selecteer een bias</h3>
+                        <div class="contentTextBox">
+                            <textarea class="biasText" id="description3" onkeyup="textToArray(this.id, this.value)"
+                                      placeholder="[Beschrijf situatie(s) / voorbeeld(en) hier]"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                </div>
+            </div>
+        </section>
     </div>
+</div>
 
-        <script type="text/javascript" src="../Javascript/biasPage.js"></script>
-    </body>
+
+<div class="buttonsPages">
+    <div class="div1"><a class="returnButton" type="button" href="thinkingTraps.html" onClick="valuesToJSON()">Terug</a>
+    </div>
+    <div class="lineBetween"></div>
+    <div class="div2"><a class="continueButton" type="button" href="editPossibility.html" onClick="valuesToJSON()">Verder</a>
+    </div>
+</div>
+
+<script type="text/javascript" src="../Javascript/biasPage.js"></script>
+</body>
 </html>
