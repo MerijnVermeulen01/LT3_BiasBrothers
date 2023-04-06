@@ -61,8 +61,11 @@ public class selfDevelopment extends DatabaseController {
     }
 
     public void insertSelfDevelopment(){
-//        TODO: DIT MOET 6 writeButtons worden
-        String[] writeButtons = {writeButton1, writeButton2, writeButton3};
+//        TODO: DIT MOET 6 writeButtons worden//
+        // aparte counter voor description boven 3 niet aanvullen?
+        // (als count niet hoger of gelijk is aan 2 doe dan count++ anders niks meer doen
+        // als het niet werkt een 2de insert erin zetten.
+        String[] writeButtons = {writeButton1, writeButton2, writeButton3, writeButton4, writeButton5, writeButton6};
         String[] descriptions = {description1, description2, description3};
         PreparedStatement stmt = null;
         try {
