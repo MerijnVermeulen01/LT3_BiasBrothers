@@ -216,7 +216,7 @@ public class ThinkingTraps extends DatabaseController {
 
     public List getParticipantTrapName() throws SQLException {
         Statement stmt = con.createStatement();
-        String query = "SELECT thinkingTraps FROM participant_thinkingtraps LEFT JOIN thinkingtraps ON participant_thinkingtraps.thinkingtraps_idThinkingTraps = thinkingtraps.idThinkingTraps";
+        String query = "SELECT idThinkingTraps, thinkingtraps FROM participant_thinkingtraps LEFT JOIN thinkingtraps ON participant_thinkingtraps.thinkingtraps_idThinkingTraps = thinkingtraps.idThinkingTraps";
         ResultSet resultSet = stmt.executeQuery(query);
 
         ResultSetMetaData md = resultSet.getMetaData();
