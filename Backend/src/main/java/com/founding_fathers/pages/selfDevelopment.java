@@ -65,16 +65,17 @@ public class selfDevelopment extends DatabaseController {
         // aparte counter voor description boven 3 niet aanvullen?
         // (als count niet hoger of gelijk is aan 2 doe dan count++ anders niks meer doen
         // als het niet werkt een 2de insert erin zetten.
-        String[] writeButtons = {writeButton1, writeButton2, writeButton3, writeButton4, writeButton5, writeButton6};
+        String[] writeButtons = {writeButton1, writeButton2, writeButton3};
         String[] descriptions = {description1, description2, description3};
         PreparedStatement stmt = null;
         try {
             for (int i = 0; i < writeButtons.length; i++){
-                stmt = con.prepareStatement("INSERT INTO selfdevelopment(selfDevelopment, description, session_idSession) VALUE (?, ?, ?);");
+                stmt = con.prepareStatement("INSERT INTO selfdevelopment(selfDevelopment, description, session_idSession, selectedSelfDevolpment) VALUE (?, ?, ?, ?);");
 
                 stmt.setString(1, writeButtons[i]);
                 stmt.setString(2, descriptions[i]);
                 stmt.setInt(3, 1);
+                stmt.setInt(4, 1);
                 stmt.executeUpdate();
             }
 

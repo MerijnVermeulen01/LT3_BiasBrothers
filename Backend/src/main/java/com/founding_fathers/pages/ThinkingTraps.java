@@ -47,7 +47,6 @@ public class ThinkingTraps extends DatabaseController {
     }
 
     public void checkForInformationThinkingTrap() throws SQLException {
-        System.out.println("Yeetus");
         ResultSet resultSet = null;
         PreparedStatement stmt = null;
         try {
@@ -58,13 +57,10 @@ public class ThinkingTraps extends DatabaseController {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        System.out.println("Yeet");
         if(!resultSet.isBeforeFirst()){
-            System.out.println("Insert");
             insertThinkingTraps();
         }else{
             while (resultSet.next()){
-                System.out.println("Update");
                 updateThinkingTraps(resultSet.getInt(1));
                 count++;
             }
@@ -92,13 +88,11 @@ public class ThinkingTraps extends DatabaseController {
     public void updateThinkingTraps(int id) {
         int[] buttons = {button1, button2, button3};
         String[] descriptions = {description1, description2, description3};
-        System.out.println(descriptions[count]);
         PreparedStatement stmt = null;
         try {
             stmt = con.prepareStatement("UPDATE participant_thinkingtraps SET description = ? WHERE id = ?");
 //                stmt.setInt(1, buttons[count]);
             stmt.setString(1, descriptions[count]);
-            System.out.println(id);
             stmt.setInt(2, id);
             stmt.executeUpdate();
         } catch (SQLException e) {

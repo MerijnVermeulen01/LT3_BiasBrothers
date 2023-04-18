@@ -122,7 +122,7 @@ public class MyBias extends DatabaseController {
                 stmt.setInt(1, 1);
                 stmt.setInt(2, buttons[i]);
                 stmt.setString(3, descriptions[i]);
-                stmt.executeUpdate();
+//                stmt.executeUpdate();
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -132,7 +132,7 @@ public class MyBias extends DatabaseController {
     public void updateInBias(int result) {
 //        int[] buttons = {button1, button2, button3};
         String[] descriptions = {description1, description2, description3};
-        System.out.println(descriptions[count]);
+//        System.out.println(descriptions[count]);
         PreparedStatement stmt = null;
         try {
             stmt = con.prepareStatement("UPDATE participant_bias SET description = ? WHERE id = ?");
@@ -191,7 +191,7 @@ public class MyBias extends DatabaseController {
         ResultSet resultSet = null;
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("SELECT * FROM bias WHERE idThinkingTraps = ?");
+            stmt = con.prepareStatement("SELECT * FROM bias WHERE thinkingtraps_idThinkingTraps = ?");
             stmt.setInt(1, resultid);
             resultSet = stmt.executeQuery();
         } catch (SQLException e) {

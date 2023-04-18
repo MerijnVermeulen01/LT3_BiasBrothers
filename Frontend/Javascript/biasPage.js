@@ -66,6 +66,10 @@ function valuesToJSON() {
         }
     };
 
+    clickedButton[0] = document.getElementsByClassName("activeButton");
+    clickedButton[1] = document.getElementsByClassName("activeButton");
+    clickedButton[2] = document.getElementsByClassName("activeButton");
+
     // Converting JSON data to string
     var data = JSON.stringify({
         "button1": clickedButton[0],
@@ -75,19 +79,16 @@ function valuesToJSON() {
         "button3": clickedButton[2],
         "description3": description[2],
     });
-
     console.log(data);
     // Sending data with the request
     xhr.send(data);
 
 }
 
-
 // Fetches thinkingtrap name and id.
 fetch('http://localhost:7070/joinedParticipantTraps')
     .then(response => response.json())
     .then(data => {
-        // console.log(data);
         data.forEach(post => {
             fillDiv(post.thinkingTraps, post.idThinkingTraps);
         });
@@ -96,7 +97,6 @@ fetch('http://localhost:7070/joinedParticipantTraps')
 fetch('http://localhost:7070/joinedParticipantTraps')
     .then(response => response.json())
     .then(data => {
-        console.log(data);
         document.getElementById('cardTitle1').innerHTML = data[0].thinkingTraps;
         document.getElementById('cardTitle2').innerHTML = data[1].thinkingTraps;
         document.getElementById('cardTitle3').innerHTML = data[2].thinkingTraps;
@@ -105,7 +105,6 @@ fetch('http://localhost:7070/joinedParticipantTraps')
 fetch('http://localhost:7070/getParicipantBias')
     .then(repsone => repsone.json())
     .then(data => {
-        console.log(data);
         document.getElementById(data[0].bias_idBiases).classList.add('activeButton');
         document.getElementById(data[1].bias_idBiases).classList.add('activeButton');
         document.getElementById(data[2].bias_idBiases).classList.add('activeButton');
@@ -115,10 +114,7 @@ fetch('http://localhost:7070/getParicipantBias')
         headers[0].innerHTML = data[0].nameBias;
         headers[1].innerHTML = data[1].nameBias;
         headers[2].innerHTML = data[2].nameBias;
-        console.log(document.getElementById('description1').value);
     });
-
-console.log("Dit is buiten:" + console.log(document.getElementById('description1').value));
 
 // Makes cards with buttons filled with corresponding bias.
 function fillDiv(title, id) {
@@ -136,12 +132,12 @@ function fillDiv(title, id) {
     fetch('http://localhost:7070/getTrapBias/' + id)
         .then(response => response.json())
         .then(data => {
-            // console.log(data);
             data.forEach(post => {
                 var text = document.createTextNode(post.nameBias);
                 var newButton = document.createElement("button");
 
                 newButton.classList.add('biasButton');
+                newButton.setAttribute("id", post.idBiases);
 
                 newButton.appendChild(text);
                 newDiv.appendChild(newButton);

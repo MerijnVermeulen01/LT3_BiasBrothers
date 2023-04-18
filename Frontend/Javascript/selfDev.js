@@ -47,10 +47,6 @@ function valuesToJSON(){
         }
     };
 
-    // Send the request
-    xhr.send();
-}
-
     // Converting JSON data to string
     var data = JSON.stringify({ 
         "writeButton1" : writeButton[0],
@@ -64,7 +60,6 @@ function valuesToJSON(){
         "description3" : description[2], 
     });
 
-    console.log(data);
     // Sending data with the request
     xhr.send(data);
 

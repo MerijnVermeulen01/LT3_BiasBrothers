@@ -11,7 +11,7 @@
             .then(data => {
                 console.log(data);
                 data.forEach(post => {
-                    fillDiv(post.nameBias, post.description);
+                    fillDiv(post.nameBias, post.biasDescription);
                 })
             });
     }
