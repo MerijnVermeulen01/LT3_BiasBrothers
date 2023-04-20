@@ -27,7 +27,6 @@ public class ThinkingTrapsController implements APIController {
         app.get("/getParicipantTraps", getParticipantTraps);
         app.get("/joinedParticipantTraps", getJoinedParticipantTraps);
         app.post("/MyThinkingTraps", ctx -> {
-            System.out.println("Yeetus DELETUS");
             thinkingTraps = ctx.bodyAsClass(ThinkingTraps.class);
             thinkingTraps.checkForInformationThinkingTrap();
         });

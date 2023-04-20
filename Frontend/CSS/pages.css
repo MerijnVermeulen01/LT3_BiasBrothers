@@ -406,7 +406,7 @@ textarea:hover {
 .biasButton {
     width: auto;
     height: 40px;
-    margin: 0 4px 10px 0;
+    margin: 0 0 11px 12px;
     background: #F5F5FB;
     border-radius: 10px;
     border: none;
@@ -558,7 +558,7 @@ textarea:hover {
     margin: 2% 20% 3% 30%;
 }
 
-.buttonsCodex {
+.navBar button {
     font-weight: 600;
     font-size: 16px;
     width: auto;
@@ -569,10 +569,27 @@ textarea:hover {
     transition: ease-in 0.1s;
     margin-bottom: 1%;
 }
+.navBar button.active2{
+    background: #A5A5F8;
+}
 
-.buttonsCodex:hover {
+.navBar button:hover {
     background: #A5A5F8;
     transition: all .5s;
+}
+.frame{
+    width: 55%;
+    height: 80%;
+    position: absolute;
+    border: none;
+    background: none;
+}
+.imageBox{
+
+}
+.imageBox img{
+    height: 100%;
+    width: 130%;
 }
 
 #codexBox {
@@ -696,22 +713,22 @@ textarea:hover {
     margin-bottom: 25px;
 }
 
-.navBarPosibility a:hover {
+.navBarPosibility button:hover{
     background-color: #A5A5F8;
-    color: white;
     transition: all .5s;
 }
+
 
 .navBarPosibility button {
     font-weight: 600;
     font-size: 16px;
-    width: auto;
+    width: fit-content;
     height: 40px;
     background: #F5F5FB;
     border-radius: 10px;
     border: none;
     transition: ease-in 0.1s;
-    margin-bottom: 1%;
+    margin: 0px 5px 5px 5px;
 }
 
 .navBarPosibility button.active2 {

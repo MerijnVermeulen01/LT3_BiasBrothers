@@ -8,9 +8,12 @@ import io.javalin.http.Context;
 import io.javalin.http.Handler;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
+
 public class MyBiasController implements APIController {
 
     private MyBias myBias;
+
 
     /**
      * This is the constructor of the MyBiasController file
@@ -30,6 +33,10 @@ public class MyBiasController implements APIController {
             myBias.checkForInformation();
         });
         app.get("/getParicipantBias", getParicipantBias);
+        app.get("/getTrapBias/{idThinkingTraps}", ctx -> {
+            int id = Integer.parseInt(ctx.pathParam("idThinkingTraps"));
+            ctx.json(myBias.selectBiasByTrap(id));
+        });
     }
 
     /**
@@ -40,5 +47,4 @@ public class MyBiasController implements APIController {
 
     protected final Handler getParicipantBias = (@NotNull Context context) ->
             context.json(myBias.selectParticipantBias());
-
 }

@@ -18,7 +18,7 @@
     window.onload = function() {
     if (window.location.href === 'http://localhost:63342/pages.css/Frontend/Pages/editPossibility.html') {
     button1.classList.add('active2');
-} else if (window.location.href === '../Pages/codexBiases.html') {
+} else if (window.location.href === 'http://localhost:63342/pages.css/Frontend/Pages/editPossibilitySlowingDown.html') {
     button2.classList.add('active2');
 }
 };
@@ -32,7 +32,7 @@
     // Check the window location and add the 'active' class to the corresponding button
     if (window.location.href === 'http://localhost:63342/pages.css/Frontend/Pages/editPossibility.html') {
     button1.classList.add('active2');
-} else if (window.location.hash === '../Pages/codexBiases.html') {
+} else if (window.location.hash === 'http://localhost:63342/pages.css/Frontend/Pages/editPossibilitySlowingDown.html') {
     button2.classList.add('active2');
 }
 });
