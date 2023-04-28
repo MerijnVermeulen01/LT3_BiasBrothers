@@ -1,0 +1,100 @@
+html, body {
+    height: 100%;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+    margin-top: 0;
+    transform: translatex(20%);
+    font-weight: 900;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+label{
+    font-weight: bolder;
+    font-size: 80%;
+}
+img{
+
+}
+
+#logoImg{
+    scale: 10%;
+    position: absolute;
+    top: -38%;
+    right: 33%;
+}
+------------------------------------------------------------------------------------------------------------------------
+body {
+    background-color: #F5F5FB;
+    min-height: 100%;
+    margin: 0 auto;
+
+}
+.container {
+
+    margin: 0 auto;
+    transform: translateY(65%);
+    padding: 20px;
+    background-color: #27be6b;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.75);
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
+}
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 8px;
+    margin-top: 0;
+    margin-bottom: 8px;
+    display: inline-block;
+    border: 2px solid white;
+    background-color: #27be6b;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+input::placeholder{
+    /*background-image: url("../Images/icons8-username-50.png");*/
+    background-repeat: no-repeat;
+    background-size: 8%;
+    background-position-y: 50%;
+    back
+    ;
+    font-weight: bolder;
+    color: white;
+    margin: 10%;
+    opacity: 30%;
+}
+
+#loginButton {
+    float: right;
+    background-color: white;
+    color: #1D1D35;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 45%;
+}
+
+#adminButton {
+    background-color: white;
+    color: #1D1D35;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 45%;
+    margin: 0;
+}
+
+#buttons {
+    width: 100%;
+}
