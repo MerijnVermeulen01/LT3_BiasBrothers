@@ -31,6 +31,7 @@ public class MyBiasController implements APIController {
             myBias.checkForInformation();
         });
         app.get("/getParicipantBias", getParicipantBias);
+
     }
 
     /**
