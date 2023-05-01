@@ -578,18 +578,35 @@ textarea:hover {
     transition: all .5s;
 }
 .frame{
-    width: 55%;
-    height: 80%;
     position: absolute;
     border: none;
     background: none;
+    width: 99%;
+    height: 99%;
 }
-.imageBox{
-
-}
-.imageBox img{
-    height: 100%;
-    width: 130%;
+.popUp{
+     display: block;
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     width: 55%;
+     height: 75%;
+     background-color: white;
+     border: 1px solid black;
+     padding: 10px;
+ }
+#popUpBack{
+    position: absolute;
+    font-weight: 600;
+    font-size: 16px;
+    width: auto;
+    height: 40px;
+    background: #F5F5FB;
+    border-radius: 10px;
+    border: none;
+    transition: ease-in 0.1s;
+    margin-bottom: 1%;
 }
 
 #codexBox {

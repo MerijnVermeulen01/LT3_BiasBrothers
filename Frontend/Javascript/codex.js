@@ -1,3 +1,14 @@
+    const buttonCognitiveBias = document.getElementById('buttonCognitiveBias');
+    const popUp = document.getElementById('popUp');
+    const popUpBack = document.getElementById('popUpBack');
+    const frame = document.getElementById('frame');
+    buttonCognitiveBias.addEventListener('click', () =>{
+    popUp.style.display = 'block';
+    })
+    popUpBack.addEventListener('click', () =>{
+    frame.src = "https://upload.wikimedia.org/wikipedia/commons/6/65/Cognitive_bias_codex_en.svg";
+    })
+
 
     const elements = document.querySelectorAll("#buttonContainer *");
         elements.forEach((element) =>{
@@ -113,3 +124,4 @@ function fillDiv(title, desription) {
 
         document.getElementById('codexBoxAdapt').appendChild(titleDiv);
     }
+
