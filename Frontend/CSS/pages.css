@@ -599,7 +599,7 @@ textarea:hover {
     position: fixed;
     top: 14%;
     left: 18%;
-    width: 60%;
+    width: 56%;
     height: 80%;
     border-radius: 10px;
     border: none;
@@ -623,8 +623,8 @@ textarea:hover {
      top: 50%;
      left: 50%;
      transform: translate(-50%, -50%);
-     width: 55%;
-     height: 75%;
+     width: 76%;
+     height: 88%;
      background-color: white;
      border: 1px solid black;
      padding: 10px;
