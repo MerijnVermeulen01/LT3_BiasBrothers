@@ -595,6 +595,16 @@ textarea:hover {
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
 }
+.cognitiveIMG{
+    position: fixed;
+    top: 14%;
+    left: 18%;
+    width: 60%;
+    height: 80%;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 1%;
+}
 #popUpClose{
     position: absolute;
     right: 2%;
