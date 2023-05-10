@@ -192,7 +192,7 @@ public class MyBias extends DatabaseController {
         ResultSet resultSet = null;
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("SELECT * FROM bias WHERE thinkingtraps_idThinkingTraps = ?");
+            stmt = con.prepareStatement("SELECT * FROM bias WHERE idThinkingTraps = ?");
             stmt.setInt(1, resultid);
             resultSet = stmt.executeQuery();
         } catch (SQLException e) {
