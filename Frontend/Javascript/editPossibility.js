@@ -36,4 +36,44 @@
     button2.classList.add('active2');
 }
 });
-    
+function textToArray(textAreaId, paricipantText){
+    if(textAreaId === "situationDescription1"){
+        description[0] = paricipantText;
+    } else if(textAreaId === "situationDescription2"){
+        description[1] = paricipantText;
+    } else if(textAreaId === "situationDescription3"){
+        description[2] = paricipantText;
+    }
+}
+
+function valuesToJSON(){
+    // Creating a XHR object
+    let xhr = new XMLHttpRequest();
+    let url = "http://localhost:7070//MeThinkingFastPost";
+
+    // open a connection
+    xhr.open("POST", url, true);
+
+    // Set the request header i.e. which type of content you are sending
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    // Create a state change callback
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+
+            console.log(this.responseText);
+
+        }
+    };
+
+    // Converting JSON data to string
+    var data = JSON.stringify({
+        "situationDescription1" : description[0],
+        "situationDescription2" : description[1]
+    });
+
+    console.log(data);
+    // Sending data with the request
+    xhr.send(data);
+
+}
