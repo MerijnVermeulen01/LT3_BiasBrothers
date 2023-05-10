@@ -1,9 +1,11 @@
-package com.founding_fathers.pages;
+package com.founding_fathers.pages.controller;
 
 import com.founding_fathers.API.APIController;
+import com.founding_fathers.pages.MeThinkingFast;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
 import io.javalin.http.Handler;
+import io.javalin.http.util.JsonEscapeUtil;
 import org.jetbrains.annotations.NotNull;
 
 public class MeThinkController implements APIController {
@@ -20,21 +22,24 @@ public class MeThinkController implements APIController {
 
     @Override
     public void addHandlers(Javalin app) {
-        app.get("/MethinkingFast", getMeThinkingFast);
-        app.post("/MyBiasParticipant", ctx -> {
+        System.out.println("daddyhandler");
+        app.get("/MeThinkingFast", getMeThinkingFast);
+        System.out.println("daddyhandler2");
+        app.post("/MeThinkingFastPost", ctx -> {
             meThinkingFast = ctx.bodyAsClass(MeThinkingFast.class);
             meThinkingFast.checkForInformationMeThinkingFast();
         });
-        app.get("/getParicipantBias", getParicipantBias);
+        app.get("/getParicipantMeThinkFast", getMeThinkingFastparticipant);
     }
 
     /**
      * This is a variable to get the explained top bias form the database.
      */
-//    protected final Handler getMeSlowingDown = (@NotNull Context context) ->
-//            context.json(meThinkingFast.insertInBias());
-
     protected final Handler getMeThinkingFast = (@NotNull Context context) ->
-            context.json(meThinkingFast.situationDescription());
+            context.json(meThinkingFast.selectMeThinkingFastTest2());
+
+
+    protected final Handler getMeThinkingFastparticipant = (@NotNull Context context) ->
+            context.json(meThinkingFast.selectParticipantMeThinkingFast());
 
 }

@@ -50,6 +50,7 @@ public class MyBias extends DatabaseController {
     }
 
     public void checkForInformation() throws SQLException {
+        System.out.println("papa");
         ResultSet resultSet = null;
         PreparedStatement stmt = null;
         try {
