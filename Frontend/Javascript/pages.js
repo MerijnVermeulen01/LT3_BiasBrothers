@@ -71,6 +71,7 @@ let time = startingMinutes*60;
 const countDownEl = document.getElementById('timer');
 
 setInterval(updateTimer, 1000);
+
 function updateTimer(){
     const minutes = Math.floor(time/60);
     let seconds = time % 60;
@@ -78,5 +79,10 @@ function updateTimer(){
     seconds = seconds<10?'0'+seconds:seconds;
 
     countDownEl.innerHTML=`${minutes}:${seconds}`;
-    time--;
+    if(time == 0){
+        countDownEl.innerHTML='0:00';
+    }
+    else{
+     time--;
+    }
 }
