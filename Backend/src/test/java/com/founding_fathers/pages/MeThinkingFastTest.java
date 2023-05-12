@@ -1,46 +1,33 @@
 package com.founding_fathers.pages;
-import com.founding_fathers.pages.controller.MeThinkController;
 import junit.framework.TestCase;
 import org.junit.Test;
-import io.javalin.Javalin;
+import static org.mockito.Mockito.*;
+import org.mockito.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.ResultSet;
-import org.junit.Assert;
+
 
 public class MeThinkingFastTest extends TestCase {
 
-    @Test
-    public void testAddHandlers() {
-        // Create a mock Javalin app
-        Javalin app = Javalin.create();
+    @Mock
+    private Connection connectionMock;
+    @Spy
+    private MeThinkingFast meThinkingFast = new MeThinkingFast();
 
-        // Create a mock MeThinkingFast instance
-        MeThinkingFast meThinkingFast = new MeThinkingFast();
-
-        MeThinkController controller = new MeThinkController(meThinkingFast);
-
-
-        // Add the handlers to the app
-        controller.addHandlers(app);
-
-        int a = 4; // Assume 4 coming from a database.
-        int b = 5; // Assume 5 coming from a database.
-
-        int c = a + b;
-//        Assert.True(9, c);
-
-
-
-
-//// Verify that the handlers were added correctly
-//        assertTrue(app.routes().stream().anyMatch(route -> route.getPath().equals("/MeThinkingFast") && route.getHttpMethod().equals("GET")));
-//        assertTrue(app.routes().stream().anyMatch(route -> route.getPath().equals("/MeThinkingFastPost") && route.getHttpMethod().equals("POST")));
-//        assertTrue(app.routes().stream().anyMatch(route -> route.getPath().equals("/getParicipantMeThinkFast") && route.getHttpMethod().equals("GET")));
-    }
 
     @Test
-    public void testAssert() throws Exception {
-        assertEquals(1, 2);
+    public void testInsertInBiasthinkingfast() throws SQLException {
+        // Set up the mock and spy objects
+        MockitoAnnotations.openMocks(this);
+        doReturn(connectionMock).when(meThinkingFast).getConnection();
+        PreparedStatement stmtMock = mock(PreparedStatement.class);
+        doReturn(stmtMock).when(connectionMock).prepareStatement(anyString());
+
+        // Call the method being tested
+       meThinkingFast.insertInBiasthinkingfast();
+
     }
+
 }
 
