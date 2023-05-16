@@ -18,6 +18,20 @@ function sidebarLoad(){
         </nav>"
     );
 
+    // Add the script tag for jspdf library
+    var jspdfScript = document.createElement('script');
+    jspdfScript.src = 'https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js';
+    document.head.appendChild(jspdfScript);
+
+    // Function to setup and download pdf file
+    var downloadLink = document.getElementById('downloadPage');
+    downloadLink.addEventListener('click', function() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        doc.text("Hello, this is a pdf!", 10, 10);
+        doc.save("sample.pdf");
+    });
+
     // This code removes the class active form all the children in the div sidebarContainer
     const elements = document.querySelectorAll("#sidebarContainer *");
     elements.forEach((element) =>{
