@@ -5,7 +5,8 @@
         <link rel="stylesheet" href="../CSS/pages.css">
         <link rel="icon" type="image/x-icon" href="Images/BiasBrothers.ico">
         <title>Download Gegevens</title>
-        <script type="text/javascript" src="../Javascript/sidebar.js"></script> 
+        <script type="text/javascript" src="../Javascript/sidebar.js"></script>
+        <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
     </head>
     <body>
         <!--Optie1-->
@@ -19,12 +20,11 @@
                     </div>        
                 </aside>        
                 <section class="col main">            
-
+                    <button id="download">Download pdf!</button>
                 </section>    
             </div>
         </div>
     </div>
-
-
+        <script type="text/javascript" src="../Javascript/downloadPage.js"></script>
     </body>
 </html>
