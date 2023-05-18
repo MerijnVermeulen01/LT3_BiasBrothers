@@ -23,11 +23,11 @@ function sidebarLoad(){
     jspdfScript.src = 'https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js';
     document.head.appendChild(jspdfScript);
 
-    // Function to setup and download pdf file
-    var downloadLink = document.getElementById('downloadPage');
-    downloadLink.addEventListener('click', function() {
-        generatePDF();
-    });
+    // Add script tag for pdfGenerator.js file
+    var pdfGenScript = document.createElement('script');
+    pdfGenScript.type = 'text/javascript';
+    pdfGenScript.src = '../Javascript/pdfGenerator.js';
+    document.body.appendChild(pdfGenScript);
 
     // This code removes the class active form all the children in the div sidebarContainer
     const elements = document.querySelectorAll("#sidebarContainer *");
@@ -51,12 +51,4 @@ function sidebarLoad(){
     } else if (queryStrin.includes("downloadPage")){
         document.getElementById("downloadPage").classList.add("active");
     }
-}
-
-function generatePDF(){
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
-
-    doc.text("Hello, this is a pdf", 10, 10);
-    doc.save("sample.pdf");
 }
