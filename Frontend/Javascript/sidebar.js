@@ -26,10 +26,7 @@ function sidebarLoad(){
     // Function to setup and download pdf file
     var downloadLink = document.getElementById('downloadPage');
     downloadLink.addEventListener('click', function() {
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF();
-        doc.text("Hello, this is a pdf!", 10, 10);
-        doc.save("sample.pdf");
+        generatePDF();
     });
 
     // This code removes the class active form all the children in the div sidebarContainer
@@ -54,4 +51,12 @@ function sidebarLoad(){
     } else if (queryStrin.includes("downloadPage")){
         document.getElementById("downloadPage").classList.add("active");
     }
+}
+
+function generatePDF(){
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    doc.text("Hello, this is a pdf", 10, 10);
+    doc.save("sample.pdf");
 }
