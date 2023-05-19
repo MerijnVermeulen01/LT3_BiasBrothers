@@ -23,6 +23,11 @@ function sidebarLoad(){
     jspdfScript.src = 'https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js';
     document.head.appendChild(jspdfScript);
 
+
+    var HTMLScript = document.createElement('script');
+    HTMLScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.0/html2canvas.min.js';
+    document.head.appendChild(HTMLScript);
+
     // Add script tag for pdfGenerator.js file
     var pdfGenScript = document.createElement('script');
     pdfGenScript.type = 'text/javascript';
