@@ -13,7 +13,7 @@ function sidebarLoad(){
                 <li id='editPossibility'><a href='editPossibility.html'><img alt=\"\" src=\"../Images/editPossibility.png\" /></a><span class='tooltip'>Aanpassingsvermogen</span></li>\
                 <hr />\
                 <li id='codex'><a href='codexThinkingTraps.html'><img alt=\"\" src=\"../Images/Codex.png\" /></a><span class='tooltip'>Codex</span></li>\
-                <li id='downloadPage'><a href='downloadPage.html'><img alt=\"\" src=\"../Images/Download-button.png\" /></a><span class='tooltip'>Download</span></li>\
+                <li id='downloadPage' style='cursor: pointer'><img alt=\"\" src=\"../Images/Download-button.png\" /></a><span class='tooltip'>Download</span></li>\
             </ul>\
         </nav>"
     );
