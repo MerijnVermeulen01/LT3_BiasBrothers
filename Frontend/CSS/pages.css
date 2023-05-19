@@ -189,6 +189,25 @@ hr {
 .active a {
     padding-left: 8px;
 }
+
+/* -------------------------------------------- */
+
+
+/* -------------------------------------------- */
+/* timer */
+/* -------------------------------------------- */
+
+
+#timer{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    text-align: right;
+    margin-right: 34%;
+    margin-top: 1%;
+    display: block;
+}
+
+
 /* -------------------------------------------- */
 
 
@@ -211,6 +230,10 @@ hr {
     margin-right: 40px;
     width: 331px;
 
+}
+.columns{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .columnWithTextAreas {
