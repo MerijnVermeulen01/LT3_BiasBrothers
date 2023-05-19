@@ -18,7 +18,6 @@ function generatePDF() {
         '/Frontend/PDF-presets/pdfOntwerp6.png'
     ];
 
-
     for (var i = 0; i < presetPages.length; i++) {
         // Load the preset page
         var pages = presetPages[i];
@@ -28,9 +27,5 @@ function generatePDF() {
         doc.addPage(pages, 'PNG', 0, 0, 210, 297); // Adjust the coordinates and dimensions as needed
 
     }
-
-
-
-
-    doc.save('generated.pdf');
+    doc.save('Bias Brothers.pdf');
 }
