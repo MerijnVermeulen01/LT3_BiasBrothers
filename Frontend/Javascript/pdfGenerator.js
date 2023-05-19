@@ -24,9 +24,8 @@ function generatePDF() {
         var pages = presetPages[i];
 
         // Add the page to the PDF
-        doc.addPage(pages, 'PNG', 0, 0, 210, 297); // Adjust the coordinates and dimensions as needed
         doc.addImage(pages, 'PNG', 0, 0, 210, 297); // Adjust the coordinates and dimensions as needed
-
+        doc.addPage(pages, 'PNG', 0, 0, 210, 297); // Adjust the coordinates and dimensions as needed
 
     }
 
