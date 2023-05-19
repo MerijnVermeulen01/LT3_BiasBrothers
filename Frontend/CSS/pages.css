@@ -231,6 +231,10 @@ hr {
     width: 331px;
 
 }
+.columns{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
 
 .columnWithTextAreas {
     background-color: white;
