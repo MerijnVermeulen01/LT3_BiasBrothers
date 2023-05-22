@@ -26,7 +26,7 @@ function sidebarLoad(){
     // Add script tag for pdfGenerator.js file
     var pdfGenScript = document.createElement('script');
     pdfGenScript.type = 'text/javascript';
-    pdfGenScript.src = '../Javascript/pdfGenerator.js';
+    pdfGenScript.src = '../Javascript/pdfGen.js';
     document.body.appendChild(pdfGenScript);
 
     // This code removes the class active form all the children in the div sidebarContainer
