@@ -116,7 +116,8 @@ nav {
 /* Tooltip sidebar */
 .sidebar ul li:hover .tooltip {
     visibility: visible;
-    transition: 3s ease-in;
+    transition-delay: 0.8s;
+
 }
 
 /* Container sidebar */
@@ -534,7 +535,6 @@ textarea:hover {
 }
 
 .biasButton .tooltip{
-
     visibility: hidden;
     position: absolute;
     z-index: 1;
@@ -547,13 +547,13 @@ textarea:hover {
     margin-top: 14px;
     margin-left: 10px;
     font-size: 14px;
-    transition: opacity 0.2s ease-in-out;
-    transition-delay: 3s;
+
 }
 
 .biasButton:hover .tooltip {
     visibility: visible;
-    transition-delay: 0s;
+    transition-delay: 0.8s;
+
 }
 
 .circle {

@@ -24,7 +24,7 @@ function generatePDF() {
 
         // Add the page to the PDF
         doc.addImage(pages, 'PNG', 0, 0, 210, 297); // Adjust the coordinates and dimensions as needed
-        doc.addPage(pages, 'PNG', 0, 0, 210, 297); // Adjust the coordinates and dimensions as needed
+        doc.addPage(pages, 'PNG', 0, 0, 210, 297);
 
     }
     doc.save('Bias Brothers.pdf');
