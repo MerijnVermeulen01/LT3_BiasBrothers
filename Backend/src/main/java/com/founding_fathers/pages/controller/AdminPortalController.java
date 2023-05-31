@@ -19,7 +19,11 @@ public class AdminPortalController implements APIController {
     public void addHandlers(Javalin app) {
         app.get("/adminPortalThinkingTraps", getAdminPortalThinkingTraps);
         app.get("/adminPortalBias", getAdminPortalBias);
+        app.get("/adminPortalTimer", getAdminPortalTimer);
     }
+
+    protected final Handler getAdminPortalTimer = (@NotNull Context context) ->
+            context.json(adminPortaal.selectAdminPortaal("SELECT * FROM timer"));
 
     protected final Handler getAdminPortalThinkingTraps = (@NotNull Context context) ->
             context.json(adminPortaal.selectAdminPortaal("SELECT * FROM thinkingtraps"));
