@@ -25,7 +25,6 @@
         fetch('http://localhost:7070/codexBias')
             .then(repsone => repsone.json())
             .then(data => {
-                console.log(data);
                 data.forEach(post => {
                     fillDiv(post.nameBias, post.biasDescription);
                 })
@@ -36,7 +35,6 @@
         fetch('http://localhost:7070/codexAdaptability')
             .then(repsone => repsone.json())
             .then(data => {
-                console.log(data);
                 data.forEach(post => {
                     fillAdaptibility(post.title, post.description, post.trade1, post.trade2, post.trade3);
                 })
@@ -48,7 +46,6 @@
         fetch('http://localhost:7070/codexThinkingTraps')
             .then(repsone => repsone.json())
             .then(data => {
-                console.log(data);
                 data.forEach(post => {
                     fillDiv(post.thinkingTraps, post.description);
                 })
@@ -56,11 +53,10 @@
 
     }
     else if (window.location.href.indexOf("codexCognitiveBias")>-1){
-        console.log("wew");
         buttonCognitiveBias.classList.add('active2');
     }
     else{
-        console.log("bad juju")
+
     }
 
 function fillDiv(title, desription) {
