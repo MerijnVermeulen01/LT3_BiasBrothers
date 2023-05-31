@@ -60,6 +60,6 @@ area.forEach((text) => {
                 activeTextareas.push(text);
             }
         }
-        
+
     });
 });

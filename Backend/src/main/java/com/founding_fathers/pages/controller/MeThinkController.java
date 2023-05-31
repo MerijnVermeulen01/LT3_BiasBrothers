@@ -22,9 +22,7 @@ public class MeThinkController implements APIController {
 
     @Override
     public void addHandlers(Javalin app) {
-        System.out.println("daddyhandler");
         app.get("/MeThinkingFast", getMeThinkingFast);
-        System.out.println("daddyhandler2");
         app.post("/MeThinkingFastPost", ctx -> {
             meThinkingFast = ctx.bodyAsClass(MeThinkingFast.class);
             meThinkingFast.checkForInformationMeThinkingFast();

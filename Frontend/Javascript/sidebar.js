@@ -13,10 +13,21 @@ function sidebarLoad(){
                 <li id='editPossibility'><a href='editPossibility.html'><img alt=\"\" src=\"../Images/editPossibility.png\" /></a><span class='tooltip'>Aanpassingsvermogen</span></li>\
                 <hr />\
                 <li id='codex'><a href='codexThinkingTraps.html'><img alt=\"\" src=\"../Images/Codex.png\" /></a><span class='tooltip'>Codex</span></li>\
-                <li id='downloadPage'><a href='downloadPage.html'><img alt=\"\" src=\"../Images/Download-button.png\" /></a><span class='tooltip'>Download</span></li>\
+                <li id='downloadPage' style='cursor: pointer'><img alt=\"\" src=\"../Images/Download-button.png\" /></a><span class='tooltip'>Download</span></li>\
             </ul>\
         </nav>"
     );
+
+    // Add the script tag for jspdf library
+    var jspdfScript = document.createElement('script');
+    jspdfScript.src = 'https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js';
+    document.head.appendChild(jspdfScript);
+
+    // Add script tag for pdfGenerator.js file
+    var pdfGenScript = document.createElement('script');
+    pdfGenScript.type = 'text/javascript';
+    pdfGenScript.src = '../Javascript/pdfGen.js';
+    document.body.appendChild(pdfGenScript);
 
     // This code removes the class active form all the children in the div sidebarContainer
     const elements = document.querySelectorAll("#sidebarContainer *");
