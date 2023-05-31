@@ -5,7 +5,6 @@ import com.founding_fathers.pages.MeThinkingFast;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
 import io.javalin.http.Handler;
-import io.javalin.http.util.JsonEscapeUtil;
 import org.jetbrains.annotations.NotNull;
 
 public class MeThinkController implements APIController {
@@ -22,13 +21,13 @@ public class MeThinkController implements APIController {
 
     @Override
     public void addHandlers(Javalin app) {
-        System.out.println("daddyhandler");
         app.get("/MeThinkingFast", getMeThinkingFast);
         System.out.println("daddyhandler2");
         app.post("/MeThinkingFastPost", ctx -> {
             meThinkingFast = ctx.bodyAsClass(MeThinkingFast.class);
             meThinkingFast.checkForInformationMeThinkingFast();
         });
+        System.out.println("daddyhandler3");
         app.get("/getParicipantMeThinkFast", getMeThinkingFastparticipant);
     }
 

@@ -32,11 +32,10 @@ public class MeThinkingFast extends DatabaseController {
 
     public void checkForInformationMeThinkingFast() throws SQLException {
         System.out.println("Papi");
-        System.out.println("pipo");
         ResultSet resultSet = null;
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("SELECT participant_methinkfast.id, participant_emthinkfast.description FROM participant_methinkfast  WHERE session_idSession = ?;");
+            stmt = con.prepareStatement("SELECT participant_methinkfast.id, participant_methinkfast.description FROM participant_methinkfast  WHERE session_idSession = ?;");
 
             stmt.setInt(1, 1);
             resultSet = stmt.executeQuery();
@@ -56,12 +55,13 @@ public class MeThinkingFast extends DatabaseController {
         }
     }
 
+
     public void insertInBiasthinkingfast() {
         String[] descriptions = {situationDescription1, situationDescription2, situationDescription3, situationDescription4, situationDescription5, situationDescription6, situationDescription7, situationDescription8, situationDescription9, situationDescription10, situationDescription11, situationDescription12};
         PreparedStatement stmt = null;
         try {
             for (int i = 0; i < descriptions.length; i++) {
-                stmt = con.prepareStatement("INSERT INTO participant_methinkfast (id, session_idSession, description) VALUES (?, ?, ?)");
+                stmt = con.prepareStatement("INSERT INTO participant_methinkfast (session_idSession, description) VALUES (?, ?, ?)");
                 stmt.setInt(1, 1);
                 stmt.setInt(2, 2);
                 stmt.setString(3, descriptions[i]);

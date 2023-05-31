@@ -2,7 +2,6 @@ package com.founding_fathers.pages.controller;
 
 import com.founding_fathers.API.APIController;
 import com.founding_fathers.pages.MyBias;
-import com.founding_fathers.pages.ThinkingTraps;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
 import io.javalin.http.Handler;
