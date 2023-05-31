@@ -1091,3 +1091,24 @@ a:visited, a:link { text-decoration: none!important; color:black; }
     }
 }
 /* -------------------------------------------- */
+
+/* Responsive thinkingTraps */
+
+/* When the browser is at least 500px and below */
+@media screen and (max-width: 500px) {
+.columns{
+    display: block;
+}
+    .columnWithButtons{
+        width: 60vw;
+        margin-left: 75px;
+    }
+    .columnWithTextAreas{
+        width: 62vw;
+        margin-left: 75px;
+    }
+    .textArea1, .textArea2, .textArea3{
+        margin: 0px;
+    }
+}
+/* -------------------------------------------- */
