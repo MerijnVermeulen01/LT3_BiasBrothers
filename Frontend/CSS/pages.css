@@ -1112,3 +1112,23 @@ a:visited, a:link { text-decoration: none!important; color:black; }
     }
 }
 /* -------------------------------------------- */
+
+/* Responsive editPosibility */
+
+/* When the browser is at least 500px and below */
+@media screen and (max-width: 500px) {
+    .navBarPosibility{
+        margin-left: 100px;
+    }
+    .topBarEditPosibility{
+        width: 300px;
+        margin-left: 90px;
+    }
+    .situatieBeschrijving {
+        width: 65vw;
+    }
+}
+
+
+
+/* -------------------------------------------- */
