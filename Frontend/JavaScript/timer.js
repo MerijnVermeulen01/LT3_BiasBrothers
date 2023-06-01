@@ -1,15 +1,42 @@
 const queryString = window.location.href;
-
+let startingMinutes = 10;
 
 if (queryString.includes("timerEdit")){
     fetchTimerEdit()
 }
 else{
+    fetch('http://localhost:7070/adminPortalTimer')
+        .then(repsone => repsone.json())
+        .then(data => {
+            data.forEach(post => {
+                chooseTimer(post.idtimer, post.timerName, post.timerTime);
+            })
+        });
+}
+function chooseTimer(idtimer,timerName,timerTime){
+    if (queryString.includes("myBiasPage")){
+        if (timerName.includes("biasTime")) {
+            startingMinutes = timerTime;
+        }
+    }
+    else if (queryString.includes("thinkingTraps")){
+        if (timerName.includes("thinkingTime")) {
+            startingMinutes = timerTime;
+        }
+    }
+    else if (queryString.includes("editPossibility")){
+        if (timerName.includes("possibilityTime")){
+            startingMinutes = timerTime;
+        }
+    }
+    else if (queryString.includes("selfDevelopment")){
+        if (timerName.includes("developmentTime")){
+            startingMinutes = timerTime;
+        }
+    }
     runTimer();
 }
 function runTimer() {
-
-    const startingMinutes = 10;
 
     var alarmOn = new Boolean(false);
     const alarm = new Audio('/Frontend/Images/alarm2.wav');
@@ -52,7 +79,6 @@ function fetchTimerEdit() {
     fetch('http://localhost:7070/adminPortalTimer')
         .then(repsone => repsone.json())
         .then(data => {
-            console.log(data);
             data.forEach(post => {
                 fillDiv(post.idtimer, post.timerName, post.timerTime);
             })
