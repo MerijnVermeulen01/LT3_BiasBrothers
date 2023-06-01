@@ -1,5 +1,5 @@
 const queryString = window.location.href;
-let startingMinutes = 10;           //starting value for timer
+let startingMinutes =10;           //starting value for timer
 
 if (queryString.includes("timerEdit")){     //check if in admin or in normal page
     fetchTimerEdit()
@@ -42,11 +42,12 @@ function runTimer() {                               //the timer with alarm
     const alarm = new Audio('/Frontend/Images/alarm2.wav');         //set audio
     const countDownEl = document.getElementById('timer');
     let time = startingMinutes * 60;
-    var timerInterval = setInterval(updateTimer, 1000)                  //interval of repeating the timer for 1000ms so 1 sec.
+    //var timerInterval = setInterval(updateTimer, 1000)                  //interval of repeating the timer for 1000ms so 1 sec.
 
 
     if (alarmOn == false) {                                             //makes sure the alarm only rings once
-        timerInterval
+        setInterval(updateTimer,1000)
+        //timerInterval
     }
 
     function updateTimer() {                            //function that makes the timer tick
@@ -67,7 +68,7 @@ function runTimer() {                               //the timer with alarm
             setTimeout(() => {
                 alarm.pause(); // stop the alarm
             }, 1000);         //Set amount of tiume before alarm stops
-            clearInterval(timerInterval)
+            //clearInterval(timerInterval)
         } else {
             time--;
         }
