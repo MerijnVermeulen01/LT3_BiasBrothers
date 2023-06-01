@@ -1,5 +1,5 @@
 const queryString = window.location.href;
-let startingMinutes =10;           //starting value for timer
+var alarmOn = new Boolean(false);
 
 if (queryString.includes("timerEdit")){     //check if in admin or in normal page
     fetchTimerEdit()
@@ -16,38 +16,37 @@ else{
 function chooseTimer(idtimer,timerName,timerTime){          //goes through multiple if statments to infd out the page and set the time with the fetched time for the opened page
     if (queryString.includes("myBiasPage")){
         if (timerName.includes("biasTime")) {
-            startingMinutes = timerTime;
+            runTimer(timerTime);
+            //startingMinutes = timerTime;
         }
     }
     else if (queryString.includes("thinkingTraps")){
         if (timerName.includes("thinkingTime")) {
-            startingMinutes = timerTime;
+            runTimer(timerTime);
+            //startingMinutes = timerTime;
         }
     }
     else if (queryString.includes("editPossibility")){
         if (timerName.includes("possibilityTime")){
-            startingMinutes = timerTime;
+            runTimer(timerTime);
+            //startingMinutes = timerTime;
         }
     }
     else if (queryString.includes("selfDevelopment")){
         if (timerName.includes("developmentTime")){
-            startingMinutes = timerTime;
+            runTimer(timerTime);
+            //startingMinutes = timerTime;
         }
     }
-    runTimer();
 }
-function runTimer() {                               //the timer with alarm
-
-    var alarmOn = new Boolean(false);
+function runTimer(timerTime) {                               //the timer with alarm
     const alarm = new Audio('/Frontend/Images/alarm2.wav');         //set audio
     const countDownEl = document.getElementById('timer');
-    let time = startingMinutes * 60;
-    //var timerInterval = setInterval(updateTimer, 1000)                  //interval of repeating the timer for 1000ms so 1 sec.
-
+    let time = timerTime * 60;
+    var timerInterval;
 
     if (alarmOn == false) {                                             //makes sure the alarm only rings once
-        setInterval(updateTimer,1000)
-        //timerInterval
+       timerInterval = setInterval(updateTimer, 1000)                  //interval of repeating the timer for 1000ms so 1 sec.
     }
 
     function updateTimer() {                            //function that makes the timer tick
@@ -68,7 +67,7 @@ function runTimer() {                               //the timer with alarm
             setTimeout(() => {
                 alarm.pause(); // stop the alarm
             }, 1000);         //Set amount of tiume before alarm stops
-            //clearInterval(timerInterval)
+            clearInterval(timerInterval)
         } else {
             time--;
         }
