@@ -1,12 +1,11 @@
 const queryString = window.location.href;
 
-
-if (queryString.includes("timerEdit")){
+if (queryString.includes("timerEdit")) {
     fetchTimerEdit()
-}
-else{
+} else {
     runTimer();
 }
+
 function runTimer() {
 
     const startingMinutes = 10;
@@ -58,18 +57,16 @@ function fetchTimerEdit() {
             })
         });
 }
-function fillDiv(idtimer, timerName, timerTime){
-    var time = document.createTextNode(timerTime+" minuten");
-    if (timerName.includes("biasTime")){
+
+function fillDiv(idtimer, timerName, timerTime) {
+    var time = document.createTextNode(timerTime + " minuten");
+    if (timerName.includes("biasTime")) {
         document.getElementById('biasTime').appendChild(time);
-    }
-    else if (timerName.includes("thinkingTime")){
+    } else if (timerName.includes("thinkingTime")) {
         document.getElementById('thinkingTime').appendChild(time);
-    }
-    else if (timerName.includes("developmentTime")){
+    } else if (timerName.includes("developmentTime")) {
         document.getElementById('developmentTime').appendChild(time);
-    }
-    else if (timerName.includes("possibilityTime")){
+    } else if (timerName.includes("possibilityTime")) {
         document.getElementById('possibilityTime').appendChild(time);
     }
 }
