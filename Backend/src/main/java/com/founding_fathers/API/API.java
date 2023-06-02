@@ -32,7 +32,7 @@ public class API {
         ThinkingTraps thinkingTraps = new ThinkingTraps();
         Codex codex = new Codex();
         MeThinkingFast thinkingFast = new MeThinkingFast();
-        AdminPortal adminPortaal = new AdminPortal();
+        AdminPortal adminPortal = new AdminPortal();
 
 //        SessionsParticipant session = new SessionsParticipant();
 
@@ -42,7 +42,7 @@ public class API {
         this.thinkingTrapsController = new ThinkingTrapsController(thinkingTraps);
         this.codexController = new CodexController(codex);
         this.meThinkController = new MeThinkController(thinkingFast);
-        this.adminPortaalController = new AdminPortalController(adminPortaal);
+        this.adminPortaalController = new AdminPortalController(adminPortal);
 //        this.sessionController = new SessionController(session);
         addHandlers();
 

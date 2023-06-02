@@ -48,4 +48,4 @@ function generatePDF() {
 //         // Save the PDF
 //         pdf.save('Bias Brothers.pdf');
 //     });
-}
+// }

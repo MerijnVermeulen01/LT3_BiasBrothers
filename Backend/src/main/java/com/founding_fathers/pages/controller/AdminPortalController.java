@@ -18,8 +18,16 @@ public class AdminPortalController implements APIController {
     @Override
     public void addHandlers(Javalin app) {
         app.get("/adminPortalThinkingTraps", getAdminPortalThinkingTraps);
+        app.get("/adminPortalThinkingTraps/{idThinkingTraps}", ctx -> {
+            int id = Integer.parseInt(ctx.pathParam("idThinkingTraps"));
+            ctx.json(adminPortaal.selectedByIDAdminPortaal(id));
+        });
         app.get("/adminPortalBias", getAdminPortalBias);
         app.get("/adminPortalTimer", getAdminPortalTimer);
+        app.get("/adminPortalBias/{idBiases}", ctx -> {
+            int id = Integer.parseInt(ctx.pathParam("idBiases"));
+            ctx.json(adminPortaal.selectedByIDBiasAdminPortaal(id));
+        });
     }
 
     protected final Handler getAdminPortalTimer = (@NotNull Context context) ->
