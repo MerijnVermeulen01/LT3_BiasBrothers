@@ -13,6 +13,11 @@ import java.util.stream.IntStream;
 public class AdminPortal extends DatabaseController {
 
     Connection con = getConnection();
+    private int count;
+    private int biasTime;
+    private int thinkingTime;
+    private int possibilityTime;
+    private int developmentTime;
 
     public List selectAdminPortaal(String query) throws SQLException {
         Statement stmt = con.createStatement();
@@ -43,6 +48,21 @@ public class AdminPortal extends DatabaseController {
             result.put(row);
         }
         return result.toList();
+    }
+
+    public void updateInTimer() {
+        int[] times = {biasTime, thinkingTime, possibilityTime, developmentTime};
+
+        PreparedStatement stmt = null;
+        String[] timerNames ={"biasTime", "thinkingTime", "possibilityTime", "developmentTime"};
+        try {
+            stmt = con.prepareStatement("UPDATE timer SET timerTime = ? WHERE timerName = ?");
+            stmt.setInt(1, times[count]);
+            stmt.setString(2, timerNames[count]);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
