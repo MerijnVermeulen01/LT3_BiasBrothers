@@ -8,27 +8,55 @@ function generatePDF() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 
-    // Add the preset pages
-    var presetPages = [
-        '/Frontend/PDF-presets/pdfOntwerp.png',
-        '/Frontend/PDF-presets/pdfOntwerp2.png',
-        '/Frontend/PDF-presets/pdfOntwerp3.png',
-        '/Frontend/PDF-presets/pdfOntwerp4.png',
-        '/Frontend/PDF-presets/pdfOntwerp5.png',
-        '/Frontend/PDF-presets/pdfOntwerp6.png'
+    const apiUrls = [
+        'http://localhost:7070/selfDevelopment',
+        'http://localhost:7070/getParicipantTraps'
     ];
 
-    for (var i = 0; i < presetPages.length; i++) {
-        // Load the preset page
-        var pages = presetPages[i];
+    // Fetches all data at once - puts the data in a json format
+    Promise.all(apiUrls.map(url => fetch(url).then(response => response.json())))
+        .then(data => {
+            const [selfDevelopmentData, trapData] = data;
 
-        // Add the page to the PDF
-        doc.addImage(pages, 'PNG', 0, 0, 210, 297); // Adjust the coordinates and dimensions as needed
-        doc.addPage(pages, 'PNG', 0, 0, 210, 297);
+            // Generate the pages using the fetched data
+            // Page 1 - retrieves data from selfdevelopment.
+            generatePage1(doc, selfDevelopmentData);
 
-    }
-    doc.save('Bias Brothers.pdf');
+            // Page 2 - retrieves data from thinking traps.
+            doc.addPage();
+            generatePage2(doc, trapData);
+
+            // Page 3 - retrieves data from biases.
+
+            // Save the PDF
+            doc.save('Bias Brothers.pdf');
+        })
+        .catch(error => console.error(error));
 }
+
+
+function generatePage1(doc, data) {
+    data.forEach((item, index) => {
+        const title = item.selfDevelopment;
+        const description = item.description;
+        doc.text(20, 20 + index * 10, `${title}: ${description}`);
+    });
+}
+
+function generatePage2(doc, data) {
+    data.forEach((item, index) => {
+        const title = item.thinkingtraps_idThinkingTraps;
+        const description = item.description;
+        doc.text(20, 20 + index * 10, `${title}: ${description}`);
+    });
+}
+
+
+
+
+
+
+
 
 
 // function generatePDF() {
@@ -49,3 +77,4 @@ function generatePDF() {
 //         pdf.save('Bias Brothers.pdf');
 //     });
 // }
+

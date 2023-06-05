@@ -66,7 +66,7 @@ function valuesToJSON(){
 }
 
 
-fetch('http://localhost:7070/getParicipantSelfDev')
+fetch('http://localhost:7070/selfDevelopment')
     .then(repsone => repsone.json())
     .then(data => {
         // document.getElementById('buttonWrite1').classList.add('activeButton');

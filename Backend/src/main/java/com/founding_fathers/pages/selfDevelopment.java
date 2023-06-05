@@ -70,58 +70,16 @@ public class selfDevelopment extends DatabaseController {
         PreparedStatement stmt = null;
         try {
             for (int i = 0; i < writeButtons.length; i++){
-                stmt = con.prepareStatement("INSERT INTO selfdevelopment(selfDevelopment, description, session_idSession, selectedSelfDevolpment) VALUE (?, ?, ?, ?);");
+                stmt = con.prepareStatement("INSERT INTO selfdevelopment(selfDevelopment, description) VALUE (?, ?);");
 
                 stmt.setString(1, writeButtons[i]);
                 stmt.setString(2, descriptions[i]);
-                stmt.setInt(3, 1);
-                stmt.setInt(4, 1);
                 stmt.executeUpdate();
             }
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public List getParticipantSelfDev() throws SQLException {
-        ResultSet resultSet = null;
-        PreparedStatement stmt = null;
-        try {
-            stmt = con.prepareStatement("SELECT * FROM selfdevelopment WHERE session_idSession = ?");
-
-            stmt.setInt(1, 1);
-            resultSet = stmt.executeQuery();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
-        ResultSetMetaData md =   resultSet.getMetaData();
-        int numCols = md.getColumnCount();
-        List<String> colNames = IntStream.range(0, numCols)
-                .mapToObj(i -> {
-                    try {
-                        return md.getColumnName(i + 1);
-                    } catch (SQLException e){
-                        System.out.println(e);
-                        return "?";
-                    }
-                }).collect(Collectors.toList());
-
-        JSONArray result = new JSONArray();
-        while (resultSet.next()){
-            JSONObject row = new JSONObject();
-            ResultSet finalResultSet = resultSet;
-            colNames.forEach(cn -> {
-                try {
-                    row.put(cn, finalResultSet.getObject(cn));
-                } catch (JSONException | SQLException e){
-                    System.out.println(e);
-                }
-            });
-            result.put(row);
-        }
-        return result.toList();
     }
 
     public List selectSelfDevelopment() throws SQLException {
