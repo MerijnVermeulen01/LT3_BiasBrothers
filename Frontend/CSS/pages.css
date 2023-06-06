@@ -136,7 +136,7 @@ nav {
     background-color: #27be6b;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
     position: fixed;
-    transform: translateY(20%);
+
 }
 
 /* Icons in sidebar */
@@ -1011,3 +1011,151 @@ a:visited, a:link { text-decoration: none!important; color:black; }
 
 /* -------------------------------------------- */
 
+
+
+/* Responsive selfDevelopment */
+
+
+/* When the browser is at least 1300px and below */
+@media screen and (max-width: 1300px) {
+    .buttonsAreaContainer {
+        margin-left: 100px;
+    }
+    .writeAreaContainer{
+        margin-left: 100px;
+    }
+    header{
+        margin-left: 100px;
+    }
+}
+/* When the browser is at least 1100px and below */
+@media screen and (max-width: 1100px) {
+    .buttonsAreaContainer {
+        width: 730px;
+        height: 160px;
+        margin-top: 0px;
+    }
+    textarea{
+        width: 200px;
+        height: 45px;
+    }
+    .textArea{
+        width: 233px;
+        height: 260px;
+    }
+    #writeArea1, #writeArea2, #writeArea3 {
+        width: 161px;
+        height: 188px;
+        margin: 10px;
+    }
+}
+/* When the browser is at least 1000px and below */
+@media screen and (max-width: 1000px) {
+    .buttonsAreaContainer {
+        width: 70vw;
+        padding: 0px;
+        height: fit-content;
+    }
+    textarea {
+        width: 41%;
+    }
+    .writeAreaContainer{
+        flex-wrap: wrap
+    }
+}
+/* When the browser is at least 700px and below */
+@media screen and (max-width: 700px) {
+    .buttonsAreaContainer {
+        width: 65vw;
+        height: fit-content;
+    }
+    textarea{
+        width: 90%;
+    }
+}
+
+
+/* When the browser is at least 500px and below */
+@media screen and (max-width: 400px) {
+
+    #timer{
+        font-size: 30px;
+        width: 200px;
+    }
+    .sidebar{
+        padding-top: 27%;
+    }
+    textarea {
+        width: 95%;
+        height: 80px;
+    }
+    .buttonsAreaContainer {
+        height: fit-content;
+        margin-left: 80px;
+        width: 208px;
+    }
+    .buttonWrite{
+        width: 170px;
+    }
+    .writeAreaContainer{
+        display: flex;
+        flex-direction: column;
+        margin-left: 80px;
+    }
+    .textArea{
+        margin-top: 40px;
+    }
+    header{
+        height: 100px;
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+    .buttonsPages{
+        height: 60px;
+    }
+    .div1{
+        width: 70%;
+    }
+}
+/* -------------------------------------------- */
+
+/* Responsive thinkingTraps */
+
+/* When the browser is at least 500px and below */
+@media screen and (max-width: 500px) {
+.columns{
+    display: block;
+}
+    .columnWithButtons{
+        width: 60vw;
+        margin-left: 75px;
+    }
+    .columnWithTextAreas{
+        width: 62vw;
+        margin-left: 75px;
+    }
+    .textArea1, .textArea2, .textArea3{
+        margin: 0px;
+    }
+}
+/* -------------------------------------------- */
+
+/* Responsive editPosibility */
+
+/* When the browser is at least 500px and below */
+@media screen and (max-width: 500px) {
+    .navBarPosibility{
+        margin-left: 100px;
+    }
+    .topBarEditPosibility{
+        width: 300px;
+        margin-left: 90px;
+    }
+    .situatieBeschrijving {
+        width: 65vw;
+    }
+}
+
+
+
+/* -------------------------------------------- */
