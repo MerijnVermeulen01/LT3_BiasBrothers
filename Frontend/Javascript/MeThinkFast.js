@@ -1,8 +1,6 @@
-
-var description = ["", "", "","", "", "","", "", "","", "", ""];
+var description = ["", "", "", "", "", "", "", "", "", "", "", ""];
 
 function textToArray(textAreaId, paricipantText){
-     console.log("papi")
     if(textAreaId === "situationDescription1"){
         description[0] = paricipantText;
     } else if(textAreaId === "situationDescription2"){
@@ -17,15 +15,16 @@ function textToArray(textAreaId, paricipantText){
         description[5] = paricipantText;
     } else if(textAreaId === "situationDescription7"){
         description[6] = paricipantText;
-    } else if(textAreaId === "situationDescription9"){
+    }else if(textAreaId === "situationDescription8") {
         description[7] = paricipantText;
-    } else if(textAreaId === "situationDescription10"){
+    } else if(textAreaId === "situationDescription9"){
         description[8] = paricipantText;
-    } else if(textAreaId === "situationDescription11"){
+    } else if(textAreaId === "situationDescription10"){
         description[9] = paricipantText;
-    } else if(textAreaId === "situationDescription12"){
+    } else if(textAreaId === "situationDescription11"){
         description[10] = paricipantText;
-    }
+    } else if(textAreaId === "situationDescription12"){
+        description[11] = paricipantText;
     }
 }
 
@@ -66,7 +65,6 @@ function valuesToJSON(){
         "situationDescription11" : description[10],
         "situationDescription12" : description[11],
     });
-
     console.log(data);
     // Sending data with the request
     xhr.send(data);
@@ -77,7 +75,6 @@ function valuesToJSON(){
 fetch('http://localhost:7070/getParicipantMeThinkFast')
     .then(repsone => repsone.json())
     .then(data => {
-        console.log("papi");
         document.getElementById('situationDescription1').value = data[0].description;
         document.getElementById('situationDescription2').value = data[1].description;
         document.getElementById('situationDescription3').value = data[2].description;
