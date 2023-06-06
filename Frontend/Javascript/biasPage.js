@@ -85,15 +85,6 @@ function valuesToJSON() {
 
 }
 
-// Fetches thinkingtrap name and id.
-// fetch('http://localhost:7070/joinedParticipantTraps')
-//     .then(response => response.json())
-//     .then(data => {
-//         data.forEach(post => {
-//             fillDiv(post.thinkingTraps, post.idThinkingTraps);
-//         });
-//     });
-
 // A-synchronous version of method as seen above.
 async function fetchData() {
     try {
