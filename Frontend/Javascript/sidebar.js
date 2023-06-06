@@ -29,6 +29,12 @@ function sidebarLoad(){
     pdfGenScript.src = '../Javascript/pdfGen.js';
     document.body.appendChild(pdfGenScript);
 
+    // Add script tag for tooltips.js file
+    var tooltips = document.createElement('script');
+    tooltips.type = 'text/javascript';
+    tooltips.src = '../Javascript/tooltips.js';
+    document.body.appendChild(tooltips);
+
     // This code removes the class active form all the children in the div sidebarContainer
     const elements = document.querySelectorAll("#sidebarContainer *");
     elements.forEach((element) =>{
