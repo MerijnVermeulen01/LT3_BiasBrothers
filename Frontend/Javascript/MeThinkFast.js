@@ -3,17 +3,17 @@ var description = ["", "", "", "", "", "", "", "", "", "", "", ""];
 function textToArray(textAreaId, paricipantText){
     if(textAreaId === "situationDescription1"){
         description[0] = paricipantText;
-    } else if(textAreaId === "situationDescription2"){
+    } else if (textAreaId === "situationDescription2") {
         description[1] = paricipantText;
-    } else if(textAreaId === "situationDescription3"){
+    } else if (textAreaId === "situationDescription3") {
         description[2] = paricipantText;
-    } else if(textAreaId === "situationDescription4"){
+    } else if (textAreaId === "situationDescription4") {
         description[3] = paricipantText;
-    } else if(textAreaId === "situationDescription5"){
+    } else if (textAreaId === "situationDescription5") {
         description[4] = paricipantText;
-    } else if(textAreaId === "situationDescription6"){
+    } else if (textAreaId === "situationDescription6") {
         description[5] = paricipantText;
-    } else if(textAreaId === "situationDescription7"){
+    } else if (textAreaId === "situationDescription7") {
         description[6] = paricipantText;
     }else if(textAreaId === "situationDescription8") {
         description[7] = paricipantText;
@@ -29,8 +29,7 @@ function textToArray(textAreaId, paricipantText){
 }
 
 
-
-function valuesToJSON(){
+function valuesToJSON() {
     // Creating a XHR object
     let xhr = new XMLHttpRequest();
     let url = "http://localhost:7070/MeThinkingFastPost";
@@ -52,18 +51,18 @@ function valuesToJSON(){
 
     // Converting JSON data to string
     var data = JSON.stringify({
-        "situationDescription1" : description[0],
-        "situationDescription2" : description[1],
-        "situationDescription3" : description[2],
-        "situationDescription4" : description[3],
-        "situationDescription5" : description[4],
-        "situationDescription6" : description[5],
-        "situationDescription7" : description[6],
-        "situationDescription8" : description[7],
-        "situationDescription9" : description[8],
-        "situationDescription10" : description[9],
-        "situationDescription11" : description[10],
-        "situationDescription12" : description[11],
+        "situationDescription1": description[0],
+        "situationDescription2": description[1],
+        "situationDescription3": description[2],
+        "situationDescription4": description[3],
+        "situationDescription5": description[4],
+        "situationDescription6": description[5],
+        "situationDescription7": description[6],
+        "situationDescription8": description[7],
+        "situationDescription9": description[8],
+        "situationDescription10": description[9],
+        "situationDescription11": description[10],
+        "situationDescription12": description[11],
     });
     console.log(data);
     // Sending data with the request
