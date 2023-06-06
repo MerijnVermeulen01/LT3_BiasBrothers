@@ -1,20 +1,22 @@
     const buttonCognitiveBias = document.getElementById('buttonCognitiveBias');
     const popUp = document.getElementById('popUp');
-    const popUpBack = document.getElementById('popUpBack');
-    const frame = document.getElementById('frame');
-    const fuzz = document.getElementById('fuzz');
-    const popUpClose = document.getElementById('popUpClose');
     buttonCognitiveBias.addEventListener('click', () =>{
     popUp.style.display = 'block';
     })
-    popUpBack.addEventListener('click', () =>{
-    frame.src = "https://upload.wikimedia.org/wikipedia/commons/6/65/Cognitive_bias_codex_en.svg";
-    })
-    popUpClose.addEventListener('click', () =>{
-        fuzz.style.display = 'none';
-    })
-
-
+    const queryString = window.location.href
+    if(queryString.includes("codexCognitiveBias")){
+        const popUpBack = document.getElementById('popUpBack');
+        const frame = document.getElementById('frame');
+        const fuzz = document.getElementById('fuzz');
+        const popUpClose = document.getElementById('popUpClose');
+        popUpBack.addEventListener('click', () =>{
+            frame.src = "https://upload.wikimedia.org/wikipedia/commons/6/65/Cognitive_bias_codex_en.svg";
+            })
+            popUpClose.addEventListener('click', () =>{
+                fuzz.style.display = 'none';
+            })
+    }
+    
     const elements = document.querySelectorAll("#buttonContainer *");
         elements.forEach((element) =>{
          element.classList.remove("active2");
@@ -25,7 +27,6 @@
         fetch('http://localhost:7070/codexBias')
             .then(repsone => repsone.json())
             .then(data => {
-                console.log(data);
                 data.forEach(post => {
                     fillDiv(post.nameBias, post.biasDescription);
                 })
@@ -36,7 +37,6 @@
         fetch('http://localhost:7070/codexAdaptability')
             .then(repsone => repsone.json())
             .then(data => {
-                console.log(data);
                 data.forEach(post => {
                     fillAdaptibility(post.title, post.description, post.trade1, post.trade2, post.trade3);
                 })
@@ -48,7 +48,6 @@
         fetch('http://localhost:7070/codexThinkingTraps')
             .then(repsone => repsone.json())
             .then(data => {
-                console.log(data);
                 data.forEach(post => {
                     fillDiv(post.thinkingTraps, post.description);
                 })
@@ -56,11 +55,10 @@
 
     }
     else if (window.location.href.indexOf("codexCognitiveBias")>-1){
-        console.log("wew");
         buttonCognitiveBias.classList.add('active2');
     }
     else{
-        console.log("bad juju")
+
     }
 
 function fillDiv(title, desription) {

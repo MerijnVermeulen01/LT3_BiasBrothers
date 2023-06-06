@@ -10,7 +10,6 @@ function fetchDataThinkingTraps(){
     fetch('http://localhost:7070/adminPortalThinkingTraps')
     .then(repsone => repsone.json())
     .then(data => {
-        console.log(data);
     let table = document.querySelector("table");
         generateTable(table, data);
     });
@@ -20,7 +19,8 @@ function fetchDataBiases(){
     fetch('http://localhost:7070/adminPortalBias')
     .then(repsone => repsone.json())
     .then(data => {
-    let table = document.querySelector("table");
+        console.log(data);
+        let table = document.querySelector("table");
         generateTable(table, data);
     });
 }
@@ -28,7 +28,9 @@ function fetchDataBiases(){
 function generateTable(table, data) {
     
     for (let element of data) {
-        // console.log(element);
+        if('idBiases' in element || 'idThinkingTraps' in element){
+            console.log('data');
+        }
         let row = table.insertRow();
         for (key in element) {
             let cell = row.insertCell();

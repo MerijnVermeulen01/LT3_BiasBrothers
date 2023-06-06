@@ -31,8 +31,8 @@ public class API {
         selfDevelopment selfDevelopment = new selfDevelopment();
         ThinkingTraps thinkingTraps = new ThinkingTraps();
         Codex codex = new Codex();
-        MeThinkingFast thinkingFast = new MeThinkingFast();
-        AdminPortal adminPortaal = new AdminPortal();
+        MeThinkingFast methinkingFast = new MeThinkingFast();
+        AdminPortal adminPortal = new AdminPortal();
 
 //        SessionsParticipant session = new SessionsParticipant();
 
@@ -41,8 +41,8 @@ public class API {
         this.selfDevelopmentController = new selfDevelopmentController(selfDevelopment);
         this.thinkingTrapsController = new ThinkingTrapsController(thinkingTraps);
         this.codexController = new CodexController(codex);
-        this.meThinkController = new MeThinkController(thinkingFast);
-        this.adminPortaalController = new AdminPortalController(adminPortaal);
+        this.adminPortaalController = new AdminPortalController(adminPortal);
+        this.meThinkController = new MeThinkController(methinkingFast);
 //        this.sessionController = new SessionController(session);
         addHandlers();
 
