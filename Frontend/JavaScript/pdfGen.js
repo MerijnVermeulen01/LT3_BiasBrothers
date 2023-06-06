@@ -17,9 +17,8 @@ function generatePDF() {
     // Fetches all data at once - puts the data in a json format.
     Promise.all(apiUrls.map(url => fetch(url).then(response => response.json())))
         .then(data => {
+            // Values assigned to variables.
             const [selfDevelopmentData, trapData, biasData] = data;
-
-            // Generate the pages using the fetched data
 
             // Page 1
             generatePage1(doc, selfDevelopmentData);
