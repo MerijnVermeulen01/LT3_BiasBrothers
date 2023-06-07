@@ -147,7 +147,6 @@ function generatePage2(doc, data) {
     });
 }
 
-
 // Page genarated using input-data from biases.
 function generatePage3(doc, data) {
     doc.addPage();
@@ -204,31 +203,4 @@ function generatePage3(doc, data) {
         yPos = yPos + 16 + lines.length * 7 + 10;
     });
 }
-
-
-
-
-
-
-
-
-
-// function generatePDF() {
-//     // Create a new jsPDF instance
-//     const { jsPDF } = window.jspdf;
-//     const doc = new jsPDF();
-//
-//     // Select the HTML elements you want to include in the PDF
-//     const searchResults = document.querySelector('#textHeader3');
-//
-//     // Convert the selected elements to canvas using html2canvas
-//     html2canvas(searchResults).then((canvas) => {
-//         // Add the canvas to the PDF
-//         // const pdf = new jsPDF('a4');
-//         pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 210, 297);
-//
-//         // Save the PDF
-//         pdf.save('Bias Brothers.pdf');
-//     });
-// }
 
