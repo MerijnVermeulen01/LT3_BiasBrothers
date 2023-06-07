@@ -19,6 +19,19 @@ public class AdminPortal extends DatabaseController {
     private int possibilityTime;
     private int developmentTime;
 
+    public void setBiasTime(int biasTime) {
+        this.biasTime = biasTime;
+    }
+    public void setThinkingTime(int thinkingTime) {
+        this.thinkingTime = thinkingTime;
+    }
+    public void setPossibilityTime(int possibilityTime) {
+        this.possibilityTime = possibilityTime;
+    }
+    public void setDevelopmentTime(int developmentTime) {
+        this.developmentTime = developmentTime;
+    }
+
     public List selectAdminPortaal(String query) throws SQLException {
         Statement stmt = con.createStatement();
         ResultSet resultSet = stmt.executeQuery(query);
@@ -52,9 +65,8 @@ public class AdminPortal extends DatabaseController {
 
     public void updateInTimer() {
         int[] times = {biasTime, thinkingTime, possibilityTime, developmentTime};
-
-        PreparedStatement stmt = null;
         String[] timerNames ={"biasTime", "thinkingTime", "possibilityTime", "developmentTime"};
+        PreparedStatement stmt = null;
         try {
             stmt = con.prepareStatement("UPDATE timer SET timerTime = ? WHERE timerName = ?");
             stmt.setInt(1, times[count]);

@@ -1,6 +1,11 @@
 const queryString = window.location.href;
 let startingMinutes = 10;                                                    //starting value for timer
-var times = [];
+const times = [];
+let biasTime;
+let thinkingTime;
+let possibilityTime;
+let developmentTime;
+
 if (queryString.includes("timerEdit")) {                                     //check if in admin or in normal page
     fetchTimerEdit()
 } else {
@@ -97,49 +102,57 @@ function fillDiv(idtimer, timerName, timerTime) {                            //g
 }
 
 function minusOne(timeName) {                                                         //function to subtract by one from the given time
-    if (timeName == "biasMinus") {                                                   //if statements to find the time that is being edited
+    if (timeName === "biasMinus") {                                                   //if statements to find the time that is being edited
         biasTime = document.getElementById('biasTime').innerHTML;           //takes time value from within the html
         parseInt(biasTime);                                                          //parse set time to be an int so we can edit it
         biasTime--;
+        times[0] = biasTime;                                                         //adds the new value to the times array in the corresponding spot to be sent with the JSON so the DB can be updated
         document.getElementById('biasTime').innerHTML = biasTime;           //now set the new time in the html in the corresponding id
-    } else if (timeName == "thinkingMinus") {
+    } else if (timeName === "thinkingMinus") {
         thinkingTime = document.getElementById('thinkingTime').innerHTML;
         parseInt(thinkingTime);
         thinkingTime--;
+        times[1] = thinkingTime;
         document.getElementById('thinkingTime').innerHTML = thinkingTime;
-    } else if (timeName == 'possibilityMinus') {
+    } else if (timeName === 'possibilityMinus') {
         possibilityTime = document.getElementById('possibilityTime').innerHTML;
         parseInt(possibilityTime);
         possibilityTime--;
+        times[2] = possibilityTime;
         document.getElementById('possibilityTime').innerHTML = possibilityTime;
-    } else if (timeName == 'developmentMinus') {
+    } else if (timeName === 'developmentMinus') {
         developmentTime = document.getElementById('developmentTime').innerHTML;
         parseInt(developmentTime);
         developmentTime--;
+        times[3] = developmentTime;
         document.getElementById('developmentTime').innerHTML = developmentTime;
     }
 }
 
 function plusOne(timeName) {                                                         //function to subtract by one from the given time
-    if (timeName == "biasPlus") {                                                   //if statements to find the time that is being edited
+    if (timeName === "biasPlus") {                                                   //if statements to find the time that is being edited
         biasTime = document.getElementById('biasTime').innerHTML;           //takes time value from within the html
         parseInt(biasTime);                                                          //parse set time to be an int so we can edit it
         biasTime++;
+        times[0] = biasTime;                                                         //adds the new value to the times array in the corresponding spot to be sent with the JSON so the DB can be updated
         document.getElementById('biasTime').innerHTML = biasTime;           //now set the new time in the html in the corresponding id
-    } else if (timeName == "thinkingPlus") {
+    } else if (timeName === "thinkingPlus") {
         thinkingTime = document.getElementById('thinkingTime').innerHTML;
         parseInt(thinkingTime);
         thinkingTime++;
+        times[1] = thinkingTime;
         document.getElementById('thinkingTime').innerHTML = thinkingTime;
-    } else if (timeName == 'possibilityPlus') {
+    } else if (timeName === 'possibilityPlus') {
         possibilityTime = document.getElementById('possibilityTime').innerHTML;
         parseInt(possibilityTime);
         possibilityTime++;
+        times[2] = possibilityTime;
         document.getElementById('possibilityTime').innerHTML = possibilityTime;
-    } else if (timeName == 'developmentPlus') {
+    } else if (timeName === 'developmentPlus') {
         developmentTime = document.getElementById('developmentTime').innerHTML;
         parseInt(developmentTime);
         developmentTime++;
+        times[3] = developmentTime;
         document.getElementById('developmentTime').innerHTML = developmentTime;
     }
 }
@@ -175,10 +188,6 @@ function valuesToJSON() {
 
         }
     };
-    times[0] = document.getElementById('biasTime').innerHTML;
-    times[1] = document.getElementById('thinkingTime').innerHTML;
-    times[2] = document.getElementById('possibilityTime').innerHTML;
-    times[3] = document.getElementById('developmentTime').innerHTML;
     // Converting JSON data to string
     var data = JSON.stringify({
         "biasTime": times[0],
