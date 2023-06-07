@@ -14,6 +14,7 @@ public class API {
     private final ThinkingTrapsController thinkingTrapsController;
     private final CodexController codexController;
     private final MeThinkController meThinkController;
+    private final MeSlowingDownController meSlowingDownController;
 //    private final SessionController sessionController;
 
     /**
@@ -31,6 +32,7 @@ public class API {
         ThinkingTraps thinkingTraps = new ThinkingTraps();
         Codex codex = new Codex();
         MeThinkingFast methinkingFast = new MeThinkingFast();
+        MeSlowingDown meSlowingDown = new MeSlowingDown();
 
 //        SessionsParticipant session = new SessionsParticipant();
 
@@ -40,6 +42,7 @@ public class API {
         this.thinkingTrapsController = new ThinkingTrapsController(thinkingTraps);
         this.codexController = new CodexController(codex);
         this.meThinkController = new MeThinkController(methinkingFast);
+        this.meSlowingDownController = new MeSlowingDownController(meSlowingDown);
 //        this.sessionController = new SessionController(session);
         addHandlers();
 
@@ -56,6 +59,7 @@ public class API {
         thinkingTrapsController.addHandlers(app);
         codexController.addHandlers(app);
         meThinkController.addHandlers(app);
+        meSlowingDownController.addHandlers(app);
 
     }
 }

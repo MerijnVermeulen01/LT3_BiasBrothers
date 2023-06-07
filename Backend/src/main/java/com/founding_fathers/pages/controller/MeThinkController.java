@@ -1,5 +1,4 @@
 package com.founding_fathers.pages.controller;
-
 import com.founding_fathers.API.APIController;
 import com.founding_fathers.pages.MeThinkingFast;
 import io.javalin.Javalin;
@@ -13,7 +12,7 @@ public class MeThinkController implements APIController {
     private MeThinkingFast meThinkingFast;
 
     /**
-     * This is the constructor of the MyBiasController file
+     * This is the constructor of the MeThinkingFastController file
      */
 
     public MeThinkController(MeThinkingFast meThinkingFast){this.meThinkingFast = meThinkingFast;}
