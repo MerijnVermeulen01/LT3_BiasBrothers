@@ -40,7 +40,7 @@ function generatePage1(doc, data) {
     data.forEach((item, index) => {
         const title = item.selfDevelopment;
         const description = item.description;
-        doc.text(20, 20 + index * 10, `${title}: ${description}`);
+        doc.text(20, 20 + index * 10, `${title}:\n${description}`);
     });
 }
 
@@ -50,7 +50,25 @@ function generatePage2(doc, data) {
     data.forEach((item, index) => {
         const title = item.thinkingTraps;
         const description = item.description;
-        doc.text(20, 20 + index * 10, `${title}: ${description}`);
+
+        // Set the style for the title
+        doc.setFont(undefined, 'bold');
+        doc.setTextColor(73, 207, 128);
+
+        // Title with the specified color
+        doc.text(20, 20 + index * 10, `\n${title}\n`);
+
+        // Line as seperator for text. + (style)
+        doc.line(15, 30 + index * 10, 195, 30 + index * 10);
+
+        // Reset style to default
+        doc.setFont(undefined, 'normal');
+        doc.setTextColor(0, 0, 0);
+
+        // Description with the default color
+        doc.text(20, 25 + index * 10, description);
+
+        // doc.line(15, 30 + index * 10, 195, 30 + index * 10);
     });
 }
 
@@ -60,7 +78,7 @@ function generatePage3(doc, data) {
     data.forEach((item, index) => {
         const title = item.nameBias;
         const description = item.description;
-        doc.text(20, 20 + index * 10, `${title}: ${description}`);
+        doc.text(20, 20 + index * 10, `${title}:\n${description}`);
     });
 }
 
