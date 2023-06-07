@@ -1,5 +1,11 @@
+/**
+ * This is a array with all the descriptions from the meThinkFastUser.
+ */
 var description = ["", "", "", "", "", "", "", "", "", "", "", ""];
 
+/**
+ * This is a function to convert all the text to fit in the description Array
+ */
 function textToArray(textAreaId, paricipantText){
     if(textAreaId === "situationDescription1"){
         description[0] = paricipantText;
@@ -26,52 +32,58 @@ function textToArray(textAreaId, paricipantText){
     } else if(textAreaId === "situationDescription12"){
         description[11] = paricipantText;
     }
+    console.log(description);
 }
 
 
+/**
+ * This is a function to convert the userData to Json format
+ */
+function valuesToJSON() {
+    try {
+        // Creating a XHR object
+        let xhr = new XMLHttpRequest();
+        let url = "http://localhost:7070/MeThinkingFastPost";
 
-function valuesToJSON(){
-    // Creating a XHR object
-    let xhr = new XMLHttpRequest();
-    let url = "http://localhost:7070/MeThinkingFastPost";
+        // open a connection
+        xhr.open("POST", url, true);
 
-    // open a connection
-    xhr.open("POST", url, true);
+        // Set the request header i.e. which type of content you are sending
+        xhr.setRequestHeader("Content-Type", "application/json");
 
-    // Set the request header i.e. which type of content you are sending
-    xhr.setRequestHeader("Content-Type", "application/json");
+        // Create a state change callback
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                console.log(this.responseText);
+            }
+        };
 
-    // Create a state change callback
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-
-            console.log(this.responseText);
-
-        }
-    };
-
-    // Converting JSON data to string
-    var data = JSON.stringify({
-        "situationDescription1" : description[0],
-        "situationDescription2" : description[1],
-        "situationDescription3" : description[2],
-        "situationDescription4" : description[3],
-        "situationDescription5" : description[4],
-        "situationDescription6" : description[5],
-        "situationDescription7" : description[6],
-        "situationDescription8" : description[7],
-        "situationDescription9" : description[8],
-        "situationDescription10" : description[9],
-        "situationDescription11" : description[10],
-        "situationDescription12" : description[11],
-    });
-    console.log(data);
-    // Sending data with the request
-    xhr.send(data);
-
+        // Converting JSON data to string
+        var data = JSON.stringify({
+            "situationDescription1" : description[0],
+            "situationDescription2" : description[1],
+            "situationDescription3" : description[2],
+            "situationDescription4" : description[3],
+            "situationDescription5" : description[4],
+            "situationDescription6" : description[5],
+            "situationDescription7" : description[6],
+            "situationDescription8" : description[7],
+            "situationDescription9" : description[8],
+            "situationDescription10" : description[9],
+            "situationDescription11" : description[10],
+            "situationDescription12" : description[11],
+        });
+        console.log(data);
+        // Sending data with the request
+        xhr.send(data);
+    } catch (error) {
+        console.log("An error occurred:", error);
+    }
 }
 
-
+/**
+ * This is a fetch funtion to collect the data from the database
+ */
 fetch('http://localhost:7070/getParicipantMeThinkFast')
     .then(repsone => repsone.json())
     .then(data => {
