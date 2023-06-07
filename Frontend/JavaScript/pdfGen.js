@@ -8,26 +8,86 @@ function generatePDF() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 
-    // Add the preset pages
-    var presetPages = [
-        '/Frontend/PDF-presets/pdfOntwerp.png',
-        '/Frontend/PDF-presets/pdfOntwerp2.png',
-        '/Frontend/PDF-presets/pdfOntwerp3.png',
-        '/Frontend/PDF-presets/pdfOntwerp4.png',
-        '/Frontend/PDF-presets/pdfOntwerp5.png',
-        '/Frontend/PDF-presets/pdfOntwerp6.png'
+    const apiUrls = [
+        'http://localhost:7070/selfDevelopment',
+        'http://localhost:7070/joinedParticipantTraps',
+        'http://localhost:7070/getParicipantBias'
     ];
 
-    for (var i = 0; i < presetPages.length; i++) {
-        // Load the preset page
-        var pages = presetPages[i];
+    // Fetches all data at once - puts the data in a json format.
+    Promise.all(apiUrls.map(url => fetch(url).then(response => response.json())))
+        .then(data => {
+            // Values assigned to variables.
+            const [selfDevelopmentData, trapData, biasData] = data;
 
-        // Add the page to the PDF
-        doc.addImage(pages, 'PNG', 0, 0, 210, 297); // Adjust the coordinates and dimensions as needed
-        doc.addPage(pages, 'PNG', 0, 0, 210, 297);
+            // Page 1
+            generatePage1(doc, selfDevelopmentData);
 
-    }
-    doc.save('Bias Brothers.pdf');
+            // Page 2
+            generatePage2(doc, trapData);
+
+            // Page 3
+            generatePage3(doc, biasData);
+
+            // Save the PDF
+            doc.save('Bias Brothers.pdf');
+        })
+        .catch(error => console.error(error));
 }
 
+// Page genarated using input-data from selfdevelopment.
+function generatePage1(doc, data) {
+    data.forEach((item, index) => {
+        const title = item.selfDevelopment;
+        const description = item.description;
+        doc.text(20, 20 + index * 10, `${title}: ${description}`);
+    });
+}
+
+// Page genarated using input-data from thinking traps.
+function generatePage2(doc, data) {
+    doc.addPage();
+    data.forEach((item, index) => {
+        const title = item.thinkingTraps;
+        const description = item.description;
+        doc.text(20, 20 + index * 10, `${title}: ${description}`);
+    });
+}
+
+// Page genarated using input-data from biases.
+function generatePage3(doc, data) {
+    doc.addPage();
+    data.forEach((item, index) => {
+        const title = item.nameBias;
+        const description = item.description;
+        doc.text(20, 20 + index * 10, `${title}: ${description}`);
+    });
+}
+
+
+
+
+
+
+
+
+
+// function generatePDF() {
+//     // Create a new jsPDF instance
+//     const { jsPDF } = window.jspdf;
+//     const doc = new jsPDF();
+//
+//     // Select the HTML elements you want to include in the PDF
+//     const searchResults = document.querySelector('#textHeader3');
+//
+//     // Convert the selected elements to canvas using html2canvas
+//     html2canvas(searchResults).then((canvas) => {
+//         // Add the canvas to the PDF
+//         // const pdf = new jsPDF('a4');
+//         pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 210, 297);
+//
+//         // Save the PDF
+//         pdf.save('Bias Brothers.pdf');
+//     });
+// }
 

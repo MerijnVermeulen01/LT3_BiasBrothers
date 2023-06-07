@@ -93,7 +93,7 @@ async function fetchData() {
 
         // Each iteration will wait for fillDiv to complete before moving to the next item.
         for (const item of data) {
-            await fillDiv(item.thinkingTraps, item.idThinkingTraps);
+            await fillDivCard(item.thinkingTraps, item.idThinkingTraps);
         }
     } catch (err) {
         console.error(err);
@@ -125,7 +125,7 @@ fetch('http://localhost:7070/getParicipantBias')
     });
 
 // Makes cards with buttons filled with corresponding bias.
-function fillDiv(title, id) {
+function fillDivCard(title, id) {
     var newDiv = document.createElement("div");
     var newH3 = document.createElement("h3");
     var titles = document.createTextNode(title);
