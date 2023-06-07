@@ -11,18 +11,18 @@ function textToArray(textAreaId, paricipantText){
     }
 }
 
-// function buttonToArray(clicked_id) {
-//     if(clickedButton.length <= 3){
-//             const index = clickedButton.indexOf(clicked_id);
-//             if (index > -1) {
-//                 clickedButton.splice(index, 1);
-//             }
-//
-//         else if (clickedButton.length >= 0 && clickedButton.length < 3) {
-//             clickedButton.push(clicked_id);
-//         }
-//     }
-// }
+function buttonToArray(clicked_id) {
+    if(clickedButton.length <= 3){
+            const index = clickedButton.indexOf(clicked_id);
+            if (index > -1) {
+                clickedButton.splice(index, 1);
+            }
+
+        else if (clickedButton.length >= 0 && clickedButton.length < 3) {
+            clickedButton.push(clicked_id);
+        }
+    }
+}
 
 function valuesToJSON(){  
     // Creating a XHR object
