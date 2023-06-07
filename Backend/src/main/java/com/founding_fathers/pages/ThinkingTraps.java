@@ -57,10 +57,10 @@ public class ThinkingTraps extends DatabaseController {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        if(!resultSet.isBeforeFirst()){
+        if (!resultSet.isBeforeFirst()) {
             insertThinkingTraps();
-        }else{
-            while (resultSet.next()){
+        } else {
+            while (resultSet.next()) {
                 updateThinkingTraps(resultSet.getInt(1));
                 count++;
             }
@@ -210,7 +210,7 @@ public class ThinkingTraps extends DatabaseController {
 
     public List getParticipantTrapName() throws SQLException {
         Statement stmt = con.createStatement();
-        String query = "SELECT idThinkingTraps, thinkingtraps FROM participant_thinkingtraps LEFT JOIN thinkingtraps ON participant_thinkingtraps.thinkingtraps_idThinkingTraps = thinkingtraps.idThinkingTraps";
+        String query = "SELECT idThinkingTraps, thinkingtraps, participant_thinkingtraps.description FROM participant_thinkingtraps LEFT JOIN thinkingtraps ON participant_thinkingtraps.thinkingtraps_idThinkingTraps = thinkingtraps.idThinkingTraps";
         ResultSet resultSet = stmt.executeQuery(query);
 
         ResultSetMetaData md = resultSet.getMetaData();
@@ -235,11 +235,12 @@ public class ThinkingTraps extends DatabaseController {
                     System.out.println(e);
                 }
             });
-            if (row.length() != 0){
+            if (row.length() != 0) {
                 result.put(row);
             }
         }
         return result.toList();
     }
+
 }
 

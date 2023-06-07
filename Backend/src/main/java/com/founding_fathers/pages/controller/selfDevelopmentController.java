@@ -29,7 +29,7 @@ public class selfDevelopmentController implements APIController {
             selfDevelopment = ctx.bodyAsClass(selfDevelopment.class);
             selfDevelopment.insertSelfDevelopment();
         });
-        app.get("/getParicipantSelfDev", getParticipantSelfDev);
+
     }
 
     /**
@@ -37,8 +37,5 @@ public class selfDevelopmentController implements APIController {
      */
     protected final Handler getSelfDevelopment = (@NotNull Context context) ->
             context.json(selfDevelopment.selectSelfDevelopment());
-
-    protected final Handler getParticipantSelfDev = (@NotNull Context context) ->
-            context.json(selfDevelopment.getParticipantSelfDev());
 
 }
