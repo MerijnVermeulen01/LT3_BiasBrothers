@@ -49,45 +49,42 @@ function generatePage1(doc, data) {
         const title = item.selfDevelopment;
         const description = item.description;
 
-        // Reset to default weight
+        // Reset to default weight and font size 16
         doc.setFont(undefined, 'normal');
+        doc.setFontSize(16);
+
+        // Set the style for the title
+        doc.setTextColor(73, 207, 128);
 
         // Check if there is enough space on the current page for the content
         const titleHeight = doc.getTextDimensions(title).h;
-        const descriptionLines = doc.splitTextToSize(description, 175);
+        const descriptionLines = doc.splitTextToSize(description, 227);
         const descriptionHeight = descriptionLines.length * 7;
         const totalContentHeight = titleHeight + 9 + descriptionHeight + 16;
 
         // If there is not enough space, create a new page
         if (yPos + totalContentHeight > doc.internal.pageSize.height) {
             doc.addPage();
-            yPos = 40; // Reset the vertical position for the new page
+            yPos = 22; // Reset the vertical position for the new page
         }
 
-        // Title styling and positioning
-        doc.setFontSize(16);
-        doc.setTextColor(73, 207, 128);
+        // Title with the specified color
         doc.text(20, yPos, `${title}:\n`);
 
         // Line as separator for text. + (style)
-        doc.line(15, yPos + 4, 195, yPos + 3);
+        doc.line(15, yPos + 4, 195, yPos + 4);
 
-        // Reset style to default - for default text (description)
+        // Reset style to default
         doc.setTextColor(0, 0, 0);
         doc.setFontSize(12);
 
-        // Maximum width for the description
-        const maxWidth = 175;
-
         // Split the description into multiple lines based on the maximum width
-        const lines = doc.splitTextToSize(description, maxWidth);
-
-        lines.forEach((line, lineIndex) => {
+        descriptionLines.forEach((line, lineIndex) => {
             doc.text(20, yPos + 10 + lineIndex * 7, line);
         });
 
-        // Calculate the vertical position for the next element
-        yPos = yPos + 16 + lines.length * 7 + 10;
+        // Update the vertical position for the next element
+        yPos += totalContentHeight + 5;
     });
 }
 
@@ -105,47 +102,46 @@ function generatePage2(doc, data) {
         const title = item.thinkingTraps;
         const description = item.description;
 
-        // Reset to default weight
+        // Reset to default weight and font size 16
         doc.setFont(undefined, 'normal');
+        doc.setFontSize(16);
+
+        // Set the style for the title
+        doc.setTextColor(73, 207, 128);
 
         // Check if there is enough space on the current page for the content
         const titleHeight = doc.getTextDimensions(title).h;
-        const descriptionLines = doc.splitTextToSize(description, 175);
+        const descriptionLines = doc.splitTextToSize(description, 227);
         const descriptionHeight = descriptionLines.length * 7;
         const totalContentHeight = titleHeight + 9 + descriptionHeight + 16;
 
         // If there is not enough space, create a new page
         if (yPos + totalContentHeight > doc.internal.pageSize.height) {
             doc.addPage();
-            yPos = 40; // Reset the vertical position for the new page
+            yPos = 22; // Reset the vertical position for the new page
         }
 
-        // Title styling and positioning
-        doc.setFontSize(16);
-        doc.setTextColor(73, 207, 128);
+        // Title with the specified color
         doc.text(20, yPos, `${title}:\n`);
 
         // Line as separator for text. + (style)
-        doc.line(15, yPos + 4, 195, yPos + 3);
+        doc.line(15, yPos + 4, 195, yPos + 4);
 
-        // Reset style to default - for default text (description)
+        // Reset style to default
         doc.setTextColor(0, 0, 0);
         doc.setFontSize(12);
 
-        // Maximum width for the description
-        const maxWidth = 175;
-
         // Split the description into multiple lines based on the maximum width
-        const lines = doc.splitTextToSize(description, maxWidth);
-
-        lines.forEach((line, lineIndex) => {
+        descriptionLines.forEach((line, lineIndex) => {
             doc.text(20, yPos + 10 + lineIndex * 7, line);
         });
 
-        // Calculate the vertical position for the next element
-        yPos = yPos + 16 + lines.length * 7 + 10;
+        // Update the vertical position for the next element
+        yPos += totalContentHeight + 5;
     });
 }
+
+
 
 // Page genarated using input-data from biases.
 function generatePage3(doc, data) {
@@ -162,45 +158,42 @@ function generatePage3(doc, data) {
         const title = item.nameBias;
         const description = item.description;
 
-        // Reset to default weight
+        // Reset to default weight and font size 16
         doc.setFont(undefined, 'normal');
+        doc.setFontSize(16);
+
+        // Set the style for the title
+        doc.setTextColor(73, 207, 128);
 
         // Check if there is enough space on the current page for the content
         const titleHeight = doc.getTextDimensions(title).h;
-        const descriptionLines = doc.splitTextToSize(description, 175);
+        const descriptionLines = doc.splitTextToSize(description, 227);
         const descriptionHeight = descriptionLines.length * 7;
         const totalContentHeight = titleHeight + 9 + descriptionHeight + 16;
 
         // If there is not enough space, create a new page
         if (yPos + totalContentHeight > doc.internal.pageSize.height) {
             doc.addPage();
-            yPos = 40; // Reset the vertical position for the new page
+            yPos = 22; // Reset the vertical position for the new page
         }
 
-        // Title styling and positioning
-        doc.setFontSize(16);
-        doc.setTextColor(73, 207, 128);
+        // Title with the specified color
         doc.text(20, yPos, `${title}:\n`);
 
         // Line as separator for text. + (style)
-        doc.line(15, yPos + 4, 195, yPos + 3);
+        doc.line(15, yPos + 4, 195, yPos + 4);
 
-        // Reset style to default - for default text (description)
+        // Reset style to default
         doc.setTextColor(0, 0, 0);
         doc.setFontSize(12);
 
-        // Maximum width for the description
-        const maxWidth = 175;
-
         // Split the description into multiple lines based on the maximum width
-        const lines = doc.splitTextToSize(description, maxWidth);
-
-        lines.forEach((line, lineIndex) => {
+        descriptionLines.forEach((line, lineIndex) => {
             doc.text(20, yPos + 10 + lineIndex * 7, line);
         });
 
-        // Calculate the vertical position for the next element
-        yPos = yPos + 16 + lines.length * 7 + 10;
+        // Update the vertical position for the next element
+        yPos += totalContentHeight + 5;
     });
 }
 
