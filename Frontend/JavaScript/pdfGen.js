@@ -14,6 +14,8 @@ function generatePDF() {
         'http://localhost:7070/getParicipantBias'
     ];
 
+    // HIER FRONT TOEVOEGEN!!!
+
     // Fetches all data at once - puts the data in a json format.
     Promise.all(apiUrls.map(url => fetch(url).then(response => response.json())))
         .then(data => {
@@ -37,6 +39,7 @@ function generatePDF() {
 
 // Page genarated using input-data from selfdevelopment.
 function generatePage1(doc, data) {
+    doc.addPage();
 
     // Set title for page
     doc.setFont('helvetica', 'bold');
@@ -53,7 +56,7 @@ function generatePage1(doc, data) {
         doc.setFont(undefined, 'normal');
         doc.setFontSize(16);
 
-        // Set the style for the title
+        // Set the color for the title
         doc.setTextColor(73, 207, 128);
 
         // Check if there is enough space on the current page for the content
@@ -140,8 +143,6 @@ function generatePage2(doc, data) {
         yPos += totalContentHeight + 5;
     });
 }
-
-
 
 // Page genarated using input-data from biases.
 function generatePage3(doc, data) {
