@@ -8,7 +8,11 @@
 //     const { jsPDF } = window.jspdf;
 //     const doc = new jsPDF();
 //
-
+// const apiUrls = [
+//     'http://localhost:7070/selfDevelopment',
+//     'http://localhost:7070/joinedParticipantTraps',
+//     'http://localhost:7070/getParicipantBias'
+// ];
 //
 //     function generatePDF() {
 //         // Create a new jsPDF instance
