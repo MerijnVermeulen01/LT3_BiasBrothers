@@ -19,8 +19,8 @@ public class AdminPortalController implements APIController {
     @Override
     public void addHandlers(Javalin app) {
         app.post("/timer", ctx -> {
-            adminPortaal = ctx.bodyAsClass(AdminPortal.class);
-            adminPortaal.updateInTimer();
+            adminPortal = ctx.bodyAsClass(AdminPortal.class);
+            adminPortal.updateInTimer();
         });
         app.get("/adminPortalThinkingTraps", getAdminPortalThinkingTraps);
         app.get("/adminPortalThinkingTraps/{idThinkingTraps}", ctx -> {
