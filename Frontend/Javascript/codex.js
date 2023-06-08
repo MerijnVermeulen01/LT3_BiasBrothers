@@ -26,17 +26,17 @@
     if(window.location.href.indexOf("codexBiases")> -1){
         buttonBiases.classList.add('active2');
         fetch('http://localhost:7070/codexBias')
-            .then(repsone => repsone.json())
+            .then(response => response.json())
             .then(data => {
                 data.forEach(post => {
-                    fillDiv(post.nameBias, post.biasDescription);
+                    fillDiv(post.nameBias, post.description);
                 })
             });
     }
     else if (window.location.href.indexOf("codexAdaptability")>-1){
         buttonAdaptability.classList.add('active2');
         fetch('http://localhost:7070/codexAdaptability')
-            .then(repsone => repsone.json())
+            .then(response => response.json())
             .then(data => {
                 data.forEach(post => {
                     fillAdaptibility(post.title, post.description, post.trade1, post.trade2, post.trade3);
@@ -47,7 +47,7 @@
     else if (window.location.href.indexOf("codexThinkingTraps")>-1){
         buttonThinkingTraps.classList.add('active2');
         fetch('http://localhost:7070/codexThinkingTraps')
-            .then(repsone => repsone.json())
+            .then(response => response.json())
             .then(data => {
                 data.forEach(post => {
                     fillDiv(post.thinkingTraps, post.description);
