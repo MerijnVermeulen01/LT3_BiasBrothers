@@ -1,25 +1,99 @@
+// var downloadButton = document.getElementById('downloadPage');
+// downloadButton.addEventListener('click', () => {
+//     generatePDF();
+// });
+//
+// function generatePDF() {
+//     // Create a new jsPDF instance
+//     const { jsPDF } = window.jspdf;
+//     const doc = new jsPDF();
+//
+
+//
+//     function generatePDF() {
+//         // Create a new jsPDF instance
+//         const { jsPDF } = window.jspdf;
+//         const doc = new jsPDF();
+//
+//         // Add the preset pages
+//         var presetPages = [
+//             '/Frontend/PDF-presets/pdfOntwerp.png',
+//             '/Frontend/PDF-presets/pdfOntwerp2.png',
+//             '/Frontend/PDF-presets/pdfOntwerp3.png',
+//             '/Frontend/PDF-presets/pdfOntwerp4.png',
+//             '/Frontend/PDF-presets/pdfOntwerp5.png',
+//             '/Frontend/PDF-presets/pdfOntwerp6.png'
+//         ];
+//
+//         for (var i = 0; i < presetPages.length; i++) {
+//             // Load the preset page
+//             var pages = presetPages[i];
+//
+//             // Add the page to the PDF
+//             doc.addImage(pages, 'PNG', 0, 0, 210, 297); // Adjust the coordinates and dimensions as needed
+//             doc.addPage(pages, 'PNG', 0, 0, 210, 297); // Adjust the coordinates and dimensions as needed
+//
+//         }
+//         doc.save('Bias Brothers.pdf');
+//     }
+//
+//
+//
+//
+//     // Fetches all data at once - puts the data in a json format.
+//     Promise.all(apiUrls.map(url => fetch(url).then(response => response.json())))
+//         .then(data => {
+//             // Values assigned to variables.
+//             const [selfDevelopmentData, trapData, biasData] = data;
+//
+//             // Page 1
+//             generatePage1(doc, selfDevelopmentData);
+//
+//             // Page 2
+//             generatePage2(doc, trapData);
+//
+//             // Page 3
+//             generatePage3(doc, biasData);
+//
+//             // Save the PDF
+//             doc.save('Bias Brothers.pdf');
+//         })
+//         .catch(error => console.error(error));
+// }
+
+
+
 var downloadButton = document.getElementById('downloadPage');
-downloadButton.addEventListener('click', () => {
-    generatePDF();
-});
+downloadButton.addEventListener('click', generatePDF);
 
 function generatePDF() {
-    // Create a new jsPDF instance
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
-
+    
+    
     const apiUrls = [
         'http://localhost:7070/selfDevelopment',
         'http://localhost:7070/joinedParticipantTraps',
         'http://localhost:7070/getParicipantBias'
     ];
+    
+    const presetPages = [
+        '/Frontend/PDF-presets/pdfOntwerp.png',
+        '/Frontend/PDF-presets/pdfOntwerp2.png',
+        '/Frontend/PDF-presets/pdfOntwerp3.png',
+        '/Frontend/PDF-presets/pdfOntwerp4.png',
+        '/Frontend/PDF-presets/pdfOntwerp5.png',
+        '/Frontend/PDF-presets/pdfOntwerp6.png'
+    ];
 
-    // HIER FRONT TOEVOEGEN!!!
+    for (var i = 0; i < presetPages.length; i++) {
+        var page = presetPages[i];
+        doc.addImage(page, 'PNG', 0, 0, 210, 297); // Adjust the coordinates and dimensions as needed
+    }
 
     // Fetches all data at once - puts the data in a json format.
     Promise.all(apiUrls.map(url => fetch(url).then(response => response.json())))
         .then(data => {
-            // Values assigned to variables.
             const [selfDevelopmentData, trapData, biasData] = data;
 
             // Page 1
@@ -197,4 +271,6 @@ function generatePage3(doc, data) {
         yPos += totalContentHeight + 5;
     });
 }
+
+
 
