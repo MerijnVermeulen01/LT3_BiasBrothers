@@ -20,17 +20,17 @@ public class MeSlowingDownController implements APIController {
 
     @Override
     public void addHandlers(Javalin app) {
-        app.get("/getParicipantMeSlowingDown", getMeThinkingFastparticipant);
+        app.get("/getParticipantMeSlowingDown", getMeSlowingDownParticipant);
         app.post("/MeSlowingDownPost", ctx -> {
             meSlowingDown = ctx.bodyAsClass(MeSlowingDown.class);
-            meSlowingDown.checkForInformationMeThinkingFast();
+            meSlowingDown.checkForInformationMeSlowingDown();
         });
     }
 
     /**
      * This is a select function to get the explained editPossibility's form the database. It is used in the addHandlers.
      */
-    protected final Handler getMeThinkingFastparticipant = (@NotNull Context context) ->
-            context.json(meSlowingDown.selectMeThinkingFast());
+    protected final Handler getMeSlowingDownParticipant = (@NotNull Context context) ->
+            context.json(meSlowingDown.selectMeSlowingDown());
 
 }

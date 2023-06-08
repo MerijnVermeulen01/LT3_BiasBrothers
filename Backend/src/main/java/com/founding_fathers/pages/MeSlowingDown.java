@@ -47,11 +47,11 @@ public class MeSlowingDown extends DatabaseController {
      * Function wich checks if there is already information in the page. if there is it goes to the update else it goes to the insert
      */
 
-    public void checkForInformationMeThinkingFast() throws SQLException {
+    public void checkForInformationMeSlowingDown() throws SQLException {
         ResultSet resultSet = null;
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("SELECT participant_methinkfast.id, participant_methinkfast.description FROM participant_methinkfast  WHERE session_idSession = ?;");
+            stmt = con.prepareStatement("SELECT methinkslow.idmethinkslow, methinkslow.description FROM methinkslow  WHERE session_id = ?;");
             stmt.setInt(1, 1);
             resultSet = stmt.executeQuery();
         } catch (SQLException e) {
@@ -59,11 +59,11 @@ public class MeSlowingDown extends DatabaseController {
         }
         if(!resultSet.isBeforeFirst()){
             System.out.println("Insert");
-            insertInBiasthinkingfast();
+            insertInBiasMeSlowingDown();
         }else{
             while (resultSet.next()){
                 System.out.println("Update");
-                updateMeThinkingFast(resultSet.getInt(1));
+                updateMeSlowingDown(resultSet.getInt(1));
                 count++;
             }
         }
@@ -72,12 +72,12 @@ public class MeSlowingDown extends DatabaseController {
     /**
      * This is the insert function for meThinkingFast it is used in the checkForInformationMeThinkingFast function to insert data into the database
      */
-    public void insertInBiasthinkingfast() {
+    public void insertInBiasMeSlowingDown() {
         String[] descriptions = {meSlowingDownSituationDescription1, meSlowingDownSituationDescription2, meSlowingDownSituationDescription3, meSlowingDownSituationDescription4, meSlowingDownSituationDescription5, meSlowingDownSituationDescription6, meSlowingDownSituationDescription7, meSlowingDownSituationDescription8, meSlowingDownSituationDescription9, meSlowingDownSituationDescription10, meSlowingDownSituationDescription11, meSlowingDownSituationDescription12};
         PreparedStatement stmt = null;
         try {
             for (int i = 0; i < descriptions.length; i++) {
-                stmt = con.prepareStatement("INSERT INTO participant_methinkfast (session_idSession, description) VALUES (?, ?)");
+                stmt = con.prepareStatement("INSERT INTO methinkslow (session_id, description) VALUES (?, ?)");
                 stmt.setInt(1, 2);
                 stmt.setString(2, descriptions[i]);
                 stmt.executeUpdate();
@@ -90,12 +90,12 @@ public class MeSlowingDown extends DatabaseController {
     /**
      * This is the update function for meThinkingFast
      */
-    public void updateMeThinkingFast(int id) {
+    public void updateMeSlowingDown(int id) {
         String[] descriptions = {meSlowingDownSituationDescription1, meSlowingDownSituationDescription2,meSlowingDownSituationDescription3,meSlowingDownSituationDescription4,meSlowingDownSituationDescription5,meSlowingDownSituationDescription6,meSlowingDownSituationDescription7,meSlowingDownSituationDescription8,meSlowingDownSituationDescription9,meSlowingDownSituationDescription10,meSlowingDownSituationDescription11,meSlowingDownSituationDescription12};
         System.out.println(descriptions[count]);
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("UPDATE participant_methinkfast SET description = ? WHERE id = ?");
+            stmt = con.prepareStatement("UPDATE methinkslow SET description = ? WHERE idmethinkslow = ?");
             stmt.setString(1, descriptions[count]);
             System.out.println(id);
             stmt.setInt(2, id);
@@ -109,9 +109,9 @@ public class MeSlowingDown extends DatabaseController {
      * This is the update function for meThinkingFast
      */
 
-    public List selectMeThinkingFast() throws SQLException {
+    public List selectMeSlowingDown() throws SQLException {
         Statement stmt = con.createStatement();
-        String query = "SELECT * FROM participant_methinkfast";
+        String query = "SELECT * FROM methinkslow";
         ResultSet resultSet = stmt.executeQuery(query);
 
         ResultSetMetaData md = resultSet.getMetaData();

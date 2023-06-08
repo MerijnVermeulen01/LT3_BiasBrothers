@@ -84,7 +84,7 @@ function valuesToJSON() {
 /**
  * This is a fetch funtion to collect the data from the database
  */
-fetch('http://localhost:7070/getParicipantMeThinkFast')
+fetch('http://localhost:7070/getParticipantMeThinkFast')
     .then(repsone => repsone.json())
     .then(data => {
         document.getElementById('situationDescription1').value = data[0].description;

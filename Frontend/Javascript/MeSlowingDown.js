@@ -1,38 +1,38 @@
 /**
  * This is a array with all the descriptions from the meSlowingDownUser.
  */
-var slowingDownDescriptions = ["", "", "", "", "", "", "", "", "", "", "", ""];
+var description = ["", "", "", "", "", "", "", "", "", "", "", ""];
 
 /**
  * This is a function to convert all the text to fit in the description Array
  */
 function textToArray(textAreaId, paricipantText){
     if(textAreaId === "meSlowingDownSituationDescription1"){
-        slowingDownDescriptions[0] = paricipantText;
+        description[0] = paricipantText;
     } else if(textAreaId === "meSlowingDownSituationDescription2"){
-        slowingDownDescriptions[1] = paricipantText;
+        description[1] = paricipantText;
     } else if(textAreaId === "meSlowingDownSituationDescription3"){
-        slowingDownDescriptions[2] = paricipantText;
+        description[2] = paricipantText;
     } else if(textAreaId === "meSlowingDownSituationDescription4"){
-        slowingDownDescriptions[3] = paricipantText;
+        description[3] = paricipantText;
     } else if(textAreaId === "meSlowingDownSituationDescription5"){
-        slowingDownDescriptions[4] = paricipantText;
+        description[4] = paricipantText;
     } else if(textAreaId === "meSlowingDownSituationDescription6"){
-        slowingDownDescriptions[5] = paricipantText;
+        description[5] = paricipantText;
     } else if(textAreaId === "meSlowingDownSituationDescription7"){
-        slowingDownDescriptions[6] = paricipantText;
+        description[6] = paricipantText;
     }else if(textAreaId === "meSlowingDownSituationDescription8") {
-        slowingDownDescriptions[7] = paricipantText;
+        description[7] = paricipantText;
     } else if(textAreaId === "meSlowingDownSituationDescription9"){
-        slowingDownDescriptions[8] = paricipantText;
+        description[8] = paricipantText;
     } else if(textAreaId === "meSlowingDownSituationDescription10"){
-        slowingDownDescriptions[9] = paricipantText;
+        description[9] = paricipantText;
     } else if(textAreaId === "meSlowingDownSituationDescription11"){
-        slowingDownDescriptions[10] = paricipantText;
+        description[10] = paricipantText;
     } else if(textAreaId === "meSlowingDownSituationDescription12"){
-        slowingDownDescriptions[11] = paricipantText;
+        description[11] = paricipantText;
     }
-    console.log(slowingDownDescriptions);
+    console.log(description);
 }
 
 
@@ -60,18 +60,18 @@ function valuesToJSON() {
 
         // Converting JSON data to string
         var data = JSON.stringify({
-            "meSlowingDownSituationDescription1" : slowingDownDescriptions[0],
-            "meSlowingDownSituationDescription2" : slowingDownDescriptions[1],
-            "meSlowingDownSituationDescription3" : slowingDownDescriptions[2],
-            "meSlowingDownSituationDescription4" : slowingDownDescriptions[3],
-            "meSlowingDownSituationDescription5" : slowingDownDescriptions[4],
-            "meSlowingDownSituationDescription6" : slowingDownDescriptions[5],
-            "meSlowingDownSituationDescription7" : slowingDownDescriptions[6],
-            "meSlowingDownSituationDescription8" : slowingDownDescriptions[7],
-            "meSlowingDownSituationDescription9" : slowingDownDescriptions[8],
-            "meSlowingDownSituationDescription10" : slowingDownDescriptions[9],
-            "meSlowingDownSituationDescription11" : slowingDownDescriptions[10],
-            "meSlowingDownSituationDescription12" : slowingDownDescriptions[11],
+            "meSlowingDownSituationDescription1" : description[0],
+            "meSlowingDownSituationDescription2" : description[1],
+            "meSlowingDownSituationDescription3" : description[2],
+            "meSlowingDownSituationDescription4" : description[3],
+            "meSlowingDownSituationDescription5" : description[4],
+            "meSlowingDownSituationDescription6" : description[5],
+            "meSlowingDownSituationDescription7" : description[6],
+            "meSlowingDownSituationDescription8" : description[7],
+            "meSlowingDownSituationDescription9" : description[8],
+            "meSlowingDownSituationDescription10" : description[9],
+            "meSlowingDownSituationDescription11" : description[10],
+            "meSlowingDownSituationDescription12" : description[11],
         });
         console.log(data);
         // Sending data with the request
@@ -84,19 +84,20 @@ function valuesToJSON() {
 /**
  * This is a fetch funtion to collect the data from the database
  */
-fetch('http://localhost:7070/getParicipantMeSlowingDown')
+fetch('http://localhost:7070/getParticipantMeSlowingDown')
     .then(repsone => repsone.json())
     .then(data => {
-        document.getElementById('meSlowingDownSituationDescription1').value = data[0].slowingDownDescriptions;
-        document.getElementById('meSlowingDownSituationDescription2').value = data[1].slowingDownDescriptions;
-        document.getElementById('meSlowingDownSituationDescription3').value = data[2].slowingDownDescriptions;
-        document.getElementById('meSlowingDownSituationDescription4').value = data[3].slowingDownDescriptions;
-        document.getElementById('meSlowingDownSituationDescription5').value = data[4].slowingDownDescriptions;
-        document.getElementById('meSlowingDownSituationDescription6').value = data[5].slowingDownDescriptions;
-        document.getElementById('meSlowingDownSituationDescription7').value = data[6].slowingDownDescriptions;
-        document.getElementById('meSlowingDownSituationDescription8').value = data[7].slowingDownDescriptions;
-        document.getElementById('meSlowingDownSituationDescription9').value = data[8].slowingDownDescriptions;
-        document.getElementById('meSlowingDownSituationDescription10').value = data[9].slowingDownDescriptions;
-        document.getElementById('meSlowingDownSituationDescription11').value = data[10].slowingDownDescriptions;
-        document.getElementById('meSlowingDownSituationDescription12').value = data[11].slowingDownDescriptions;
+        console.log(data[0]);
+        document.getElementById('meSlowingDownSituationDescription1').value = data[0].description;
+        document.getElementById('meSlowingDownSituationDescription2').value = data[1].description;
+        document.getElementById('meSlowingDownSituationDescription3').value = data[2].description;
+        document.getElementById('meSlowingDownSituationDescription4').value = data[3].description;
+        document.getElementById('meSlowingDownSituationDescription5').value = data[4].description;
+        document.getElementById('meSlowingDownSituationDescription6').value = data[5].description;
+        document.getElementById('meSlowingDownSituationDescription7').value = data[6].description;
+        document.getElementById('meSlowingDownSituationDescription8').value = data[7].description;
+        document.getElementById('meSlowingDownSituationDescription9').value = data[8].description;
+        document.getElementById('meSlowingDownSituationDescription10').value = data[9].description;
+        document.getElementById('meSlowingDownSituationDescription11').value = data[10].description;
+        document.getElementById('meSlowingDownSituationDescription12').value = data[11].description;
     });
