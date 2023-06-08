@@ -3,7 +3,8 @@
     buttonCognitiveBias.addEventListener('click', () =>{
     popUp.style.display = 'block';
     })
-    const queryString = window.location.href
+    const queryString = window.location.href;
+
     if(queryString.includes("codexCognitiveBias")){
         const popUpBack = document.getElementById('popUpBack');
         const frame = document.getElementById('frame');

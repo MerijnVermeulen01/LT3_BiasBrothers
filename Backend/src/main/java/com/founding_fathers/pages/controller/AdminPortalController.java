@@ -9,10 +9,10 @@ import org.jetbrains.annotations.NotNull;
 
 public class AdminPortalController implements APIController {
 
-    private AdminPortal adminPortaal;
+    private AdminPortal adminPortal;
 
     public AdminPortalController(AdminPortal adminPortaal) {
-        this.adminPortaal = adminPortaal;
+        this.adminPortal = adminPortaal;
     }
 
     @Override
@@ -20,21 +20,21 @@ public class AdminPortalController implements APIController {
         app.get("/adminPortalThinkingTraps", getAdminPortalThinkingTraps);
         app.get("/adminPortalThinkingTraps/{idThinkingTraps}", ctx -> {
             int id = Integer.parseInt(ctx.pathParam("idThinkingTraps"));
-            ctx.json(adminPortaal.selectedByIDAdminPortaal(id));
+            ctx.json(adminPortal.selectedByIDAdminPortaal(id));
         });
         app.get("/adminPortalBias", getAdminPortalBias);
         app.get("/adminPortalTimer", getAdminPortalTimer);
         app.get("/adminPortalBias/{idBiases}", ctx -> {
             int id = Integer.parseInt(ctx.pathParam("idBiases"));
-            ctx.json(adminPortaal.selectedByIDBiasAdminPortaal(id));
+            ctx.json(adminPortal.selectedByIDBiasAdminPortaal(id));
         });
     }
 
     protected final Handler getAdminPortalTimer = (@NotNull Context context) ->
-            context.json(adminPortaal.selectAdminPortaal("SELECT * FROM timer"));
+            context.json(adminPortal.selectAdminPortaal("SELECT * FROM timer"));
 
     protected final Handler getAdminPortalThinkingTraps = (@NotNull Context context) ->
-            context.json(adminPortaal.selectAdminPortaal("SELECT * FROM thinkingtraps"));
+            context.json(adminPortal.selectAdminPortaal("SELECT * FROM thinkingtraps"));
     protected final Handler getAdminPortalBias = (@NotNull Context context) ->
-            context.json(adminPortaal.selectAdminPortaal("SELECT idBiases, nameBias, biasDescription FROM bias"));
+            context.json(adminPortal.selectAdminPortaal("SELECT idBiases, nameBias, biasDescription FROM bias"));
 }
