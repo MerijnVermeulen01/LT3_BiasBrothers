@@ -32,7 +32,7 @@ public class AdminPortal extends DatabaseController {
         this.possibilityTime = possibilityTime;
     }
 
-    public List selectAdminPortaal(String query) throws SQLException {
+    public List selectAdminPortal(String query) throws SQLException {
         Statement stmt = con.createStatement();
         ResultSet resultSet = stmt.executeQuery(query);
 
@@ -63,7 +63,7 @@ public class AdminPortal extends DatabaseController {
         return result.toList();
     }
 
-    public List selectedByIDAdminPortaal(int ID) throws SQLException {
+    public List selectedByIDAdminPortal(int ID) throws SQLException {
         ResultSet resultSet = null;
         PreparedStatement stmt = null;
         try {
@@ -98,7 +98,7 @@ public class AdminPortal extends DatabaseController {
         return result.toList();
     }
 
-    public List selectedByIDBiasAdminPortaal(int ID) throws SQLException {
+    public List selectedByIDBiasAdminPortal(int ID) throws SQLException {
         ResultSet resultSet = null;
         PreparedStatement stmt = null;
         try {

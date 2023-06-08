@@ -8,7 +8,7 @@ if (queryString.includes("thinkingTrapsEdit")){
 
 function fetchDataThinkingTraps(){
     fetch('http://localhost:7070/adminPortalThinkingTraps')
-    .then(repsone => repsone.json())
+    .then(response => response.json())
     .then(data => {
     let table = document.querySelector("table");
         generateTable(table, data);
@@ -17,7 +17,7 @@ function fetchDataThinkingTraps(){
 
 function fetchDataBiases(){
     fetch('http://localhost:7070/adminPortalBias')
-    .then(repsone => repsone.json())
+    .then(response => response.json())
     .then(data => {
         console.log(data);
         let table = document.querySelector("table");

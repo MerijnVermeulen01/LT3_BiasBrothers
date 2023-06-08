@@ -553,7 +553,7 @@ textarea:hover {
 } */
 
 /* Speciaal voor Shawn, changed the name to fix your page layout. BUT WHY??? Have to fix it for later.  */
-.col_main {
+.thinkingFormat {
     display: flex;
     margin-left: 0.5rem;
     margin-right: 0.5rem;

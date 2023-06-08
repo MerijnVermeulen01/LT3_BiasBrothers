@@ -10,7 +10,7 @@ if (queryString.includes("timerEdit")) {                                     //c
     fetchTimerEdit(0)
 } else {
     fetch('http://localhost:7070/adminPortalTimer')                    //fetch timer info for seperate pages
-        .then(repsone => repsone.json())
+        .then(response => response.json())
         .then(data => {
             data.forEach(post => {
                 chooseTimer(post.idtimer, post.timerName, post.timerTime);   //brings timer info to selection of page
@@ -84,7 +84,7 @@ function runTimer(timerTime) {                               //the timer with al
 async function fetchTimerEdit(id) {
     //fetch for the admin page to see the timer times
     fetch('http://localhost:7070/adminPortalTimer')
-        .then(repsone => repsone.json())
+        .then(response => response.json())
         .then(data => {
             data.forEach(post => {
                 fillDiv(post.idtimer, post.timerName, post.timerTime);

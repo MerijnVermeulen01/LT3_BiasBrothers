@@ -23,55 +23,57 @@
             </div>
         </aside>
 
-        <section class="col_main">
+        <section class="col main">
             <p id="timer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-            <div class="columnWithButtons">
-                <div class="column-content">
-                    <h3>Kies een van de volgende valkuilen</h3>
-                    <div id="buttonContainer">
-                        <button class="buttons biasButton" id="2" onclick="buttonToArray(this.id)">
-                            Tunnelvisie
-                        </button>
-                        <button class="buttons biasButton" id="5" onclick="buttonToArray(this.id)">
-                            Externaliseren
-                        </button>
-                        <button class="buttons biasButton" id="8" onclick="buttonToArray(this.id)">
-                            Emotioneel redeneren
-                        </button>
-                        <button  class="buttons biasButton" id="3" onclick="buttonToArray(this.id)">
-                            Vergroten
-                        </button>
-                        <button  class="buttons biasButton" id="4" onclick="buttonToArray(this.id)">
-                            Personaliseren
-                        </button>
-                        <button class="buttons biasButton" id="7" onclick="buttonToArray(this.id)">
-                            Gedachten lezen
-                        </button>
-                        <button  class="buttons biasButton" id="6" onclick="buttonToArray(this.id)">
-                            Over-generaliseren
-                        </button>
-                        <button  class="buttons biasButton" id="1" onclick="buttonToArray(this.id)">
-                            Overhaast concluderen
-                        </button>
+            <div class="thinkingFormat">
+                <div class="columnWithButtons">
+                    <div class="column-content">
+                        <h3>Kies een van de volgende valkuilen</h3>
+                        <div id="buttonContainer">
+                            <button class="buttons biasButton" id="2" onclick="buttonToArray(this.id)">
+                                Tunnelvisie
+                            </button>
+                            <button class="buttons biasButton" id="5" onclick="buttonToArray(this.id)">
+                                Externaliseren
+                            </button>
+                            <button class="buttons biasButton" id="8" onclick="buttonToArray(this.id)">
+                                Emotioneel redeneren
+                            </button>
+                            <button  class="buttons biasButton" id="3" onclick="buttonToArray(this.id)">
+                                Vergroten
+                            </button>
+                            <button  class="buttons biasButton" id="4" onclick="buttonToArray(this.id)">
+                                Personaliseren
+                            </button>
+                            <button class="buttons biasButton" id="7" onclick="buttonToArray(this.id)">
+                                Gedachten lezen
+                            </button>
+                            <button  class="buttons biasButton" id="6" onclick="buttonToArray(this.id)">
+                                Over-generaliseren
+                            </button>
+                            <button  class="buttons biasButton" id="1" onclick="buttonToArray(this.id)">
+                                Overhaast concluderen
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
             <div class="columnWithExplanation">
                 <h3 id="explanationTitle">Uitleg </h3>
                 <p id="explanation"></p>
             </div>
-            <div class="columnWithTextAreas">
-                <h3 class="textCardHeader" id="textHeader1">Selecteer een bias</h3>
-                <div class="textArea1">
-                    <textarea id="description1" onkeyup="textToArray(this.id, this.value)" style="overflow:auto" placeholder="[Beschrijf situatie(s)/voorbeeld(en) hier]"></textarea>
-                </div>
-                <h3 class="textCardHeader" id="textHeader2">Selecteer een bias</h3>
-                <div class="textArea2">
-                    <textarea id="description2" onkeyup="textToArray(this.id, this.value)" style="overflow:auto" placeholder="[Beschrijf situatie(s)/voorbeeld(en) hier]"></textarea>
-                </div>
-                <h3 class="textCardHeader" id="textHeader3">Selecteer een bias</h3>
-                <div class="textArea3">
-                    <textarea id="description3" onkeyup="textToArray(this.id, this.value)" style="overflow:auto" placeholder="[Beschrijf situatie(s)/voorbeeld(en) hier]"></textarea>
+                <div class="columnWithTextAreas">
+                    <h3 class="textCardHeader" id="textHeader1">Selecteer een bias</h3>
+                    <div class="textArea1">
+                        <textarea id="description1" onkeyup="textToArray(this.id, this.value)" style="overflow:auto" placeholder="[Beschrijf situatie(s)/voorbeeld(en) hier]"></textarea>
+                    </div>
+                    <h3 class="textCardHeader" id="textHeader2">Selecteer een bias</h3>
+                    <div class="textArea2">
+                        <textarea id="description2" onkeyup="textToArray(this.id, this.value)" style="overflow:auto" placeholder="[Beschrijf situatie(s)/voorbeeld(en) hier]"></textarea>
+                    </div>
+                    <h3 class="textCardHeader" id="textHeader3">Selecteer een bias</h3>
+                    <div class="textArea3">
+                        <textarea id="description3" onkeyup="textToArray(this.id, this.value)" style="overflow:auto" placeholder="[Beschrijf situatie(s)/voorbeeld(en) hier]"></textarea>
+                    </div>
                 </div>
             </div>
         </section>

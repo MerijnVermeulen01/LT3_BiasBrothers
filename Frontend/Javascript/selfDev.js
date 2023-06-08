@@ -67,7 +67,7 @@ function valuesToJSON(){
 
 
 fetch('http://localhost:7070/selfDevelopment')
-    .then(repsone => repsone.json())
+    .then(response => response.json())
     .then(data => {
         // document.getElementById('buttonWrite1').classList.add('activeButton');
         // document.getElementById('buttonWrite2').classList.add('activeButton');

@@ -72,7 +72,7 @@ function valuesToJSON() {
 
 
 fetch('http://localhost:7070/getParicipantMeThinkFast')
-    .then(repsone => repsone.json())
+    .then(response => response.json())
     .then(data => {
         document.getElementById('situationDescription1').value = data[0].description;
         document.getElementById('situationDescription2').value = data[1].description;

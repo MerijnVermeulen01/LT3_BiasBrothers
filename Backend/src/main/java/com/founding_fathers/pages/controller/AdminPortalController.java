@@ -12,8 +12,8 @@ public class AdminPortalController implements APIController {
 
     private AdminPortal adminPortal;
 
-    public AdminPortalController(AdminPortal adminPortaal) {
-        this.adminPortal = adminPortaal;
+    public AdminPortalController(AdminPortal adminPortal) {
+        this.adminPortal = adminPortal;
     }
 
     @Override
@@ -25,21 +25,21 @@ public class AdminPortalController implements APIController {
         app.get("/adminPortalThinkingTraps", getAdminPortalThinkingTraps);
         app.get("/adminPortalThinkingTraps/{idThinkingTraps}", ctx -> {
             int id = Integer.parseInt(ctx.pathParam("idThinkingTraps"));
-            ctx.json(adminPortal.selectedByIDAdminPortaal(id));
+            ctx.json(adminPortal.selectedByIDAdminPortal(id));
         });
         app.get("/adminPortalBias", getAdminPortalBias);
         app.get("/adminPortalTimer", getAdminPortalTimer);
         app.get("/adminPortalBias/{idBiases}", ctx -> {
             int id = Integer.parseInt(ctx.pathParam("idBiases"));
-            ctx.json(adminPortal.selectedByIDBiasAdminPortaal(id));
+            ctx.json(adminPortal.selectedByIDBiasAdminPortal(id));
         });
     }
 
     protected final Handler getAdminPortalTimer = (@NotNull Context context) ->
-            context.json(adminPortal.selectAdminPortaal("SELECT * FROM timer"));
+            context.json(adminPortal.selectAdminPortal("SELECT * FROM timer"));
 
     protected final Handler getAdminPortalThinkingTraps = (@NotNull Context context) ->
-            context.json(adminPortal.selectAdminPortaal("SELECT * FROM thinkingtraps"));
+            context.json(adminPortal.selectAdminPortal("SELECT * FROM thinkingtraps"));
     protected final Handler getAdminPortalBias = (@NotNull Context context) ->
-            context.json(adminPortal.selectAdminPortaal("SELECT idBiases, nameBias, biasDescription FROM bias"));
+            context.json(adminPortal.selectAdminPortal("SELECT idBiases, nameBias, biasDescription FROM bias"));
 }
