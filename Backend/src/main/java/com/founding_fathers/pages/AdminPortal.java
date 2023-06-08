@@ -16,8 +16,8 @@ public class AdminPortal extends DatabaseController {
     private int count;
     private int biasTime;
     private int thinkingTime;
-    private int possibilityTime;
     private int developmentTime;
+    private int possibilityTime;
 
     public void setBiasTime(int biasTime) {
         this.biasTime = biasTime;
@@ -25,11 +25,11 @@ public class AdminPortal extends DatabaseController {
     public void setThinkingTime(int thinkingTime) {
         this.thinkingTime = thinkingTime;
     }
-    public void setPossibilityTime(int possibilityTime) {
-        this.possibilityTime = possibilityTime;
-    }
     public void setDevelopmentTime(int developmentTime) {
         this.developmentTime = developmentTime;
+    }
+    public void setPossibilityTime(int possibilityTime) {
+        this.possibilityTime = possibilityTime;
     }
 
     public List selectAdminPortaal(String query) throws SQLException {
@@ -133,14 +133,16 @@ public class AdminPortal extends DatabaseController {
         return result.toList();
     }
     public void updateInTimer() {
-        int[] times = {biasTime, thinkingTime, possibilityTime, developmentTime};
-        String[] timerNames ={"biasTime", "thinkingTime", "possibilityTime", "developmentTime"};
+        int[] times = {biasTime, thinkingTime, developmentTime, possibilityTime};
+        String[] timerNames ={"biasTime", "thinkingTime", "developmentTime", "possibilityTime"};
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("UPDATE timer SET timerTime = ? WHERE timerName = ?");
-            stmt.setInt(1, times[count]);
-            stmt.setString(2, timerNames[count]);
-            stmt.executeUpdate();
+            for(int i = 0; i < timerNames.length; i++){
+                stmt = con.prepareStatement("UPDATE timer SET timerTime = ? WHERE timerName = ?");
+                stmt.setInt(1, times[i]);
+                stmt.setString(2, timerNames[i]);
+                stmt.executeUpdate();
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

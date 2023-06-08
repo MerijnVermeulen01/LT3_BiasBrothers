@@ -1,13 +1,13 @@
 const queryString = window.location.href;
 var alarmOn = new Boolean(false);
-const times = [];
+let times = [];
 let biasTime;
 let thinkingTime;
 let possibilityTime;
 let developmentTime;
 
 if (queryString.includes("timerEdit")) {                                     //check if in admin or in normal page
-    fetchTimerEdit()
+    fetchTimerEdit(0)
 } else {
     fetch('http://localhost:7070/adminPortalTimer')                    //fetch timer info for seperate pages
         .then(repsone => repsone.json())
@@ -30,14 +30,14 @@ function chooseTimer(idtimer, timerName, timerTime) {                        //g
             //startingMinutes = timerTime;
         }
     }
-    else if (queryString.includes("editPossibility")){
-        if (timerName.includes("possibilityTime")){
+    else if (queryString.includes("selfDevelopment")){
+        if (timerName.includes("developmentTime")){
             runTimer(timerTime);
             //startingMinutes = timerTime;
         }
     }
-    else if (queryString.includes("selfDevelopment")){
-        if (timerName.includes("developmentTime")){
+    else if (queryString.includes("editPossibility")){
+        if (timerName.includes("possibilityTime")){
             runTimer(timerTime);
             //startingMinutes = timerTime;
         }
@@ -81,17 +81,20 @@ function runTimer(timerTime) {                               //the timer with al
 }
 
 
-function fetchTimerEdit() {                                                  //fetch for the admin page to see the timer times
+async function fetchTimerEdit(id) {
+    //fetch for the admin page to see the timer times
     fetch('http://localhost:7070/adminPortalTimer')
         .then(repsone => repsone.json())
         .then(data => {
             data.forEach(post => {
                 fillDiv(post.idtimer, post.timerName, post.timerTime);
             })
+            document.getElementById("saveButton").addEventListener("click", valuesToJSON(data))
         });
 }
 
-function fillDiv(idtimer, timerName, timerTime) {                            //gets the information of the timers to display the values on screen
+function fillDiv(idtimer, timerName, timerTime) {
+    //gets the information of the timers to display the values on screen
     var time = document.createTextNode(timerTime);
     if (timerName.includes("biasTime")) {                                    //if statements to set right time at right name
         document.getElementById('biasTime').appendChild(time);
@@ -117,18 +120,18 @@ function minusOne(timeName) {                                                   
         thinkingTime--;
         times[1] = thinkingTime;
         document.getElementById('thinkingTime').innerHTML = thinkingTime;
-    } else if (timeName === 'possibilityMinus') {
-        possibilityTime = document.getElementById('possibilityTime').innerHTML;
-        parseInt(possibilityTime);
-        possibilityTime--;
-        times[2] = possibilityTime;
-        document.getElementById('possibilityTime').innerHTML = possibilityTime;
     } else if (timeName === 'developmentMinus') {
         developmentTime = document.getElementById('developmentTime').innerHTML;
         parseInt(developmentTime);
         developmentTime--;
-        times[3] = developmentTime;
+        times[2] = developmentTime;
         document.getElementById('developmentTime').innerHTML = developmentTime;
+    } else if (timeName === 'possibilityMinus') {
+        possibilityTime = document.getElementById('possibilityTime').innerHTML;
+        parseInt(possibilityTime);
+        possibilityTime--;
+        times[3] = possibilityTime;
+        document.getElementById('possibilityTime').innerHTML = possibilityTime;
     }
 }
 
@@ -145,34 +148,22 @@ function plusOne(timeName) {                                                    
         thinkingTime++;
         times[1] = thinkingTime;
         document.getElementById('thinkingTime').innerHTML = thinkingTime;
-    } else if (timeName === 'possibilityPlus') {
-        possibilityTime = document.getElementById('possibilityTime').innerHTML;
-        parseInt(possibilityTime);
-        possibilityTime++;
-        times[2] = possibilityTime;
-        document.getElementById('possibilityTime').innerHTML = possibilityTime;
     } else if (timeName === 'developmentPlus') {
         developmentTime = document.getElementById('developmentTime').innerHTML;
         parseInt(developmentTime);
         developmentTime++;
-        times[3] = developmentTime;
+        times[2] = developmentTime;
         document.getElementById('developmentTime').innerHTML = developmentTime;
+    } else if (timeName === 'possibilityPlus') {
+        possibilityTime = document.getElementById('possibilityTime').innerHTML;
+        parseInt(possibilityTime);
+        possibilityTime++;
+        times[3] = possibilityTime;
+        document.getElementById('possibilityTime').innerHTML = possibilityTime;
     }
 }
 
-
-// function timesToArray(timeId) {     //set the times in an array to be put in a JSON that'll send them to update the DB
-//     if (timeId === "biasTime") {
-//         biasTime[0] = biasTime;
-//     } else if (timeId === "thinkingTime") {
-//         thinkingTime[1] = thinkingTime;
-//     } else if (timeId === "possibilityTime") {
-//         possibilityTime[2] = possibilityTime;
-//     } else if (timeId === "developmentTime"){
-//         developmentTime[3] = developmentTime;
-//     }
-// }
-function valuesToJSON() {
+function valuesToJSON(data) {
     // Creating a XHR object
     let xhr = new XMLHttpRequest();
     let url = "http://localhost:7070/timer";
@@ -191,15 +182,31 @@ function valuesToJSON() {
 
         }
     };
-    // Converting JSON data to string
-    var data = JSON.stringify({
-        "biasTime": times[0],
-        "thinkingTime": times[1],
-        "possibilityTime": times[2],
-        "developmentTime": times[3],
-    });
-    console.log(data);
-    // Sending data with the request
-    xhr.send(data);
 
+    if(times.length != 0){
+
+        for(let i = 0; i < data.length; i++){
+            if (times[0] == null) {
+                times[0] = data[0].timerTime;
+            } else if (times[1] == null) {
+                times[1] = data[1].timerTime;
+            } else if (times[2] == null) {
+                times[2] = data[2].timerTime;
+            } else if (times[3] == null) {
+                times[3] = data[3].timerTime;
+            }
+        }
+
+        // Converting JSON data to string
+        var data = JSON.stringify({
+            "biasTime": times[0],
+            "thinkingTime": times[1],
+            "developmentTime": times[2],
+            "possibilityTime":times[3],
+        });
+        console.log(data);
+        // Sending data with the request
+        xhr.send(data);
+        location.reload();
+    }
 }
