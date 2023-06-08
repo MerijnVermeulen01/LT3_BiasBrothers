@@ -12,7 +12,7 @@ if(edit == "true"){
         urlName = "adminPortalBias";
     }
     fetch('http://localhost:7070/' + urlName + '/' + id)
-    .then(repsone => repsone.json())
+    .then(response => response.json())
     .then(data => {
         generateInputFields(data, queryString);
     });

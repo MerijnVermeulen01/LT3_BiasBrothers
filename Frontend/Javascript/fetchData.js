@@ -62,7 +62,7 @@ function valuesToJSON(){
 
 
 fetch('http://localhost:7070/getParicipantTraps')
-    .then(repsone => repsone.json())
+    .then(response => response.json())
     .then(data => {
         // console.log();
         document.getElementById(data[0].thinkingtraps_idThinkingTraps).classList.add('activeButton');

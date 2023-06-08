@@ -15,10 +15,11 @@ public class API {
     private final CodexController codexController;
     private final MeThinkController meThinkController;
 //    private final SessionController sessionController;
-    private final AdminPortalController adminPortaalController;
+    private final AdminPortalController adminPortalController;
+    private final LoginController loginController;
 
     /**
-     * This function is the REST-API. This makes sure that we there will be a connection between the front-end and the back-end.
+     * this function is the rest-api. this makes sure that we there will be a connection between the front-end and the back-end.
      */
     public API(){
         new DatabaseController();
@@ -33,6 +34,7 @@ public class API {
         Codex codex = new Codex();
         MeThinkingFast methinkingFast = new MeThinkingFast();
         AdminPortal adminPortal = new AdminPortal();
+        LoginPage loginPage = new LoginPage();
 
 //        SessionsParticipant session = new SessionsParticipant();
 
@@ -41,8 +43,9 @@ public class API {
         this.selfDevelopmentController = new selfDevelopmentController(selfDevelopment);
         this.thinkingTrapsController = new ThinkingTrapsController(thinkingTraps);
         this.codexController = new CodexController(codex);
-        this.adminPortaalController = new AdminPortalController(adminPortal);
+        this.adminPortalController = new AdminPortalController(adminPortal);
         this.meThinkController = new MeThinkController(methinkingFast);
+        this.loginController = new LoginController(loginPage);
 //        this.sessionController = new SessionController(session);
         addHandlers();
 
@@ -57,6 +60,7 @@ public class API {
         thinkingTrapsController.addHandlers(app);
         codexController.addHandlers(app);
         meThinkController.addHandlers(app);
-        adminPortaalController.addHandlers(app);
+        adminPortalController.addHandlers(app);
+        loginController.addHandlers(app);
     }
 }
