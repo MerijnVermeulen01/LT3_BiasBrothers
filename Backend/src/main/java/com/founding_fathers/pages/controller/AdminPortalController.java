@@ -2,6 +2,7 @@ package com.founding_fathers.pages.controller;
 
 import com.founding_fathers.API.APIController;
 import com.founding_fathers.pages.AdminPortal;
+import com.founding_fathers.pages.MyBias;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
 import io.javalin.http.Handler;
@@ -17,6 +18,10 @@ public class AdminPortalController implements APIController {
 
     @Override
     public void addHandlers(Javalin app) {
+        app.post("/timer", ctx -> {
+            adminPortaal = ctx.bodyAsClass(AdminPortal.class);
+            adminPortaal.updateInTimer();
+        });
         app.get("/adminPortalThinkingTraps", getAdminPortalThinkingTraps);
         app.get("/adminPortalThinkingTraps/{idThinkingTraps}", ctx -> {
             int id = Integer.parseInt(ctx.pathParam("idThinkingTraps"));
