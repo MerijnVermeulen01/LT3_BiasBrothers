@@ -180,12 +180,16 @@ a {
     }
     .descriptionText{
         float:right;
+        padding: 20px 20px 0px 20px;
     }
     .tableTitle{
         float: left;
+        width: 30%;
+        margin-top: 20px;
     }
     .buttonArea{
         float: left;
+        margin: 10px;
     }
 }
 
