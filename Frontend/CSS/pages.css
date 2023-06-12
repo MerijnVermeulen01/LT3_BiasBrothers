@@ -50,13 +50,13 @@ textarea {
 
 .continueButton {
     text-underline: #27be6b;
-    color: #27be6b;
+    color: #1D1D35;
     text-decoration: none;
     font-size: 20px;
 }
 .returnButton{
     text-underline: #27be6b;
-    color: #27be6b;
+    color: #1D1D35;
     text-decoration: none;
     font-size: 20px;
     padding-right: 10px;
@@ -234,7 +234,7 @@ hr {
 
 .columnWithButtons {
     background-color: white;
-    border-radius: 10px;
+    border-radius: 20px;
     height: fit-content;
     /*width: fit-content;*/
     color: black;
@@ -255,7 +255,7 @@ hr {
 
 .columnWithTextAreas {
       background-color: white;
-    border-radius: 10px;
+    border-radius: 20px;
     height: fit-content;
     width: 670px;
     padding: 10px;
@@ -267,7 +267,7 @@ hr {
 
 .columnWithExplanation {
     background-color: white;
-    border-radius: 10px;
+    border-radius: 20px;
     height: 293px;
     /*width: fit-content;*/
     color: black;
@@ -355,7 +355,7 @@ header {
     background-color: #FFFFFF;
     width: 955px;
     height: 120px;
-    border-radius: 17px;
+    border-radius: 20px;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
     padding: 20px;
     margin-left: 140px;
@@ -378,7 +378,6 @@ header {
     padding: 12px;
     margin-left: 8px;
     font-weight: 500;
-    color: #1D1D35;
     font-size: 14px;
     border: none;
     transition: ease-in 0.1s;
@@ -444,7 +443,7 @@ textarea:hover {
     height: 160px;
     background: #FFFFFF;
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 17px;
+    border-radius: 20px;
     margin-bottom: 40px;
 }
 
@@ -504,6 +503,7 @@ textarea:hover {
     margin: 0 0 0 30px;
     border-radius: 10px;
     padding: 26px;
+    color: #1D1D35;
 }
 
 .textCardHeader{
@@ -625,7 +625,7 @@ textarea:hover {
     border-radius: 10px;
     border: none;
     transition: ease-in 0.1s;
-    margin-bottom: 1%;
+    margin: 0px 5px 0px 5px;
 }
 .navBar button.active2{
     background: #A5A5F8;
@@ -728,7 +728,7 @@ textarea:hover {
     background: #F5F5FB;
     text-align: left;
     padding: 14px;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 #codexBoxAdapt{
     display: grid;
@@ -842,7 +842,7 @@ textarea:hover {
     background-color: #A5A5F8;
 }
 
-a:visited, a:link { text-decoration: none!important; color:black; }
+a:visited, a:link { text-decoration: none!important; color: #1D1D35; }
 /* end menu within page */
 
 
@@ -905,7 +905,7 @@ a:visited, a:link { text-decoration: none!important; color:black; }
     height: fit-content;
     background: #FFFFFF;
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 17px;
+    border-radius: 20px;
 }
 
 .contentEditPosibility {
@@ -921,6 +921,7 @@ a:visited, a:link { text-decoration: none!important; color:black; }
     border-radius: 10px;
     padding: 26px;
     font-size: 12px;
+    color: #1D1D35;
 }
 
 .rowBoxes {
