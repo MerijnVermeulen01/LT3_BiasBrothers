@@ -1,15 +1,3 @@
-// const currentLocation = location.href;
-// const navItems =   document.querySelectorAll(".nav_link");
-// const navLength = navItems.length
-//
-// for (let i = 0; i < navLength; i++){
-//     if (navItems[i].href === currentLocation){
-//         navItems[i].className = "navActive"
-//     }
-// };
-//
-
-
     // Get the buttons from the navigation bar
     var button1 = document.getElementById('button1');
     var button2 = document.getElementById('button2');

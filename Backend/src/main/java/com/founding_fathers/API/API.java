@@ -14,6 +14,7 @@ public class API {
     private final ThinkingTrapsController thinkingTrapsController;
     private final CodexController codexController;
     private final MeThinkController meThinkController;
+    private final MeSlowingDownController meSlowingDownController;
 //    private final SessionController sessionController;
     private final AdminPortalController adminPortalController;
     private final LoginController loginController;
@@ -35,6 +36,7 @@ public class API {
         MeThinkingFast methinkingFast = new MeThinkingFast();
         AdminPortal adminPortal = new AdminPortal();
         LoginPage loginPage = new LoginPage();
+        MeSlowingDown meSlowingDown = new MeSlowingDown();
 
 //        SessionsParticipant session = new SessionsParticipant();
 
@@ -45,7 +47,11 @@ public class API {
         this.codexController = new CodexController(codex);
         this.adminPortalController = new AdminPortalController(adminPortal);
         this.meThinkController = new MeThinkController(methinkingFast);
+
         this.loginController = new LoginController(loginPage);
+
+        this.meSlowingDownController = new MeSlowingDownController(meSlowingDown);
+
 //        this.sessionController = new SessionController(session);
         addHandlers();
 
@@ -60,7 +66,10 @@ public class API {
         thinkingTrapsController.addHandlers(app);
         codexController.addHandlers(app);
         meThinkController.addHandlers(app);
+
         adminPortalController.addHandlers(app);
         loginController.addHandlers(app);
+        meSlowingDownController.addHandlers(app);
+
     }
 }

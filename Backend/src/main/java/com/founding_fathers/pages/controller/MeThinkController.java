@@ -1,5 +1,4 @@
 package com.founding_fathers.pages.controller;
-
 import com.founding_fathers.API.APIController;
 import com.founding_fathers.pages.MeThinkingFast;
 import io.javalin.Javalin;
@@ -13,7 +12,7 @@ public class MeThinkController implements APIController {
     private MeThinkingFast meThinkingFast;
 
     /**
-     * This is the constructor of the MyBiasController file
+     * This is the constructor of the MeThinkingFastController file
      */
 
     public MeThinkController(MeThinkingFast meThinkingFast){this.meThinkingFast = meThinkingFast;}
@@ -21,23 +20,17 @@ public class MeThinkController implements APIController {
 
     @Override
     public void addHandlers(Javalin app) {
-        app.get("/MeThinkingFast", getMeThinkingFast);
+        app.get("/getParticipantMeThinkFast", getMeThinkingFastparticipant);
         app.post("/MeThinkingFastPost", ctx -> {
             meThinkingFast = ctx.bodyAsClass(MeThinkingFast.class);
             meThinkingFast.checkForInformationMeThinkingFast();
         });
-        System.out.println("daddyhandler3");
-        app.get("/getParicipantMeThinkFast", getMeThinkingFastparticipant);
     }
 
     /**
-     * This is a variable to get the explained top bias form the database.
+     * This is a select function to get the explained editPossibility's form the database. It is used in the addHandlers.
      */
-    protected final Handler getMeThinkingFast = (@NotNull Context context) ->
-            context.json(meThinkingFast.selectMeThinkingFastTest2());
-
-
     protected final Handler getMeThinkingFastparticipant = (@NotNull Context context) ->
-            context.json(meThinkingFast.selectParticipantMeThinkingFast());
+            context.json(meThinkingFast.selectMeThinkingFast());
 
 }
