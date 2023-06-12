@@ -149,3 +149,19 @@ a {
     margin-right: auto;
     margin-bottom: 50px;
 }
+
+/* -------------------------------------------- */
+
+/* Responsive Index */
+
+/* When the browser is at least 500px and below */
+@media screen and (max-width: 500px) {
+    #cards{
+        height: 100%;
+        margin-top: 50px;
+    }
+}
+
+
+
+/* -------------------------------------------- */
