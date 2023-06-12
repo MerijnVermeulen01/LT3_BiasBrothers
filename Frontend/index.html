@@ -13,11 +13,13 @@
     <title>Bias Brothers</title>
 
 </head>
-<!-- <script type="text/javascript">
-    function error(){
-        window.location.href = "login.html";
-    }
-</script> -->
+<script>
+window.addEventListener('error', function (event) {
+  if (event && event.error && event.error.status === 404) {
+    window.location.href = 'your-error-page-url';
+  }
+});
+</script>
 <body onload="error();">
 <div id="cards">
     <a href="./Pages/selfDevelopment.html">
