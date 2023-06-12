@@ -5,7 +5,13 @@
     <title>Login Screen</title>
     <link rel="stylesheet" href="./CSS/login.css">
 </head>
-
+<script>
+window.addEventListener('error', function (event) {
+  if (event && event.error && event.error.status === 404) {
+    window.location.href = 'your-error-page-url';
+  }
+});
+</script>
 <body>
 <div class="container">
     <img id="logoImg" src="./Images/BiasBrothers-Logo-Sidebar.png">
