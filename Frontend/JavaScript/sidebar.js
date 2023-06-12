@@ -1,5 +1,5 @@
 // This function makes the sidebar.
-function sidebarLoad(){
+function sidebarLoad() {
     // This piece of code makes the sidebar with HTML
     document.write(
         "<nav>\
@@ -37,24 +37,24 @@ function sidebarLoad(){
 
     // This code removes the class active form all the children in the div sidebarContainer
     const elements = document.querySelectorAll("#sidebarContainer *");
-    elements.forEach((element) =>{
+    elements.forEach((element) => {
         element.classList.remove("active");
     });
 
     // This code looks at which page you are and then adds the class active to it
     // TODO: IF STATEMENT TO SWITCH STATEMENT
     const queryStrin = window.location.href;
-    if (queryStrin.includes("selfDevelopment")){
+    if (queryStrin.includes("selfDevelopment")) {
         document.getElementById("selfDevelopment").classList.add("active");
-    } else if (queryStrin.includes("thinkingTraps")){
+    } else if (queryStrin.includes("thinkingTraps")) {
         document.getElementById("thinkingTraps").classList.add("active");
-    } else if (queryStrin.includes("myBiasPage")){
+    } else if (queryStrin.includes("myBiasPage")) {
         document.getElementById("myBiasPage").classList.add("active");
-    } else if (queryStrin.includes("editPossibility")){
+    } else if (queryStrin.includes("editPossibility")) {
         document.getElementById("editPossibility").classList.add("active");
-    } else if (queryStrin.includes("codex")){
+    } else if (queryStrin.includes("codex")) {
         document.getElementById("codex").classList.add("active");
-    } else if (queryStrin.includes("downloadPage")){
+    } else if (queryStrin.includes("downloadPage")) {
         document.getElementById("downloadPage").classList.add("active");
     }
 }

@@ -29,15 +29,13 @@ function chooseTimer(idtimer, timerName, timerTime) {                        //g
             runTimer(timerTime);
             //startingMinutes = timerTime;
         }
-    }
-    else if (queryString.includes("selfDevelopment")){
-        if (timerName.includes("developmentTime")){
+    } else if (queryString.includes("selfDevelopment")) {
+        if (timerName.includes("developmentTime")) {
             runTimer(timerTime);
             //startingMinutes = timerTime;
         }
-    }
-    else if (queryString.includes("editPossibility")){
-        if (timerName.includes("possibilityTime")){
+    } else if (queryString.includes("editPossibility")) {
+        if (timerName.includes("possibilityTime")) {
             runTimer(timerTime);
             //startingMinutes = timerTime;
         }
@@ -52,7 +50,7 @@ function runTimer(timerTime) {                               //the timer with al
     var timerInterval;
 
     if (alarmOn == false) {                                             //makes sure the alarm only rings once
-       timerInterval = setInterval(updateTimer, 1000)                  //interval of repeating the timer for 1000ms so 1 sec.
+        timerInterval = setInterval(updateTimer, 1000)                  //interval of repeating the timer for 1000ms so 1 sec.
     }
 
     function updateTimer() {                                                 //function that makes the timer tick
@@ -183,9 +181,9 @@ function valuesToJSON(data) {
         }
     };
 
-    if(times.length != 0){
+    if (times.length != 0) {
 
-        for(let i = 0; i < data.length; i++){
+        for (let i = 0; i < data.length; i++) {
             if (times[0] == null) {
                 times[0] = data[0].timerTime;
             } else if (times[1] == null) {
@@ -202,7 +200,7 @@ function valuesToJSON(data) {
             "biasTime": times[0],
             "thinkingTime": times[1],
             "developmentTime": times[2],
-            "possibilityTime":times[3],
+            "possibilityTime": times[3],
         });
         console.log(data);
         // Sending data with the request

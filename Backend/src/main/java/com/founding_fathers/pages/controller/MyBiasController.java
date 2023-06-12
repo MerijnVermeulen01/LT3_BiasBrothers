@@ -7,8 +7,6 @@ import io.javalin.http.Context;
 import io.javalin.http.Handler;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
-
 public class MyBiasController implements APIController {
 
     private MyBias myBias;
@@ -17,7 +15,7 @@ public class MyBiasController implements APIController {
     /**
      * This is the constructor of the MyBiasController file
      */
-    public MyBiasController(MyBias myBias){
+    public MyBiasController(MyBias myBias) {
         this.myBias = myBias;
     }
 

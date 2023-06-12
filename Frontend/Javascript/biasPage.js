@@ -4,26 +4,26 @@ const description = ["", "", ""];
 const buttonContainer = document.getElementById('cardContainer');
 const headers = [document.getElementById('textHeader1'), document.getElementById('textHeader2'), document.getElementById('textHeader3')];
 
-    buttonContainer.addEventListener('click', (event) => {
-        const button = event.target.closest('.biasButton');
-        if (pressedButtons.length <= 3) {
-            if (button.classList.contains('activeButton')) {
-                button.classList.remove('activeButton');
+buttonContainer.addEventListener('click', (event) => {
+    const button = event.target.closest('.biasButton');
+    if (pressedButtons.length <= 3) {
+        if (button.classList.contains('activeButton')) {
+            button.classList.remove('activeButton');
 
-                const index = pressedButtons.indexOf(button);
-                if (index > -1) {
-                    pressedButtons.splice(index, 1);
-                }
-            } else if (pressedButtons.length >= 0 && pressedButtons.length < 3) {
-                button.classList.add('activeButton');
-                pressedButtons.push(button);
+            const index = pressedButtons.indexOf(button);
+            if (index > -1) {
+                pressedButtons.splice(index, 1);
             }
-
-            headers.forEach((header, index) => {
-                header.innerHTML = pressedButtons[index] ? pressedButtons[index].innerHTML : "Selecteer een bias";
-            });
+        } else if (pressedButtons.length >= 0 && pressedButtons.length < 3) {
+            button.classList.add('activeButton');
+            pressedButtons.push(button);
         }
-    });
+
+        headers.forEach((header, index) => {
+            header.innerHTML = pressedButtons[index] ? pressedButtons[index].innerHTML : "Selecteer een bias";
+        });
+    }
+});
 
 function buttonToArray(clicked_id) {
     if (clickedButton.length <= 3) {
@@ -99,6 +99,7 @@ async function fetchData() {
         console.error(err);
     }
 }
+
 fetchData();
 
 

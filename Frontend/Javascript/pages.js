@@ -53,8 +53,8 @@ area.forEach((text) => {
             if (index > -1) {
                 activeTextareas.splice(index, 1);
             }
-        } else if (text.value.length > 0 && text.value.trim() !== '')  {
-            if ( activeTextareas.length <= 2 ) {
+        } else if (text.value.length > 0 && text.value.trim() !== '') {
+            if (activeTextareas.length <= 2) {
                 text.classList.add('activeButton');
 
                 activeTextareas.push(text);

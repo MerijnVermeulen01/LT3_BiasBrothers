@@ -6,30 +6,30 @@ var description = ["", "", "", "", "", "", "", "", "", "", "", ""];
 /**
  * This is a function to convert all the text to fit in the description Array
  */
-function textToArray(textAreaId, paricipantText){
-    if(textAreaId === "meSlowingDownSituationDescription1"){
+function textToArray(textAreaId, paricipantText) {
+    if (textAreaId === "meSlowingDownSituationDescription1") {
         description[0] = paricipantText;
-    } else if(textAreaId === "meSlowingDownSituationDescription2"){
+    } else if (textAreaId === "meSlowingDownSituationDescription2") {
         description[1] = paricipantText;
-    } else if(textAreaId === "meSlowingDownSituationDescription3"){
+    } else if (textAreaId === "meSlowingDownSituationDescription3") {
         description[2] = paricipantText;
-    } else if(textAreaId === "meSlowingDownSituationDescription4"){
+    } else if (textAreaId === "meSlowingDownSituationDescription4") {
         description[3] = paricipantText;
-    } else if(textAreaId === "meSlowingDownSituationDescription5"){
+    } else if (textAreaId === "meSlowingDownSituationDescription5") {
         description[4] = paricipantText;
-    } else if(textAreaId === "meSlowingDownSituationDescription6"){
+    } else if (textAreaId === "meSlowingDownSituationDescription6") {
         description[5] = paricipantText;
-    } else if(textAreaId === "meSlowingDownSituationDescription7"){
+    } else if (textAreaId === "meSlowingDownSituationDescription7") {
         description[6] = paricipantText;
-    }else if(textAreaId === "meSlowingDownSituationDescription8") {
+    } else if (textAreaId === "meSlowingDownSituationDescription8") {
         description[7] = paricipantText;
-    } else if(textAreaId === "meSlowingDownSituationDescription9"){
+    } else if (textAreaId === "meSlowingDownSituationDescription9") {
         description[8] = paricipantText;
-    } else if(textAreaId === "meSlowingDownSituationDescription10"){
+    } else if (textAreaId === "meSlowingDownSituationDescription10") {
         description[9] = paricipantText;
-    } else if(textAreaId === "meSlowingDownSituationDescription11"){
+    } else if (textAreaId === "meSlowingDownSituationDescription11") {
         description[10] = paricipantText;
-    } else if(textAreaId === "meSlowingDownSituationDescription12"){
+    } else if (textAreaId === "meSlowingDownSituationDescription12") {
         description[11] = paricipantText;
     }
     console.log(description);
@@ -60,18 +60,18 @@ function valuesToJSON() {
 
         // Converting JSON data to string
         var data = JSON.stringify({
-            "meSlowingDownSituationDescription1" : description[0],
-            "meSlowingDownSituationDescription2" : description[1],
-            "meSlowingDownSituationDescription3" : description[2],
-            "meSlowingDownSituationDescription4" : description[3],
-            "meSlowingDownSituationDescription5" : description[4],
-            "meSlowingDownSituationDescription6" : description[5],
-            "meSlowingDownSituationDescription7" : description[6],
-            "meSlowingDownSituationDescription8" : description[7],
-            "meSlowingDownSituationDescription9" : description[8],
-            "meSlowingDownSituationDescription10" : description[9],
-            "meSlowingDownSituationDescription11" : description[10],
-            "meSlowingDownSituationDescription12" : description[11],
+            "meSlowingDownSituationDescription1": description[0],
+            "meSlowingDownSituationDescription2": description[1],
+            "meSlowingDownSituationDescription3": description[2],
+            "meSlowingDownSituationDescription4": description[3],
+            "meSlowingDownSituationDescription5": description[4],
+            "meSlowingDownSituationDescription6": description[5],
+            "meSlowingDownSituationDescription7": description[6],
+            "meSlowingDownSituationDescription8": description[7],
+            "meSlowingDownSituationDescription9": description[8],
+            "meSlowingDownSituationDescription10": description[9],
+            "meSlowingDownSituationDescription11": description[10],
+            "meSlowingDownSituationDescription12": description[11],
         });
         console.log(data);
         // Sending data with the request

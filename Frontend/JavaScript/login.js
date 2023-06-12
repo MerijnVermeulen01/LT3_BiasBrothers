@@ -1,27 +1,26 @@
-
 // let buttonLogin = document.getElementById("loginButton");
 // let buttonAdmin = document.getElementById("adminButton");
 // onclick="window.open('index.html')"
 // onclick="window.open('./Pages/adminportal.html')"
-function checkButtonLogin(){
+function checkButtonLogin() {
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
-    if(username.includes('@')){
+    if (username.includes('@')) {
         sendAdminData(username, password, 'admin');
-    } else{
+    } else {
         sendParcipantData(username, password, 'participant');
     }
 }
 
-function sendAdminData(username, password, typeOfLogin){
+function sendAdminData(username, password, typeOfLogin) {
     // Creating a XHR object
     let xhr = new XMLHttpRequest();
     let url;
     let urlFetch;
-    if(typeOfLogin == 'admin'){
+    if (typeOfLogin == 'admin') {
         url = "http://localhost:7070/AdminLogin";
         urlFetch = "http://localhost:7070/CheckAdmin";
-    }else{
+    } else {
         url = "http://localhost:7070/ParticipantLogin";
         urlFetch = "http://localhost:7070/CheckParticipant";
     }
@@ -43,8 +42,8 @@ function sendAdminData(username, password, typeOfLogin){
 
     // Converting JSON data to string
     var data = JSON.stringify({
-        "username" : username,
-        "password" : password
+        "username": username,
+        "password": password
     });
 
     console.log(data);
@@ -52,12 +51,12 @@ function sendAdminData(username, password, typeOfLogin){
     xhr.send(data);
 
     fetch(urlFetch)
-    .then(response => response.json())
-    .then(data => {
-        try {
-            alert(data);
-        } catch (error) {
-            
-        }
-    });
+        .then(response => response.json())
+        .then(data => {
+            try {
+                alert(data);
+            } catch (error) {
+
+            }
+        });
 }

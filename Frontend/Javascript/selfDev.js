@@ -1,34 +1,34 @@
 var writeButton = ["", "", "", "", "", ""];
 var description = ["", "", ""];
 
-function textToArray(textAreaId, paricipantText){
-    if(textAreaId === "writeArea1"){
+function textToArray(textAreaId, paricipantText) {
+    if (textAreaId === "writeArea1") {
         description[0] = paricipantText;
-    } else if(textAreaId === "writeArea2"){
+    } else if (textAreaId === "writeArea2") {
         description[1] = paricipantText;
-    } else if(textAreaId === "writeArea3"){
+    } else if (textAreaId === "writeArea3") {
         description[2] = paricipantText;
     }
 }
 
 
-function buttonTextToArray(textAreaId, paricipantText){
-    if(textAreaId === "buttonWrite1"){
+function buttonTextToArray(textAreaId, paricipantText) {
+    if (textAreaId === "buttonWrite1") {
         writeButton[0] = paricipantText;
-    } else if(textAreaId === "buttonWrite2"){
+    } else if (textAreaId === "buttonWrite2") {
         writeButton[1] = paricipantText;
-    } else if(textAreaId === "buttonWrite3"){
+    } else if (textAreaId === "buttonWrite3") {
         writeButton[2] = paricipantText;
-    } else if(textAreaId === "buttonWrite4"){
+    } else if (textAreaId === "buttonWrite4") {
         writeButton[3] = paricipantText;
-    } else if(textAreaId === "buttonWrite5"){
-       writeButton[4] = paricipantText;
-    } else if(textAreaId === "buttonWrite6"){
+    } else if (textAreaId === "buttonWrite5") {
+        writeButton[4] = paricipantText;
+    } else if (textAreaId === "buttonWrite6") {
         writeButton[5] = paricipantText;
     }
 }
 
-function valuesToJSON(){  
+function valuesToJSON() {
     // Creating a XHR object
     let xhr = new XMLHttpRequest();
     let url = "http://localhost:7070/selfDevToBackend";
@@ -48,16 +48,16 @@ function valuesToJSON(){
     };
 
     // Converting JSON data to string
-    var data = JSON.stringify({ 
-        "writeButton1" : writeButton[0],
-        "writeButton2" : writeButton[1],
-        "writeButton3" : writeButton[2],
-        "writeButton4" : writeButton[3],
-        "writeButton5" : writeButton[4],
-        "writeButton6" : writeButton[5],
-        "description1" : description[0],
-        "description2" : description[1],
-        "description3" : description[2], 
+    var data = JSON.stringify({
+        "writeButton1": writeButton[0],
+        "writeButton2": writeButton[1],
+        "writeButton3": writeButton[2],
+        "writeButton4": writeButton[3],
+        "writeButton5": writeButton[4],
+        "writeButton6": writeButton[5],
+        "description1": description[0],
+        "description2": description[1],
+        "description3": description[2],
     });
 
     // Sending data with the request

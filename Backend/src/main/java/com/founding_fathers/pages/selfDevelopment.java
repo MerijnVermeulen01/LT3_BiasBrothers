@@ -60,7 +60,7 @@ public class selfDevelopment extends DatabaseController {
         this.description3 = description3;
     }
 
-    public void insertSelfDevelopment(){
+    public void insertSelfDevelopment() {
 //        TODO: DIT MOET 6 writeButtons worden//
         // aparte counter voor description boven 3 niet aanvullen?
         // (als count niet hoger of gelijk is aan 2 doe dan count++ anders niks meer doen
@@ -69,7 +69,7 @@ public class selfDevelopment extends DatabaseController {
         String[] descriptions = {description1, description2, description3};
         PreparedStatement stmt = null;
         try {
-            for (int i = 0; i < writeButtons.length; i++){
+            for (int i = 0; i < writeButtons.length; i++) {
                 stmt = con.prepareStatement("INSERT INTO selfdevelopment(selfDevelopment, description) VALUE (?, ?);");
 
                 stmt.setString(1, writeButtons[i]);
@@ -87,25 +87,25 @@ public class selfDevelopment extends DatabaseController {
         String query = "SELECT * FROM selfdevelopment";
         ResultSet resultSet = stmt.executeQuery(query);
 
-        ResultSetMetaData md =   resultSet.getMetaData();
+        ResultSetMetaData md = resultSet.getMetaData();
         int numCols = md.getColumnCount();
         List<String> colNames = IntStream.range(0, numCols)
                 .mapToObj(i -> {
                     try {
                         return md.getColumnName(i + 1);
-                    } catch (SQLException e){
+                    } catch (SQLException e) {
                         System.out.println(e);
                         return "?";
                     }
                 }).collect(Collectors.toList());
 
         JSONArray result = new JSONArray();
-        while (resultSet.next()){
+        while (resultSet.next()) {
             JSONObject row = new JSONObject();
             colNames.forEach(cn -> {
                 try {
                     row.put(cn, resultSet.getObject(cn));
-                } catch (JSONException | SQLException e){
+                } catch (JSONException | SQLException e) {
                     System.out.println(e);
                 }
             });
@@ -114,7 +114,7 @@ public class selfDevelopment extends DatabaseController {
         return result.toList();
     }
 
-    public void deleteSelfDevelopment(){
+    public void deleteSelfDevelopment() {
 
         int nummer = 1;
 
@@ -130,7 +130,7 @@ public class selfDevelopment extends DatabaseController {
         }
     }
 
-    public void updateSelfDevelopment(){
+    public void updateSelfDevelopment() {
         String dummy = "Update";
         String description = "UpdateDescription";
 

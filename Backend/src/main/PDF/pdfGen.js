@@ -1,5 +1,5 @@
 // import the pdf-lib library
-import { PDFDocument, PDFPage } from 'pdf-lib';
+import {PDFDocument} from 'pdf-lib';
 
 // fetch the template PDF document
 const templateUrl = './PDF/PDFtemplates/PDFvoorpagina';
@@ -18,7 +18,7 @@ page.drawPage(templatePage);
 const pdfData = await pdfDoc.save();
 
 // create a Blob object from the PDF data
-const blob = new Blob([pdfData], { type: 'application/pdf' });
+const blob = new Blob([pdfData], {type: 'application/pdf'});
 
 // create a URL for the Blob object
 const url = URL.createObjectURL(blob);
@@ -35,7 +35,6 @@ document.body.removeChild(link);
 
 // cleanup the URL object
 URL.revokeObjectURL(url);
-
 
 
 // import the mysql module
@@ -71,14 +70,14 @@ connection.query(query, [userId], function (error, results, fields) {
 // define a function to generate a PDF document with the user data
 async function generatePdf(userData) {
     // import the pdf-lib library
-    const { PDFDocument, StandardFonts } = require('pdf-lib');
+    const {PDFDocument, StandardFonts} = require('pdf-lib');
 
     // set the default font for the page to Helvetica
     page.setFont(StandardFonts.Helvetica);
 
     // add some dynamic text to the page
-    page.drawText(`Name: ${userData.name}`, { x: 50, y: 700 });
-    page.drawText(`Age: ${userData.age}`, { x: 50, y: 680 });
-    page.drawText(`Email: ${userData.email}`, { x: 50, y: 660 });
+    page.drawText(`Name: ${userData.name}`, {x: 50, y: 700});
+    page.drawText(`Age: ${userData.age}`, {x: 50, y: 680});
+    page.drawText(`Email: ${userData.email}`, {x: 50, y: 660});
 
 }

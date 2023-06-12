@@ -187,7 +187,7 @@ public class MyBias extends DatabaseController {
 //        result.getJSONObject(1).getString("nameBias") <- Dit is om een object uit de json te halen.
     }
 
-//    Select a bias based on 'idThinkingTrap'
+    //    Select a bias based on 'idThinkingTrap'
     public List selectBiasByTrap(int resultid) throws SQLException {
         ResultSet resultSet = null;
         PreparedStatement stmt = null;

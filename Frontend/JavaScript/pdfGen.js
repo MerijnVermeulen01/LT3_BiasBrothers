@@ -2,10 +2,10 @@ var downloadButton = document.getElementById('downloadPage');
 downloadButton.addEventListener('click', generatePDF);
 
 function generatePDF() {
-    const { jsPDF } = window.jspdf;
+    const {jsPDF} = window.jspdf;
     const doc = new jsPDF();
-    
-    
+
+
     const apiUrls = [
         'http://localhost:7070/selfDevelopment',
         'http://localhost:7070/joinedParticipantTraps',
@@ -43,7 +43,7 @@ function generatePage1(doc, data) {
     // Set title for page
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(24);
-    doc.text(20, 22,`Mijn Ontwikkelacties\n\n`);
+    doc.text(20, 22, `Mijn Ontwikkelacties\n\n`);
 
     let yPos = 40; // Initial vertical position for the title
 
@@ -150,7 +150,7 @@ function generatePage3(doc, data) {
     // Set title for page
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(24);
-    doc.text(20, 22,`Mijn Biases\n\n`);
+    doc.text(20, 22, `Mijn Biases\n\n`);
 
     let yPos = 40; // Initial vertical position for the title
 
