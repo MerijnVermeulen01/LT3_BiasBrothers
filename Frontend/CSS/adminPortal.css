@@ -178,6 +178,15 @@ a {
         height: 100%;
         margin-top: 50px;
     }
+    .descriptionText{
+        float:right;
+    }
+    .tableTitle{
+        float: left;
+    }
+    .buttonArea{
+        float: left;
+    }
 }
 
 
