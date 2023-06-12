@@ -7,7 +7,7 @@ let possibilityTime;
 let developmentTime;
 
 if (queryString.includes("timerEdit")) {                                     //check if in admin or in normal page
-    fetchTimerEdit(0)
+    fetchTimerEdit()
 } else {
     fetch('http://localhost:7070/adminPortalTimer')                    //fetch timer info for seperate pages
         .then(response => response.json())
@@ -81,7 +81,7 @@ function runTimer(timerTime) {                               //the timer with al
 }
 
 
-async function fetchTimerEdit(id) {
+async function fetchTimerEdit() {
     //fetch for the admin page to see the timer times
     fetch('http://localhost:7070/adminPortalTimer')
         .then(response => response.json())

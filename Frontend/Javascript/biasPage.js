@@ -102,13 +102,13 @@ async function fetchData() {
 fetchData();
 
 
-fetch('http://localhost:7070/joinedParticipantTraps')
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById('cardTitle1').innerHTML = data[0].thinkingTraps;
-        document.getElementById('cardTitle2').innerHTML = data[1].thinkingTraps;
-        document.getElementById('cardTitle3').innerHTML = data[2].thinkingTraps;
-    });
+// fetch('http://localhost:7070/joinedParticipantTraps')
+//     .then(response => response.json())
+//     .then(data => {
+//         document.getElementById('cardTitle1').innerHTML = data[0].thinkingTraps;
+//         document.getElementById('cardTitle2').innerHTML = data[1].thinkingTraps;
+//         document.getElementById('cardTitle3').innerHTML = data[2].thinkingTraps;
+//     });
 
 fetch('http://localhost:7070/getParicipantBias')
     .then(repsone => repsone.json())
