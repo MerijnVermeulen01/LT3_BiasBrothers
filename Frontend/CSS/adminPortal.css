@@ -41,7 +41,7 @@ tr {
 }
 
 a {
-    color: black;
+    color: #1D1D35;
     text-decoration: none;
     font-size: 16px;
     margin: 10px;
@@ -123,6 +123,7 @@ a {
 .tableTitle, .buttonArea {
     width: 10%;
     text-align: center;
+    color: #1D1D35;
 }
 
 
@@ -134,6 +135,7 @@ a {
     font-weight: lighter;
     padding: 20px;
     font-size: 14px;
+    color: #1D1D35;
 }
 
 .buttons{
@@ -142,6 +144,7 @@ a {
     font-size: 14px;
     border-radius: 10px;
     border: none;
+    color: #1D1D35;
 }
 
 #backButton {
@@ -150,6 +153,21 @@ a {
     margin-bottom: 50px;
 }
 
+/* -------------------------------------------- */
+
+/* Responsive Index */
+
+/* When the browser is at least 500px and below */
+@media screen and (max-width: 650px) {
+    #cards{
+        height: 100%;
+        margin-top: 50px;
+    }
+}
+
+
+
+/* -------------------------------------------- */
 /* -------------------------------------------- */
 
 /* Responsive Index */
