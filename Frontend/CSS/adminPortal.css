@@ -196,3 +196,23 @@ a {
 
 
 /* -------------------------------------------- */
+
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+
+/* Responsive InsertEditThinkingTraps */
+
+/* When the browser is at least 500px and below */
+@media screen and (max-width: 500px) {
+    .textarea1{
+     margin: 20px 0px 0px 0px;
+    }
+    .titleText{
+        margin-left: 10px;
+    }
+}
+
+
+
+/* -------------------------------------------- */
+
