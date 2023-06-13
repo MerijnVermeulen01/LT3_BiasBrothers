@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../CSS/pages.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="Images/BiasBrothers.ico">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../CSS/pages.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="Images/BiasBrothers.ico" />
     <title>Mijn Biases</title>
     <script type="text/javascript" src="../Javascript/sidebar.js"></script>
-</head>
-<body>
-<!--Optie1-->
-<div class="container">
-    <div class="flexGrid">
+  </head>
+  <body>
+    <!--Optie1-->
+    <div class="container">
+      <div class="flexGrid">
         <aside class="col sidebar">
-            <div id="sidebarContainer">
-                <script type="text/javascript">
-                    sidebarLoad();
-                </script>
-            </div>
+          <div id="sidebarContainer">
+            <script type="text/javascript">
+              sidebarLoad();
+            </script>
+          </div>
         </aside>
         <section class="col main">
-            <p id="timer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-            <div>
-                <div id="cardContainer">
-                    <!-- <div class="card">
+          <p id="timer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+          <div>
+            <div id="cardContainer">
+              <!-- <div class="card">
                         <h3 class="header" id="cardTitle1">Selecteer een valkuil</h3>
                         <div class="content">
                             <button class="biasButton" onClick="buttonToArray(this.id)" id="4">Confirmation bias
@@ -56,49 +59,77 @@
                             </button>
                         </div>
                     </div> -->
-                </div>
-                <div id="cardInputContainer">
-                    <div class="textCard">
-                        <h3 class="textCardHeader" id="textHeader1">Selecteer een bias</h3>
-                        <div class="contentTextBox">
-                            <textarea class="biasText" id="description1" onkeyup="textToArray(this.id, this.value)"
-                                      placeholder="[Deze bias herken ik op deze manier in relatie tot een ontwikkelactie]"></textarea>
-                        </div>
-                    </div>
-                    <div class="textCard">
-                        <h3 class="textCardHeader" id="textHeader2">Selecteer een bias</h3>
-                        <div class="contentTextBox">
-                            <textarea class="biasText" id="description2" onkeyup="textToArray(this.id, this.value)"
-                                      placeholder="[Deze bias herken ik op deze manier in relatie tot een ontwikkelactie]"></textarea>
-                        </div>
-                    </div>
-                    <div class="textCard">
-                        <h3 class="textCardHeader" id="textHeader3">Selecteer een bias</h3>
-                        <div class="contentTextBox">
-                            <textarea class="biasText" id="description3" onkeyup="textToArray(this.id, this.value)"
-                                      placeholder="[Deze bias herken ik op deze manier in relatie tot een ontwikkelactie]"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                </div>
             </div>
+            <div id="cardInputContainer">
+              <div class="textCard">
+                <h3 class="textCardHeader" id="textHeader1">
+                  Selecteer een bias
+                </h3>
+                <div class="contentTextBox">
+                  <textarea
+                    class="biasText"
+                    id="description1"
+                    onkeyup="textToArray(this.id, this.value)"
+                    placeholder="[Deze bias herken ik op deze manier in relatie tot een ontwikkelactie]"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="textCard">
+                <h3 class="textCardHeader" id="textHeader2">
+                  Selecteer een bias
+                </h3>
+                <div class="contentTextBox">
+                  <textarea
+                    class="biasText"
+                    id="description2"
+                    onkeyup="textToArray(this.id, this.value)"
+                    placeholder="[Deze bias herken ik op deze manier in relatie tot een ontwikkelactie]"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="textCard">
+                <h3 class="textCardHeader" id="textHeader3">
+                  Selecteer een bias
+                </h3>
+                <div class="contentTextBox">
+                  <textarea
+                    class="biasText"
+                    id="description3"
+                    onkeyup="textToArray(this.id, this.value)"
+                    placeholder="[Deze bias herken ik op deze manier in relatie tot een ontwikkelactie]"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+            <div></div>
+          </div>
         </section>
+      </div>
     </div>
-</div>
 
-
-
-<div class="buttonsPages">
-    <div class="div1"><a class="returnButton" type="button" href="thinkingTraps.html" onClick="valuesToJSON()">Terug</a>
+    <div class="buttonsPages">
+      <div class="div1">
+        <a
+          class="returnButton"
+          type="button"
+          href="thinkingTraps.html"
+          onClick="valuesToJSON()"
+          >Terug</a
+        >
+      </div>
+      <div class="lineBetween"></div>
+      <div class="div2">
+        <a
+          class="continueButton"
+          type="button"
+          href="editPossibility.html"
+          onClick="valuesToJSON()"
+          >Verder</a
+        >
+      </div>
     </div>
-    <div class="lineBetween"></div>
-    <div class="div2"><a class="continueButton" type="button" href="editPossibility.html" onClick="valuesToJSON()">Verder</a>
-    </div>
-</div>
 
-<script type="text/javascript" src="../JavaScript/biasPage.js"></script>
-<script type="text/javascript" src="../JavaScript/timer.js"></script>
-
-</body>
+    <script type="text/javascript" src="../JavaScript/biasPage.js"></script>
+    <script type="text/javascript" src="../JavaScript/timer.js"></script>
+  </body>
 </html>
