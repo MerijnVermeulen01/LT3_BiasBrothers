@@ -1,48 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="../../CSS/adminPortal.css">
-        <link rel="icon" type="image/x-icon" href="../../Images/BiasBrothers.ico">
-            <title>Title</title>
-    </head>
-    <body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../../CSS/adminPortal.css" />
+    <link rel="icon" type="image/x-icon" href="../../Images/BiasBrothers.ico" />
+    <title>Title</title>
+  </head>
+  <body>
     <!--Optie1-->
-        <div class="container">
-            <div class="flexGrid">
-                <div class="tableContainer">
-                    <h1>Timer</h1>
-                            <div class="timers">
-                                <div class="timer">MyBias
-                                    <button class="timerButton" id="biasMinus" onClick="minusOne(this.id)">-</button>
-                                    <p id="biasTime" class="time"></p>
-                                    <button class="timerButton" id="biasPlus" onClick="plusOne(this.id)">+</button>
-                                </div>
-                                <div class="timer">ThinkingTraps
-                                    <button class="timerButton"  id="thinkingMinus" onClick="minusOne(this.id)">-</button>
-                                    <p id="thinkingTime" class="time"></p>
-                                    <button class="timerButton" id="thinkingPlus" onClick="plusOne(this.id)">+</button>
-                                </div>
-                                <div class="timer">SelfDevelopment
-                                    <button class="timerButton" id="developmentMinus" onClick="minusOne(this.id)">-</button>
-                                    <p id="developmentTime" class="time"></p>
-                                    <button class="timerButton" id="developmentPlus" onClick="plusOne(this.id)">+</button>
-                                </div>
-                                <div class="timer">EditPossibility
-                                    <button class="timerButton" id="possibilityMinus" onClick="minusOne(this.id)">-</button>
-                                    <p id="possibilityTime" class="time"></p>
-                                    <button class="timerButton" id="possibilityPlus" onClick="plusOne(this.id)">+</button>
-                                </div>
-                            </div>
-                        <div class="saveButtonContainer">
-                            <button class="buttons" id="saveButton" onClick="fetchTimerEdit()">Opslaan</button>
-                        </div>
-                    <div class="buttonContainer" id="backButton">
-                        <button class="buttons" onclick="window.location.href='../adminportal.html'">Terug</button>
-                    </div>
-                </div>
+    <div class="container">
+      <div class="flexGrid">
+        <div class="tableContainer">
+          <h1>Timer</h1>
+          <div class="timers">
+            <div class="timer">
+              MyBias
+              <button
+                class="timerButton"
+                id="biasMinus"
+                onClick="minusOne(this.id)"
+              >
+                -
+              </button>
+              <p id="biasTime" class="time"></p>
+              <button
+                class="timerButton"
+                id="biasPlus"
+                onClick="plusOne(this.id)"
+              >
+                +
+              </button>
             </div>
+            <div class="timer">
+              ThinkingTraps
+              <button
+                class="timerButton"
+                id="thinkingMinus"
+                onClick="minusOne(this.id)"
+              >
+                -
+              </button>
+              <p id="thinkingTime" class="time"></p>
+              <button
+                class="timerButton"
+                id="thinkingPlus"
+                onClick="plusOne(this.id)"
+              >
+                +
+              </button>
+            </div>
+            <div class="timer">
+              SelfDevelopment
+              <button
+                class="timerButton"
+                id="developmentMinus"
+                onClick="minusOne(this.id)"
+              >
+                -
+              </button>
+              <p id="developmentTime" class="time"></p>
+              <button
+                class="timerButton"
+                id="developmentPlus"
+                onClick="plusOne(this.id)"
+              >
+                +
+              </button>
+            </div>
+            <div class="timer">
+              EditPossibility
+              <button
+                class="timerButton"
+                id="possibilityMinus"
+                onClick="minusOne(this.id)"
+              >
+                -
+              </button>
+              <p id="possibilityTime" class="time"></p>
+              <button
+                class="timerButton"
+                id="possibilityPlus"
+                onClick="plusOne(this.id)"
+              >
+                +
+              </button>
+            </div>
+          </div>
+          <div class="saveButtonContainer">
+            <button class="buttons" id="saveButton" onClick="fetchTimerEdit()">
+              Opslaan
+            </button>
+          </div>
+          <div class="buttonContainer" id="backButton">
+            <button
+              class="buttons"
+              onclick="window.location.href='../adminportal.html'"
+            >
+              Terug
+            </button>
+          </div>
         </div>
-    </body>
-    <script type="text/javascript" src="../../Javascript/timer.js"></script>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="../../Javascript/timer.js"></script>
 </html>
