@@ -58,9 +58,11 @@ public class ThinkingTraps extends DatabaseController {
             throw new RuntimeException(e);
         }
         if (!resultSet.isBeforeFirst()) {
+            System.out.println("Yeet");
             insertThinkingTraps();
         } else {
             while (resultSet.next()) {
+//                System.out.println(resultSet.getInt(1));
                 updateThinkingTraps(resultSet.getInt(1));
                 count++;
             }
@@ -88,12 +90,14 @@ public class ThinkingTraps extends DatabaseController {
     public void updateThinkingTraps(int id) {
         int[] buttons = {button1, button2, button3};
         String[] descriptions = {description1, description2, description3};
+
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("UPDATE participant_thinkingtraps SET description = ? WHERE id = ?");
-//                stmt.setInt(1, buttons[count]);
-            stmt.setString(1, descriptions[count]);
-            stmt.setInt(2, id);
+            System.out.println(buttons[count]);
+            stmt = con.prepareStatement("UPDATE participant_thinkingtraps SET thinkingtraps_idThinkingTraps = ?, description = ? WHERE id = ?");
+            stmt.setInt(1, buttons[count]);
+            stmt.setString(2, descriptions[count]);
+            stmt.setInt(3, id);
             stmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -129,42 +133,6 @@ public class ThinkingTraps extends DatabaseController {
             result.put(row);
         }
         return result.toList();
-    }
-
-    public void deleteSelfDevelopment() {
-
-        int nummer = 1;
-
-        PreparedStatement stmt = null;
-        try {
-            stmt = con.prepareStatement("DELETE FROM selfdevelopment WHERE idThinkingTraps = ?");
-
-            stmt.setInt(1, nummer);
-            stmt.executeUpdate();
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public void updateSelfDevelopment() {
-        String dummy = "Update";
-        String description = "UpdateDescription";
-
-        int id2 = 2;
-
-        PreparedStatement stmt = null;
-        try {
-            stmt = con.prepareStatement("UPDATE thinkingTraps SET thinkingTraps = ?, description = ? WHERE idThinkingTraps = ?");
-
-            stmt.setString(1, dummy);
-            stmt.setString(2, description);
-            stmt.setInt(3, id2);
-            stmt.executeUpdate();
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     public List selectParticipantThinkingTraps() throws SQLException {

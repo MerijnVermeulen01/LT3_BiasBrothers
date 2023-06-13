@@ -1,8 +1,8 @@
 // This function makes the sidebar.
 function sidebarLoad() {
-    // This piece of code makes the sidebar with HTML
-    document.write(
-        "<nav>\
+  // This piece of code makes the sidebar with HTML
+  document.write(
+    "<nav>\
             <ul>\
                 <li id='logo'><img alt=\"\" src=\"../Images/BiasBrothers-Logo-Sidebar.png\" /></li>\
                 <li id='dashboard'><a href='../index.html'><img alt=\"\" src=\"../Images/Dashboard.png\" /></a><span class='tooltip' >Dashboard</span></li>\
@@ -16,24 +16,24 @@ function sidebarLoad() {
                 <li id='downloadPage' style='cursor: pointer'><img alt=\"\" src=\"../Images/Download-button.png\" /></a><span class='tooltip'>Download</span></li>\
             </ul>\
         </nav>"
-    );
+  );
 
-    // Add the script tag for jspdf library
-    var jspdfScript = document.createElement('script');
-    jspdfScript.src = 'https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js';
-    document.head.appendChild(jspdfScript);
+  // Add the script tag for jspdf library
+  var jspdfScript = document.createElement("script");
+  jspdfScript.src = "https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js";
+  document.head.appendChild(jspdfScript);
 
-    // Add script tag for pdfGenerator.js file
-    var pdfGenScript = document.createElement('script');
-    pdfGenScript.type = 'text/javascript';
-    pdfGenScript.src = '../Javascript/pdfGen.js';
-    document.body.appendChild(pdfGenScript);
+  // Add script tag for pdfGenerator.js file
+  var pdfGenScript = document.createElement("script");
+  pdfGenScript.type = "text/javascript";
+  pdfGenScript.src = "../Javascript/pdfGen.js";
+  document.body.appendChild(pdfGenScript);
 
-    // Add script tag for tooltips.js file
-    var tooltips = document.createElement('script');
-    tooltips.type = 'text/javascript';
-    tooltips.src = '../Javascript/tooltips.js';
-    document.body.appendChild(tooltips);
+  // Add script tag for tooltips.js file
+  var tooltips = document.createElement("script");
+  tooltips.type = "text/javascript";
+  tooltips.src = "../Javascript/tooltips.js";
+  document.body.appendChild(tooltips);
 
     // This code removes the class active form all the children in the div sidebarContainer
     const elements = document.querySelectorAll("#sidebarContainer *");

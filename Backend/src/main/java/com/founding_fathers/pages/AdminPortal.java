@@ -153,5 +153,16 @@ public class AdminPortal extends DatabaseController {
 
     }
 
+    public void deleteAdminThinkingTraps(int id) {
+        PreparedStatement stmt = null;
+        try {
+            stmt = con.prepareStatement("DELETE FROM thinkingtraps WHERE idThinkingTraps = ?");
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 
 }
