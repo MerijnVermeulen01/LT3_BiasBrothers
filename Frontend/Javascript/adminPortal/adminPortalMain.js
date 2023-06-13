@@ -68,8 +68,8 @@ function generateTable(table, data) {
         const deleteButton = document.createElement("a");
         const deleteTextButton = document.createTextNode("Delete");
         deleteButton.setAttribute("class", "deleteButton");
-        deleteButton.setAttribute("onclick", "popupTest("+idName+")");
-        deleteButton.setAttribute("id", "deleteButton_" + idName);
+        deleteButton.setAttribute("onclick", "popupTest(this.id)");
+        deleteButton.setAttribute("id", idName);
         deleteButton.appendChild(deleteTextButton);
         
         cellButton.appendChild(editButton);
@@ -79,6 +79,7 @@ function generateTable(table, data) {
 }
 
 function popupTest(id){
+
     let namingSpace = "";
     const queryString = window.location.href;
     if (queryString.includes("thinkingTrapsEdit")){
@@ -95,20 +96,20 @@ function popupTest(id){
         console.log("Nee is gedrukt");
     }
 
-    // if(response){
-    //     valuesToJSON(namingSpace);
-    // }else{
-    //     return;
-    // }
+    if(response){
+        valuesToJSON(namingSpace, id);
+    }else{
+        return;
+    }
 }
 
-function valuesToJSON(namingSpacing) {
+function valuesToJSON(namingSpacing, id) {
     // Creating a XHR object
     let xhr = new XMLHttpRequest();
-    let url = "http://localhost:7070/" + namingSpacing;
+    let url = "http://localhost:7070/" + namingSpacing + "/" + id;
 
     // open a connection
-    xhr.open("POST", url, true);
+    xhr.open("GET", url, true);
 
     // Set the request header i.e. which type of content you are sending
     xhr.setRequestHeader("Content-Type", "application/json");
@@ -124,15 +125,11 @@ function valuesToJSON(namingSpacing) {
 
     // Converting JSON data to string
     var data = JSON.stringify({
-        "button1": clickedButton[0],
-        "description1": description[0],
-        "button2": clickedButton[1],
-        "description2": description[1],
-        "button3": clickedButton[2],
-        "description3": description[2],
+        "idDelete": id,
     });
-    console.log(data);
     // Sending data with the request
     xhr.send(data);
+
+    location.reload();
 
 }
