@@ -118,8 +118,6 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-
-/* Klein opzetje voor het geval we gebruik willen maken van een hover effect over de kaarten. (LET OP!! Dit is wel gewenst door de opdrahtgever) */
 .card:hover {
     transition: opacity 0.2s ease-in-out;
     border-color: #F5F5FB;
