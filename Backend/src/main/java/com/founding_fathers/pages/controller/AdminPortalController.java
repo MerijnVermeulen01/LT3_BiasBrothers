@@ -33,6 +33,10 @@ public class AdminPortalController implements APIController {
             int id = Integer.parseInt(ctx.pathParam("idBiases"));
             ctx.json(adminPortal.selectedByIDBiasAdminPortal(id));
         });
+        app.get("/thinkingTrapsDelete/{idThinkingTrapsDelete}", ctx -> {
+            int id = Integer.parseInt(ctx.pathParam("idThinkingTrapsDelete"));
+            adminPortal.deleteAdminThinkingTraps(id);
+        });
     }
 
     protected final Handler getAdminPortalTimer = (@NotNull Context context) ->
