@@ -81,7 +81,7 @@ body {
 }
 
 .card {
-    border-radius: 10px;
+    border-radius: 20px;
     cursor: pointer;
     height: 260px;
     width: 300px;

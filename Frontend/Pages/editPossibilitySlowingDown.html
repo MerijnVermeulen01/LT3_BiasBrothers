@@ -7,8 +7,9 @@
   <link rel="icon" type="image/x-icon" href="../Images/BiasBrothers.ico">
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <title>SlowingDown</title>
-  <script type="text/javascript" src="../JavaScript/sidebar.js"></script>
-  <script type="text/javascript" src="../JavaScript/editPossibility.js" defer></script>
+  <script type="text/javascript" src="../Javascript/sidebar.js"></script>
+  <script type="text/javascript" src="../Javascript/editPossibility.js" defer></script>
+  <script type="text/javascript" src="../Javascript/MeSlowingDown.js  " defer></script>
 </head>
 <body>
 
@@ -47,7 +48,7 @@
                 <div class='columnBoxesLeft'>
                   <div class="cardEditPosibility">
                     <div class="contentEditPosibility">
-                      <textarea class="testEditPosibility" name="situationDescription1" placeholder="Typ hier"></textarea>
+                      <textarea class="testEditPosibility" id="meSlowingDownSituationDescription1" onkeyup="textToArray(this.id, this.value)" placeholder="Zenuwen, spanning, angstig, schaamte"></textarea>
                     </div>
                   </div>
                 </div>
@@ -56,7 +57,7 @@
                 <div class='columnBoxesRight'>
                   <div class="cardEditPosibility">
                     <div class="contentEditPosibility">
-                      <textarea class="testEditPosibility" name="situationDescription2" placeholder="Typ hier"></textarea>
+                      <textarea class="testEditPosibility" id="meSlowingDownSituationDescription2" onkeyup="textToArray(this.id, this.value)" name="situationDescription2" placeholder="Zenuwen, spanning, angstig, schaamte"></textarea>
                     </div>
                   </div>
                 </div>
@@ -72,7 +73,7 @@
                 <div class='columnBoxesLeft'>
                   <div class="cardEditPosibility">
                     <div class="contentEditPosibility">
-                      <textarea class="testEditPosibility" placeholder="Typ hier"></textarea>
+                      <textarea class="testEditPosibility" id="meSlowingDownSituationDescription3" onkeyup="textToArray(this.id, this.value)" placeholder="Dan presenteer ik in een willekeurig klantteam, en zeker met 'hooggeplaatste' mensen tegen wie ik een beetje opkijk."></textarea>
                     </div>
                   </div>
                 </div>
@@ -81,7 +82,7 @@
                 <div class='columnBoxesRight'>
                   <div class="cardEditPosibility">
                     <div class="contentEditPosibility">
-                      <textarea class="testEditPosibility" placeholder="Typ hier"></textarea>
+                      <textarea class="testEditPosibility" id="meSlowingDownSituationDescription4" onkeyup="textToArray(this.id, this.value)" placeholder="Zenuwen, spanning, angstig, schaamte"></textarea>
                     </div>
                   </div>
                 </div>
@@ -104,7 +105,7 @@
                 <div class='columnBoxesLeft'>
                   <div class="cardEditPosibility">
                     <div class="contentEditPosibility">
-                      <textarea class="testEditPosibility" placeholder="Typ hier"></textarea>
+                      <textarea class="testEditPosibility" id="meSlowingDownSituationDescription5" onkeyup="textToArray(this.id, this.value)" placeholder="Zenuwen, spanning, angstig, schaamte"></textarea>
                     </div>
                   </div>
                 </div>
@@ -113,7 +114,7 @@
                 <div class='columnBoxesRight'>
                   <div class="cardEditPosibility">
                     <div class="contentEditPosibility">
-                      <textarea class="testEditPosibility" placeholder="Typ hier"></textarea>
+                      <textarea class="testEditPosibility" id="meSlowingDownSituationDescription6" onkeyup="textToArray(this.id, this.value)" placeholder="Zenuwen, spanning, angstig, schaamte"></textarea>
                     </div>
                   </div>
                 </div>
@@ -129,7 +130,7 @@
                 <div class='columnBoxesLeft'>
                   <div class="cardEditPosibility">
                     <div class="contentEditPosibility">
-                      <textarea class="testEditPosibility" placeholder="Typ hier"></textarea>
+                      <textarea class="testEditPosibility" id="meSlowingDownSituationDescription7" onkeyup="textToArray(this.id, this.value)" placeholder="Ik ga stotteren, uhmmen, mijzelf verontschuldigen, zweten, zachter praten"></textarea>
                     </div>
                   </div>
                 </div>
@@ -138,7 +139,7 @@
                 <div class='columnBoxesRight'>
                   <div class="cardEditPosibility">
                     <div class="contentEditPosibility">
-                      <textarea class="testEditPosibility" placeholder="Typ hier"></textarea>
+                      <textarea class="testEditPosibility" id="meSlowingDownSituationDescription8" onkeyup="textToArray(this.id, this.value)"placeholder="Zenuwen, spanning, angstig, schaamte"></textarea>
                     </div>
                   </div>
                 </div>
@@ -162,7 +163,7 @@
                 <div class='columnBoxesLeft'>
                   <div class="cardEditPosibility">
                     <div class="contentEditPosibility">
-                      <textarea class="testEditPosibility" placeholder="Typ hier"></textarea>
+                      <textarea class="testEditPosibility" id="meSlowingDownSituationDescription9" onkeyup="textToArray(this.id, this.value)" placeholder="Owjee, ze hebben door dat ik een slechte presentatie geef."></textarea>
                     </div>
                   </div>
                 </div>
@@ -171,7 +172,7 @@
                 <div class='columnBoxesRight'>
                   <div class="cardEditPosibility">
                     <div class="contentEditPosibility">
-                      <textarea class="testEditPosibility" placeholder="Typ hier"></textarea>
+                      <textarea class="testEditPosibility" id="meSlowingDownSituationDescription10" onkeyup="textToArray(this.id, this.value)" placeholder="Zenuwen, spanning, angstig, schaamte"></textarea>
                     </div>
                   </div>
                 </div>
@@ -187,7 +188,7 @@
                 <div class='columnBoxesLeft'>
                   <div class="cardEditPosibility">
                     <div class="contentEditPosibility">
-                      <textarea class="testEditPosibility" placeholder="Typ hier"></textarea>
+                      <textarea class="testEditPosibility" id="meSlowingDownSituationDescription11" onkeyup="textToArray(this.id, this.value)" placeholder="Ik durf minder vaak/snel een presentatie te geven. En als ik hem wel geef, dan ga ik door het spotlight-effect me vooral richten op mijzelf en mijn voorkomen."></textarea>
                     </div>
                   </div>
                 </div>
@@ -196,7 +197,7 @@
                 <div class='columnBoxesRight'>
                   <div class="cardEditPosibility">
                     <div class="contentEditPosibility">
-                      <textarea class="testEditPosibility" placeholder="Typ hier"></textarea>
+                      <textarea class="testEditPosibility" id="meSlowingDownSituationDescription12" onkeyup="textToArray(this.id, this.value)" placeholder="Zenuwen, spanning, angstig, schaamte"></textarea>
                     </div>
                   </div>
                 </div>
@@ -214,7 +215,7 @@
 <div class="buttonsPages">
   <div class="div1" ><a class="returnButton" type="button" href="myBiasPage.html" onClick="valuesToJSON()">Terug</a> </div>
   <div class ="lineBetween"></div>
-  <div class="div2"><a class="continueButton" type="button" href="codexThinkingTraps.html" onClick="valuesToJSON()">Verder</a></div>
+  <div class="div2"><a class="continueButton" type="button" href="codexThinkingTraps.html" onClick="valuesToJSON()">Opslaan</a></div>
 </div>
 
 </body>
