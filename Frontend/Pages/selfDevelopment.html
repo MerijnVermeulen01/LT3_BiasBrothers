@@ -1,65 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
 
-
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../CSS/pages.css">
-    <link rel="icon" type="image/x-icon" href="../Images/BiasBrothers.ico">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../CSS/pages.css" />
+    <link rel="icon" type="image/x-icon" href="../Images/BiasBrothers.ico" />
     <title>Ontwikkelacties</title>
     <script type="text/javascript" src="../JavaScript/sidebar.js"></script>
     <title>Bias Brothers</title>
-</head>
-<body>
-<!--Optie1-->
-<div class="container">
-    <div class="flexGrid">
+  </head>
+  <body>
+    <!--Optie1-->
+    <div class="container">
+      <div class="flexGrid">
         <aside class="col sidebar">
-            <div id="sidebarContainer">
-                <script type="text/javascript">
-                    sidebarLoad();
-                </script>
-            </div>
+          <div id="sidebarContainer">
+            <script type="text/javascript">
+              sidebarLoad();
+            </script>
+          </div>
         </aside>
         <section class="col main">
-            <p id="timer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-            <div class="buttonsAreaContainer"id="buttonContainer1">
-                    <textarea class="buttonWrite" id="buttonWrite1" onkeyup="buttonTextToArray(this.id, this.value)" placeholder="Ontwikkelactie hier opschrijven"></textarea>
-                    <textarea class="buttonWrite" id="buttonWrite2" onkeyup="buttonTextToArray(this.id, this.value)" placeholder="Ontwikkelactie hier opschrijven"></textarea>
-                    <textarea class="buttonWrite" id="buttonWrite3" onkeyup="buttonTextToArray(this.id, this.value)" placeholder="Ontwikkelactie hier opschrijven"></textarea>
-                    <textarea class="buttonWrite" id="buttonWrite4" onkeyup="buttonTextToArray(this.id, this.value)" placeholder="Ontwikkelactie hier opschrijven"></textarea>
-                    <textarea class="buttonWrite" id="buttonWrite5" onkeyup="buttonTextToArray(this.id, this.value)" placeholder="Ontwikkelactie hier opschrijven"></textarea>
-                    <textarea class="buttonWrite" id="buttonWrite6" onkeyup="buttonTextToArray(this.id, this.value)" placeholder="Ontwikkelactie hier opschrijven"></textarea>
+          <p id="timer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+          <div class="buttonsAreaContainer" id="buttonContainer1">
+            <textarea
+              class="buttonWrite"
+              id="buttonWrite1"
+              onkeyup="buttonTextToArray(this.id, this.value)"
+              placeholder="Ontwikkelactie hier opschrijven"
+            ></textarea>
+            <textarea
+              class="buttonWrite"
+              id="buttonWrite2"
+              onkeyup="buttonTextToArray(this.id, this.value)"
+              placeholder="Ontwikkelactie hier opschrijven"
+            ></textarea>
+            <textarea
+              class="buttonWrite"
+              id="buttonWrite3"
+              onkeyup="buttonTextToArray(this.id, this.value)"
+              placeholder="Ontwikkelactie hier opschrijven"
+            ></textarea>
+            <textarea
+              class="buttonWrite"
+              id="buttonWrite4"
+              onkeyup="buttonTextToArray(this.id, this.value)"
+              placeholder="Ontwikkelactie hier opschrijven"
+            ></textarea>
+            <textarea
+              class="buttonWrite"
+              id="buttonWrite5"
+              onkeyup="buttonTextToArray(this.id, this.value)"
+              placeholder="Ontwikkelactie hier opschrijven"
+            ></textarea>
+            <textarea
+              class="buttonWrite"
+              id="buttonWrite6"
+              onkeyup="buttonTextToArray(this.id, this.value)"
+              placeholder="Ontwikkelactie hier opschrijven"
+            ></textarea>
+          </div>
+          <header>
+            <h1>Mijn 3 ontwikkelacties</h1>
+          </header>
+          <!-- Tekstvak koppeling maken bijv situatie 1, 2 en 3?-->
+          <div class="writeAreaContainer">
+            <div class="textArea">
+              <textarea
+                id="writeArea1"
+                onkeyup="textToArray(this.id, this.value)"
+                placeholder="[Als ik deze ontwikkelactie doe, dan helpt mij dit als volgt]"
+              ></textarea>
             </div>
-            <header>
-                <h1> Mijn 3 ontwikkelacties </h1>
-            </header>
-            <!-- Tekstvak koppeling maken bijv situatie 1, 2 en 3?-->
-            <div class="writeAreaContainer">
-                <div class="textArea"><textarea id="writeArea1" onkeyup="textToArray(this.id, this.value)" placeholder="[Als ik deze ontwikkelactie doe, dan helpt mij dit als volgt]"></textarea></div>
-                <div class="textArea"><textarea id="writeArea2" onkeyup="textToArray(this.id, this.value)" placeholder="[Als ik deze ontwikkelactie doe, dan helpt mij dit als volgt]"></textarea></div>
-                <div class="textArea"><textarea id="writeArea3" onkeyup="textToArray(this.id, this.value)" placeholder="[Als ik deze ontwikkelactie doe, dan helpt mij dit als volgt]"></textarea></div>
+            <div class="textArea">
+              <textarea
+                id="writeArea2"
+                onkeyup="textToArray(this.id, this.value)"
+                placeholder="[Als ik deze ontwikkelactie doe, dan helpt mij dit als volgt]"
+              ></textarea>
             </div>
+            <div class="textArea">
+              <textarea
+                id="writeArea3"
+                onkeyup="textToArray(this.id, this.value)"
+                placeholder="[Als ik deze ontwikkelactie doe, dan helpt mij dit als volgt]"
+              ></textarea>
+            </div>
+          </div>
         </section>
+      </div>
     </div>
-</div>
-<div class="buttonsPages">
-    <div class="div1" ><a class="returnButton" type="button" href="../index.html" onClick="valuesToJSON()">Terug</a> </div>
-    <div class ="lineBetween"></div>
-    <div class="div2"><a class="continueButton" type="button" href="thinkingTraps.html" onClick="valuesToJSON()">Verder</a></div>
-</div>
-
-</body>
-<script type="text/javascript" src="../JavaScript/pages.js"></script>
-<script type="text/javascript" src="../JavaScript/timer.js"></script>
-<script type="text/javascript" src="../JavaScript/selfDev.js"></script>
-<script type="text/javascript" src="../JavaScript/tooltips.js"></script>
+    <div class="buttonsPages">
+      <div class="div1">
+        <a
+          class="returnButton"
+          type="button"
+          href="../index.html"
+          onClick="valuesToJSON()"
+          >Terug</a
+        >
+      </div>
+      <div class="lineBetween"></div>
+      <div class="div2">
+        <a
+          class="continueButton"
+          type="button"
+          href="thinkingTraps.html"
+          onClick="valuesToJSON()"
+          >Verder</a
+        >
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="../JavaScript/pages.js"></script>
+  <script type="text/javascript" src="../JavaScript/timer.js"></script>
+  <script type="text/javascript" src="../JavaScript/selfDev.js"></script>
+  <script type="text/javascript" src="../JavaScript/tooltips.js"></script>
 </html>
-
