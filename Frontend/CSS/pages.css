@@ -1,10 +1,8 @@
 /* -------------------------------------------- */
 /* Base Styling*/
 /* -------------------------------------------- */
-
-/*
- Added font to all elements
-*/
+/*Added font to all elements*/
+/* -------------------------------------------- */
 *{
     font-family: 'Poppins', sans-serif;
 }
@@ -536,12 +534,7 @@ textarea:hover {
 
 }
 /* -------------------------------------------- */
-/* TODO: IDK WHAT DIT IS */
-/* 
-    display: inline-block;
-    padding: 10px;
-    margin: 10px 20px;
-} */
+
 .thinkingFormat {
     display: flex;
     margin-left: 0.5rem;
@@ -835,7 +828,7 @@ a:visited, a:link { text-decoration: none!important; color: #1D1D35; }
 /* end menu within page */
 
 
-#titelTopBar{
+#titleTopBar{
     background-color: #27be6b;
     color: white;
     height: fit-content;
@@ -846,7 +839,7 @@ a:visited, a:link { text-decoration: none!important; color: #1D1D35; }
     font-weight: 600;
 }
 
-#titelTopBar p {
+#titleTopBar p {
     margin: 0;
     padding: 8px;
 }
@@ -866,10 +859,8 @@ a:visited, a:link { text-decoration: none!important; color: #1D1D35; }
     display: flex;
     flex-direction: column;
     flex: 1;
-    /*border: solid blue;*/
     height: fit-content;
 }
-
 
 .situatieBeschrijving{
     background-color: white;
@@ -889,7 +880,7 @@ a:visited, a:link { text-decoration: none!important; color: #1D1D35; }
     text-align: left;
 }
 
-.cardEditPosibility {
+.cardEditPossibility {
     width: fit-content;
     height: fit-content;
     background: #FFFFFF;
@@ -969,7 +960,7 @@ a:visited, a:link { text-decoration: none!important; color: #1D1D35; }
     .situatieBeschrijving{
         width: 38vw;
     }
-    .cardEditPosibility{
+    .cardEditPossibility{
         margin: auto;
     }
 }
@@ -983,16 +974,16 @@ a:visited, a:link { text-decoration: none!important; color: #1D1D35; }
     .columnBoxes{
         margin-bottom: 20px;
     }
-    .cardEditPosibility{
+    .cardEditPossibility{
         margin: auto;
     }
-    #titelTopBar{
+    #titleTopBar{
         width: fit-content;
     }
-    .topBarEditPosibility{
+    .topBarEditPossibility{
         margin: auto;
     }
-    .cardEditPosibility{
+    .cardEditPossibility{
         margin: 0;
     }
 
@@ -1108,9 +1099,7 @@ a:visited, a:link { text-decoration: none!important; color: #1D1D35; }
     }
 }
 /* -------------------------------------------- */
-
 /* Responsive thinkingTraps */
-
 /* When the browser is at least 500px and below */
 @media screen and (max-width: 500px) {
 .columns{
@@ -1129,9 +1118,7 @@ a:visited, a:link { text-decoration: none!important; color: #1D1D35; }
     }
 }
 /* -------------------------------------------- */
-
 /* Responsive editPosibility */
-
 /* When the browser is at least 500px and below */
 @media screen and (max-width: 500px) {
     .navBarPosibility{
