@@ -71,7 +71,7 @@ function generatePage1(doc, data) {
         }
 
         // Title with the specified color
-        doc.text(20, yPos, `${title}:\n`);
+        doc.text(20, yPos, title + `:\n`);
 
         // Line as separator for text. + (style)
         doc.line(15, yPos + 4, 195, yPos + 4);
@@ -124,7 +124,7 @@ function generatePage2(doc, data) {
         }
 
         // Title with the specified color
-        doc.text(20, yPos, `${title}:\n`);
+        doc.text(20, yPos, title + `:\n`);
 
         // Line as separator for text. + (style)
         doc.line(15, yPos + 4, 195, yPos + 4);
@@ -178,7 +178,7 @@ function generatePage3(doc, data) {
         }
 
         // Title with the specified color
-        doc.text(20, yPos, `${title}:\n`);
+        doc.text(20, yPos, title + `:\n`);
 
         // Line as separator for text. + (style)
         doc.line(15, yPos + 4, 195, yPos + 4);
