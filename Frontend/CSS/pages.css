@@ -530,7 +530,7 @@ textarea:hover {
     }
 
     .biasText{
-        width: 197px;
+        /*width: 197px;*/
         height: 45px;
 
         margin: 0 0 0 25px
@@ -557,7 +557,6 @@ textarea:hover {
     display: flex;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
-    padding: 1rem;
 
 }
 
@@ -1058,20 +1057,77 @@ a:visited, a:link { text-decoration: none!important; color: #1D1D35; }
         height: fit-content;
     }
     textarea {
-        width: 41%;
+        width: 43%;
     }
     .writeAreaContainer{
         flex-wrap: wrap
     }
+    header{
+        margin-bottom:50px
+    }
 }
-/* When the browser is at least 700px and below */
-@media screen and (max-width: 700px) {
+/* When the browser is at least 860px and below */
+@media screen and (max-width: 860px) {
+    textarea {
+        width: 41%;
+    }
+}
+/* When the browser is at least 750px and below */
+@media screen and (max-width: 750px) {
+    textarea {
+        width: 90%;
+    }
+    .textArea{
+        width: 70vw;
+    }
+    #writeArea1, #writeArea2, #writeArea3{
+        width: 85%;
+    }
+}
+/* When the browser is at least 750px and below */
+@media screen and (max-width: 650px) {
+    .textArea {
+        width: 65vw;
+    }
+    #writeArea1, #writeArea2, #writeArea3 {
+        width: 82%;
+    }
+}
+/* When the browser is at least 500px and below */
+@media screen and (max-width: 500px) {
     .buttonsAreaContainer {
         width: 65vw;
         height: fit-content;
+        margin-left: 80px;
     }
     textarea{
-        width: 90%;
+        width: 85%;
+    }
+    .buttonWrite{
+        margin-left: 10px;
+        padding: 15px;
+    }
+    .textArea{
+        width: 65vw;
+        margin-top: 20px;
+    }
+    #writeArea1, #writeArea2, #writeArea3{
+        width: 78%;
+    }
+    header{
+        margin-top: 10px;
+        margin-bottom: 100px;
+        margin-left: 80px;
+    }
+    .writeAreaContainer{
+        margin-left: 80px;
+    }
+    .buttonsPages{
+        width: 97%;
+        padding-bottom: 20px;
+    }
+    #sidebarContainer{
+        margin-top: 5%;
     }
 }
 
@@ -1123,24 +1179,155 @@ a:visited, a:link { text-decoration: none!important; color: #1D1D35; }
 /* Responsive thinkingTraps */
 
 /* When the browser is at least 500px and below */
+@media screen and (max-width: 1350px) {
+.columnWithButtons{
+    margin-left: 100px;
+}
+    .columnWithExplanation{
+        margin-left: -400px;
+    }
+    .columnWithTextAreas{
+        width: 50%;
+    }
+    .textArea1 textarea, .textArea2 textarea, .textArea3 textarea{
+        width: 33.5%;
+    }
+}
+@media screen and (max-width: 1234px) {
+    .columnWithExplanation {
+        margin-left: -392px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .textArea1 textarea, .textArea2 textarea, .textArea3 textarea{
+        width: 25.5%;
+    }
+}
+@media screen and (max-width: 1150px) {
+    .columnWithExplanation {
+        margin-left: -380px;
+    }
+}
+@media screen and (max-width: 1060px) {
+    .columnWithExplanation {
+        margin-left: -360px;
+    }
+}
+/* When the browser is at least 500px and below */
+@media screen and (max-width: 960px) {
+    .columnWithButtons {
+        margin-left: 80px;
+    }
+    .thinkingFormat{
+        flex-direction: column;
+    }
+    .columnWithButtons{
+        width: 70vw;
+        margin-left: 70px;
+        margin-right: 0px;
+    }
+    .columnWithTextAreas{
+        width: 71vw;
+        margin-left: 70px;
+        margin-right: 0px;
+    }
+    .columnWithExplanation{
+        width: 70vw;
+        margin-left: 70px;
+        margin-top: 40px;
+        margin-right: 0px;
+    }
+    .textArea1 textarea, .textArea2 textarea, .textArea3 textarea{
+        width: 54.5%;
+    }
+}
+/* When the browser is at least 500px and below */
 @media screen and (max-width: 500px) {
 .columns{
     display: block;
 }
     .columnWithButtons{
         width: 60vw;
-        margin-left: 75px;
+        margin-left: 70px;
+        margin-right: 0px;
     }
     .columnWithTextAreas{
         width: 62vw;
-        margin-left: 75px;
+        margin-left: 70px;
+        margin-right: 0px;
+    }
+    .columnWithExplanation{
+        width: 60vw;
+        margin-left: 70px;
+        margin-top: 40px;
+        margin-right: 0px;
     }
     .textArea1, .textArea2, .textArea3{
         margin: 0px;
     }
+    .thinkingFormat{
+        flex-direction: column;
+    }
+    .textArea1 textarea, .textArea2 textarea, .textArea3 textarea {
+        width: 55.5%;
+        height: 12%;
+    }
 }
+
 /* -------------------------------------------- */
 
+/* -------------------------------------------- */
+
+/* Responsive mybias */
+
+/* When the browser is at least 500px and below */
+@media screen and (max-width: 1370px) {
+    #cardInputContainer {
+
+         margin-right: 0px;
+
+    }
+}
+/* When the browser is at least 500px and below */
+@media screen and (max-width: 1250px) {
+  .textCard{
+      width: 40vw;
+  }
+    .biasText{
+        width: 75%;
+    }
+}
+/* When the browser is at least 500px and below */
+@media screen and (max-width: 1060px) {
+    .textCard{
+        width: 65vw;
+        float: left;
+        margin-left: 140px
+    }
+}
+/* When the browser is at least 500px and below */
+@media screen and (max-width: 800px) {
+
+}
+
+/* When the browser is at least 500px and below */
+@media screen and (max-width: 500px) {
+#cardContainer{
+    margin-left: 100px;
+}
+    .textCard{
+            margin-left: 100px;
+        width: 60vw;
+    }
+    .biasText{
+        margin: 0 0 0 15px;
+    }
+
+}
+
+
+
+/* -------------------------------------------- */
 /* Responsive editPosibility */
 
 /* When the browser is at least 500px and below */
@@ -1154,6 +1341,24 @@ a:visited, a:link { text-decoration: none!important; color: #1D1D35; }
     }
     .situatieBeschrijving {
         width: 65vw;
+    }
+}
+
+
+
+/* -------------------------------------------- */
+
+/* -------------------------------------------- */
+/* Responsive codex */
+
+/* When the browser is at least 500px and below */
+@media screen and (max-width: 900px) {
+    #codexBox{
+        display: block;
+        margin-left: 20%;
+    }
+    .codexTitle{
+        width: 60vw;
     }
 }
 
