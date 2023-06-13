@@ -49,22 +49,19 @@ textarea {
 }
 
 .continueButton {
-    text-underline: #27be6b;
+    text-decoration-color: #27be6b;
     color: #27be6b;
     text-decoration: none;
     font-size: 20px;
 }
 .returnButton{
-    text-underline: #27be6b;
+    text-decoration-color: #27be6b;
     color: #27be6b;
     text-decoration: none;
     font-size: 20px;
     padding-right: 10px;
 }
 
-.columnReturnContinue{
-
-}
 .div1{
     text-align: right;
     width: 80%;
@@ -551,8 +548,6 @@ textarea:hover {
     padding: 10px;
     margin: 10px 20px;
 } */
-
-/* Speciaal voor Shawn, changed the name to fix your page layout. BUT WHY??? Have to fix it for later.  */
 .thinkingFormat {
     display: flex;
     margin-left: 0.5rem;
@@ -1155,7 +1150,4 @@ a:visited, a:link { text-decoration: none!important; color:black; }
         width: 65vw;
     }
 }
-
-
-
 /* -------------------------------------------- */
