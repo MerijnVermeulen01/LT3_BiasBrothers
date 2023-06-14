@@ -86,24 +86,32 @@ function valuesToJSON() {
   xhr.send(data);
 }
 
+fetch("http://localhost:7070/joinedParticipantTraps")
+    .then(response => response.json() )
+    .then(data => {
+        data.forEach(item => {
+            fillDivCard(item.thinkingTraps, item.idThinkingTraps);
+        })
+    });
+
 // A-synchronous version of method as seen above.
-async function fetchData() {
-  try {
-    const response = await fetch(
-      "http://localhost:7070/joinedParticipantTraps"
-    );
-    const data = await response.json();
-
-    // Each iteration will wait for fillDiv to complete before moving to the next item.
-    for (const item of data) {
-      await fillDivCard(item.thinkingTraps, item.idThinkingTraps);
-    }
-  } catch (err) {
-    console.error(err);
-  }
-}
-
-fetchData();
+// async function fetchData() {
+//   try {
+//     const response = await fetch(
+//       "http://localhost:7070/joinedParticipantTraps"
+//     );
+//     const data = await response.json();
+//
+//     // Each iteration will wait for fillDiv to complete before moving to the next item.
+//     for (const item of data) {
+//       await fillDivCard(item.thinkingTraps, item.idThinkingTraps);
+//     }
+//   } catch (err) {
+//     console.error(err);
+//   }
+// }
+//
+// fetchData();
 
 // fetch('http://localhost:7070/joinedParticipantTraps')
 //     .then(response => response.json())
