@@ -16,7 +16,7 @@ public class LoginPage extends DatabaseController {
     private boolean admin = false;
     private boolean participant = false;
 
-    public void checkAdmin() throws SQLException{
+    public void checkAdmin() throws SQLException {
         System.out.println("Wordt select Check Gedaan van admin?");
         String dbUsername, dbPassword;
         PreparedStatement stmt = null;
@@ -24,11 +24,11 @@ public class LoginPage extends DatabaseController {
             stmt = con.prepareStatement("SELECT username, password FROM admin;");
             stmt.executeQuery();
             ResultSet resultSet = stmt.getResultSet();
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 dbUsername = resultSet.getString("username");
                 dbPassword = resultSet.getString("password");
 
-                if(dbUsername.equals(username) && dbPassword.equals(password)){
+                if (dbUsername.equals(username) && dbPassword.equals(password)) {
                     this.admin = true;
                 }
             }
@@ -37,7 +37,7 @@ public class LoginPage extends DatabaseController {
         }
     }
 
-    public void checkParticipant() throws SQLException{
+    public void checkParticipant() throws SQLException {
         System.out.println("Wordt select Check Gedaan van gebruiker?");
         String dbCode;
         PreparedStatement stmt = null;
@@ -45,10 +45,10 @@ public class LoginPage extends DatabaseController {
             stmt = con.prepareStatement("SELECT code FROM code;");
             stmt.executeQuery();
             ResultSet resultSet = stmt.getResultSet();
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 dbCode = resultSet.getString("code");
 
-                if(dbCode.equals(password)){
+                if (dbCode.equals(password)) {
                     this.participant = true;
                 }
             }
@@ -57,12 +57,12 @@ public class LoginPage extends DatabaseController {
         }
     }
 
-    public boolean checkAdminBool(){
+    public boolean checkAdminBool() {
         System.out.println("Wordt Check Gedaan van admin?");
         return this.admin;
     }
 
-    public boolean checkParticipantBool(){
+    public boolean checkParticipantBool() {
         System.out.println("Wordt Check Gedaan van gebruiker?");
         return this.participant;
     }

@@ -3,15 +3,17 @@
 /* -------------------------------------------- */
 /*Added font to all elements*/
 /* -------------------------------------------- */
-*{
+* {
     font-family: 'Poppins', sans-serif;
 }
+
 /*
   3. Allow percentage-based heights in the application
   4. Add accessible line-height
   5. Improve text rendering
 */
-html, body {
+html,
+body {
     height: 100%;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
@@ -52,7 +54,8 @@ textarea {
     text-decoration: none;
     font-size: 20px;
 }
-.returnButton{
+
+.returnButton {
     text-decoration-color: #27be6b;
     color: #27be6b;
     text-decoration: none;
@@ -60,23 +63,26 @@ textarea {
     padding-right: 10px;
 }
 
-.div1{
+.div1 {
     text-align: right;
     width: 80%;
     float: left;
 }
-.div2{
+
+.div2 {
     width: 10%;
     float: left;
 }
-.lineBetween{
+
+.lineBetween {
     width: 1%;
     height: 30px;
     border-left: 3px solid #1D1D35;
-    float :left;
+    float: left;
 }
-.buttonsPages{
-    height:30px;
+
+.buttonsPages {
+    height: 30px;
     margin-top: 20px;
     margin-bottom: 50px;
 }
@@ -147,6 +153,7 @@ hr {
     border-style: solid;
     border-color: white;
 }
+
 /* -------------------------------------------- */
 
 
@@ -202,7 +209,7 @@ hr {
 /* -------------------------------------------- */
 
 
-#timer{
+#timer {
     font-family: 'Orbitron', sans-serif;
     font-size: 20px;
     text-align: right;
@@ -210,13 +217,22 @@ hr {
     margin-top: 1%;
     display: block;
 }
+
 .blink {
     animation: blink 1s linear infinite;
 }
 
 @keyframes blink {
-    0%, 49% { opacity: 1; }
-    50%, 100% { opacity: 0; }
+
+    0%,
+    49% {
+        opacity: 1;
+    }
+
+    50%,
+    100% {
+        opacity: 0;
+    }
 }
 
 
@@ -243,13 +259,14 @@ hr {
     width: 331px;
 
 }
-.columns{
+
+.columns {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
 
 .columnWithTextAreas {
-      background-color: white;
+    background-color: white;
     border-radius: 20px;
     height: fit-content;
     width: 670px;
@@ -298,7 +315,9 @@ hr {
     font-size: 19px;
 }
 
-.textArea1, .textArea2, .textArea3 {
+.textArea1,
+.textArea2,
+.textArea3 {
     margin: 30px;
     background-color: #F5F5FB;
 
@@ -317,7 +336,9 @@ hr {
     grid-gap: 10px;
 }
 
-.textArea1 textarea, .textArea2 textarea, .textArea3 textarea {
+.textArea1 textarea,
+.textArea2 textarea,
+.textArea3 textarea {
     overflow: hidden;
     justify-content: space-between;
     position: absolute;
@@ -328,6 +349,7 @@ hr {
     width: 34.5%;
     height: 9%;
 }
+
 /* -------------------------------------------- */
 /* -------------------------------------------- */
 /* selfDevelopment */
@@ -359,7 +381,7 @@ header {
 }
 
 
-.textArea{
+.textArea {
     margin-top: 70px;
     margin-right: 35px;
     background-color: #FFFFFF;
@@ -379,7 +401,9 @@ header {
     color: #1D1D35;
 }
 
-#writeArea1, #writeArea2, #writeArea3 {
+#writeArea1,
+#writeArea2,
+#writeArea3 {
     margin: 30px;
     background-color: #F5F5FB;
     width: 195px;
@@ -393,7 +417,9 @@ header {
     font-size: 13px;
 }
 
-#writeArea1:hover, #writeArea2:hover, #writeArea3:hover {
+#writeArea1:hover,
+#writeArea2:hover,
+#writeArea3:hover {
     cursor: pointer;
     background-color: #f1f1f7;
     border-color: #27be6b;
@@ -472,7 +498,7 @@ textarea:hover {
     background: #A5A5F8;
 }
 
-.activeButton:hover{
+.activeButton:hover {
     background: #9494df;
 }
 
@@ -501,7 +527,7 @@ textarea:hover {
     color: #1D1D35;
 }
 
-.textCardHeader{
+.textCardHeader {
     margin: auto;
     text-align: center;
     padding-top: 10px;
@@ -510,21 +536,21 @@ textarea:hover {
 }
 
 @media screen and (max-width: 1035px) {
-    .textCard{
+    .textCard {
         margin-left: 140px;
     }
 
 }
 
-@media screen and (max-width: 800px){
-    .textCard{
+@media screen and (max-width: 800px) {
+    .textCard {
         width: 300px;
         height: 160px;
 
         margin-left: 140px;
     }
 
-    .biasText{
+    .biasText {
         width: 197px;
         height: 45px;
 
@@ -533,6 +559,7 @@ textarea:hover {
 
 
 }
+
 /* -------------------------------------------- */
 
 .thinkingFormat {
@@ -543,7 +570,7 @@ textarea:hover {
 
 }
 
-.biasButton .tooltip{
+.biasButton .tooltip {
     visibility: hidden;
     position: absolute;
     z-index: 1;
@@ -609,7 +636,8 @@ textarea:hover {
     transition: ease-in 0.1s;
     margin: 0px 5px 0px 5px;
 }
-.navBar button.active2{
+
+.navBar button.active2 {
     background: #A5A5F8;
 }
 
@@ -617,25 +645,28 @@ textarea:hover {
     background: #A5A5F8;
     transition: all .5s;
 }
-.frame{
+
+.frame {
     position: absolute;
     border: none;
     background: none;
     width: 99%;
     height: 99%;
 }
-.fuzz{
+
+.fuzz {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     z-index: 50;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0, 0, 0, 0.6);
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
 }
-.cognitiveIMG{
+
+.cognitiveIMG {
     position: fixed;
     top: 14%;
     left: 18%;
@@ -645,7 +676,8 @@ textarea:hover {
     border: none;
     margin-bottom: 1%;
 }
-#popUpClose{
+
+#popUpClose {
     position: absolute;
     right: 2%;
     font-weight: 600;
@@ -657,19 +689,21 @@ textarea:hover {
     border: none;
     margin-bottom: 1%;
 }
-.popUp{
-     display: block;
-     position: fixed;
-     top: 50%;
-     left: 50%;
-     transform: translate(-50%, -50%);
-     width: 76%;
-     height: 88%;
-     background-color: white;
-     border: 1px solid black;
-     padding: 10px;
- }
-#popUpBack{
+
+.popUp {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 76%;
+    height: 88%;
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#popUpBack {
     position: absolute;
     font-weight: 600;
     font-size: 16px;
@@ -701,7 +735,8 @@ textarea:hover {
     box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
     border-radius: 20px;
 }
-.line{
+
+.line {
     border-bottom: 1px solid black;
     margin-bottom: 2px;
 }
@@ -712,14 +747,16 @@ textarea:hover {
     padding: 14px;
     border-radius: 10px;
 }
-#codexBoxAdapt{
+
+#codexBoxAdapt {
     display: grid;
     margin-left: 10%;
     margin-right: 10%;
     margin-top: 2.5%;
     grid-template-columns: repeat(2, 1fr);
 }
-.AdaptTitle{
+
+.AdaptTitle {
     display: grid;
     padding: 2px 20px 14px 20px;
     margin: 2%;
@@ -733,11 +770,13 @@ textarea:hover {
     border-radius: 20px;
 
 }
-.cardTitle{
+
+.cardTitle {
     border-bottom: 1px solid black;
     margin-bottom: 2px;
 }
-.AdaptDescription{
+
+.AdaptDescription {
     margin: 10px;
     background: #F5F5FB;
     text-align: left;
@@ -745,7 +784,7 @@ textarea:hover {
     border-radius: 20px;
 }
 
-.AdaptingTrades{
+.AdaptingTrades {
     padding-top: 5px;
     font-size: 12px;
     list-style-type: circle;
@@ -754,12 +793,13 @@ textarea:hover {
     border-radius: 20px;
 }
 
-.adaptingTrade{
+.adaptingTrade {
     list-style: unset;
     text-align: left;
     padding: 15px;
     margin-right: 10px;
 }
+
 /* -------------------------------------------- */
 
 
@@ -802,7 +842,7 @@ textarea:hover {
     margin-bottom: 25px;
 }
 
-.navBarPossibility button:hover{
+.navBarPossibility button:hover {
     background-color: #A5A5F8;
     transition: all .5s;
 }
@@ -824,11 +864,16 @@ textarea:hover {
     background-color: #A5A5F8;
 }
 
-a:visited, a:link { text-decoration: none!important; color: #1D1D35; }
+a:visited,
+a:link {
+    text-decoration: none !important;
+    color: #1D1D35;
+}
+
 /* end menu within page */
 
 
-#titleTopBar{
+#titleTopBar {
     background-color: #27be6b;
     color: white;
     height: fit-content;
@@ -843,6 +888,7 @@ a:visited, a:link { text-decoration: none!important; color: #1D1D35; }
     margin: 0;
     padding: 8px;
 }
+
 .wrapper {
     margin: 15px;
 }
@@ -862,7 +908,7 @@ a:visited, a:link { text-decoration: none!important; color: #1D1D35; }
     height: fit-content;
 }
 
-.situationDescription{
+.situationDescription {
     background-color: white;
     color: #1D1D35;
     height: fit-content;
@@ -935,13 +981,15 @@ a:visited, a:link { text-decoration: none!important; color: #1D1D35; }
         margin-left: 100px;
     }
 }
+
 /* When the browser is at least 1150px and below */
 @media screen and (max-width: 1150px) {
     .row {
         margin-left: 70px;
         width: 100%;
     }
-    .columnBoxes{
+
+    .columnBoxes {
         margin-bottom: 20px;
     }
 }
@@ -952,13 +1000,16 @@ a:visited, a:link { text-decoration: none!important; color: #1D1D35; }
         margin-left: 70px;
         width: 100%;
     }
-    .columnBoxes{
+
+    .columnBoxes {
         margin-bottom: 20px;
     }
-    .situationDescription{
+
+    .situationDescription {
         width: 38vw;
     }
-    .cardEditPossibility{
+
+    .cardEditPossibility {
         margin: auto;
     }
 }
@@ -969,23 +1020,29 @@ a:visited, a:link { text-decoration: none!important; color: #1D1D35; }
         margin-left: 70px;
         width: 100%;
     }
-    .columnBoxes{
+
+    .columnBoxes {
         margin-bottom: 20px;
     }
-    .cardEditPossibility{
+
+    .cardEditPossibility {
         margin: auto;
     }
-    #titleTopBar{
+
+    #titleTopBar {
         width: fit-content;
     }
-    .topBarEditPossibility{
+
+    .topBarEditPossibility {
         margin: auto;
     }
-    .cardEditPossibility{
+
+    .cardEditPossibility {
         margin: 0;
     }
 
 }
+
 /* -------------------------------------------- */
 /* Responsive selfDevelopment */
 /* When the browser is at least 1300px and below */
@@ -993,13 +1050,16 @@ a:visited, a:link { text-decoration: none!important; color: #1D1D35; }
     .buttonsAreaContainer {
         margin-left: 100px;
     }
-    .writeAreaContainer{
+
+    .writeAreaContainer {
         margin-left: 100px;
     }
-    header{
+
+    header {
         margin-left: 100px;
     }
 }
+
 /* When the browser is at least 1100px and below */
 @media screen and (max-width: 1100px) {
     .buttonsAreaContainer {
@@ -1007,20 +1067,26 @@ a:visited, a:link { text-decoration: none!important; color: #1D1D35; }
         height: 160px;
         margin-top: 0px;
     }
-    textarea{
+
+    textarea {
         width: 200px;
         height: 45px;
     }
-    .textArea{
+
+    .textArea {
         width: 233px;
         height: 260px;
     }
-    #writeArea1, #writeArea2, #writeArea3 {
+
+    #writeArea1,
+    #writeArea2,
+    #writeArea3 {
         width: 161px;
         height: 188px;
         margin: 10px;
     }
 }
+
 /* When the browser is at least 1000px and below */
 @media screen and (max-width: 1000px) {
     .buttonsAreaContainer {
@@ -1028,97 +1094,121 @@ a:visited, a:link { text-decoration: none!important; color: #1D1D35; }
         padding: 0px;
         height: fit-content;
     }
+
     textarea {
         width: 41%;
     }
-    .writeAreaContainer{
+
+    .writeAreaContainer {
         flex-wrap: wrap
     }
 }
+
 /* When the browser is at least 700px and below */
 @media screen and (max-width: 700px) {
     .buttonsAreaContainer {
         width: 65vw;
         height: fit-content;
     }
-    textarea{
+
+    textarea {
         width: 90%;
     }
 }
+
 /* When the browser is at least 500px and below */
 @media screen and (max-width: 400px) {
 
-    #timer{
+    #timer {
         font-size: 30px;
         width: 200px;
     }
-    .sidebar{
+
+    .sidebar {
         padding-top: 27%;
     }
+
     textarea {
         width: 95%;
         height: 80px;
     }
+
     .buttonsAreaContainer {
         height: fit-content;
         margin-left: 80px;
         width: 208px;
     }
-    .buttonWrite{
+
+    .buttonWrite {
         width: 170px;
     }
-    .writeAreaContainer{
+
+    .writeAreaContainer {
         display: flex;
         flex-direction: column;
         margin-left: 80px;
     }
-    .textArea{
+
+    .textArea {
         margin-top: 40px;
     }
-    header{
+
+    header {
         height: 100px;
         margin-bottom: 50px;
         margin-top: 50px;
     }
-    .buttonsPages{
+
+    .buttonsPages {
         height: 60px;
     }
-    .div1{
+
+    .div1 {
         width: 70%;
     }
 }
+
 /* -------------------------------------------- */
 /* Responsive thinkingTraps */
 /* When the browser is at least 500px and below */
 @media screen and (max-width: 500px) {
-.columns{
-    display: block;
-}
-    .columnWithButtons{
+    .columns {
+        display: block;
+    }
+
+    .columnWithButtons {
         width: 60vw;
         margin-left: 75px;
     }
-    .columnWithTextAreas{
+
+    .columnWithTextAreas {
         width: 62vw;
         margin-left: 75px;
     }
-    .textArea1, .textArea2, .textArea3{
+
+    .textArea1,
+    .textArea2,
+    .textArea3 {
         margin: 0px;
     }
 }
+
 /* -------------------------------------------- */
 /* Responsive editPossibility */
 /* When the browser is at least 500px and below */
 @media screen and (max-width: 500px) {
-    .navBarPossibility{
+    .navBarPossibility {
         margin-left: 100px;
     }
-    .topBarEditPossibility{
+
+    .topBarEditPossibility {
         width: 300px;
         margin-left: 90px;
     }
+
     .situationDescription {
         width: 65vw;
     }
 }
+
 /* -------------------------------------------- */
