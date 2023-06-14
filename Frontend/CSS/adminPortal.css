@@ -149,3 +149,32 @@ a {
     margin-right: auto;
     margin-bottom: 50px;
 }
+.timers{
+    padding: 2%;
+    background-color: white;
+    border-radius: 10px;
+    margin-right: 20%;
+}
+.timer{
+    font-size: 18px;
+    margin: 3%;
+    display: flex;
+    position: center;
+
+}
+.time{
+    margin: 0%;
+    font-size: 14px;
+
+}
+.timerButton{
+    padding: 2%;
+    margin-right: 1%;
+    margin-left: 1%;
+    margin-top: -2%;
+    font-size: 14px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 2px 4px 4px rgb(0 0 0 / 0.40);
+    background-color: #F5F5FB;
+}
