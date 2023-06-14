@@ -8,27 +8,25 @@ const headers = [
   document.getElementById("textHeader3"),
 ];
 
-buttonContainer.addEventListener("click", (event) => {
-  const button = event.target.closest(".biasButton");
-  if (pressedButtons.length <= 3) {
-    if (button.classList.contains("activeButton")) {
-      button.classList.remove("activeButton");
+buttonContainer.addEventListener('click', (event) => {
+    const button = event.target.closest('.biasButton');
+    if (pressedButtons.length <= 3) {
+        if (button.classList.contains('activeButton')) {
+            button.classList.remove('activeButton');
 
-      const index = pressedButtons.indexOf(button);
-      if (index > -1) {
-        pressedButtons.splice(index, 1);
-      }
-    } else if (pressedButtons.length >= 0 && pressedButtons.length < 3) {
-      button.classList.add("activeButton");
-      pressedButtons.push(button);
+            const index = pressedButtons.indexOf(button);
+            if (index > -1) {
+                pressedButtons.splice(index, 1);
+            }
+        } else if (pressedButtons.length >= 0 && pressedButtons.length < 3) {
+            button.classList.add('activeButton');
+            pressedButtons.push(button);
+        }
+
+        headers.forEach((header, index) => {
+            header.innerHTML = pressedButtons[index] ? pressedButtons[index].innerHTML : "Selecteer een bias";
+        });
     }
-
-    headers.forEach((header, index) => {
-      header.innerHTML = pressedButtons[index]
-        ? pressedButtons[index].innerHTML
-        : "Selecteer een bias";
-    });
-  }
 });
 
 function buttonToArray(clicked_id) {
@@ -88,24 +86,32 @@ function valuesToJSON() {
   xhr.send(data);
 }
 
+fetch("http://localhost:7070/joinedParticipantTraps")
+    .then(response => response.json() )
+    .then(data => {
+        data.forEach(item => {
+            fillDivCard(item.thinkingTraps, item.idThinkingTraps);
+        })
+    });
+
 // A-synchronous version of method as seen above.
-async function fetchData() {
-  try {
-    const response = await fetch(
-      "http://localhost:7070/joinedParticipantTraps"
-    );
-    const data = await response.json();
-
-    // Each iteration will wait for fillDiv to complete before moving to the next item.
-    for (const item of data) {
-      await fillDivCard(item.thinkingTraps, item.idThinkingTraps);
-    }
-  } catch (err) {
-    console.error(err);
-  }
-}
-
-fetchData();
+// async function fetchData() {
+//   try {
+//     const response = await fetch(
+//       "http://localhost:7070/joinedParticipantTraps"
+//     );
+//     const data = await response.json();
+//
+//     // Each iteration will wait for fillDiv to complete before moving to the next item.
+//     for (const item of data) {
+//       await fillDivCard(item.thinkingTraps, item.idThinkingTraps);
+//     }
+//   } catch (err) {
+//     console.error(err);
+//   }
+// }
+//
+// fetchData();
 
 // fetch('http://localhost:7070/joinedParticipantTraps')
 //     .then(response => response.json())

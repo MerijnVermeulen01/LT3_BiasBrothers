@@ -1,13 +1,13 @@
 var clickedButton = [];
 var description = [];
 
-function textToArray(textAreaId, paricipantText) {
+function textToArray(textAreaId, participantText) {
   if (textAreaId === "description1") {
-    description[0] = paricipantText;
+    description[0] = participantText;
   } else if (textAreaId === "description2") {
-    description[1] = paricipantText;
+    description[1] = participantText;
   } else if (textAreaId === "description3") {
-    description[2] = paricipantText;
+    description[2] = participantText;
   }
 }
 
@@ -19,7 +19,6 @@ function buttonToArray(clicked_id) {
     } else if (clickedButton.length >= 0 && clickedButton.length < 3) {
       clickedButton.push(clicked_id);
     }
-  }
 }
 
 function valuesToJSON(data){  
@@ -38,11 +37,7 @@ function valuesToJSON(data){
       console.log(this.responseText);
     }
   };
-
-            console.log(this.responseText);
-
-        }
-    };
+}
 
     if(clickedButton.length != 0){
         

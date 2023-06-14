@@ -14,6 +14,9 @@ import java.util.stream.IntStream;
 public class MeThinkingFast extends DatabaseController {
 
     Connection con = getConnection();
+    public void setConnection(Connection connection) {
+        this.con = connection;
+    }
 
     private String situationDescription1;
     private String situationDescription2;
@@ -34,6 +37,10 @@ public class MeThinkingFast extends DatabaseController {
      */
     public void setSituationDescription1(String situationDescription1) {
         this.situationDescription1 = situationDescription1;
+    }
+
+    public String getSituationDescription1() {
+        return situationDescription1;
     }
 
     public void setSituationDescription2(String situationDescription2) {
