@@ -3,20 +3,20 @@ const urlParams = new URLSearchParams(queryString);
 const edit = urlParams.get("edit");
 const id = urlParams.get("id");
 
-if(edit == "true"){
+if (edit == "true") {
     const queryString = window.location.href;
     let urlName;
-    if (queryString.includes("insertEditThinkingTraps")){
+    if (queryString.includes("insertEditThinkingTraps")) {
         urlName = "adminPortalThinkingTraps";
-    }else if (queryString.includes("insertEditBiases")){
+    } else if (queryString.includes("insertEditBiases")) {
         urlName = "adminPortalBias";
     }
     fetch('http://localhost:7070/' + urlName + '/' + id)
-    .then(response => response.json())
-    .then(data => {
-        generateInputFields(data, queryString);
-    });
-}else{
+        .then(response => response.json())
+        .then(data => {
+            generateInputFields(data, queryString);
+        });
+} else {
     const table = document.querySelector("table");
     const rowTitle = table.insertRow();
     rowTitle.classList.add("trEditTitle");
@@ -27,9 +27,9 @@ if(edit == "true"){
     const titleText = document.createTextNode("Titel:");
     const inputTitle = document.createElement("input");
     inputTitle.classList.add("titleText");
-    
+
     const rowDescription = table.insertRow();
-    
+
     const cellDescription = rowDescription.insertCell();
     cellDescription.classList.add("editDescription");
 
@@ -45,15 +45,15 @@ if(edit == "true"){
 
 }
 
-function generateInputFields(data, queryString){
-    for(let element of data){
-        
+function generateInputFields(data, queryString) {
+    for (let element of data) {
+
         let titleName;
         let description;
-        if(queryString.includes("insertEditThinkingTraps")){
+        if (queryString.includes("insertEditThinkingTraps")) {
             description = element['description'];
             titleName = element['thinkingTraps'];
-        }else if (queryString.includes("insertEditBiases")){
+        } else if (queryString.includes("insertEditBiases")) {
             description = element['biasDescription'];
             titleName = element['nameBias'];
         }
@@ -69,9 +69,9 @@ function generateInputFields(data, queryString){
         const titleText = document.createTextNode("Titel:");
         const inputTitle = document.createElement("input");
         inputTitle.classList.add("titleText");
-        
+
         const rowDescription = table.insertRow();
-        
+
         const cellDescription = rowDescription.insertCell();
         cellDescription.classList.add("editDescription");
 

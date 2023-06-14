@@ -40,7 +40,7 @@ public class passwordUtils {
         return Base64.getEncoder().encodeToString(hashBytes);
     }
 
-    public static String Test(){
+    public static String Test() {
 
         return "";
     }

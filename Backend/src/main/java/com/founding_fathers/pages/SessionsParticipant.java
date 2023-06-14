@@ -1,6 +1,7 @@
 package com.founding_fathers.pages;
 
 import com.founding_fathers.pages.controller.DatabaseController;
+
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -39,7 +40,7 @@ public class SessionsParticipant extends DatabaseController {
         Statement stmt = con.createStatement();
         String query = "SELECT * FROM sessionparticipant ORDER BY sesionId DESC LIMIT 1";
         ResultSet resultSet = stmt.executeQuery(query);
-        while (resultSet.next()){
+        while (resultSet.next()) {
             setIdSession(resultSet.getInt(1));
         }
         return this.idSession;

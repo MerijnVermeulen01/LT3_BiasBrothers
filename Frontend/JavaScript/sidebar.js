@@ -35,26 +35,26 @@ function sidebarLoad() {
   tooltips.src = "../Javascript/tooltips.js";
   document.body.appendChild(tooltips);
 
-  // This code removes the class active form all the children in the div sidebarContainer
-  const elements = document.querySelectorAll("#sidebarContainer *");
-  elements.forEach((element) => {
-    element.classList.remove("active");
-  });
+    // This code removes the class active form all the children in the div sidebarContainer
+    const elements = document.querySelectorAll("#sidebarContainer *");
+    elements.forEach((element) => {
+        element.classList.remove("active");
+    });
 
-  // This code looks at which page you are and then adds the class active to it
-  // TODO: IF STATEMENT TO SWITCH STATEMENT
-  const queryStrin = window.location.href;
-  if (queryStrin.includes("selfDevelopment")) {
-    document.getElementById("selfDevelopment").classList.add("active");
-  } else if (queryStrin.includes("thinkingTraps")) {
-    document.getElementById("thinkingTraps").classList.add("active");
-  } else if (queryStrin.includes("myBiasPage")) {
-    document.getElementById("myBiasPage").classList.add("active");
-  } else if (queryStrin.includes("editPossibility")) {
-    document.getElementById("editPossibility").classList.add("active");
-  } else if (queryStrin.includes("codex")) {
-    document.getElementById("codex").classList.add("active");
-  } else if (queryStrin.includes("downloadPage")) {
-    document.getElementById("downloadPage").classList.add("active");
-  }
+    // This code looks at which page you are and then adds the class active to it
+    // TODO: IF STATEMENT TO SWITCH STATEMENT
+    const queryStrin = window.location.href;
+    if (queryStrin.includes("selfDevelopment")) {
+        document.getElementById("selfDevelopment").classList.add("active");
+    } else if (queryStrin.includes("thinkingTraps")) {
+        document.getElementById("thinkingTraps").classList.add("active");
+    } else if (queryStrin.includes("myBiasPage")) {
+        document.getElementById("myBiasPage").classList.add("active");
+    } else if (queryStrin.includes("editPossibility")) {
+        document.getElementById("editPossibility").classList.add("active");
+    } else if (queryStrin.includes("codex")) {
+        document.getElementById("codex").classList.add("active");
+    } else if (queryStrin.includes("downloadPage")) {
+        document.getElementById("downloadPage").classList.add("active");
+    }
 }

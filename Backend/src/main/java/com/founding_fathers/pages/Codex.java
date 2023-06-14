@@ -1,15 +1,16 @@
 package com.founding_fathers.pages;
 
+import com.founding_fathers.pages.controller.DatabaseController;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import com.founding_fathers.pages.controller.DatabaseController;
+
 import java.sql.*;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class Codex extends DatabaseController{
+public class Codex extends DatabaseController {
     Connection con = getConnection();
 
     public List codexInfo(String query) throws SQLException {
@@ -22,19 +23,19 @@ public class Codex extends DatabaseController{
                 .mapToObj(i -> {
                     try {
                         return md.getColumnName(i + 1);
-                    } catch (SQLException e){
+                    } catch (SQLException e) {
                         System.out.println(e);
                         return "?";
                     }
                 }).collect(Collectors.toList());
 
         JSONArray result = new JSONArray();
-        while(resultSet.next()){
+        while (resultSet.next()) {
             JSONObject row = new JSONObject();
             colNames.forEach(cn -> {
                 try {
                     row.put(cn, resultSet.getObject(cn));
-                } catch (JSONException | SQLException e){
+                } catch (JSONException | SQLException e) {
                     System.out.println(e);
                 }
             });

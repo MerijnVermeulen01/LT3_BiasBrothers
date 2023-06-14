@@ -2,25 +2,26 @@ var clickedButton = [];
 var description = [];
 
 function textToArray(textAreaId, paricipantText) {
-  if (textAreaId === "description1") {
-    description[0] = paricipantText;
-  } else if (textAreaId === "description2") {
-    description[1] = paricipantText;
-  } else if (textAreaId === "description3") {
-    description[2] = paricipantText;
-  }
+    if (textAreaId === "description1") {
+        description[0] = paricipantText;
+    } else if (textAreaId === "description2") {
+        description[1] = paricipantText;
+    } else if (textAreaId === "description3") {
+        description[2] = paricipantText;
+    }
 }
 
 function buttonToArray(clicked_id) {
-  if (clickedButton.length <= 3) {
-    const index = clickedButton.indexOf(clicked_id);
-    if (index > -1) {
-      clickedButton.splice(index, 1);
-    } else if (clickedButton.length >= 0 && clickedButton.length < 3) {
-      clickedButton.push(clicked_id);
+    if (clickedButton.length <= 3) {
+        const index = clickedButton.indexOf(clicked_id);
+        if (index > -1) {
+            clickedButton.splice(index, 1);
+        } else if (clickedButton.length >= 0 && clickedButton.length < 3) {
+            clickedButton.push(clicked_id);
+        }
     }
-  }
 }
+
 
 function valuesToJSON(data){  
     // Creating a XHR object
@@ -38,11 +39,7 @@ function valuesToJSON(data){
       console.log(this.responseText);
     }
   };
-
-            console.log(this.responseText);
-
-        }
-    };
+}
 
     if(clickedButton.length != 0){
         
@@ -71,13 +68,13 @@ function valuesToJSON(data){
     console.log(clickedButton);
 
     // Converting JSON data to string
-    var data = JSON.stringify({ 
-        "button1" : clickedButton[0],
-        "description1" : description[0],
-        "button2" : clickedButton[1],
-        "description2" : description[1],
-        "button3" : clickedButton[2],
-        "description3" : description[2], 
+    var data = JSON.stringify({
+        "button1": clickedButton[0],
+        "description1": description[0],
+        "button2": clickedButton[1],
+        "description2": description[1],
+        "button3": clickedButton[2],
+        "description3": description[2],
     });
 
     // Sending data with the request

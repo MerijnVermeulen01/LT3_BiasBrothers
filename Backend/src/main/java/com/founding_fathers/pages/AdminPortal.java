@@ -22,12 +22,15 @@ public class AdminPortal extends DatabaseController {
     public void setBiasTime(int biasTime) {
         this.biasTime = biasTime;
     }
+
     public void setThinkingTime(int thinkingTime) {
         this.thinkingTime = thinkingTime;
     }
+
     public void setDevelopmentTime(int developmentTime) {
         this.developmentTime = developmentTime;
     }
+
     public void setPossibilityTime(int possibilityTime) {
         this.possibilityTime = possibilityTime;
     }
@@ -36,25 +39,25 @@ public class AdminPortal extends DatabaseController {
         Statement stmt = con.createStatement();
         ResultSet resultSet = stmt.executeQuery(query);
 
-        ResultSetMetaData md =   resultSet.getMetaData();
+        ResultSetMetaData md = resultSet.getMetaData();
         int numCols = md.getColumnCount();
         List<String> colNames = IntStream.range(0, numCols)
                 .mapToObj(i -> {
                     try {
                         return md.getColumnName(i + 1);
-                    } catch (SQLException e){
+                    } catch (SQLException e) {
                         System.out.println(e);
                         return "?";
                     }
                 }).collect(Collectors.toList());
 
         JSONArray result = new JSONArray();
-        while (resultSet.next()){
+        while (resultSet.next()) {
             JSONObject row = new JSONObject();
             colNames.forEach(cn -> {
                 try {
                     row.put(cn, resultSet.getObject(cn));
-                } catch (JSONException | SQLException e){
+                } catch (JSONException | SQLException e) {
                     System.out.println(e);
                 }
             });
@@ -135,10 +138,10 @@ public class AdminPortal extends DatabaseController {
 
     public void updateInTimer() {
         int[] times = {biasTime, thinkingTime, developmentTime, possibilityTime};
-        String[] timerNames ={"biasTime", "thinkingTime", "developmentTime", "possibilityTime"};
+        String[] timerNames = {"biasTime", "thinkingTime", "developmentTime", "possibilityTime"};
         PreparedStatement stmt = null;
         try {
-            for(int i = 0; i < timerNames.length; i++){
+            for (int i = 0; i < timerNames.length; i++) {
                 stmt = con.prepareStatement("UPDATE timer SET timerTime = ? WHERE timerName = ?");
                 stmt.setInt(1, times[i]);
                 stmt.setString(2, timerNames[i]);

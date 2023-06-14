@@ -124,3 +124,19 @@ body {
     box-shadow: 0 0 10px #F5F5FB;
     opacity: 0.8;
 }
+
+/* -------------------------------------------- */
+
+/* Responsive Index */
+
+/* When the browser is at least 500px and below */
+@media screen and (max-width: 500px) {
+    #cards{
+        height: 100%;
+        margin-top: 50px;
+    }
+}
+
+
+
+/* -------------------------------------------- */

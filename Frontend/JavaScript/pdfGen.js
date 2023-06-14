@@ -2,14 +2,15 @@ var downloadButton = document.getElementById("downloadPage");
 downloadButton.addEventListener("click", generatePDF);
 
 function generatePDF() {
-  const { jsPDF } = window.jspdf;
-  const doc = new jsPDF();
+    const {jsPDF} = window.jspdf;
+    const doc = new jsPDF();
 
-  const apiUrls = [
-    "http://localhost:7070/selfDevelopment",
-    "http://localhost:7070/joinedParticipantTraps",
-    "http://localhost:7070/getParicipantBias",
-  ];
+
+    const apiUrls = [
+        'http://localhost:7070/selfDevelopment',
+        'http://localhost:7070/joinedParticipantTraps',
+        'http://localhost:7070/getParicipantBias'
+    ];
 
   // Fontpage added to pdf
   var page = "/Frontend/PDF-presets/pdfDesign.png";

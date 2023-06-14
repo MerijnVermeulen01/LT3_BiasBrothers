@@ -1,20 +1,20 @@
 const queryString = window.location.href;
 if (queryString.includes("thinkingTrapsEdit")){
     fetchDataThinkingTraps();
-}else if (queryString.includes("biasesEdit")){
+} else if (queryString.includes("biasesEdit")) {
     fetchDataBiases();
 }
 
-function fetchDataThinkingTraps(){
+function fetchDataThinkingTraps() {
     fetch('http://localhost:7070/adminPortalThinkingTraps')
-    .then(response => response.json())
-    .then(data => {
-    let table = document.querySelector("table");
-        generateTable(table, data);
-    });
+        .then(response => response.json())
+        .then(data => {
+            let table = document.querySelector("table");
+            generateTable(table, data);
+        });
 }
 
-function fetchDataBiases(){
+function fetchDataBiases() {
     fetch('http://localhost:7070/adminPortalBias')
     .then(response => response.json())
     .then(data => {
@@ -24,7 +24,7 @@ function fetchDataBiases(){
 }
 
 function generateTable(table, data) {
-    
+
     for (let element of data) {
         // if('idBiases' in element || 'idThinkingTraps' in element){
         //     console.log('data');
@@ -33,27 +33,27 @@ function generateTable(table, data) {
         for (key in element) {
             let cell = row.insertCell();
             let text = document.createTextNode(element[key]);
-            
-            
-            if(key == "description" || key == "biasDescription"){
+
+
+            if (key == "description" || key == "biasDescription") {
                 cell.classList.add("descriptionText");
-            }else {
+            } else {
                 cell.classList.add("tableTitle");
             }
             cell.appendChild(text);
         }
         const cellButton = row.insertCell();
         cellButton.classList.add("buttonArea");
-        
+
         let fileNameEdit = "";
         let deletePath = "";
 
         let idName;
-        if(queryString.includes("thinkingTrapsEdit")){
+        if (queryString.includes("thinkingTrapsEdit")) {
             fileNameEdit = "insertEditThinkingTraps";
             deletePath = "thinkingtraps";
             idName = element['idThinkingTraps'];
-        }else if (queryString.includes("biasesEdit")){
+        } else if (queryString.includes("biasesEdit")) {
             fileNameEdit = "insertEditBiases";
             deletePath = "biases";
             idName = element['idBiases'];
@@ -71,7 +71,7 @@ function generateTable(table, data) {
         deleteButton.setAttribute("onclick", "popupTest(this.id)");
         deleteButton.setAttribute("id", idName);
         deleteButton.appendChild(deleteTextButton);
-        
+
         cellButton.appendChild(editButton);
         cellButton.appendChild(deleteButton);
 

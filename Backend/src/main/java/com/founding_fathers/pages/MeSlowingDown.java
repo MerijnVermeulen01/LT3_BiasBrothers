@@ -1,8 +1,10 @@
 package com.founding_fathers.pages;
+
 import com.founding_fathers.pages.controller.DatabaseController;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.sql.*;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -29,18 +31,53 @@ public class MeSlowingDown extends DatabaseController {
     /**
      * Setters for the description variables
      */
-    public void setMeSlowingDownSituationDescription1(String meSlowingDownSituationDescription1) {this.meSlowingDownSituationDescription1 = meSlowingDownSituationDescription1;}
-    public void setMeSlowingDownSituationDescription2(String meSlowingDownSituationDescription2) {this.meSlowingDownSituationDescription2 = meSlowingDownSituationDescription2;}
-    public void setMeSlowingDownSituationDescription3(String meSlowingDownSituationDescription3) {this.meSlowingDownSituationDescription3 = meSlowingDownSituationDescription3;}
-    public void setMeSlowingDownSituationDescription4(String meSlowingDownSituationDescription4) {this.meSlowingDownSituationDescription4 = meSlowingDownSituationDescription4;}
-    public void setMeSlowingDownSituationDescription5(String meSlowingDownSituationDescription5) {this.meSlowingDownSituationDescription5 = meSlowingDownSituationDescription5;}
-    public void setMeSlowingDownSituationDescription6(String meSlowingDownSituationDescription6) {this.meSlowingDownSituationDescription6 = meSlowingDownSituationDescription6;}
-    public void setMeSlowingDownSituationDescription7(String meSlowingDownSituationDescription7) {this.meSlowingDownSituationDescription7 = meSlowingDownSituationDescription7;}
-    public void setMeSlowingDownSituationDescription8(String meSlowingDownSituationDescription8) {this.meSlowingDownSituationDescription8 = meSlowingDownSituationDescription8;}
-    public void setMeSlowingDownSituationDescription9(String meSlowingDownSituationDescription9) {this.meSlowingDownSituationDescription9 = meSlowingDownSituationDescription9;}
-    public void setMeSlowingDownSituationDescription10(String meSlowingDownSituationDescription10) {this.meSlowingDownSituationDescription10 = meSlowingDownSituationDescription10;}
-    public void setMeSlowingDownSituationDescription11(String meSlowingDownSituationDescription11) {this.meSlowingDownSituationDescription11 = meSlowingDownSituationDescription11;}
-    public void setMeSlowingDownSituationDescription12(String meSlowingDownSituationDescription12) {this.meSlowingDownSituationDescription12 = meSlowingDownSituationDescription12;}
+    public void setMeSlowingDownSituationDescription1(String meSlowingDownSituationDescription1) {
+        this.meSlowingDownSituationDescription1 = meSlowingDownSituationDescription1;
+    }
+
+    public void setMeSlowingDownSituationDescription2(String meSlowingDownSituationDescription2) {
+        this.meSlowingDownSituationDescription2 = meSlowingDownSituationDescription2;
+    }
+
+    public void setMeSlowingDownSituationDescription3(String meSlowingDownSituationDescription3) {
+        this.meSlowingDownSituationDescription3 = meSlowingDownSituationDescription3;
+    }
+
+    public void setMeSlowingDownSituationDescription4(String meSlowingDownSituationDescription4) {
+        this.meSlowingDownSituationDescription4 = meSlowingDownSituationDescription4;
+    }
+
+    public void setMeSlowingDownSituationDescription5(String meSlowingDownSituationDescription5) {
+        this.meSlowingDownSituationDescription5 = meSlowingDownSituationDescription5;
+    }
+
+    public void setMeSlowingDownSituationDescription6(String meSlowingDownSituationDescription6) {
+        this.meSlowingDownSituationDescription6 = meSlowingDownSituationDescription6;
+    }
+
+    public void setMeSlowingDownSituationDescription7(String meSlowingDownSituationDescription7) {
+        this.meSlowingDownSituationDescription7 = meSlowingDownSituationDescription7;
+    }
+
+    public void setMeSlowingDownSituationDescription8(String meSlowingDownSituationDescription8) {
+        this.meSlowingDownSituationDescription8 = meSlowingDownSituationDescription8;
+    }
+
+    public void setMeSlowingDownSituationDescription9(String meSlowingDownSituationDescription9) {
+        this.meSlowingDownSituationDescription9 = meSlowingDownSituationDescription9;
+    }
+
+    public void setMeSlowingDownSituationDescription10(String meSlowingDownSituationDescription10) {
+        this.meSlowingDownSituationDescription10 = meSlowingDownSituationDescription10;
+    }
+
+    public void setMeSlowingDownSituationDescription11(String meSlowingDownSituationDescription11) {
+        this.meSlowingDownSituationDescription11 = meSlowingDownSituationDescription11;
+    }
+
+    public void setMeSlowingDownSituationDescription12(String meSlowingDownSituationDescription12) {
+        this.meSlowingDownSituationDescription12 = meSlowingDownSituationDescription12;
+    }
 
 
     /**
@@ -57,11 +94,11 @@ public class MeSlowingDown extends DatabaseController {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        if(!resultSet.isBeforeFirst()){
+        if (!resultSet.isBeforeFirst()) {
             System.out.println("Insert");
             insertInBiasMeSlowingDown();
-        }else{
-            while (resultSet.next()){
+        } else {
+            while (resultSet.next()) {
                 System.out.println("Update");
                 updateMeSlowingDown(resultSet.getInt(1));
                 count++;
@@ -91,7 +128,7 @@ public class MeSlowingDown extends DatabaseController {
      * This is the update function for meThinkingFast
      */
     public void updateMeSlowingDown(int id) {
-        String[] descriptions = {meSlowingDownSituationDescription1, meSlowingDownSituationDescription2,meSlowingDownSituationDescription3,meSlowingDownSituationDescription4,meSlowingDownSituationDescription5,meSlowingDownSituationDescription6,meSlowingDownSituationDescription7,meSlowingDownSituationDescription8,meSlowingDownSituationDescription9,meSlowingDownSituationDescription10,meSlowingDownSituationDescription11,meSlowingDownSituationDescription12};
+        String[] descriptions = {meSlowingDownSituationDescription1, meSlowingDownSituationDescription2, meSlowingDownSituationDescription3, meSlowingDownSituationDescription4, meSlowingDownSituationDescription5, meSlowingDownSituationDescription6, meSlowingDownSituationDescription7, meSlowingDownSituationDescription8, meSlowingDownSituationDescription9, meSlowingDownSituationDescription10, meSlowingDownSituationDescription11, meSlowingDownSituationDescription12};
         System.out.println(descriptions[count]);
         PreparedStatement stmt = null;
         try {
@@ -120,19 +157,19 @@ public class MeSlowingDown extends DatabaseController {
                 .mapToObj(i -> {
                     try {
                         return md.getColumnName(i + 1);
-                    } catch (SQLException e){
+                    } catch (SQLException e) {
                         System.out.println(e);
                         return "?";
                     }
                 }).collect(Collectors.toList());
 
         JSONArray result = new JSONArray();
-        while(resultSet.next()){
+        while (resultSet.next()) {
             JSONObject row = new JSONObject();
             colNames.forEach(cn -> {
                 try {
                     row.put(cn, resultSet.getObject(cn));
-                } catch (JSONException | SQLException e){
+                } catch (JSONException | SQLException e) {
                     System.out.println(e);
                 }
             });

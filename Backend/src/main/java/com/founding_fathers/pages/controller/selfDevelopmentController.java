@@ -1,7 +1,6 @@
 package com.founding_fathers.pages.controller;
 
 import com.founding_fathers.API.APIController;
-import com.founding_fathers.pages.ThinkingTraps;
 import com.founding_fathers.pages.selfDevelopment;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
@@ -15,7 +14,7 @@ public class selfDevelopmentController implements APIController {
     /**
      * This is the constructor of the selfDevelopmentController file
      */
-    public selfDevelopmentController(selfDevelopment selfDevelopment){
+    public selfDevelopmentController(selfDevelopment selfDevelopment) {
         this.selfDevelopment = selfDevelopment;
     }
 
