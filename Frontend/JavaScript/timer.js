@@ -10,10 +10,10 @@ if (queryString.includes("timerEdit")) {
   //check if in admin or in normal page
   fetchTimerEdit();
 } else {
-  fetch("http://localhost:7070/adminPortalTimer") //fetch timer info for seperate pages
-    .then((response) => response.json())
-    .then((data) => {
-      data.forEach((post) => {
+  fetch('http://localhost:7070/adminPortalTimer') //fetch timer info for seperate pages
+    .then(response => response.json())
+    .then(data => {
+      data.forEach(post => {
         chooseTimer(post.idtimer, post.timerName, post.timerTime); //brings timer info to selection of page
       });
     });
