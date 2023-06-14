@@ -47,14 +47,12 @@ textarea {
 }
 
 .continueButton {
-    text-decoration-color: #27be6b;
-    color: #27be6b;
+
     text-decoration: none;
     font-size: 20px;
 }
 .returnButton{
-    text-decoration-color: #27be6b;
-    color: #27be6b;
+
     text-decoration: none;
     font-size: 20px;
     padding-right: 10px;
@@ -789,7 +787,7 @@ textarea:hover {
 /* EditPossibility */
 /* -------------------------------------------- */
 /* For menu within page */
-.navBarPossibility {
+.navBarPosibility {
     background-color: white;
     border-radius: 10px;
     width: fit-content;
@@ -801,13 +799,13 @@ textarea:hover {
     margin-bottom: 25px;
 }
 
-.navBarPossibility button:hover{
+.navBarPosibility button:hover{
     background-color: #A5A5F8;
     transition: all .5s;
 }
 
 
-.navBarPossibility button {
+.navBarPosibility button {
     font-weight: 600;
     font-size: 16px;
     width: fit-content;
@@ -819,7 +817,7 @@ textarea:hover {
     margin: 0px 5px 5px 5px;
 }
 
-.navBarPossibility button.active2 {
+.navBarPosibility button.active2 {
     background-color: #A5A5F8;
 }
 
@@ -879,7 +877,7 @@ a:visited, a:link { text-decoration: none!important; color: #1D1D35; }
     text-align: left;
 }
 
-.cardEditPossibility {
+.cardEditPosibility {
     width: fit-content;
     height: fit-content;
     background: #FFFFFF;
@@ -887,13 +885,13 @@ a:visited, a:link { text-decoration: none!important; color: #1D1D35; }
     border-radius: 20px;
 }
 
-.contentEditPossibility {
+.contentEditPosibility {
     /*padding-left: 20px;*/
     max-width: fit-content;
 
 }
 
-.testEditPossibility {
+.testEditPosibility {
     width: fit-content;
     height: fit-content;
     /*margin: 30px 0 0 30px;*/
