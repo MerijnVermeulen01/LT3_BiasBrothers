@@ -114,15 +114,12 @@ fetchData();
 fetch('http://localhost:7070/getParicipantBias')
     .then(repsone => repsone.json())
     .then(data => {
-        document.getElementById(data[0].bias_idBiases).classList.add('activeButton');
-        document.getElementById(data[1].bias_idBiases).classList.add('activeButton');
-        document.getElementById(data[2].bias_idBiases).classList.add('activeButton');
         document.getElementById('description1').value = data[0].description;
         document.getElementById('description2').value = data[1].description;
         document.getElementById('description3').value = data[2].description;
-        // headers[0].innerHTML = data[0].nameBias;
-        // headers[1].innerHTML = data[1].nameBias;
-        // headers[2].innerHTML = data[2].nameBias;
+        headers[0].innerHTML = data[0].nameBias;
+        headers[1].innerHTML = data[1].nameBias;
+        headers[2].innerHTML = data[2].nameBias;
     });
 
 // Makes cards with buttons filled with corresponding bias.
@@ -150,6 +147,8 @@ function fillDivCard(title, id) {
 
                 newButton.appendChild(text);
                 newDiv.appendChild(newButton);
+                // console.log(post);
+                // 
             });
         });
 }
