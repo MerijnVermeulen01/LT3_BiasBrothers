@@ -5,6 +5,8 @@ let biasTime;
 let thinkingTime;
 let possibilityTime;
 let developmentTime;
+let slowingTime;
+
 
 if (queryString.includes("timerEdit")) {
   //check if in admin or in normal page
@@ -20,26 +22,26 @@ if (queryString.includes("timerEdit")) {
 }
 
 function chooseTimer(idtimer, timerName, timerTime) {
-  //goes through multiple if statments to infd out the page and set the time with the fetched time for the opened page
+  //goes through multiple if statments to find out the page and set the time with the fetched time for the opened page
   if (queryString.includes("myBiasPage")) {
     if (timerName.includes("biasTime")) {
       runTimer(timerTime);
-      //startingMinutes = timerTime;
     }
   } else if (queryString.includes("thinkingTraps")) {
     if (timerName.includes("thinkingTime")) {
       runTimer(timerTime);
-      //startingMinutes = timerTime;
     }
   } else if (queryString.includes("selfDevelopment")) {
     if (timerName.includes("developmentTime")) {
       runTimer(timerTime);
-      //startingMinutes = timerTime;
+    }
+  } else if (queryString.includes("editPossibilitySlowingDown")) {
+    if (timerName.includes("slowingTime")) {
+      runTimer(timerTime);
     }
   } else if (queryString.includes("editPossibility")) {
     if (timerName.includes("possibilityTime")) {
       runTimer(timerTime);
-      //startingMinutes = timerTime;
     }
   }
 }
@@ -108,6 +110,8 @@ function fillDiv(idtimer, timerName, timerTime) {
     document.getElementById("developmentTime").appendChild(time);
   } else if (timerName.includes("possibilityTime")) {
     document.getElementById("possibilityTime").appendChild(time);
+  } else if (timerName.includes("slowingTime")) {
+    document.getElementById("slowingTime").appendChild(time);
   }
 }
 
@@ -138,6 +142,12 @@ function minusOne(timeName) {
     possibilityTime--;
     times[3] = possibilityTime;
     document.getElementById("possibilityTime").innerHTML = possibilityTime;
+  } else if (timeName === "possibilitySlowMinus") {
+    slowingTime = document.getElementById("slowingTime").innerHTML;
+    parseInt(slowingTime);
+    slowingTime--;
+    times[4] = slowingTime;
+    document.getElementById("slowingTime").innerHTML = slowingTime;
   }
 }
 
@@ -168,6 +178,12 @@ function plusOne(timeName) {
     possibilityTime++;
     times[3] = possibilityTime;
     document.getElementById("possibilityTime").innerHTML = possibilityTime;
+  } else if (timeName === "possibilitySlowPlus") {
+    slowingTime = document.getElementById("slowingTime").innerHTML;
+    parseInt(slowingTime);
+    slowingTime++;
+    times[4] = slowingTime;
+    document.getElementById("slowingTime").innerHTML = slowingTime;
   }
 }
 
@@ -199,6 +215,8 @@ function valuesToJSON(data) {
         times[2] = data[2].timerTime;
       } else if (times[3] == null) {
         times[3] = data[3].timerTime;
+      } else if (times[4] == null) {
+        times[4] = data[4].timerTime;
       }
     }
 
@@ -208,6 +226,7 @@ function valuesToJSON(data) {
       thinkingTime: times[1],
       developmentTime: times[2],
       possibilityTime: times[3],
+      slowingTime: times[4],
     });
     console.log(data);
     // Sending data with the request

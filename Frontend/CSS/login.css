@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     height: 100%;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
@@ -10,17 +11,17 @@ h1 {
     font-weight: 900;
 }
 
-*{
+* {
     font-family: 'Poppins', sans-serif;
     color: white;
 }
 
-label{
+label {
     font-weight: bolder;
     font-size: 80%;
 }
 
-#logoImg{
+#logoImg {
     scale: 10%;
     position: absolute;
     top: -38%;
@@ -38,6 +39,7 @@ body {
     margin: 0 auto;
 
 }
+
 .container {
 
     margin: 0 auto;
@@ -49,7 +51,9 @@ body {
     width: 300px;
     height: 300px;
 }
-input[type=text], input[type=password] {
+
+input[type=text],
+input[type=password] {
     width: 100%;
     padding: 12px 8px;
     margin-top: 0;
@@ -60,7 +64,8 @@ input[type=text], input[type=password] {
     border-radius: 5px;
     box-sizing: border-box;
 }
-input::placeholder{
+
+input::placeholder {
     /*background-image: url("../Images/icons8-username-50.png");*/
     background-repeat: no-repeat;
     background-size: 8%;

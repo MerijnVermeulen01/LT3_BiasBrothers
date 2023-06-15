@@ -37,6 +37,12 @@
                                     <p class="time">&nbsp;minuten</p>
                                     <button class="timerButton" id="possibilityPlus" onClick="plusOne(this.id)">+</button>
                                 </div>
+                                <div class="timer">Aanpassingsvermogen Slow&nbsp;&nbsp;
+                                    <button class="timerButton" id="possibilitySlowMinus" onClick="minusOne(this.id)">-</button>
+                                    <p id="slowingTime" class="time"></p>
+                                    <p class="time">&nbsp;minuten</p>
+                                    <button class="timerButton" id="possibilitySlowPlus" onClick="plusOne(this.id)">+</button>
+                                </div>
                             </div>
                         <div class="saveButtonContainer">
                             <button class="buttons" id="saveButton" onClick="fetchTimerEdit()">Opslaan</button>
@@ -46,7 +52,77 @@
                     </div>
                 </div>
             </div>
+            <div class="timer">
+              ThinkingTraps
+              <button
+                class="timerButton"
+                id="thinkingMinus"
+                onClick="minusOne(this.id)"
+              >
+                -
+              </button>
+              <p id="thinkingTime" class="time"></p>
+              <button
+                class="timerButton"
+                id="thinkingPlus"
+                onClick="plusOne(this.id)"
+              >
+                +
+              </button>
+            </div>
+            <div class="timer">
+              SelfDevelopment
+              <button
+                class="timerButton"
+                id="developmentMinus"
+                onClick="minusOne(this.id)"
+              >
+                -
+              </button>
+              <p id="developmentTime" class="time"></p>
+              <button
+                class="timerButton"
+                id="developmentPlus"
+                onClick="plusOne(this.id)"
+              >
+                +
+              </button>
+            </div>
+            <div class="timer">
+              EditPossibility
+              <button
+                class="timerButton"
+                id="possibilityMinus"
+                onClick="minusOne(this.id)"
+              >
+                -
+              </button>
+              <p id="possibilityTime" class="time"></p>
+              <button
+                class="timerButton"
+                id="possibilityPlus"
+                onClick="plusOne(this.id)"
+              >
+                +
+              </button>
+            </div>
+          </div>
+          <div class="saveButtonContainer">
+            <button class="buttons" id="saveButton" onClick="fetchTimerEdit()">
+              Opslaan
+            </button>
+          </div>
+          <div class="buttonContainer" id="backButton">
+            <button
+              class="buttons"
+              onclick="window.location.href='../adminportal.html'"
+            >
+              Terug
+            </button>
+          </div>
         </div>
-    </body>
-    <script type="text/javascript" src="../../Javascript/timer.js"></script>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="../../Javascript/timer.js"></script>
 </html>
