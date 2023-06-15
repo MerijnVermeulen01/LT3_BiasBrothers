@@ -4,9 +4,9 @@ var button2 = document.getElementById('button2');
 
 // Check the window location on page load
 window.onload = function () {
-    if (window.location.href === 'http://localhost:63342/pages.css/Frontend/Pages/editPossibility.html') {
+    if (window.location.href === 'editPossibility.html') {
         button1.classList.add('active2');
-    } else if (window.location.href === 'http://localhost:63342/pages.css/Frontend/Pages/editPossibilitySlowingDown.html') {
+    } else if (window.location.href === 'editPossibilitySlowingDown.html') {
         button2.classList.add('active2');
     }
 };
@@ -18,9 +18,9 @@ window.addEventListener('hashchange', function () {
     button2.classList.remove('active2');
 
     // Check the window location and add the 'active' class to the corresponding button
-    if (window.location.href === 'http://localhost:63342/pages.css/Frontend/Pages/editPossibility.html') {
+    if (window.location.href === 'editPossibility.html') {
         button1.classList.add('active2');
-    } else if (window.location.hash === 'http://localhost:63342/pages.css/Frontend/Pages/editPossibilitySlowingDown.html') {
+    } else if (window.location.hash === 'editPossibilitySlowingDown.html') {
         button2.classList.add('active2');
     }
 });

@@ -37,7 +37,6 @@ function valuesToJSON(data){
       console.log(this.responseText);
     }
   };
-}
 
     if(clickedButton.length != 0){
         
