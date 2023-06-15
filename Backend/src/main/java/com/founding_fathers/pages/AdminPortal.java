@@ -41,15 +41,14 @@ public class AdminPortal extends DatabaseController {
 
         ResultSetMetaData md = resultSet.getMetaData();
         int numCols = md.getColumnCount();
-        List<String> colNames = IntStream.range(0, numCols)
-                .mapToObj(i -> {
-                    try {
-                        return md.getColumnName(i + 1);
-                    } catch (SQLException e) {
-                        System.out.println(e);
-                        return "?";
-                    }
-                }).collect(Collectors.toList());
+        List<String> colNames = IntStream.range(0, numCols).mapToObj(i -> {
+            try {
+                return md.getColumnName(i + 1);
+            } catch (SQLException e) {
+                System.out.println(e);
+                return "?";
+            }
+        }).collect(Collectors.toList());
 
         JSONArray result = new JSONArray();
         while (resultSet.next()) {
@@ -70,7 +69,8 @@ public class AdminPortal extends DatabaseController {
         ResultSet resultSet = null;
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("SELECT description, thinkingTraps FROM thinkingtraps WHERE idThinkingTraps = ?");
+            stmt = con
+                    .prepareStatement("SELECT description, thinkingTraps FROM thinkingtraps WHERE idThinkingTraps = ?");
             stmt.setInt(1, ID);
             resultSet = stmt.executeQuery();
         } catch (SQLException e) {
@@ -79,15 +79,14 @@ public class AdminPortal extends DatabaseController {
 
         ResultSetMetaData md = resultSet.getMetaData();
         int numCols = md.getColumnCount();
-        List<String> colNames = IntStream.range(0, numCols)
-                .mapToObj(i -> {
-                    try {
-                        return md.getColumnName(i + 1);
-                    } catch (SQLException e) {
-                        System.out.println(e);
-                        return "?";
-                    }
-                }).collect(Collectors.toList());
+        List<String> colNames = IntStream.range(0, numCols).mapToObj(i -> {
+            try {
+                return md.getColumnName(i + 1);
+            } catch (SQLException e) {
+                System.out.println(e);
+                return "?";
+            }
+        }).collect(Collectors.toList());
         JSONArray result = new JSONArray();
         while (resultSet.next()) {
             JSONObject row = new JSONObject();
@@ -114,15 +113,14 @@ public class AdminPortal extends DatabaseController {
 
         ResultSetMetaData md = resultSet.getMetaData();
         int numCols = md.getColumnCount();
-        List<String> colNames = IntStream.range(0, numCols)
-                .mapToObj(i -> {
-                    try {
-                        return md.getColumnName(i + 1);
-                    } catch (SQLException e) {
-                        System.out.println(e);
-                        return "?";
-                    }
-                }).collect(Collectors.toList());
+        List<String> colNames = IntStream.range(0, numCols).mapToObj(i -> {
+            try {
+                return md.getColumnName(i + 1);
+            } catch (SQLException e) {
+                System.out.println(e);
+                return "?";
+            }
+        }).collect(Collectors.toList());
         JSONArray result = new JSONArray();
         while (resultSet.next()) {
             JSONObject row = new JSONObject();
