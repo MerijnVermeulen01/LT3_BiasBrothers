@@ -18,6 +18,7 @@ public class AdminPortal extends DatabaseController {
     private int thinkingTime;
     private int developmentTime;
     private int possibilityTime;
+    private int slowingTime;
 
     public void setBiasTime(int biasTime) {
         this.biasTime = biasTime;
@@ -33,6 +34,9 @@ public class AdminPortal extends DatabaseController {
 
     public void setPossibilityTime(int possibilityTime) {
         this.possibilityTime = possibilityTime;
+    }
+    public void setSlowingTime(int slowingTime) {
+        this.slowingTime = slowingTime;
     }
 
     public List selectAdminPortal(String query) throws SQLException {
@@ -137,8 +141,8 @@ public class AdminPortal extends DatabaseController {
     }
 
     public void updateInTimer() {
-        int[] times = {biasTime, thinkingTime, developmentTime, possibilityTime};
-        String[] timerNames = {"biasTime", "thinkingTime", "developmentTime", "possibilityTime"};
+        int[] times = {biasTime, thinkingTime, developmentTime, possibilityTime, slowingTime};
+        String[] timerNames = {"biasTime", "thinkingTime", "developmentTime", "possibilityTime", "slowingTime"};
         PreparedStatement stmt = null;
         try {
             for (int i = 0; i < timerNames.length; i++) {
