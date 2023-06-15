@@ -21,15 +21,24 @@ window.addEventListener('error', function (event) {
         <input type="text" id="username" name="username" placeholder="voorbeeld@bias.com"><br>
         <label for="password">Password</label><br>
 
-                <input type="password" id="password" name="password" placeholder="kat1234"><br><br>
-                <div id="buttonsContainer">
-                    <div id="buttons">
-                        <button id="loginButton" type="submit" onclick="checkButtonLogin()">Login</button>
-                        <button id="adminButton" type="submit" onclick="checkButtonLogin()">Admin</button>
-                    </div>
-                </div>
-            </form>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="kat1234"
+        /><br /><br />
+        <div id="buttonsContainer">
+          <div id="buttons">
+            <button id="loginButton" type="submit" onclick="checkButtonLogin()">
+              Login
+            </button>
+            <button id="adminButton" type="submit" onclick="checkButtonLogin()">
+              Admin
+            </button>
+          </div>
         </div>
-    </body>
-    <script type="text/javascript" src="./Javascript/login.js"></script>
+      </form>
+    </div>
+  </body>
+  <script type="text/javascript" src="./Javascript/login.js"></script>
 </html>

@@ -7,6 +7,7 @@ let possibilityTime;
 let developmentTime;
 let slowingTime;
 
+
 if (queryString.includes("timerEdit")) {
   //check if in admin or in normal page
   fetchTimerEdit();
@@ -21,7 +22,7 @@ if (queryString.includes("timerEdit")) {
 }
 
 function chooseTimer(idtimer, timerName, timerTime) {
-  //goes through multiple if statments to infd out the page and set the time with the fetched time for the opened page
+  //goes through multiple if statments to find out the page and set the time with the fetched time for the opened page
   if (queryString.includes("myBiasPage")) {
     if (timerName.includes("biasTime")) {
       runTimer(timerTime);
