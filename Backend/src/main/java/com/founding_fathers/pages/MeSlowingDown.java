@@ -79,10 +79,6 @@ public class MeSlowingDown extends DatabaseController {
         this.meSlowingDownSituationDescription12 = meSlowingDownSituationDescription12;
     }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> parent of 734cf50 (Merge branch 'develop' of https://github.com/Cayde7/LT3_BiasBrothers into develop)
     /**
      * Function wich checks if there is already information in the page. if there is it goes to the update else it goes to the insert
      */
