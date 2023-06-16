@@ -11,10 +11,10 @@ De losse schermen die in de mural worden gebruikt zullen terug komen als venster
 ---
 
 >Leertaak 3 voor Bias Brothers door:
->- Geo Bouwmeester (Product Owner)
->- Shawn O'Donoghue (Scrum Master)
->- Merijn Vermeulen  
+>- Geo Bouwmeester 
+>- Shawn O'Donoghue (**Git-Custodian**)
+>- Merijn Vermeulen (***Product Owner***)
 >- Jaron Rombeek
->- Evan Schriekenberg
+>- Evan Schriekenberg (Scrum Master)
 >- Peter Ruizendaal
 >- Gregory Gomes Branco
