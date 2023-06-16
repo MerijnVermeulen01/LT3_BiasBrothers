@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+
 public class MeThinkingFast extends DatabaseController {
 
     Connection con = getConnection();
@@ -36,6 +37,10 @@ public class MeThinkingFast extends DatabaseController {
      */
     public void setSituationDescription1(String situationDescription1) {
         this.situationDescription1 = situationDescription1;
+    }
+
+    public String getSituationDescription1() {
+        return situationDescription1;
     }
 
     public void setSituationDescription2(String situationDescription2) {
@@ -82,17 +87,16 @@ public class MeThinkingFast extends DatabaseController {
         this.situationDescription12 = situationDescription12;
     }
 
+
     /**
-     * Function wich checks if there is already information in the page. if there is
-     * it goes to the update else it goes to the insert
+     * Function wich checks if there is already information in the page. if there is it goes to the update else it goes to the insert
      */
 
     public void checkForInformationMeThinkingFast() throws SQLException {
         ResultSet resultSet = null;
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement(
-                    "SELECT participant_methinkfast.id, participant_methinkfast.description FROM participant_methinkfast  WHERE session_idSession = ?;");
+            stmt = con.prepareStatement("SELECT participant_methinkfast.id, participant_methinkfast.description FROM participant_methinkfast  WHERE session_idSession = ?;");
             stmt.setInt(1, 1);
             resultSet = stmt.executeQuery();
         } catch (SQLException e) {
@@ -111,19 +115,14 @@ public class MeThinkingFast extends DatabaseController {
     }
 
     /**
-     * This is the insert function for meThinkingFast it is used in the
-     * checkForInformationMeThinkingFast function to insert data into the database
+     * This is the insert function for meThinkingFast it is used in the checkForInformationMeThinkingFast function to insert data into the database
      */
     public void insertInBiasthinkingfast() {
-        String[] descriptions = { situationDescription1, situationDescription2, situationDescription3,
-                situationDescription4, situationDescription5, situationDescription6, situationDescription7,
-                situationDescription8, situationDescription9, situationDescription10, situationDescription11,
-                situationDescription12 };
+        String[] descriptions = {situationDescription1, situationDescription2, situationDescription3, situationDescription4, situationDescription5, situationDescription6, situationDescription7, situationDescription8, situationDescription9, situationDescription10, situationDescription11, situationDescription12};
         PreparedStatement stmt = null;
         try {
             for (int i = 0; i < descriptions.length; i++) {
-                stmt = con.prepareStatement(
-                        "INSERT INTO participant_methinkfast (session_idSession, description) VALUES (?, ?)");
+                stmt = con.prepareStatement("INSERT INTO participant_methinkfast (session_idSession, description) VALUES (?, ?)");
                 stmt.setInt(1, 2);
                 stmt.setString(2, descriptions[i]);
                 stmt.executeUpdate();
@@ -137,10 +136,7 @@ public class MeThinkingFast extends DatabaseController {
      * This is the update function for meThinkingFast
      */
     public void updateMeThinkingFast(int id) {
-        String[] descriptions = { situationDescription1, situationDescription2, situationDescription3,
-                situationDescription4, situationDescription5, situationDescription6, situationDescription7,
-                situationDescription8, situationDescription9, situationDescription10, situationDescription11,
-                situationDescription12 };
+        String[] descriptions = {situationDescription1, situationDescription2, situationDescription3, situationDescription4, situationDescription5, situationDescription6, situationDescription7, situationDescription8, situationDescription9, situationDescription10, situationDescription11, situationDescription12};
         System.out.println(descriptions[count]);
         PreparedStatement stmt = null;
         try {
@@ -165,14 +161,15 @@ public class MeThinkingFast extends DatabaseController {
 
         ResultSetMetaData md = resultSet.getMetaData();
         int numCols = md.getColumnCount();
-        List<String> colNames = IntStream.range(0, numCols).mapToObj(i -> {
-            try {
-                return md.getColumnName(i + 1);
-            } catch (SQLException e) {
-                System.out.println(e);
-                return "?";
-            }
-        }).collect(Collectors.toList());
+        List<String> colNames = IntStream.range(0, numCols)
+                .mapToObj(i -> {
+                    try {
+                        return md.getColumnName(i + 1);
+                    } catch (SQLException e) {
+                        System.out.println(e);
+                        return "?";
+                    }
+                }).collect(Collectors.toList());
 
         JSONArray result = new JSONArray();
         while (resultSet.next()) {

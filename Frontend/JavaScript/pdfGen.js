@@ -13,7 +13,7 @@ function generatePDF() {
     ];
 
   // Fontpage added to pdf
-  var page = "/Frontend/PDFs/pdfDesign.png";
+  var page = "/Frontend/PDF-presets/pdfDesign.png";
   doc.addImage(page, "PNG", 0, 0, 210, 297); // Adjust the coordinates and dimensions as needed
 
   // Fetches all data at once - puts the data in a json format.

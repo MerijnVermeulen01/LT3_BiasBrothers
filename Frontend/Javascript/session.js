@@ -2,8 +2,8 @@ function valuesToJSON() {
     let xhr = new XMLHttpRequest();
     let url = "http://localhost:7070/Sessions";
 
-  xhr.open("POST", url, true);
-  xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
 
     var data = JSON.stringify({
         "button1": clickedButton[0],
@@ -14,5 +14,5 @@ function valuesToJSON() {
         "description3": description[2],
     });
 
-  xhr.send(data);
+    xhr.send(data);
 }

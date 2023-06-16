@@ -90,7 +90,7 @@ body {
 }
 
 
-.card>.cardContent {
+.card > .cardContent {
     height: calc(100% - 2px);
     margin: 1px;
     width: calc(100% - 2px);
@@ -99,6 +99,7 @@ body {
     font-family: inherit;
     position: relative;
     box-shadow: 2px 4px 4px rgb(0 0 0 / 40%)
+
 }
 
 .cardContent img {
