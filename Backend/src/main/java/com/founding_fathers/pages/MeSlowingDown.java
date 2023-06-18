@@ -87,7 +87,7 @@ public class MeSlowingDown extends DatabaseController {
         ResultSet resultSet = null;
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("SELECT methinkslow.idmethinkslow, methinkslow.description FROM methinkslow  WHERE session_id = ?;");
+            stmt = con.prepareStatement("SELECT participant_methinkslow.id, participant_methinkslow.description FROM participant_methinkslow  WHERE session_idSession = ?;");
             stmt.setInt(1, 1);
             resultSet = stmt.executeQuery();
         } catch (SQLException e) {
@@ -113,7 +113,7 @@ public class MeSlowingDown extends DatabaseController {
         PreparedStatement stmt = null;
         try {
             for (int i = 0; i < descriptions.length; i++) {
-                stmt = con.prepareStatement("INSERT INTO methinkslow (session_id, description) VALUES (?, ?)");
+                stmt = con.prepareStatement("INSERT INTO participant_methinkslow (session_idSession, description) VALUES (?, ?)");
                 stmt.setInt(1, 2);
                 stmt.setString(2, descriptions[i]);
                 stmt.executeUpdate();
@@ -147,7 +147,7 @@ public class MeSlowingDown extends DatabaseController {
 
     public List selectMeSlowingDown() throws SQLException {
         Statement stmt = con.createStatement();
-        String query = "SELECT * FROM methinkslow";
+        String query = "SELECT * FROM participant_methinkslow";
         ResultSet resultSet = stmt.executeQuery(query);
 
         ResultSetMetaData md = resultSet.getMetaData();
