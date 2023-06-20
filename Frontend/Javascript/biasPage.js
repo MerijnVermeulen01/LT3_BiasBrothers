@@ -94,7 +94,7 @@ async function fetchData() {
         for (const item of data) {
             if (item.thinkingTraps && item.idThinkingTraps) {
                 await fillDivCard(item.thinkingTraps, item.idThinkingTraps);
-            } 
+            }
         }
     } catch (err) {
         console.error(err);
