@@ -88,13 +88,13 @@ function valuesToJSON() {
 // A-synchronous version of method as seen above.
 async function fetchData() {
     try {
-        
         const response = await fetch('http://localhost:7070/joinedParticipantTraps');
         const data = await response.json();
 
-        // Each iteration will wait for fillDiv to complete before moving to the next item.
         for (const item of data) {
-            await fillDivCard(item.thinkingTraps, item.idThinkingTraps);
+            if (item.thinkingTraps && item.idThinkingTraps) {
+                await fillDivCard(item.thinkingTraps, item.idThinkingTraps);
+            } 
         }
     } catch (err) {
         console.error(err);
