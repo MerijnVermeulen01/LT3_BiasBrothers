@@ -170,7 +170,6 @@ public class MeThinkingFast extends DatabaseController {
                         return "?";
                     }
                 }).collect(Collectors.toList());
-
         JSONArray result = new JSONArray();
         while (resultSet.next()) {
             JSONObject row = new JSONObject();

@@ -49,7 +49,6 @@ public class MyBias extends DatabaseController {
     }
 
     public void checkForInformation() throws SQLException {
-        System.out.println("papa");
         ResultSet resultSet = null;
         PreparedStatement stmt = null;
         try {
@@ -153,7 +152,6 @@ public class MyBias extends DatabaseController {
      * Here the controller gives it to the REST-API.
      */
     public List selectMyBias() throws SQLException {
-        System.out.println("Pipa");
         Statement stmt = con.createStatement();
         String query = "SELECT * FROM bias";
         ResultSet resultSet = stmt.executeQuery(query);
