@@ -4,37 +4,50 @@ const description = ["", "", ""];
 const buttonContainer = document.getElementById('cardContainer');
 const headers = [document.getElementById('textHeader1'), document.getElementById('textHeader2'), document.getElementById('textHeader3')];
 
-    buttonContainer.addEventListener('click', (event) => {
-        const button = event.target.closest('.biasButton');
-        if (pressedButtons.length <= 3) {
-            if (button.classList.contains('activeButton')) {
-                button.classList.remove('activeButton');
+buttonContainer.addEventListener('click', (event) => {
+    const button = event.target.closest('.biasButton');
+    const buttonId = button.getAttribute('id'); // Get the ID of the clicked button
 
-                const index = pressedButtons.indexOf(button);
-                if (index > -1) {
-                    pressedButtons.splice(index, 1);
-                }
-            } else if (pressedButtons.length >= 0 && pressedButtons.length < 3) {
-                button.classList.add('activeButton');
-                pressedButtons.push(button);
+    if (pressedButtons.length <= 3) {
+        if (button.classList.contains('activeButton')) {
+            button.classList.remove('activeButton');
+
+            const index = pressedButtons.indexOf(button);
+            if (index > -1) {
+                pressedButtons.splice(index, 1);
             }
-
-            headers.forEach((header, index) => {
-                header.innerHTML = pressedButtons[index] ? pressedButtons[index].innerHTML : "Selecteer een bias";
-            });
+        } else if (pressedButtons.length < 3) {
+            button.classList.add('activeButton');
+            pressedButtons.push(button);
         }
-    });
 
-function buttonToArray(clicked_id) {
-    if (clickedButton.length <= 3) {
-        const index = clickedButton.indexOf(clicked_id);
-        if (index > -1) {
-            clickedButton.splice(index, 1);
-        } else if (clickedButton.length >= 0 && clickedButton.length < 3) {
-            clickedButton.push(clicked_id);
+        const clickedIndex = clickedButton.indexOf(buttonId); // Find the index of the buttonId in the clickedButtons array
+
+        if (clickedIndex > -1) {
+            clickedButton.splice(clickedIndex, 1); // Remove the buttonId from the clickedButtons array
+        } else {
+            console.log(buttonId)
+            clickedButton.push(buttonId); // Add the buttonId to the clickedButtons array
         }
+
+        headers.forEach((header, index) => {
+            header.innerHTML = pressedButtons[index]?.innerHTML || "Selecteer een bias";
+        });
     }
-}
+});
+document.getElementById("futherButton").addEventListener('click',valuesToJSON);
+
+// function buttonToArray(clicked_id) {
+//     console.log(clickedButton);
+//     if (clickedButton.length <= 3) {
+//         const index = clickedButton.indexOf(clicked_id);
+//         if (index > -1) {
+//             clickedButton.splice(index, 1);
+//         } else if (clickedButton.length >= 0 && clickedButton.length < 3) {
+//             clickedButton.push(clicked_id);
+//         }
+//     }
+// }
 
 function textToArray(textAreaId, paricipantText) {
     if (textAreaId === "description1") {
@@ -66,9 +79,9 @@ function valuesToJSON() {
         }
     };
 
-    clickedButton[0] = document.getElementsByClassName("activeButton");
-    clickedButton[1] = document.getElementsByClassName("activeButton");
-    clickedButton[2] = document.getElementsByClassName("activeButton");
+    // clickedButton[0] = document.getElementsByClassName("activeButton");
+    // clickedButton[1] = document.getElementsByClassName("activeButton");
+    // clickedButton[2] = document.getElementsByClassName("activeButton");
 
     // Converting JSON data to string
     var data = JSON.stringify({
@@ -102,14 +115,6 @@ async function fetchData() {
 }
 fetchData();
 
-
-// fetch('http://localhost:7070/joinedParticipantTraps')
-//     .then(response => response.json())
-//     .then(data => {
-//         document.getElementById('cardTitle1').innerHTML = data[0].thinkingTraps;
-//         document.getElementById('cardTitle2').innerHTML = data[1].thinkingTraps;
-//         document.getElementById('cardTitle3').innerHTML = data[2].thinkingTraps;
-//     });
 
 fetch('http://localhost:7070/getParicipantBias')
     .then(repsone => repsone.json())
@@ -147,11 +152,12 @@ function fillDivCard(title, id) {
 
                 newButton.appendChild(text);
                 newDiv.appendChild(newButton);
-                // console.log(post);
-                // 
+
+
             });
         });
 }
+
 
 // Not needed. For when cardText should be re-active.
 // function fillTextCard() {

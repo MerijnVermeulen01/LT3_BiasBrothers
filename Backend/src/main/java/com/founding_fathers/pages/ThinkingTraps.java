@@ -60,12 +60,12 @@ public class ThinkingTraps extends DatabaseController {
         if (!resultSet.isBeforeFirst()) {
             System.out.println("Yeet");
             insertThinkingTraps();
-        } else {
-            while (resultSet.next()) {
-//                System.out.println(resultSet.getInt(1));
-                updateThinkingTraps(resultSet.getInt(1));
-                count++;
-            }
+//        } else {
+//            while (resultSet.next()) {
+////                System.out.println(resultSet.getInt(1));
+//                updateThinkingTraps(resultSet.getInt(1));
+//                count++;
+//            }
         }
     }
 
@@ -87,22 +87,22 @@ public class ThinkingTraps extends DatabaseController {
         }
     }
 
-    public void updateThinkingTraps(int id) {
-        int[] buttons = {button1, button2, button3};
-        String[] descriptions = {description1, description2, description3};
-
-        PreparedStatement stmt = null;
-        try {
-            System.out.println(buttons[count]);
-            stmt = con.prepareStatement("UPDATE participant_thinkingtraps SET thinkingtraps_idThinkingTraps = ?, description = ? WHERE id = ?");
-            stmt.setInt(1, buttons[count]);
-            stmt.setString(2, descriptions[count]);
-            stmt.setInt(3, id);
-            stmt.executeUpdate();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
+//    public void updateThinkingTraps(int id) {
+//        int[] buttons = {button1, button2, button3};
+//        String[] descriptions = {description1, description2, description3};
+//
+//        PreparedStatement stmt = null;
+//        try {
+//            System.out.println(buttons[count]);
+//            stmt = con.prepareStatement("UPDATE participant_thinkingtraps SET thinkingtraps_idThinkingTraps = ?, description = ? WHERE id = ?");
+//            stmt.setInt(1, buttons[count]);
+//            stmt.setString(2, descriptions[count]);
+//            stmt.setInt(3, id);
+//            stmt.executeUpdate();
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
 
     public List selectThinkingTraps() throws SQLException {
         Statement stmt = con.createStatement();

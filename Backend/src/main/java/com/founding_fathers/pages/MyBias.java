@@ -49,7 +49,6 @@ public class MyBias extends DatabaseController {
     }
 
     public void checkForInformation() throws SQLException {
-        System.out.println("papa");
         ResultSet resultSet = null;
         PreparedStatement stmt = null;
         try {
@@ -112,6 +111,7 @@ public class MyBias extends DatabaseController {
     }
 
     public void insertInBias() {
+        System.out.println("papapapap");
         int[] buttons = {button1, button2, button3};
         String[] descriptions = {description1, description2, description3};
         PreparedStatement stmt = null;
@@ -122,7 +122,7 @@ public class MyBias extends DatabaseController {
                 stmt.setInt(1, 1);
                 stmt.setInt(2, buttons[i]);
                 stmt.setString(3, descriptions[i]);
-//                stmt.executeUpdate();
+                stmt.executeUpdate();
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
