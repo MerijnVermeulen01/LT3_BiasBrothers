@@ -29,7 +29,7 @@ if (window.location.href.indexOf("codexBiases") > -1) {
         .then(response => response.json())
         .then(data => {
             data.forEach(post => {
-                fillDiv(post.nameBias, post.biasDescription);
+                fillDiv(post.nameBias, post.description);
             })
         });
 } else if (window.location.href.indexOf("codexAdaptability") > -1) {
