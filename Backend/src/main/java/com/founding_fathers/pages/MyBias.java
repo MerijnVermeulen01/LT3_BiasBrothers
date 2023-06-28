@@ -130,17 +130,15 @@ public class MyBias extends DatabaseController {
     }
 
     public void updateInBias(int result) {
-//        int[] buttons = {button1, button2, button3};
+        int[] buttons = {button1, button2, button3};
         String[] descriptions = {description1, description2, description3};
-//        System.out.println(descriptions[count]);
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("UPDATE participant_bias SET description = ? WHERE id = ?");
-//            System.out.println(descriptions);
-//                stmt.setInt(1, buttons[count]);
-            stmt.setString(1, descriptions[count]);
+            stmt = con.prepareStatement("UPDATE participant_bias SET bias_idBiases = ?, description = ? WHERE id = ?");
+            stmt.setInt(1, buttons[count]);
+            stmt.setString(2, descriptions[count]);
             System.out.println(result);
-            stmt.setInt(2, result);
+            stmt.setInt(3, result);
             stmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);

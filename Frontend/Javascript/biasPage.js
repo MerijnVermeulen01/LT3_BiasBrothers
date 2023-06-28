@@ -4,39 +4,32 @@ const description = ["", "", ""];
 const buttonContainer = document.getElementById('cardContainer');
 const headers = [document.getElementById('textHeader1'), document.getElementById('textHeader2'), document.getElementById('textHeader3')];
 
-buttonContainer.addEventListener('click', (event) => {
-    const button = event.target.closest('.biasButton');
-    const buttonId = button.getAttribute('id'); // Get the ID of the clicked button
+    buttonContainer.addEventListener('click', (event) => {
+        const button = event.target.closest('.biasButton');
+        const buttonId = button.getAttribute('id'); // Get the ID of the clicked button
 
-    if (pressedButtons.length <= 3) {
         if (button.classList.contains('activeButton')) {
             button.classList.remove('activeButton');
 
-            const index = pressedButtons.indexOf(button);
+            const index = clickedButton.indexOf(buttonId);
             if (index > -1) {
+                clickedButton.splice(index, 1);
                 pressedButtons.splice(index, 1);
             }
-        } else if (pressedButtons.length < 3) {
+        } else if (clickedButton.length < 3) {
             button.classList.add('activeButton');
+            clickedButton.push(buttonId);
             pressedButtons.push(button);
-        }
-
-        const clickedIndex = clickedButton.indexOf(buttonId); // Find the index of the buttonId in the clickedButtons array
-
-        if (clickedIndex > -1) {
-            clickedButton.splice(clickedIndex, 1); // Remove the buttonId from the clickedButtons array
-        } else {
-            console.log(buttonId)
-            clickedButton.push(buttonId); // Add the buttonId to the clickedButtons array
         }
 
         headers.forEach((header, index) => {
             header.innerHTML = pressedButtons[index]?.innerHTML || "Selecteer een bias";
         });
-    }
-});
+    });
+
 document.getElementById("futherButton").addEventListener('click',valuesToJSON);
 
+// Didn't work so implemented it to event-listener.
 // function buttonToArray(clicked_id) {
 //     console.log(clickedButton);
 //     if (clickedButton.length <= 3) {
@@ -99,7 +92,7 @@ function valuesToJSON() {
 }
 
 // A-synchronous version of method as seen above.
-async function fetchData() {
+async function fetchCards() {
     try {
         const response = await fetch('http://localhost:7070/joinedParticipantTraps');
         const data = await response.json();
@@ -113,8 +106,47 @@ async function fetchData() {
         console.error(err);
     }
 }
-fetchData();
+fetchCards();
 
+async function fetchButtons(id, newDiv) {
+    try {
+        const response = await fetch('http://localhost:7070/getTrapBias/' + id);
+        const data = await response.json();
+
+        for (const item of data) {
+            var text = document.createTextNode(item.nameBias);
+            var newButton = document.createElement("button");
+
+            newButton.setAttribute("id", item.idBiases);
+            setButtonClass(item.idBiases, newButton);
+
+            newButton.appendChild(text);
+            newDiv.appendChild(newButton);
+        }
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+async function setButtonClass(id, newButton) {
+    try {
+        const response = await fetch('http://localhost:7070/getParicipantBias');
+        const data = await response.json();
+
+        const isParticipantBias = data.some((participantItem) => {
+            return participantItem.bias_idBiases === id;
+        });
+
+        if (isParticipantBias) {
+            newButton.classList.add('biasButton');
+            newButton.classList.add('activeButton');
+        } else {
+            newButton.classList.add('biasButton');
+        }
+    } catch (err) {
+        console.error(err);
+    }
+}
 
 fetch('http://localhost:7070/getParicipantBias')
     .then(repsone => repsone.json())
@@ -140,22 +172,7 @@ function fillDivCard(title, id) {
     newDiv.appendChild(newH3);
     document.getElementById('cardContainer').appendChild(newDiv);
 
-    fetch('http://localhost:7070/getTrapBias/' + id)
-        .then(response => response.json())
-        .then(data => {
-            data.forEach(post => {
-                var text = document.createTextNode(post.nameBias);
-                var newButton = document.createElement("button");
-
-                newButton.classList.add('biasButton');
-                newButton.setAttribute("id", post.idBiases);
-
-                newButton.appendChild(text);
-                newDiv.appendChild(newButton);
-
-
-            });
-        });
+    fetchButtons(id, newDiv);
 }
 
 
